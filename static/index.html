@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harvard Science Center — Indoor Navigation</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🏛</span>
+      <span class="brand-name">Science Center</span>
+    </div>
+    <div class="searchbar">
+      <div class="search-field">
+        <span class="search-dot search-dot--start"></span>
+        <input id="search-from" class="search-input" placeholder="Choose starting point…" autocomplete="off"/>
+        <div id="suggestions-from" class="suggestions" hidden></div>
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <span class="search-dot search-dot--end"></span>
+        <input id="search-to" class="search-input" placeholder="Choose destination…" autocomplete="off"/>
+        <div id="suggestions-to" class="suggestions" hidden></div>
+      </div>
+      <button id="go-btn" class="go-btn">Navigate</button>
+    </div>
+    <div id="compass" class="compass" title="North up">
+      <svg viewBox="0 0 40 40" width="40" height="40">
+        <circle cx="20" cy="20" r="18" fill="white" stroke="#ccc" stroke-width="1.5"/>
+        <polygon points="20,5 24,20 20,17 16,20" fill="#ea4335"/>
+        <polygon points="20,35 24,20 20,23 16,20" fill="#aaa"/>
+        <text x="20" y="9" text-anchor="middle" font-size="7" font-weight="bold" fill="#ea4335">N</text>
+      </svg>
+    </div>
+  </header>
+
+  <main class="map-stage">
+    <svg id="floor-svg" class="floor-svg" viewBox="0 0 1210 930" preserveAspectRatio="xMidYMid meet">
+      <defs id="svg-defs"></defs>
+      <g id="layer-rooms"></g>
+      <g id="layer-corridors"></g>
+      <g id="layer-labels"></g>
+      <g id="layer-route"></g>
+      <g id="layer-pins"></g>
+    </svg>
+
+    <aside class="floor-selector" id="floor-selector"></aside>
+
+    <div id="status-banner" class="status-banner" hidden></div>
+    <div id="info-panel" class="info-panel" hidden>
+      <div class="info-close" id="info-close">✕</div>
+      <div id="info-content"></div>
+    </div>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
