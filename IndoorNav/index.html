@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IndoorNav — Harvard Science Center</title>
+
+  <!-- Preconnect for faster font load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="src/styles/main.css" />
+
+  <!-- React + ReactDOM (development builds for better error messages) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Babel Standalone (JSX transpilation in-browser) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Fuse.js for fuzzy search -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7/dist/fuse.basic.umd.min.js"></script>
+</head>
+<body>
+  <div id="root">
+    <!-- Shown while JS loads -->
+    <div class="splash-loading">
+      <div class="splash-logo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" stroke="#A51C30" stroke-width="2"/>
+          <circle cx="24" cy="24" r="4" fill="#A51C30"/>
+          <line x1="24" y1="2" x2="24" y2="14" stroke="#A51C30" stroke-width="2" stroke-linecap="round"/>
+          <line x1="24" y1="34" x2="24" y2="46" stroke="#A51C30" stroke-width="2" stroke-linecap="round"/>
+          <line x1="2" y1="24" x2="14" y2="24" stroke="#A51C30" stroke-width="2" stroke-linecap="round"/>
+          <line x1="34" y1="24" x2="46" y2="24" stroke="#A51C30" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="splash-title">IndoorNav</div>
+      <div class="splash-subtitle">Harvard Science Center</div>
+      <div class="splash-spinner"></div>
+    </div>
+  </div>
+
+  <!-- ── Data ─────────────────────────────────────────────────────── -->
+  <script src="src/data/scienceCenter.js"></script>
+
+  <!-- ── Utilities (plain JS, no JSX) ─────────────────────────────── -->
+  <script src="src/utils/search.js"></script>
+  <script src="src/utils/pathfind.js"></script>
+
+  <!-- ── React Components (JSX via Babel) ──────────────────────────── -->
+  <script type="text/babel" src="src/components/FloorSwitcher.jsx" data-presets="react"></script>
+  <script type="text/babel" src="src/components/IndoorMap.jsx"     data-presets="react"></script>
+  <script type="text/babel" src="src/components/SearchBar.jsx"     data-presets="react"></script>
+  <script type="text/babel" src="src/components/RoomPanel.jsx"     data-presets="react"></script>
+
+  <!-- ── App ───────────────────────────────────────────────────────── -->
+  <script type="text/babel" src="src/App.jsx" data-presets="react"></script>
+
+  <!-- ── Mount ─────────────────────────────────────────────────────── -->
+  <script type="text/babel" data-presets="react">
+    const AppComponent = window.App;
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<AppComponent />);
+  </script>
+</body>
+</html>
