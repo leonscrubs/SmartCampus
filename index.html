@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harvard Science Center · Floor 1</title>
+  <title>Harvard Science Center · Indoor Map</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -43,21 +43,69 @@
       flex-shrink: 0;
     }
 
-    #topbar-title {
-      flex: 1;
-    }
+    #topbar-title { flex: 1; min-width: 0; }
 
     #topbar-title h1 {
       font-size: 16px;
       font-weight: 600;
       color: #202124;
       line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    #topbar-title p {
+    #topbar-subtitle {
       font-size: 12px;
       color: #5f6368;
       margin-top: 1px;
+    }
+
+    /* ── Floor selector ── */
+    #floor-selector {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    #floor-selector-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #9aa0a6;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-right: 2px;
+    }
+
+    .floor-btn {
+      min-width: 34px;
+      height: 30px;
+      border-radius: 15px;
+      border: 1.5px solid #dadce0;
+      background: #f8f9fa;
+      color: #5f6368;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0 10px;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .floor-btn:hover:not(.active) {
+      background: #e8eaed;
+      border-color: #bdc1c6;
+      color: #3c4043;
+    }
+
+    .floor-btn.active {
+      background: #1a56c4;
+      color: #ffffff;
+      border-color: #1a56c4;
     }
 
     #btn-reset {
@@ -73,6 +121,7 @@
       align-items: center;
       gap: 6px;
       transition: background 0.15s, box-shadow 0.15s;
+      flex-shrink: 0;
     }
 
     #btn-reset:hover {
@@ -122,6 +171,43 @@
 
     .room-label.large { font-size: 13px; font-weight: 600; }
     .room-label.small { font-size: 9px; font-weight: 400; fill: #5f6368; }
+
+    /* ── Floor placeholder ── */
+    #floor-placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: rgba(232, 224, 208, 0.7);
+      backdrop-filter: blur(2px);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    #floor-placeholder.visible { display: flex; }
+
+    #placeholder-icon {
+      font-size: 52px;
+      line-height: 1;
+      opacity: 0.5;
+    }
+
+    #placeholder-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #3c4043;
+    }
+
+    #placeholder-body {
+      font-size: 14px;
+      color: #5f6368;
+      text-align: center;
+      max-width: 380px;
+      line-height: 1.5;
+    }
 
     /* ── Legend ── */
     #legend {
@@ -180,9 +266,7 @@
       overflow: hidden;
     }
 
-    #info-card.visible {
-      transform: translateY(0);
-    }
+    #info-card.visible { transform: translateY(0); }
 
     #info-card-header {
       padding: 14px 16px 10px;
@@ -238,9 +322,7 @@
 
     #info-card-close:hover { color: #202124; background: #f1f3f4; }
 
-    #info-card-body {
-      padding: 12px 16px 14px;
-    }
+    #info-card-body { padding: 12px 16px 14px; }
 
     #info-card-body .section-label {
       font-size: 10px;
@@ -315,7 +397,7 @@
 
     .zoom-btn:hover { background: #f8f9fa; }
     .zoom-btn:first-child { border-radius: 4px 4px 0 0; }
-    .zoom-btn:last-child { border-radius: 0 0 4px 4px; }
+    .zoom-btn:last-child  { border-radius: 0 0 4px 4px; }
 
     /* ── Attribution ── */
     #attribution {
@@ -341,7 +423,10 @@
   </div>
   <div id="topbar-title">
     <h1>Harvard Science Center</h1>
-    <p>Floor 1 &mdash; Interactive Map</p>
+    <p id="topbar-subtitle">Floor 1 &mdash; Interactive Map</p>
+  </div>
+  <div id="floor-selector">
+    <span id="floor-selector-label">Floor</span>
   </div>
   <button id="btn-reset" title="Reset view">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -370,7 +455,7 @@
     <!-- 1. Outside background -->
     <rect width="1650" height="1275" fill="#E8E0D0"/>
 
-    <!-- 2. Building interior base (filled) -->
+    <!-- 2. Building interior base -->
     <polygon id="building-base" fill="#FAFAF8" filter="url(#soft-shadow)"/>
 
     <!-- 3. Building exterior outline -->
@@ -391,6 +476,13 @@
     <!-- 8. Labels -->
     <g id="layer-labels"></g>
   </svg>
+
+  <!-- Floor placeholder (shown when a floor has no data yet) -->
+  <div id="floor-placeholder">
+    <div id="placeholder-icon">🗺️</div>
+    <div id="placeholder-title">Floor data not yet available</div>
+    <div id="placeholder-body">Trace this floor's rooms in FP_DESIGN.ipynb, then save the result as the corresponding floor JSON file.</div>
+  </div>
 
   <!-- Legend -->
   <div id="legend">
@@ -432,6 +524,19 @@
 <script>
   'use strict';
 
+  // ─── Floor definitions ────────────────────────────────────────────────────
+  const FLOORS = [
+    { key: 'B',   label: 'Basement',   short: 'B',   file: 'floorB.json'  },
+    { key: '1',   label: 'Floor 1',    short: '1',   file: 'floor1.json'  },
+    { key: '2',   label: 'Floor 2',    short: '2',   file: 'floor2.json'  },
+    { key: '3',   label: 'Floor 3',    short: '3',   file: 'floor3.json'  },
+    { key: '4',   label: 'Floor 4',    short: '4',   file: 'floor4.json'  },
+    { key: '5',   label: 'Floor 5',    short: '5',   file: 'floor5.json'  },
+    { key: '6-9', label: 'Floors 6–9', short: '6-9', file: 'floor6.json'  },
+  ];
+
+  let currentFloorKey = null;
+
   // ─── Colour map ───────────────────────────────────────────────────────────
   const TYPE_FILLS = {
     classroom: '#D9E5F7',
@@ -446,142 +551,94 @@
   };
 
   const TYPE_LABELS = {
-    classroom: { label: 'Classroom',   color: '#1a73e8' },
-    lecture:   { label: 'Lecture Hall',color: '#e37400' },
-    lobby:     { label: 'Lobby',       color: '#f9ab00' },
-    lab:       { label: 'Lab',         color: '#1e8e3e' },
-    library:   { label: 'Library',     color: '#7b1fa2' },
-    stairwell: { label: 'Stairwell',   color: '#546e7a' },
-    elevator:  { label: 'Elevator',    color: '#546e7a' },
-    corridor:  { label: 'Corridor',    color: '#757575' },
-    default:   { label: 'Room',        color: '#5f6368' },
+    classroom: { label: 'Classroom',    color: '#1a73e8' },
+    lecture:   { label: 'Lecture Hall', color: '#e37400' },
+    lobby:     { label: 'Lobby',        color: '#f9ab00' },
+    lab:       { label: 'Lab',          color: '#1e8e3e' },
+    library:   { label: 'Library',      color: '#7b1fa2' },
+    stairwell: { label: 'Stairwell',    color: '#546e7a' },
+    elevator:  { label: 'Elevator',     color: '#546e7a' },
+    corridor:  { label: 'Corridor',     color: '#757575' },
+    default:   { label: 'Room',         color: '#5f6368' },
   };
 
   const TYPE_ICONS = {
-    classroom: '📚',
-    lecture:   '🎓',
-    lobby:     '🏛',
-    lab:       '🔬',
-    library:   '📖',
-    stairwell: '🪜',
-    elevator:  '🛗',
-    corridor:  '🚶',
-    default:   '📍',
+    classroom: '📚', lecture: '🎓', lobby: '🏛', lab: '🔬',
+    library: '📖',  stairwell: '🪜', elevator: '🛗', corridor: '🚶',
+    default: '📍',
   };
 
-  // Lighten a hex colour by mixing with white at a given ratio (0–1)
   function lightenHex(hex, ratio) {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    const lr = Math.round(r + (255 - r) * ratio);
-    const lg = Math.round(g + (255 - g) * ratio);
-    const lb = Math.round(b + (255 - b) * ratio);
-    return `rgb(${lr},${lg},${lb})`;
+    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    return `rgb(${Math.round(r+(255-r)*ratio)},${Math.round(g+(255-g)*ratio)},${Math.round(b+(255-b)*ratio)})`;
   }
 
-  // ─── SVG namespace helper ─────────────────────────────────────────────────
   const SVG_NS = 'http://www.w3.org/2000/svg';
   function svgEl(tag, attrs = {}) {
     const el = document.createElementNS(SVG_NS, tag);
-    for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+    for (const [k,v] of Object.entries(attrs)) el.setAttribute(k, v);
     return el;
   }
 
-  function pointsAttr(polygon) {
-    return polygon.map(p => p.join(',')).join(' ');
-  }
+  function pointsAttr(polygon) { return polygon.map(p => p.join(',')).join(' '); }
 
-  // ─── Polygon centroid ─────────────────────────────────────────────────────
   function centroid(polygon) {
-    let x = 0, y = 0;
-    for (const [px, py] of polygon) { x += px; y += py; }
-    return { x: x / polygon.length, y: y / polygon.length };
+    let x=0, y=0;
+    for (const [px,py] of polygon) { x+=px; y+=py; }
+    return { x: x/polygon.length, y: y/polygon.length };
   }
 
   // ─── Door symbol ──────────────────────────────────────────────────────────
-  // Draws architectural door: line (panel) + quarter-circle arc
   function buildDoorSymbol(door, roomCenter) {
     const R = 20;
-    const dx = door.x - roomCenter.x;
-    const dy = door.y - roomCenter.y;
-    const len = Math.sqrt(dx * dx + dy * dy) || 1;
-    // Unit vector from room center toward door (outward direction)
-    const nx = dx / len;
-    const ny = dy / len;
-    // Perpendicular (tangent to wall)
-    const tx = -ny;
-    const ty = nx;
-
-    // Door hinge at door point, panel sweeps along tangent
+    const dx = door.x - roomCenter.x, dy = door.y - roomCenter.y;
+    const len = Math.sqrt(dx*dx + dy*dy) || 1;
+    const nx = dx/len, ny = dy/len, tx = -ny, ty = nx;
     const hinge = { x: door.x, y: door.y };
-    const panelEnd = { x: hinge.x + tx * R, y: hinge.y + ty * R };
-    // Arc goes from panelEnd to a point R along the outward direction
-    const arcEnd = { x: hinge.x + nx * R, y: hinge.y + ny * R };
-
+    const panelEnd = { x: hinge.x + tx*R, y: hinge.y + ty*R };
+    const arcEnd   = { x: hinge.x + nx*R, y: hinge.y + ny*R };
     const g = svgEl('g');
-
-    // Panel line
-    const line = svgEl('line', {
-      x1: hinge.x, y1: hinge.y,
-      x2: panelEnd.x, y2: panelEnd.y,
-      stroke: '#AAAAAA', 'stroke-width': '1.2',
-      'stroke-linecap': 'round',
-    });
-    g.appendChild(line);
-
-    // Quarter-circle arc
-    const arc = svgEl('path', {
+    g.appendChild(svgEl('line', {
+      x1: hinge.x, y1: hinge.y, x2: panelEnd.x, y2: panelEnd.y,
+      stroke: '#AAAAAA', 'stroke-width': '1.2', 'stroke-linecap': 'round',
+    }));
+    g.appendChild(svgEl('path', {
       d: `M ${panelEnd.x} ${panelEnd.y} A ${R} ${R} 0 0 0 ${arcEnd.x} ${arcEnd.y}`,
-      fill: 'none',
-      stroke: '#AAAAAA', 'stroke-width': '1',
-      'stroke-dasharray': '3 2',
-    });
-    g.appendChild(arc);
-
+      fill: 'none', stroke: '#AAAAAA', 'stroke-width': '1', 'stroke-dasharray': '3 2',
+    }));
     return g;
   }
 
-  // ─── Build legend ─────────────────────────────────────────────────────────
-  function buildLegend() {
+  // ─── Legend ───────────────────────────────────────────────────────────────
+  function buildLegend(typesPresent) {
     const container = document.getElementById('legend-items');
-    const types = ['classroom','lecture','lobby','lab','library','stairwell','corridor'];
-    for (const t of types) {
+    container.innerHTML = '';
+    const order = ['classroom','lecture','lobby','lab','library','stairwell','corridor'];
+    for (const t of order) {
+      if (!typesPresent.has(t)) continue;
       const info = TYPE_LABELS[t] || TYPE_LABELS.default;
       const fill = TYPE_FILLS[t] || TYPE_FILLS.default;
       const item = document.createElement('div');
       item.className = 'legend-item';
-      item.innerHTML = `
-        <div class="legend-swatch" style="background:${fill}; border-color: ${info.color}33;"></div>
-        <span>${info.label}</span>
-      `;
+      item.innerHTML = `<div class="legend-swatch" style="background:${fill};border-color:${info.color}33;"></div><span>${info.label}</span>`;
       container.appendChild(item);
     }
   }
 
-  // ─── Room name lookup (built from data) ───────────────────────────────────
-  let roomMap = {};  // id → room object
-
-  // ─── Info card ────────────────────────────────────────────────────────────
-  let selectedId = null;
-  let selectedEl = null;
-  let selectedOrigFill = null;
+  // ─── Room state ───────────────────────────────────────────────────────────
+  let roomMap = {};
+  let selectedId = null, selectedEl = null, selectedOrigFill = null;
 
   function showCard(room) {
     const info = TYPE_LABELS[room.type] || TYPE_LABELS.default;
     document.getElementById('info-card-name').textContent = room.name;
-
     const badge = document.getElementById('info-card-badge');
-    badge.textContent = info.label;
-    badge.style.background = info.color;
-
+    badge.textContent = info.label; badge.style.background = info.color;
     const icon = document.getElementById('info-card-icon');
     icon.textContent = TYPE_ICONS[room.type] || TYPE_ICONS.default;
     icon.style.background = info.color + '22';
-
     const neighborsEl = document.getElementById('info-card-neighbors');
     neighborsEl.innerHTML = '';
-
     if (!room.neighbors || room.neighbors.length === 0) {
       const none = document.createElement('div');
       none.style.cssText = 'font-size:12px;color:#9aa0a6;font-style:italic;';
@@ -594,350 +651,272 @@
         const ninfo = TYPE_LABELS[neighbor.type] || TYPE_LABELS.default;
         const chip = document.createElement('div');
         chip.className = 'neighbor-chip';
-        chip.innerHTML = `
-          <div class="neighbor-chip-dot" style="background:${ninfo.color};"></div>
-          <span>${neighbor.name}</span>
-        `;
+        chip.innerHTML = `<div class="neighbor-chip-dot" style="background:${ninfo.color};"></div><span>${neighbor.name}</span>`;
         chip.addEventListener('click', () => selectRoom(nid));
         neighborsEl.appendChild(chip);
       }
     }
-
     document.getElementById('info-card').classList.add('visible');
   }
 
-  function hideCard() {
-    document.getElementById('info-card').classList.remove('visible');
-  }
+  function hideCard() { document.getElementById('info-card').classList.remove('visible'); }
 
   function selectRoom(id) {
-    // Deselect previous
     if (selectedEl) {
       selectedEl.setAttribute('fill', selectedOrigFill);
       selectedEl.classList.remove('selected');
       selectedEl.removeAttribute('filter');
     }
-
-    if (id === selectedId) {
-      selectedId = null;
-      selectedEl = null;
-      selectedOrigFill = null;
-      hideCard();
-      return;
-    }
-
+    if (id === selectedId) { selectedId=null; selectedEl=null; selectedOrigFill=null; hideCard(); return; }
     const el = document.querySelector(`[data-id="${id}"]`);
     if (!el) return;
-
     const room = roomMap[id];
     if (!room) return;
-
     const baseFill = TYPE_FILLS[room.type] || TYPE_FILLS.default;
-    const lightFill = lightenHex(baseFill, 0.22);
-
     selectedOrigFill = baseFill;
-    el.setAttribute('fill', lightFill);
+    el.setAttribute('fill', lightenHex(baseFill, 0.22));
     el.classList.add('selected');
     el.setAttribute('filter', 'url(#selected-glow)');
-
-    selectedId = id;
-    selectedEl = el;
-
+    selectedId = id; selectedEl = el;
     showCard(room);
-
-    // Bring selected room to front within layer-rooms
-    const layerRooms = document.getElementById('layer-rooms');
-    layerRooms.appendChild(el);
+    document.getElementById('layer-rooms').appendChild(el);
   }
 
   function deselectRoom() {
     if (!selectedId) return;
-    if (selectedEl) {
-      selectedEl.setAttribute('fill', selectedOrigFill);
-      selectedEl.classList.remove('selected');
-      selectedEl.removeAttribute('filter');
-    }
-    selectedId = null;
-    selectedEl = null;
-    selectedOrigFill = null;
-    hideCard();
+    if (selectedEl) { selectedEl.setAttribute('fill', selectedOrigFill); selectedEl.classList.remove('selected'); selectedEl.removeAttribute('filter'); }
+    selectedId=null; selectedEl=null; selectedOrigFill=null; hideCard();
   }
 
   // ─── Pan & Zoom ───────────────────────────────────────────────────────────
-  const VB_DEFAULT = { x: 0, y: 0, w: 1650, h: 1275 };
-  let vb = { ...VB_DEFAULT };
-  let isPanning = false;
-  let panStart = { x: 0, y: 0 };
-  let panVbStart = { x: 0, y: 0 };
-  let didPan = false;  // track if mouse actually moved during drag
+  let VB_W = 1650, VB_H = 1275;
+  let vb = { x:0, y:0, w:VB_W, h:VB_H };
+  let isPanning=false, panStart={x:0,y:0}, panVbStart={x:0,y:0}, didPan=false;
 
-  const svg = document.getElementById('map-svg');
+  const svg       = document.getElementById('map-svg');
   const container = document.getElementById('map-container');
 
-  function applyViewBox() {
-    svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
-  }
+  function applyViewBox() { svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`); }
+
+  function resetView() { vb = { x:0, y:0, w:VB_W, h:VB_H }; applyViewBox(); }
 
   function clientToSvgPoint(cx, cy) {
     const rect = svg.getBoundingClientRect();
-    const scaleX = vb.w / rect.width;
-    const scaleY = vb.h / rect.height;
-    return {
-      x: vb.x + (cx - rect.left) * scaleX,
-      y: vb.y + (cy - rect.top) * scaleY,
-    };
+    return { x: vb.x + (cx-rect.left)*(vb.w/rect.width), y: vb.y + (cy-rect.top)*(vb.h/rect.height) };
   }
 
   function zoomAt(cx, cy, factor) {
     const pt = clientToSvgPoint(cx, cy);
-    const newW = Math.max(200, Math.min(3300, vb.w * factor));
-    const newH = Math.max(155, Math.min(2550, vb.h * factor));
-    const ratioX = (pt.x - vb.x) / vb.w;
-    const ratioY = (pt.y - vb.y) / vb.h;
-    vb.x = pt.x - ratioX * newW;
-    vb.y = pt.y - ratioY * newH;
-    vb.w = newW;
-    vb.h = newH;
+    const newW = Math.max(200, Math.min(VB_W*2, vb.w*factor));
+    const newH = Math.max(155, Math.min(VB_H*2, vb.h*factor));
+    vb.x = pt.x - ((pt.x-vb.x)/vb.w)*newW;
+    vb.y = pt.y - ((pt.y-vb.y)/vb.h)*newH;
+    vb.w = newW; vb.h = newH;
     applyViewBox();
   }
 
-  // Mouse drag pan
   container.addEventListener('mousedown', e => {
     if (e.button !== 0) return;
-    isPanning = true;
-    didPan = false;
-    panStart = { x: e.clientX, y: e.clientY };
-    panVbStart = { x: vb.x, y: vb.y };
-    container.classList.add('dragging');
-    e.preventDefault();
+    isPanning=true; didPan=false;
+    panStart={x:e.clientX,y:e.clientY}; panVbStart={x:vb.x,y:vb.y};
+    container.classList.add('dragging'); e.preventDefault();
   });
-
   window.addEventListener('mousemove', e => {
     if (!isPanning) return;
-    const dx = e.clientX - panStart.x;
-    const dy = e.clientY - panStart.y;
-    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) didPan = true;
-    const rect = svg.getBoundingClientRect();
-    const scaleX = vb.w / rect.width;
-    const scaleY = vb.h / rect.height;
-    vb.x = panVbStart.x - dx * scaleX;
-    vb.y = panVbStart.y - dy * scaleY;
+    const dx=e.clientX-panStart.x, dy=e.clientY-panStart.y;
+    if (Math.abs(dx)>3||Math.abs(dy)>3) didPan=true;
+    const rect=svg.getBoundingClientRect();
+    vb.x=panVbStart.x-dx*(vb.w/rect.width); vb.y=panVbStart.y-dy*(vb.h/rect.height);
     applyViewBox();
   });
-
-  window.addEventListener('mouseup', () => {
-    isPanning = false;
-    container.classList.remove('dragging');
-  });
-
-  // Scroll zoom
-  container.addEventListener('wheel', e => {
-    e.preventDefault();
-    const factor = e.deltaY > 0 ? 1.12 : 0.88;
-    zoomAt(e.clientX, e.clientY, factor);
-  }, { passive: false });
-
-  // Double-click zoom in
-  svg.addEventListener('dblclick', e => {
-    zoomAt(e.clientX, e.clientY, 0.65);
-    e.stopPropagation();
-  });
-
-  // Reset view
-  document.getElementById('btn-reset').addEventListener('click', () => {
-    vb = { ...VB_DEFAULT };
-    applyViewBox();
-    deselectRoom();
-  });
-
-  // Zoom buttons
+  window.addEventListener('mouseup', () => { isPanning=false; container.classList.remove('dragging'); });
+  container.addEventListener('wheel', e => { e.preventDefault(); zoomAt(e.clientX, e.clientY, e.deltaY>0?1.12:0.88); }, { passive:false });
+  svg.addEventListener('dblclick', e => { zoomAt(e.clientX, e.clientY, 0.65); e.stopPropagation(); });
+  document.getElementById('btn-reset').addEventListener('click', () => { resetView(); deselectRoom(); });
   document.getElementById('btn-zoom-in').addEventListener('click', () => {
-    const cx = container.getBoundingClientRect().left + container.offsetWidth / 2;
-    const cy = container.getBoundingClientRect().top + container.offsetHeight / 2;
-    zoomAt(cx, cy, 0.75);
+    const r=container.getBoundingClientRect(); zoomAt(r.left+r.width/2, r.top+r.height/2, 0.75);
   });
   document.getElementById('btn-zoom-out').addEventListener('click', () => {
-    const cx = container.getBoundingClientRect().left + container.offsetWidth / 2;
-    const cy = container.getBoundingClientRect().top + container.offsetHeight / 2;
-    zoomAt(cx, cy, 1.33);
+    const r=container.getBoundingClientRect(); zoomAt(r.left+r.width/2, r.top+r.height/2, 1.33);
   });
 
-  // Touch pan/zoom
-  let lastTouches = null;
-  container.addEventListener('touchstart', e => {
-    lastTouches = e.touches;
-    e.preventDefault();
-  }, { passive: false });
-
+  let lastTouches=null;
+  container.addEventListener('touchstart', e => { lastTouches=e.touches; e.preventDefault(); }, { passive:false });
   container.addEventListener('touchmove', e => {
     e.preventDefault();
-    if (e.touches.length === 1 && lastTouches && lastTouches.length === 1) {
-      const dx = e.touches[0].clientX - lastTouches[0].clientX;
-      const dy = e.touches[0].clientY - lastTouches[0].clientY;
-      const rect = svg.getBoundingClientRect();
-      vb.x -= dx * (vb.w / rect.width);
-      vb.y -= dy * (vb.h / rect.height);
-      applyViewBox();
-    } else if (e.touches.length === 2 && lastTouches && lastTouches.length === 2) {
-      const d0 = Math.hypot(
-        lastTouches[0].clientX - lastTouches[1].clientX,
-        lastTouches[0].clientY - lastTouches[1].clientY
-      );
-      const d1 = Math.hypot(
-        e.touches[0].clientX - e.touches[1].clientX,
-        e.touches[0].clientY - e.touches[1].clientY
-      );
-      if (d0 > 0) {
-        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-        zoomAt(midX, midY, d0 / d1);
-      }
+    if (e.touches.length===1 && lastTouches?.length===1) {
+      const dx=e.touches[0].clientX-lastTouches[0].clientX, dy=e.touches[0].clientY-lastTouches[0].clientY;
+      const rect=svg.getBoundingClientRect();
+      vb.x-=dx*(vb.w/rect.width); vb.y-=dy*(vb.h/rect.height); applyViewBox();
+    } else if (e.touches.length===2 && lastTouches?.length===2) {
+      const d0=Math.hypot(lastTouches[0].clientX-lastTouches[1].clientX, lastTouches[0].clientY-lastTouches[1].clientY);
+      const d1=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY);
+      if (d0>0) { const mx=(e.touches[0].clientX+e.touches[1].clientX)/2, my=(e.touches[0].clientY+e.touches[1].clientY)/2; zoomAt(mx,my,d0/d1); }
     }
-    lastTouches = e.touches;
-  }, { passive: false });
+    lastTouches=e.touches;
+  }, { passive:false });
+  container.addEventListener('touchend', e => { lastTouches=e.touches; });
 
-  container.addEventListener('touchend', e => {
-    lastTouches = e.touches;
-  });
-
-  // ─── Click handling (event delegation) ────────────────────────────────────
+  // ─── Click handling ───────────────────────────────────────────────────────
   document.getElementById('layer-rooms').addEventListener('click', e => {
-    if (didPan) { didPan = false; return; }
-    const target = e.target.closest('[data-id]');
+    if (didPan) { didPan=false; return; }
+    const target=e.target.closest('[data-id]');
     if (!target) return;
-    const id = target.getAttribute('data-id');
-    selectRoom(id);
+    selectRoom(target.getAttribute('data-id'));
     e.stopPropagation();
   });
-
-  // Click on SVG background to deselect
   svg.addEventListener('click', e => {
-    if (didPan) { didPan = false; return; }
-    if (!e.target.closest('[data-id]') && !e.target.closest('#info-card')) {
-      deselectRoom();
-    }
+    if (didPan) { didPan=false; return; }
+    if (!e.target.closest('[data-id]') && !e.target.closest('#info-card')) deselectRoom();
   });
-
   document.getElementById('info-card-close').addEventListener('click', deselectRoom);
+
+  // ─── Clear floor ──────────────────────────────────────────────────────────
+  function clearFloor() {
+    ['layer-rooms','layer-hatch','layer-walls','layer-doors','layer-labels'].forEach(id => {
+      document.getElementById(id).innerHTML = '';
+    });
+    document.getElementById('legend-items').innerHTML = '';
+    document.getElementById('building-base').setAttribute('points', '');
+    document.getElementById('building-outline').setAttribute('points', '');
+    roomMap = {};
+    deselectRoom();
+  }
 
   // ─── Render floor data ────────────────────────────────────────────────────
   function renderFloor(data) {
-    // Build room lookup
+    const W = data.viewBox?.width  || 1650;
+    const H = data.viewBox?.height || 1275;
+    VB_W=W; VB_H=H;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.querySelector('#building-base').closest('defs')?.parentElement
+      ?.querySelector('rect')?.setAttribute('width', W);
+    svg.querySelector('rect').setAttribute('width', W);
+    svg.querySelector('rect').setAttribute('height', H);
+    resetView();
+
     for (const room of data.rooms) roomMap[room.id] = room;
 
-    // Building outline
-    const pts = pointsAttr(data.buildingOutline);
-    document.getElementById('building-base').setAttribute('points', pts);
-    document.getElementById('building-outline').setAttribute('points', pts);
+    if (data.buildingOutline?.length) {
+      const pts = pointsAttr(data.buildingOutline);
+      document.getElementById('building-base').setAttribute('points', pts);
+      document.getElementById('building-outline').setAttribute('points', pts);
+    }
 
     const layerRooms  = document.getElementById('layer-rooms');
     const layerHatch  = document.getElementById('layer-hatch');
     const layerWalls  = document.getElementById('layer-walls');
     const layerDoors  = document.getElementById('layer-doors');
     const layerLabels = document.getElementById('layer-labels');
+    const typesPresent = new Set();
 
     for (const room of data.rooms) {
-      const fill = TYPE_FILLS[room.type] || TYPE_FILLS.default;
-      const ptsStr = pointsAttr(room.polygon);
+      const fill    = TYPE_FILLS[room.type] || TYPE_FILLS.default;
+      const ptsStr  = pointsAttr(room.polygon);
+      typesPresent.add(room.type);
 
-      // Room fill polygon
       const poly = svgEl('polygon', {
         class: `room room--${room.type}`,
-        'data-id': room.id,
-        'data-type': room.type,
-        points: ptsStr,
-        fill: fill,
-        stroke: '#9E9E9E',
-        'stroke-width': '1',
-        'stroke-linejoin': 'round',
+        'data-id': room.id, 'data-type': room.type,
+        points: ptsStr, fill: fill,
+        stroke: '#9E9E9E', 'stroke-width': '1', 'stroke-linejoin': 'round',
       });
       layerRooms.appendChild(poly);
 
-      // Stairwell hatch overlay
       if (room.type === 'stairwell' || room.type === 'elevator') {
-        const hatch = svgEl('polygon', {
-          points: ptsStr,
-          fill: 'url(#hatch)',
-          'fill-opacity': '0.4',
-          'pointer-events': 'none',
-        });
-        layerHatch.appendChild(hatch);
+        layerHatch.appendChild(svgEl('polygon', {
+          points: ptsStr, fill: 'url(#hatch)', 'fill-opacity': '0.4', 'pointer-events': 'none',
+        }));
       }
 
-      // Interior wall stroke (thin, on top)
-      const wall = svgEl('polygon', {
-        class: 'room-wall',
-        points: ptsStr,
-        fill: 'none',
-        stroke: '#BDBDBD',
-        'stroke-width': '0.75',
-        'stroke-linejoin': 'round',
-        'pointer-events': 'none',
-      });
-      layerWalls.appendChild(wall);
+      layerWalls.appendChild(svgEl('polygon', {
+        class: 'room-wall', points: ptsStr, fill: 'none',
+        stroke: '#BDBDBD', 'stroke-width': '0.75', 'stroke-linejoin': 'round', 'pointer-events': 'none',
+      }));
 
-      // Door symbol
       if (room.door) {
         const center = room.labelAnchor
           ? { x: room.labelAnchor.x, y: room.labelAnchor.y }
           : centroid(room.polygon);
-        const doorG = buildDoorSymbol(room.door, center);
-        layerDoors.appendChild(doorG);
+        layerDoors.appendChild(buildDoorSymbol(room.door, center));
       }
 
-      // Label
       if (room.labelAnchor) {
-        // Choose label size class based on room type / name length
         let cls = 'room-label';
         if (room.type === 'lobby' || room.type === 'lecture') cls += ' large';
         else if (room.name.length > 12) cls += ' small';
-
-        const text = svgEl('text', {
-          class: cls,
-          x: room.labelAnchor.x,
-          y: room.labelAnchor.y,
-        });
-
-        // Split into lines if needed
+        const text = svgEl('text', { class: cls, x: room.labelAnchor.x, y: room.labelAnchor.y });
         const words = room.name.split(' ');
         if (words.length > 2 && room.name.length > 10) {
-          const mid = Math.ceil(words.length / 2);
-          const line1 = words.slice(0, mid).join(' ');
-          const line2 = words.slice(mid).join(' ');
-          const tspan1 = svgEl('tspan', { x: room.labelAnchor.x, dy: '-0.6em' });
-          tspan1.textContent = line1;
-          const tspan2 = svgEl('tspan', { x: room.labelAnchor.x, dy: '1.2em' });
-          tspan2.textContent = line2;
-          text.appendChild(tspan1);
-          text.appendChild(tspan2);
+          const mid = Math.ceil(words.length/2);
+          const ts1 = svgEl('tspan', { x: room.labelAnchor.x, dy: '-0.6em' });
+          ts1.textContent = words.slice(0,mid).join(' ');
+          const ts2 = svgEl('tspan', { x: room.labelAnchor.x, dy: '1.2em' });
+          ts2.textContent = words.slice(mid).join(' ');
+          text.appendChild(ts1); text.appendChild(ts2);
         } else {
           text.textContent = room.name;
         }
-
         layerLabels.appendChild(text);
       }
     }
 
-    buildLegend();
-    applyViewBox();
+    buildLegend(typesPresent);
   }
 
-  // ─── Embedded fallback JSON ───────────────────────────────────────────────
-  // This is a copy of floor1.json for file:// protocol usage
-  const FALLBACK_JSON = {"floor":1,"viewBox":{"width":1650,"height":1275},"buildingOutline":[[90,140],[230,140],[230,105],[340,105],[340,165],[700,165],[700,120],[1320,120],[1320,255],[1450,255],[1450,215],[1560,215],[1560,340],[1540,340],[1540,540],[1560,540],[1560,780],[1440,780],[1440,930],[1300,930],[1300,1010],[1150,1010],[1150,950],[720,950],[720,900],[420,900],[350,800],[250,720],[160,600],[105,470],[85,350]],"rooms":[{"id":"sc-1-maab-left","name":"MAAB II Left","type":"stairwell","polygon":[[230,140],[340,140],[340,270],[230,270]],"labelAnchor":{"x":285,"y":205},"door":{"x":340,"y":260},"neighbors":["sc-1-lobby"]},{"id":"sc-1-lecture-a","name":"Lecture Hall A","type":"lecture","polygon":[[310,340],[500,300],[640,300],[720,340],[770,400],[790,480],[780,560],[740,630],[670,680],[560,700],[440,690],[340,660],[260,600],[210,520],[195,440],[220,380]],"labelAnchor":{"x":490,"y":500},"door":{"x":780,"y":440},"neighbors":["sc-1-lobby","sc-1-corr-main"]},{"id":"sc-1-lecture-b","name":"Lecture Hall B","type":"lecture","polygon":[[300,310],[500,270],[640,270],[740,300],[800,340],[820,380],[820,310],[790,270],[700,240],[550,225],[410,235],[310,260]],"labelAnchor":{"x":560,"y":275},"door":{"x":820,"y":340},"neighbors":["sc-1-lobby","sc-1-corr-main"]},{"id":"sc-1-lobby","name":"Main Lobby","type":"lobby","polygon":[[820,200],[990,200],[990,310],[1050,310],[1050,470],[970,520],[900,560],[830,600],[800,560],[790,480],[790,400],[800,340],[820,310]],"labelAnchor":{"x":920,"y":380},"door":{"x":1050,"y":400},"neighbors":["sc-1-maab-left","sc-1-lecture-a","sc-1-lecture-b","sc-1-corr-main"]},{"id":"sc-1-corr-main","name":"Main Corridor","type":"corridor","polygon":[[1050,310],[1300,310],[1300,360],[1430,360],[1430,410],[1300,410],[1300,470],[1050,470]],"labelAnchor":{"x":1180,"y":390},"door":{"x":1200,"y":470},"neighbors":["sc-1-lobby","sc-1-teaching-labs","sc-1-corr-east","sc-1-101","sc-1-102","sc-1-103","sc-1-104"]},{"id":"sc-1-corr-east","name":"East Corridor","type":"corridor","polygon":[[1200,470],[1430,470],[1430,780],[1200,780],[1200,700],[1150,700],[1150,650],[1200,650]],"labelAnchor":{"x":1310,"y":620},"door":{"x":1200,"y":750},"neighbors":["sc-1-corr-main","sc-1-maab-right","sc-1-105","sc-1-106","sc-1-107","sc-1-108","sc-1-cabot-entry"]},{"id":"sc-1-teaching-labs","name":"Teaching Labs","type":"lab","polygon":[[1050,150],[1320,150],[1320,255],[1450,255],[1450,310],[1050,310]],"labelAnchor":{"x":1230,"y":220},"door":{"x":1200,"y":310},"neighbors":["sc-1-corr-main"]},{"id":"sc-1-maab-right","name":"MAAB II Right","type":"stairwell","polygon":[[1450,235],[1560,235],[1560,360],[1450,360]],"labelAnchor":{"x":1505,"y":295},"door":{"x":1450,"y":340},"neighbors":["sc-1-corr-east"]},{"id":"sc-101","name":"Room 101","type":"classroom","polygon":[[1050,470],[1150,470],[1150,560],[1050,560]],"labelAnchor":{"x":1100,"y":515},"door":{"x":1100,"y":470},"neighbors":["sc-1-corr-main"]},{"id":"sc-102","name":"Room 102","type":"classroom","polygon":[[1050,560],[1150,560],[1150,650],[1050,650]],"labelAnchor":{"x":1100,"y":605},"door":{"x":1150,"y":600},"neighbors":["sc-1-corr-main"]},{"id":"sc-103","name":"Room 103","type":"classroom","polygon":[[1050,650],[1150,650],[1150,740],[1050,740]],"labelAnchor":{"x":1100,"y":695},"door":{"x":1150,"y":700},"neighbors":["sc-1-corr-main","sc-1-corr-east"]},{"id":"sc-104","name":"Room 104","type":"classroom","polygon":[[1050,740],[1150,740],[1150,830],[1050,830]],"labelAnchor":{"x":1100,"y":785},"door":{"x":1150,"y":790},"neighbors":["sc-1-corr-east"]},{"id":"sc-105","name":"Room 105","type":"classroom","polygon":[[1430,410],[1540,410],[1540,500],[1430,500]],"labelAnchor":{"x":1485,"y":455},"door":{"x":1430,"y":450},"neighbors":["sc-1-corr-east"]},{"id":"sc-106","name":"Room 106","type":"classroom","polygon":[[1430,500],[1540,500],[1540,590],[1430,590]],"labelAnchor":{"x":1485,"y":545},"door":{"x":1430,"y":540},"neighbors":["sc-1-corr-east"]},{"id":"sc-107","name":"Room 107","type":"classroom","polygon":[[1430,590],[1540,590],[1540,680],[1430,680]],"labelAnchor":{"x":1485,"y":635},"door":{"x":1430,"y":630},"neighbors":["sc-1-corr-east"]},{"id":"sc-108","name":"Room 108","type":"classroom","polygon":[[1430,680],[1540,680],[1540,770],[1430,770]],"labelAnchor":{"x":1485,"y":725},"door":{"x":1430,"y":720},"neighbors":["sc-1-corr-east"]},{"id":"sc-1-cabot-entry","name":"Cabot Entry","type":"corridor","polygon":[[1150,780],[1430,780],[1430,900],[1150,900]],"labelAnchor":{"x":1290,"y":840},"door":{"x":1290,"y":780},"neighbors":["sc-1-corr-east","sc-1-cabot-l101","sc-1-cabot-l102"]},{"id":"sc-1-cabot-l101","name":"Cabot L101","type":"library","polygon":[[720,900],[1140,900],[1140,960],[720,960]],"labelAnchor":{"x":930,"y":930},"door":{"x":1140,"y":880},"neighbors":["sc-1-cabot-entry"]},{"id":"sc-1-cabot-l102","name":"Cabot L102","type":"library","polygon":[[1150,900],[1440,900],[1440,1000],[1150,1000]],"labelAnchor":{"x":1295,"y":950},"door":{"x":1290,"y":900},"neighbors":["sc-1-cabot-entry"]}]};
+  // ─── Floor switching ──────────────────────────────────────────────────────
+  function loadFloor(key) {
+    if (key === currentFloorKey) return;
+    currentFloorKey = key;
+
+    const floor = FLOORS.find(f => f.key === key);
+    if (!floor) return;
+
+    // Update buttons
+    document.querySelectorAll('.floor-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.floor === key);
+    });
+
+    // Update subtitle
+    document.getElementById('topbar-subtitle').textContent = `${floor.label} — Interactive Map`;
+
+    // Clear previous floor
+    clearFloor();
+
+    // Hide placeholder while loading
+    const placeholder = document.getElementById('floor-placeholder');
+    placeholder.classList.remove('visible');
+
+    fetch(`/${floor.file}`)
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(data => {
+        if (!data.rooms || data.rooms.length === 0) {
+          document.getElementById('placeholder-title').textContent = `${floor.label} — Not yet traced`;
+          placeholder.classList.add('visible');
+        } else {
+          renderFloor(data);
+        }
+      })
+      .catch(() => {
+        document.getElementById('placeholder-title').textContent = `${floor.label} — Not yet traced`;
+        placeholder.classList.add('visible');
+      });
+  }
+
+  // ─── Build floor selector buttons ─────────────────────────────────────────
+  const selectorEl = document.getElementById('floor-selector');
+  for (const floor of FLOORS) {
+    const btn = document.createElement('button');
+    btn.className = 'floor-btn';
+    btn.dataset.floor = floor.key;
+    btn.textContent = floor.short;
+    btn.title = floor.label;
+    btn.addEventListener('click', () => loadFloor(floor.key));
+    selectorEl.appendChild(btn);
+  }
 
   // ─── Bootstrap ────────────────────────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', () => {
-    const load = (window.location.protocol === 'file:')
-      ? Promise.resolve(FALLBACK_JSON)
-      : fetch('/floor1.json')
-          .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-          .catch(() => FALLBACK_JSON);  // also fall back on network error
-
-    load.then(renderFloor).catch(err => {
-      console.error('Failed to load floor data:', err);
-    });
-  });
+  document.addEventListener('DOMContentLoaded', () => loadFloor('1'));
 </script>
 </body>
 </html>
