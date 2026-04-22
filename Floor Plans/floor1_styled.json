@@ -146,7 +146,7 @@
     {
       "id": "sc-1-courtyard",
       "name": "Courtyard",
-      "type": "classroom",
+      "type": "corridor",
       "polygon": [
         [
           951,
@@ -189,7 +189,8 @@
         "outside",
         "sc-1-cr-136",
         "sc-1-clover-food",
-        "sc-1-cabot-library"
+        "sc-1-cabot-library",
+        "sc-hw-main"
       ]
     },
     {
@@ -1124,7 +1125,8 @@
         "sc-1-lecture-hall-a",
         "sc-1-lecture-hall-b",
         "sc-1-lecture-hall-c",
-        "sc-1-lecture-hall-d"
+        "sc-1-lecture-hall-d",
+        "sc-1-courtyard"
       ]
     },
     {
