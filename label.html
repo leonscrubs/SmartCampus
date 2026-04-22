@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Floor Plan Labeler — Floor 1</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; height: 100vh; display: flex; flex-direction: column; }
+
+#toolbar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; background: #16213e; border-bottom: 1px solid #0f3460;
+  flex-shrink: 0;
+}
+#toolbar h1 { font-size: 15px; color: #e94560; }
+.btn {
+  padding: 6px 14px; border-radius: 6px; border: none; cursor: pointer;
+  font-size: 13px; font-weight: 600;
+}
+.btn-primary { background: #e94560; color: white; }
+.btn-secondary { background: #0f3460; color: #aaa; }
+.btn-success { background: #2ecc71; color: #111; }
+.btn:hover { opacity: 0.85; }
+#mode-label { font-size: 12px; color: #aaa; }
+#current-type {
+  background: #0f3460; border: 1px solid #e94560; color: #e94560;
+  padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;
+}
+
+#main { display: flex; flex: 1; overflow: hidden; }
+
+#canvas-wrap {
+  flex: 1; overflow: auto; position: relative; cursor: crosshair;
+}
+#canvas-wrap img#floorplan {
+  display: block;
+  /* rendered at natural size, user can scroll */
+}
+#svg-overlay {
+  position: absolute; top: 0; left: 0;
+  pointer-events: none;
+}
+#svg-overlay.drawing { pointer-events: all; }
+
+#sidebar {
+  width: 280px; background: #16213e; border-left: 1px solid #0f3460;
+  display: flex; flex-direction: column; overflow: hidden;
+}
+#sidebar h2 { font-size: 13px; padding: 10px 14px; background: #0f3460; color: #aaa; }
+#room-list { flex: 1; overflow-y: auto; }
+.room-entry {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-bottom: 1px solid #0f3460; font-size: 12px;
+  cursor: pointer;
+}
+.room-entry:hover { background: #0f3460; }
+.room-entry .swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+.room-entry .room-name { flex: 1; }
+.room-entry .room-type { color: #888; font-size: 11px; }
+.room-entry .edit-btn   { color: #aaa; cursor: pointer; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+.room-entry .edit-btn:hover   { background: #0f3460; color: white; }
+.room-entry .delete-btn { color: #e94560; cursor: pointer; padding: 2px 6px; border-radius: 3px; }
+.room-entry .delete-btn:hover { background: #e94560; color: white; }
+
+#export-area { padding: 12px; border-top: 1px solid #0f3460; }
+#export-area textarea { width: 100%; height: 80px; background: #0f3460; border: none; color: #aaa; font-size: 10px; font-family: monospace; border-radius: 4px; padding: 6px; resize: none; }
+
+/* Modal */
+#modal-bg {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+  z-index: 100; justify-content: center; align-items: center;
+}
+#modal-bg.active { display: flex; }
+#modal {
+  background: #16213e; border: 1px solid #e94560; border-radius: 10px;
+  padding: 24px; min-width: 320px;
+}
+#modal h3 { margin-bottom: 16px; color: #e94560; }
+#modal label { display: block; font-size: 12px; color: #aaa; margin-bottom: 4px; }
+#modal input, #modal select {
+  width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #0f3460;
+  background: #0f3460; color: #eee; font-size: 13px; margin-bottom: 12px;
+}
+#modal .modal-btns { display: flex; gap: 8px; justify-content: flex-end; }
+
+/* Type colors */
+.type-classroom  { color: #5b9bd5; }
+.type-lecture    { color: #ed7d31; }
+.type-lobby      { color: #f9c846; }
+.type-lab        { color: #70ad47; }
+.type-library    { color: #9b59b6; }
+.type-stairwell  { color: #546e7a; }
+.type-elevator   { color: #7986cb; }
+.type-corridor   { color: #95a5a6; }
+.type-office     { color: #e67e22; }
+.type-other      { color: #aaa; }
+</style>
+</head>
+<body>
+
+<div id="toolbar">
+  <h1>🏛 Floor Plan Labeler — Floor 1</h1>
+  <span id="mode-label">Mode:</span>
+  <button class="btn btn-primary" id="btn-draw" onclick="setMode('draw')">✏️ Draw polygon</button>
+  <button class="btn btn-secondary" id="btn-select" onclick="setMode('select')">👆 Select</button>
+  <button class="btn btn-success" id="btn-done" onclick="finishPolygon()">✓ Done (Enter)</button>
+  <button class="btn btn-secondary" onclick="undoPoint()">↩ Undo point</button>
+  <button class="btn btn-secondary" onclick="cancelDraw()">✕ Cancel</button>
+  <span style="margin-left:auto;font-size:12px;color:#aaa">Current type:</span>
+  <span id="current-type">classroom</span>
+  <button class="btn btn-success" onclick="exportJSON()">⬇ Export JSON</button>
+  <button class="btn btn-secondary" onclick="clearAll()" style="margin-left:auto;color:#e94560">🗑 Clear all</button>
+</div>
+
+<div id="main">
+  <div id="canvas-wrap">
+    <img id="floorplan" src="/Floor Plans/1ST Floor Floorplan.png" draggable="false"/>
+    <svg id="svg-overlay" class="drawing"></svg>
+  </div>
+
+  <div id="sidebar">
+    <h2>Rooms (<span id="room-count">0</span>)</h2>
+    <div id="room-list"></div>
+    <div id="export-area">
+      <textarea id="json-out" placeholder="Exported JSON will appear here…" readonly></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Label modal -->
+<div id="modal-bg">
+  <div id="modal">
+    <h3 id="modal-title">Name this area</h3>
+
+    <label>Type</label>
+    <select id="modal-type" onchange="onTypeChange()">
+      <option value="classroom">Classroom</option>
+      <option value="lecture">Lecture Hall</option>
+      <option value="lobby">Lobby</option>
+      <option value="corridor">Corridor / Hallway</option>
+      <option value="connection">Hallway Connection (corridor ↔ corridor)</option>
+      <option value="door">Door (room ↔ corridor)</option>
+      <option value="entrance">Entrance (from outside)</option>
+      <option value="lab">Lab</option>
+      <option value="library">Library</option>
+      <option value="stairwell">Stairwell</option>
+      <option value="elevator">Elevator</option>
+      <option value="office">Office</option>
+      <option value="other">Other</option>
+    </select>
+
+    <!-- Standard fields (hidden for door) -->
+    <div id="fields-standard">
+      <label>Name</label>
+      <input id="modal-name" type="text" placeholder="e.g. Lecture Hall A"/>
+      <label>Short ID (auto-generated if blank)</label>
+      <input id="modal-id" type="text" placeholder="e.g. sc-1-lecture-a"/>
+    </div>
+
+    <!-- Door fields -->
+    <div id="fields-door" style="display:none">
+      <p style="font-size:12px;color:#aaa;margin-bottom:8px">A door links two areas. Select both sides:</p>
+      <label>Side A</label>
+      <select id="door-a"><option value="outside">Outside / Street</option></select>
+      <label>Side B</label>
+      <select id="door-b"><option value="outside">Outside / Street</option></select>
+      <label>Door name (optional)</label>
+      <input id="door-name" type="text" placeholder="e.g. Main Entrance Door"/>
+    </div>
+
+    <!-- Entrance fields -->
+    <div id="fields-entrance" style="display:none">
+      <label>Entrance name</label>
+      <input id="entrance-name" type="text" placeholder="e.g. Main Entrance – Oxford St"/>
+      <label>Leads into (indoor area)</label>
+      <select id="entrance-to"><option value="outside">— select indoor area —</option></select>
+    </div>
+
+    <!-- Stairwell / Elevator floors -->
+    <div id="fields-vertical" style="display:none">
+      <label>Name</label>
+      <input id="vertical-name" type="text" placeholder="e.g. Stairwell A"/>
+      <label>Connects floors (check all that apply)</label>
+      <div id="floor-checkboxes" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="0"/> B</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="1" checked/> 1</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="2"/> 2</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="3"/> 3</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="4"/> 4</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="5"/> 5</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="6"/> 6</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="7"/> 7</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="8"/> 8</label>
+        <label style="font-size:13px;color:#eee"><input type="checkbox" value="9"/> 9</label>
+      </div>
+      <label>Short ID (auto-generated if blank)</label>
+      <input id="vertical-id" type="text" placeholder="e.g. sc-stair-a"/>
+    </div>
+
+    <div class="modal-btns">
+      <button class="btn btn-secondary" onclick="cancelLabel()">Cancel</button>
+      <button class="btn btn-primary" onclick="confirmLabel()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const TYPE_COLORS = {
+  classroom:   '#5b9bd5',
+  lecture:     '#ed7d31',
+  lobby:       '#f9c846',
+  corridor:    '#95a5a6',
+  connection:  '#26c6da',
+  door:        '#e74c3c',
+  entrance:    '#ff6b35',
+  lab:         '#70ad47',
+  library:     '#9b59b6',
+  stairwell:   '#546e7a',
+  elevator:    '#7986cb',
+  office:      '#e67e22',
+  other:       '#aaaaaa',
+};
+
+const VERTICAL_TYPES    = new Set(['stairwell', 'elevator']);
+const DOOR_TYPES        = new Set(['door', 'entrance', 'connection']);
+const CONNECTION_TYPES  = new Set(['door', 'connection']);
+
+let mode = 'draw';
+let currentPoints = [];   // [{x,y}] while drawing
+let rooms = [];           // completed rooms
+let selectedRoom = null;
+let pendingPolygon = null;
+let editingIdx = null;    // index of room being edited (null = new room)
+
+const STORAGE_KEY = 'sc-floor1-rooms';
+
+function saveToStorage() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(rooms)); } catch(e) {}
+}
+
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      rooms = JSON.parse(raw);
+      // Restore polygon points as objects if stored as arrays
+      rooms.forEach(r => {
+        if (r.polygon && Array.isArray(r.polygon[0])) {
+          r.polygon = r.polygon.map(p => ({x: p[0], y: p[1]}));
+        }
+      });
+      renderAll();
+      updateSidebar();
+    }
+  } catch(e) {}
+}
+
+const img    = document.getElementById('floorplan');
+const svgEl  = document.getElementById('svg-overlay');
+const wrap   = document.getElementById('canvas-wrap');
+
+// Size SVG to match image
+function resizeSVG() {
+  svgEl.setAttribute('width',  img.naturalWidth  || img.width);
+  svgEl.setAttribute('height', img.naturalHeight || img.height);
+  svgEl.style.width  = (img.naturalWidth  || img.width)  + 'px';
+  svgEl.style.height = (img.naturalHeight || img.height) + 'px';
+}
+img.addEventListener('load', () => { resizeSVG(); loadFromStorage(); });
+if (img.complete) { resizeSVG(); loadFromStorage(); }
+
+function setMode(m) {
+  mode = m;
+  document.getElementById('btn-draw').style.opacity   = m === 'draw'   ? '1' : '0.5';
+  document.getElementById('btn-select').style.opacity = m === 'select' ? '1' : '0.5';
+  if (m !== 'draw') cancelDraw();
+}
+setMode('draw');
+
+// Get click position relative to image
+function getPos(e) {
+  const rect = img.getBoundingClientRect();
+  const scaleX = img.naturalWidth  / rect.width;
+  const scaleY = img.naturalHeight / rect.height;
+  return {
+    x: Math.round((e.clientX - rect.left) * scaleX),
+    y: Math.round((e.clientY - rect.top)  * scaleY),
+  };
+}
+
+svgEl.addEventListener('click', e => {
+  if (mode !== 'draw') return;
+  // Allow clicks even on top of existing polygons so doors can be drawn over rooms
+  const pos = getPos(e);
+  currentPoints.push(pos);
+  renderDraft();
+});
+
+svgEl.addEventListener('dblclick', e => { e.preventDefault(); }); // disabled — use Done button
+
+function finishPolygon() {
+  if (currentPoints.length < 3) { alert('Place at least 3 points first'); return; }
+  openModal();
+}
+
+function renderDraft() {
+  // Remove existing draft
+  svgEl.querySelectorAll('.draft').forEach(el => el.remove());
+  if (currentPoints.length === 0) return;
+
+  // Draft polygon fill
+  if (currentPoints.length > 2) {
+    const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    poly.setAttribute('points', currentPoints.map(p => `${p.x},${p.y}`).join(' '));
+    poly.setAttribute('fill', 'rgba(233,69,96,0.2)');
+    poly.setAttribute('stroke', '#e94560');
+    poly.setAttribute('stroke-width', '2');
+    poly.setAttribute('stroke-dasharray', '6,3');
+    poly.classList.add('draft');
+    svgEl.appendChild(poly);
+  }
+
+  // Draft line through points
+  if (currentPoints.length > 1) {
+    const pts = currentPoints.map(p=>`${p.x},${p.y}`).join(' ');
+    const pl = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    pl.setAttribute('points', pts);
+    pl.setAttribute('fill', 'none');
+    pl.setAttribute('stroke', '#e94560');
+    pl.setAttribute('stroke-width', '1.5');
+    pl.classList.add('draft');
+    svgEl.appendChild(pl);
+  }
+
+  // Dot for each point
+  currentPoints.forEach((p, i) => {
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); c.setAttribute('r', i===0?6:4);
+    c.setAttribute('fill', i===0?'#2ecc71':'#e94560');
+    c.setAttribute('stroke', 'white'); c.setAttribute('stroke-width', '1.5');
+    c.classList.add('draft');
+    svgEl.appendChild(c);
+  });
+}
+
+function undoPoint() {
+  currentPoints.pop();
+  renderDraft();
+}
+
+function cancelDraw() {
+  currentPoints = [];
+  renderDraft();
+}
+
+// Modal
+function populateRoomSelects() {
+  const opts = '<option value="outside">Outside / Street</option>' +
+    rooms.filter(r => !DOOR_TYPES.has(r.type))
+         .map(r => `<option value="${r.id}">${r.name}</option>`).join('');
+  document.getElementById('door-a').innerHTML = opts;
+  document.getElementById('door-b').innerHTML = opts;
+  document.getElementById('entrance-to').innerHTML =
+    '<option value="">— select indoor area —</option>' +
+    rooms.filter(r => !DOOR_TYPES.has(r.type))
+         .map(r => `<option value="${r.id}">${r.name}</option>`).join('');
+}
+
+function onTypeChange() {
+  const type = document.getElementById('modal-type').value;
+  document.getElementById('fields-standard').style.display  = (!DOOR_TYPES.has(type) && !VERTICAL_TYPES.has(type)) ? '' : 'none';
+  document.getElementById('fields-door').style.display      = CONNECTION_TYPES.has(type) ? '' : 'none';
+  document.getElementById('fields-entrance').style.display  = type === 'entrance' ? '' : 'none';
+  document.getElementById('fields-vertical').style.display  = VERTICAL_TYPES.has(type) ? '' : 'none';
+
+  // Update door-fields label to match context
+  const sideLabel = type === 'connection' ? 'Hallway A' : 'Side A';
+  const sideLabelB = type === 'connection' ? 'Hallway B' : 'Side B';
+  const nameHint = type === 'connection' ? 'e.g. North–South Hallway Junction' : 'e.g. Main Entrance Door';
+  document.querySelectorAll('#fields-door label')[0].textContent = sideLabel;
+  document.querySelectorAll('#fields-door label')[1].textContent = sideLabelB;
+  document.getElementById('door-name').placeholder = nameHint;
+
+  document.getElementById('modal-title').textContent =
+    type === 'connection' ? 'Add a Hallway Connection' :
+    type === 'door'       ? 'Add a Door (connection)' :
+    type === 'entrance'   ? 'Add an Entrance' :
+    VERTICAL_TYPES.has(type) ? `Add a ${type.charAt(0).toUpperCase()+type.slice(1)}` :
+    'Name this area';
+}
+
+function openModal() {
+  editingIdx = null;
+  pendingPolygon = [...currentPoints];
+  currentPoints = [];
+  renderDraft();
+  // Reset fields
+  document.getElementById('modal-name').value    = '';
+  document.getElementById('modal-id').value      = '';
+  document.getElementById('door-name').value     = '';
+  document.getElementById('entrance-name').value = '';
+  document.getElementById('vertical-name').value = '';
+  document.getElementById('vertical-id').value   = '';
+  document.getElementById('modal-type').value    = 'classroom';
+  populateRoomSelects();
+  onTypeChange();
+  document.getElementById('modal-bg').classList.add('active');
+  document.getElementById('modal-name').focus();
+}
+
+function editRoom(idx) {
+  const r = rooms[idx];
+  editingIdx    = idx;
+  pendingPolygon = r.polygon.map(p => ({x: p[0], y: p[1]}));
+
+  populateRoomSelects();
+  document.getElementById('modal-type').value = r.type;
+  onTypeChange();
+
+  if (r.type === 'door') {
+    document.getElementById('door-a').value  = r.connects?.[0] ?? 'outside';
+    document.getElementById('door-b').value  = r.connects?.[1] ?? 'outside';
+    document.getElementById('door-name').value = r.name.startsWith('Door (') ? '' : r.name;
+  } else if (r.type === 'entrance') {
+    document.getElementById('entrance-name').value = r.name;
+    document.getElementById('entrance-to').value   = r.connects?.[1] ?? '';
+  } else if (VERTICAL_TYPES.has(r.type)) {
+    document.getElementById('vertical-name').value = r.name;
+    document.getElementById('vertical-id').value   = r.id;
+    const checked = new Set(r.connectsFloors ?? []);
+    document.querySelectorAll('#floor-checkboxes input').forEach(cb => {
+      cb.checked = checked.has(parseInt(cb.value));
+    });
+  } else {
+    document.getElementById('modal-name').value = r.name;
+    document.getElementById('modal-id').value   = r.id;
+  }
+
+  document.getElementById('modal-bg').classList.add('active');
+}
+
+function cancelLabel() {
+  pendingPolygon = null;
+  document.getElementById('modal-bg').classList.remove('active');
+}
+
+function autoId(name) {
+  return 'sc-1-' + name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function confirmLabel() {
+  const type = document.getElementById('modal-type').value;
+  const labelAnchor = centroid(pendingPolygon);
+
+  if (CONNECTION_TYPES.has(type)) {
+    const aId = document.getElementById('door-a').value;
+    const bId = document.getElementById('door-b').value;
+    if (aId === bId) { alert('Please select two different areas'); return; }
+    const rawName = document.getElementById('door-name').value.trim();
+    const name = rawName || `Door (${aId} ↔ ${bId})`;
+    const id   = editingIdx !== null ? rooms[editingIdx].id : autoId(name);
+    // Remove old neighbor wiring if editing
+    if (editingIdx !== null) {
+      const old = rooms[editingIdx];
+      (old.connects || []).forEach(cid => {
+        const r = rooms.find(x => x.id === cid);
+        if (r) r.neighbors = r.neighbors.filter(n => n !== old.id && n !== (cid === old.connects[0] ? old.connects[1] : old.connects[0]));
+      });
+    }
+    const rA = rooms.find(r => r.id === aId);
+    const rB = rooms.find(r => r.id === bId);
+    if (rA && !rA.neighbors.includes(bId)) rA.neighbors.push(bId);
+    if (rB && !rB.neighbors.includes(aId)) rB.neighbors.push(aId);
+    const updated = { id, name, type, connects: [aId, bId], polygon: pendingPolygon, labelAnchor, neighbors: [aId, bId] };
+    editingIdx !== null ? applyEdit(updated) : rooms.push(updated);
+
+  } else if (type === 'entrance') {
+    const name = document.getElementById('entrance-name').value.trim();
+    if (!name) { alert('Please enter a name for this entrance'); return; }
+    const toId = document.getElementById('entrance-to').value;
+    const id   = editingIdx !== null ? rooms[editingIdx].id : autoId(name);
+    const rTo  = rooms.find(r => r.id === toId);
+    if (rTo && !rTo.neighbors.includes('outside')) rTo.neighbors.push('outside');
+    const updated = { id, name, type, connects: ['outside', toId], polygon: pendingPolygon, labelAnchor, neighbors: ['outside', toId] };
+    editingIdx !== null ? applyEdit(updated) : rooms.push(updated);
+
+  } else if (VERTICAL_TYPES.has(type)) {
+    const name = document.getElementById('vertical-name').value.trim();
+    if (!name) { alert('Please enter a name'); return; }
+    const id = document.getElementById('vertical-id').value.trim() || (editingIdx !== null ? rooms[editingIdx].id : autoId(name));
+    const checkedFloors = [...document.querySelectorAll('#floor-checkboxes input:checked')].map(el => parseInt(el.value));
+    const updated = { id, name, type, connectsFloors: checkedFloors, polygon: pendingPolygon, labelAnchor, neighbors: editingIdx !== null ? rooms[editingIdx].neighbors : [] };
+    editingIdx !== null ? applyEdit(updated) : rooms.push(updated);
+
+  } else {
+    const name = document.getElementById('modal-name').value.trim();
+    if (!name) { alert('Please enter a name'); return; }
+    const id = document.getElementById('modal-id').value.trim() || (editingIdx !== null ? rooms[editingIdx].id : autoId(name));
+    const updated = { id, name, type, polygon: pendingPolygon, labelAnchor, neighbors: editingIdx !== null ? rooms[editingIdx].neighbors : [] };
+    editingIdx !== null ? applyEdit(updated) : rooms.push(updated);
+  }
+
+  pendingPolygon = null;
+  editingIdx = null;
+  document.getElementById('modal-bg').classList.remove('active');
+  renderAll();
+  updateSidebar();
+  saveToStorage();
+}
+
+function applyEdit(updated) {
+  // Preserve the original polygon when editing
+  updated.polygon    = rooms[editingIdx].polygon;
+  updated.labelAnchor = rooms[editingIdx].labelAnchor;
+  rooms[editingIdx] = updated;
+}
+
+function centroid(pts) {
+  const x = Math.round(pts.reduce((s,p)=>s+p.x,0)/pts.length);
+  const y = Math.round(pts.reduce((s,p)=>s+p.y,0)/pts.length);
+  return {x,y};
+}
+
+// Render all saved rooms
+function renderAll() {
+  svgEl.querySelectorAll('.room-polygon, .room-label').forEach(el => el.remove());
+  rooms.forEach((room, idx) => renderRoom(room, idx));
+}
+
+function renderRoom(room, idx) {
+  const color = TYPE_COLORS[room.type] || '#aaa';
+  const isSelected = selectedRoom === idx;
+
+  // Fill polygon
+  const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+  poly.setAttribute('points', room.polygon.map(p=>`${p.x},${p.y}`).join(' '));
+  poly.setAttribute('fill', hexToRgba(color, isSelected ? 0.55 : 0.35));
+  poly.setAttribute('stroke', color);
+  poly.setAttribute('stroke-width', isSelected ? '3' : '1.5');
+  poly.setAttribute('data-idx', idx);
+  poly.classList.add('room-polygon');
+  if (isSelected) poly.setAttribute('filter', 'drop-shadow(0 0 6px ' + color + ')');
+  poly.style.cursor = 'pointer';
+  poly.addEventListener('click', e => {
+    if (mode !== 'select') return;
+    e.stopPropagation();
+    selectedRoom = selectedRoom === idx ? null : idx;
+    renderAll();
+    updateSidebar();
+  });
+  svgEl.insertBefore(poly, svgEl.firstChild);
+
+  // Label
+  const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  txt.setAttribute('x', room.labelAnchor.x);
+  txt.setAttribute('y', room.labelAnchor.y);
+  txt.setAttribute('text-anchor', 'middle');
+  txt.setAttribute('dominant-baseline', 'middle');
+  txt.setAttribute('font-size', '13');
+  txt.setAttribute('font-weight', 'bold');
+  txt.setAttribute('fill', '#fff');
+  txt.setAttribute('paint-order', 'stroke');
+  txt.setAttribute('stroke', '#000');
+  txt.setAttribute('stroke-width', '3');
+  txt.setAttribute('pointer-events', 'none');
+  txt.textContent = room.name;
+  txt.classList.add('room-label');
+  svgEl.appendChild(txt);
+}
+
+function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1,3),16);
+  const g = parseInt(hex.slice(3,5),16);
+  const b = parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function updateSidebar() {
+  document.getElementById('room-count').textContent = rooms.length;
+  const list = document.getElementById('room-list');
+  list.innerHTML = '';
+  rooms.forEach((room, idx) => {
+    const div = document.createElement('div');
+    div.className = 'room-entry' + (selectedRoom===idx?' room-selected':'');
+    div.style.background = selectedRoom===idx ? 'rgba(233,69,96,0.15)' : '';
+    div.innerHTML = `
+      <div class="swatch" style="background:${TYPE_COLORS[room.type]||'#aaa'}"></div>
+      <div style="flex:1;min-width:0">
+        <div class="room-name">${room.name}</div>
+        <div class="room-type">${room.type} · ${room.id}</div>
+      </div>
+      <span class="edit-btn" onclick="editRoom(${idx})" title="Edit">✏️</span>
+      <span class="delete-btn" onclick="deleteRoom(${idx})" title="Delete">✕</span>
+    `;
+    div.addEventListener('click', e => {
+      if (e.target.classList.contains('delete-btn')) return;
+      if (e.target.classList.contains('edit-btn')) return;
+      selectedRoom = selectedRoom === idx ? null : idx;
+      mode = 'select';
+      renderAll();
+      updateSidebar();
+    });
+    list.appendChild(div);
+  });
+}
+
+function deleteRoom(idx) {
+  rooms.splice(idx, 1);
+  if (selectedRoom === idx) selectedRoom = null;
+  else if (selectedRoom > idx) selectedRoom--;
+  renderAll();
+  updateSidebar();
+  saveToStorage();
+}
+
+function clearAll() {
+  if (!confirm(`Delete all ${rooms.length} objects? This cannot be undone.`)) return;
+  rooms = []; selectedRoom = null;
+  renderAll(); updateSidebar(); saveToStorage();
+}
+
+function exportJSON() {
+  const out = {
+    floor: 1,
+    viewBox: { width: img.naturalWidth, height: img.naturalHeight },
+    buildingOutline: [],
+    rooms: rooms.map(r => {
+      const base = {
+        id: r.id,
+        name: r.name,
+        type: r.type,
+        polygon: r.polygon.map(p => [p.x, p.y]),
+        labelAnchor: { x: r.labelAnchor.x, y: r.labelAnchor.y },
+        neighbors: r.neighbors,
+      };
+      if (r.connects)       base.connects       = r.connects;
+      if (r.connectsFloors) base.connectsFloors = r.connectsFloors;
+      return base;
+    })
+  };
+  const json = JSON.stringify(out, null, 2);
+  document.getElementById('json-out').value = json;
+
+  // Also download
+  const blob = new Blob([json], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'floor1.json';
+  a.click();
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (document.getElementById('modal-bg').classList.contains('active')) {
+    if (e.key === 'Enter') confirmLabel();
+    if (e.key === 'Escape') cancelLabel();
+    return;
+  }
+  if (e.key === 'Escape') cancelDraw();
+  if (e.key === 'Enter') finishPolygon();
+  if (e.key === 'Backspace' || (e.key === 'z' && e.ctrlKey)) undoPoint();
+  if (e.key === 'd') setMode('draw');
+  if (e.key === 's') setMode('select');
+});
+
+// Enter on double-click to close polygon
+document.getElementById('modal-name').addEventListener('keydown', e => {
+  if (e.key === 'Enter') confirmLabel();
+});
+
+// Show current type in toolbar
+document.getElementById('modal-type').addEventListener('change', function() {
+  document.getElementById('current-type').textContent = this.value;
+});
+</script>
+</body>
+</html>

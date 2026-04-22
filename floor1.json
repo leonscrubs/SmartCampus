@@ -1,0 +1,369 @@
+{
+  "floor": 1,
+  "viewBox": { "width": 1650, "height": 1275 },
+  "buildingOutline": [
+    [90, 140],
+    [230, 140],
+    [230, 105],
+    [340, 105],
+    [340, 165],
+    [700, 165],
+    [700, 120],
+    [1320, 120],
+    [1320, 255],
+    [1450, 255],
+    [1450, 215],
+    [1560, 215],
+    [1560, 340],
+    [1540, 340],
+    [1540, 540],
+    [1560, 540],
+    [1560, 780],
+    [1440, 780],
+    [1440, 930],
+    [1300, 930],
+    [1300, 1010],
+    [1150, 1010],
+    [1150, 950],
+    [720, 950],
+    [720, 900],
+    [420, 900],
+    [350, 800],
+    [250, 720],
+    [160, 600],
+    [105, 470],
+    [85, 350]
+  ],
+  "rooms": [
+    {
+      "id": "sc-1-maab-left",
+      "name": "MAAB II Left",
+      "type": "stairwell",
+      "polygon": [
+        [230, 140],
+        [340, 140],
+        [340, 270],
+        [230, 270]
+      ],
+      "labelAnchor": { "x": 285, "y": 205 },
+      "door": { "x": 340, "y": 260 },
+      "neighbors": ["sc-1-lobby"]
+    },
+    {
+      "id": "sc-1-lecture-a",
+      "name": "Lecture Hall A",
+      "type": "lecture",
+      "polygon": [
+        [310, 340],
+        [500, 300],
+        [640, 300],
+        [720, 340],
+        [770, 400],
+        [790, 480],
+        [780, 560],
+        [740, 630],
+        [670, 680],
+        [560, 700],
+        [440, 690],
+        [340, 660],
+        [260, 600],
+        [210, 520],
+        [195, 440],
+        [220, 380]
+      ],
+      "labelAnchor": { "x": 490, "y": 500 },
+      "door": { "x": 780, "y": 440 },
+      "neighbors": ["sc-1-lobby", "sc-1-corr-main"]
+    },
+    {
+      "id": "sc-1-lecture-b",
+      "name": "Lecture Hall B",
+      "type": "lecture",
+      "polygon": [
+        [300, 310],
+        [500, 270],
+        [640, 270],
+        [740, 300],
+        [800, 340],
+        [820, 380],
+        [820, 310],
+        [790, 270],
+        [700, 240],
+        [550, 225],
+        [410, 235],
+        [310, 260]
+      ],
+      "labelAnchor": { "x": 560, "y": 275 },
+      "door": { "x": 820, "y": 340 },
+      "neighbors": ["sc-1-lobby", "sc-1-corr-main"]
+    },
+    {
+      "id": "sc-1-lobby",
+      "name": "Main Lobby",
+      "type": "lobby",
+      "polygon": [
+        [820, 200],
+        [990, 200],
+        [990, 310],
+        [1050, 310],
+        [1050, 470],
+        [970, 520],
+        [900, 560],
+        [830, 600],
+        [800, 560],
+        [790, 480],
+        [790, 400],
+        [800, 340],
+        [820, 310]
+      ],
+      "labelAnchor": { "x": 920, "y": 380 },
+      "door": { "x": 1050, "y": 400 },
+      "neighbors": [
+        "sc-1-maab-left",
+        "sc-1-lecture-a",
+        "sc-1-lecture-b",
+        "sc-1-corr-main"
+      ]
+    },
+    {
+      "id": "sc-1-corr-main",
+      "name": "Main Corridor",
+      "type": "corridor",
+      "polygon": [
+        [1050, 310],
+        [1300, 310],
+        [1300, 360],
+        [1430, 360],
+        [1430, 410],
+        [1300, 410],
+        [1300, 470],
+        [1050, 470]
+      ],
+      "labelAnchor": { "x": 1180, "y": 390 },
+      "door": { "x": 1200, "y": 470 },
+      "neighbors": [
+        "sc-1-lobby",
+        "sc-1-teaching-labs",
+        "sc-1-corr-east",
+        "sc-1-101",
+        "sc-1-102",
+        "sc-1-103",
+        "sc-1-104"
+      ]
+    },
+    {
+      "id": "sc-1-corr-east",
+      "name": "East Corridor",
+      "type": "corridor",
+      "polygon": [
+        [1200, 470],
+        [1430, 470],
+        [1430, 780],
+        [1200, 780],
+        [1200, 700],
+        [1150, 700],
+        [1150, 650],
+        [1200, 650]
+      ],
+      "labelAnchor": { "x": 1310, "y": 620 },
+      "door": { "x": 1200, "y": 750 },
+      "neighbors": [
+        "sc-1-corr-main",
+        "sc-1-maab-right",
+        "sc-1-105",
+        "sc-1-106",
+        "sc-1-107",
+        "sc-1-108",
+        "sc-1-cabot-entry"
+      ]
+    },
+    {
+      "id": "sc-1-teaching-labs",
+      "name": "Teaching Labs",
+      "type": "lab",
+      "polygon": [
+        [1050, 150],
+        [1320, 150],
+        [1320, 255],
+        [1450, 255],
+        [1450, 310],
+        [1050, 310]
+      ],
+      "labelAnchor": { "x": 1230, "y": 220 },
+      "door": { "x": 1200, "y": 310 },
+      "neighbors": ["sc-1-corr-main"]
+    },
+    {
+      "id": "sc-1-maab-right",
+      "name": "MAAB II Right",
+      "type": "stairwell",
+      "polygon": [
+        [1450, 235],
+        [1560, 235],
+        [1560, 360],
+        [1450, 360]
+      ],
+      "labelAnchor": { "x": 1505, "y": 295 },
+      "door": { "x": 1450, "y": 340 },
+      "neighbors": ["sc-1-corr-east"]
+    },
+    {
+      "id": "sc-101",
+      "name": "Room 101",
+      "type": "classroom",
+      "polygon": [
+        [1050, 470],
+        [1150, 470],
+        [1150, 560],
+        [1050, 560]
+      ],
+      "labelAnchor": { "x": 1100, "y": 515 },
+      "door": { "x": 1100, "y": 470 },
+      "neighbors": ["sc-1-corr-main"]
+    },
+    {
+      "id": "sc-102",
+      "name": "Room 102",
+      "type": "classroom",
+      "polygon": [
+        [1050, 560],
+        [1150, 560],
+        [1150, 650],
+        [1050, 650]
+      ],
+      "labelAnchor": { "x": 1100, "y": 605 },
+      "door": { "x": 1150, "y": 600 },
+      "neighbors": ["sc-1-corr-main"]
+    },
+    {
+      "id": "sc-103",
+      "name": "Room 103",
+      "type": "classroom",
+      "polygon": [
+        [1050, 650],
+        [1150, 650],
+        [1150, 740],
+        [1050, 740]
+      ],
+      "labelAnchor": { "x": 1100, "y": 695 },
+      "door": { "x": 1150, "y": 700 },
+      "neighbors": ["sc-1-corr-main", "sc-1-corr-east"]
+    },
+    {
+      "id": "sc-104",
+      "name": "Room 104",
+      "type": "classroom",
+      "polygon": [
+        [1050, 740],
+        [1150, 740],
+        [1150, 830],
+        [1050, 830]
+      ],
+      "labelAnchor": { "x": 1100, "y": 785 },
+      "door": { "x": 1150, "y": 790 },
+      "neighbors": ["sc-1-corr-east"]
+    },
+    {
+      "id": "sc-105",
+      "name": "Room 105",
+      "type": "classroom",
+      "polygon": [
+        [1430, 410],
+        [1540, 410],
+        [1540, 500],
+        [1430, 500]
+      ],
+      "labelAnchor": { "x": 1485, "y": 455 },
+      "door": { "x": 1430, "y": 450 },
+      "neighbors": ["sc-1-corr-east"]
+    },
+    {
+      "id": "sc-106",
+      "name": "Room 106",
+      "type": "classroom",
+      "polygon": [
+        [1430, 500],
+        [1540, 500],
+        [1540, 590],
+        [1430, 590]
+      ],
+      "labelAnchor": { "x": 1485, "y": 545 },
+      "door": { "x": 1430, "y": 540 },
+      "neighbors": ["sc-1-corr-east"]
+    },
+    {
+      "id": "sc-107",
+      "name": "Room 107",
+      "type": "classroom",
+      "polygon": [
+        [1430, 590],
+        [1540, 590],
+        [1540, 680],
+        [1430, 680]
+      ],
+      "labelAnchor": { "x": 1485, "y": 635 },
+      "door": { "x": 1430, "y": 630 },
+      "neighbors": ["sc-1-corr-east"]
+    },
+    {
+      "id": "sc-108",
+      "name": "Room 108",
+      "type": "classroom",
+      "polygon": [
+        [1430, 680],
+        [1540, 680],
+        [1540, 770],
+        [1430, 770]
+      ],
+      "labelAnchor": { "x": 1485, "y": 725 },
+      "door": { "x": 1430, "y": 720 },
+      "neighbors": ["sc-1-corr-east"]
+    },
+    {
+      "id": "sc-1-cabot-entry",
+      "name": "Cabot Entry",
+      "type": "corridor",
+      "polygon": [
+        [1150, 780],
+        [1430, 780],
+        [1430, 900],
+        [1150, 900]
+      ],
+      "labelAnchor": { "x": 1290, "y": 840 },
+      "door": { "x": 1290, "y": 780 },
+      "neighbors": [
+        "sc-1-corr-east",
+        "sc-1-cabot-l101",
+        "sc-1-cabot-l102"
+      ]
+    },
+    {
+      "id": "sc-1-cabot-l101",
+      "name": "Cabot L101",
+      "type": "library",
+      "polygon": [
+        [720, 900],
+        [1140, 900],
+        [1140, 960],
+        [720, 960]
+      ],
+      "labelAnchor": { "x": 930, "y": 930 },
+      "door": { "x": 1140, "y": 880 },
+      "neighbors": ["sc-1-cabot-entry"]
+    },
+    {
+      "id": "sc-1-cabot-l102",
+      "name": "Cabot L102",
+      "type": "library",
+      "polygon": [
+        [1150, 900],
+        [1440, 900],
+        [1440, 1000],
+        [1150, 1000]
+      ],
+      "labelAnchor": { "x": 1295, "y": 950 },
+      "door": { "x": 1290, "y": 900 },
+      "neighbors": ["sc-1-cabot-entry"]
+    }
+  ]
+}
