@@ -1,0 +1,2944 @@
+{
+  "floor": 5,
+  "viewBox": {
+    "width": 1650,
+    "height": 1275
+  },
+  "buildingOutline": [],
+  "rooms": [
+    {
+      "id": "sc-5-mechanical",
+      "name": "Rsc-5-mechanical",
+      "type": "classroom",
+      "polygon": [
+        [
+          308,
+          183
+        ],
+        [
+          309,
+          376
+        ],
+        [
+          412,
+          376
+        ],
+        [
+          411,
+          353
+        ],
+        [
+          384,
+          353
+        ],
+        [
+          384,
+          322
+        ],
+        [
+          498,
+          322
+        ],
+        [
+          498,
+          296
+        ],
+        [
+          592,
+          295
+        ],
+        [
+          592,
+          278
+        ],
+        [
+          619,
+          278
+        ],
+        [
+          619,
+          266
+        ],
+        [
+          739,
+          265
+        ],
+        [
+          739,
+          304
+        ],
+        [
+          796,
+          303
+        ],
+        [
+          796,
+          279
+        ],
+        [
+          867,
+          278
+        ],
+        [
+          867,
+          292
+        ],
+        [
+          902,
+          292
+        ],
+        [
+          901,
+          297
+        ],
+        [
+          1067,
+          297
+        ],
+        [
+          1067,
+          345
+        ],
+        [
+          1091,
+          345
+        ],
+        [
+          1091,
+          376
+        ],
+        [
+          1454,
+          378
+        ],
+        [
+          1454,
+          345
+        ],
+        [
+          1417,
+          344
+        ],
+        [
+          1416,
+          276
+        ],
+        [
+          1454,
+          276
+        ],
+        [
+          1454,
+          184
+        ]
+      ],
+      "labelAnchor": {
+        "x": 840,
+        "y": 306
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          413,
+          321
+        ],
+        [
+          413,
+          340
+        ],
+        [
+          481,
+          340
+        ],
+        [
+          480,
+          322
+        ]
+      ],
+      "labelAnchor": {
+        "x": 447,
+        "y": 331
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "4",
+        "5",
+        "6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-room-519",
+      "name": "R519",
+      "type": "office",
+      "polygon": [
+        [
+          505,
+          339
+        ],
+        [
+          505,
+          377
+        ],
+        [
+          412,
+          377
+        ],
+        [
+          412,
+          353
+        ],
+        [
+          384,
+          353
+        ],
+        [
+          383,
+          322
+        ],
+        [
+          412,
+          322
+        ],
+        [
+          412,
+          340
+        ],
+        [
+          481,
+          340
+        ]
+      ],
+      "labelAnchor": {
+        "x": 434,
+        "y": 347
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-516",
+      "name": "R516",
+      "type": "office",
+      "polygon": [
+        [
+          498,
+          321
+        ],
+        [
+          527,
+          321
+        ],
+        [
+          527,
+          295
+        ],
+        [
+          498,
+          295
+        ]
+      ],
+      "labelAnchor": {
+        "x": 513,
+        "y": 308
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-519",
+      "name": "R519",
+      "type": "office",
+      "polygon": [
+        [
+          526,
+          321
+        ],
+        [
+          552,
+          321
+        ],
+        [
+          552,
+          295
+        ],
+        [
+          527,
+          295
+        ]
+      ],
+      "labelAnchor": {
+        "x": 539,
+        "y": 308
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-520",
+      "name": "R520",
+      "type": "office",
+      "polygon": [
+        [
+          551,
+          321
+        ],
+        [
+          594,
+          321
+        ],
+        [
+          593,
+          296
+        ],
+        [
+          552,
+          296
+        ]
+      ],
+      "labelAnchor": {
+        "x": 573,
+        "y": 309
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-523",
+      "name": "R523",
+      "type": "office",
+      "polygon": [
+        [
+          504,
+          339
+        ],
+        [
+          590,
+          338
+        ],
+        [
+          590,
+          376
+        ],
+        [
+          504,
+          376
+        ]
+      ],
+      "labelAnchor": {
+        "x": 547,
+        "y": 357
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-525",
+      "name": "R525",
+      "type": "office",
+      "polygon": [
+        [
+          589,
+          338
+        ],
+        [
+          629,
+          338
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          589,
+          376
+        ]
+      ],
+      "labelAnchor": {
+        "x": 609,
+        "y": 357
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-527",
+      "name": "R527",
+      "type": "office",
+      "polygon": [
+        [
+          629,
+          339
+        ],
+        [
+          678,
+          339
+        ],
+        [
+          678,
+          377
+        ],
+        [
+          628,
+          376
+        ]
+      ],
+      "labelAnchor": {
+        "x": 653,
+        "y": 358
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-522",
+      "name": "R522",
+      "type": "office",
+      "polygon": [
+        [
+          592,
+          296
+        ],
+        [
+          620,
+          297
+        ],
+        [
+          619,
+          278
+        ],
+        [
+          591,
+          278
+        ]
+      ],
+      "labelAnchor": {
+        "x": 606,
+        "y": 287
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-524a",
+      "name": "R524A",
+      "type": "office",
+      "polygon": [
+        [
+          620,
+          297
+        ],
+        [
+          650,
+          297
+        ],
+        [
+          649,
+          266
+        ],
+        [
+          618,
+          265
+        ]
+      ],
+      "labelAnchor": {
+        "x": 634,
+        "y": 281
+      },
+      "neighbors": [
+        "sc-5-study-area"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-524",
+      "name": "R524",
+      "type": "office",
+      "polygon": [
+        [
+          648,
+          265
+        ],
+        [
+          679,
+          265
+        ],
+        [
+          679,
+          298
+        ],
+        [
+          649,
+          297
+        ]
+      ],
+      "labelAnchor": {
+        "x": 664,
+        "y": 281
+      },
+      "neighbors": [
+        "sc-5-study-area"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-526",
+      "name": "R526",
+      "type": "office",
+      "polygon": [
+        [
+          678,
+          297
+        ],
+        [
+          698,
+          297
+        ],
+        [
+          697,
+          351
+        ],
+        [
+          719,
+          352
+        ],
+        [
+          718,
+          267
+        ],
+        [
+          679,
+          266
+        ]
+      ],
+      "labelAnchor": {
+        "x": 698,
+        "y": 305
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-528"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-528",
+      "name": "R528",
+      "type": "office",
+      "polygon": [
+        [
+          717,
+          265
+        ],
+        [
+          738,
+          265
+        ],
+        [
+          738,
+          307
+        ],
+        [
+          718,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 728,
+        "y": 286
+      },
+      "neighbors": [
+        "sc-5-room-526"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          795,
+          302
+        ],
+        [
+          717,
+          302
+        ],
+        [
+          719,
+          346
+        ],
+        [
+          797,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 757,
+        "y": 324
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "4",
+        "5",
+        "6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-room-530",
+      "name": "R530",
+      "type": "office",
+      "polygon": [
+        [
+          797,
+          345
+        ],
+        [
+          851,
+          345
+        ],
+        [
+          876,
+          345
+        ],
+        [
+          876,
+          292
+        ],
+        [
+          866,
+          292
+        ],
+        [
+          867,
+          278
+        ],
+        [
+          796,
+          279
+        ]
+      ],
+      "labelAnchor": {
+        "x": 847,
+        "y": 311
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-536",
+      "name": "R536",
+      "type": "office",
+      "polygon": [
+        [
+          875,
+          292
+        ],
+        [
+          902,
+          292
+        ],
+        [
+          902,
+          317
+        ],
+        [
+          876,
+          316
+        ]
+      ],
+      "labelAnchor": {
+        "x": 889,
+        "y": 304
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-534",
+      "name": "R534",
+      "type": "office",
+      "polygon": [
+        [
+          902,
+          317
+        ],
+        [
+          902,
+          336
+        ],
+        [
+          875,
+          336
+        ],
+        [
+          875,
+          316
+        ]
+      ],
+      "labelAnchor": {
+        "x": 889,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-532",
+      "name": "R532",
+      "type": "office",
+      "polygon": [
+        [
+          871,
+          345
+        ],
+        [
+          871,
+          355
+        ],
+        [
+          902,
+          355
+        ],
+        [
+          902,
+          336
+        ],
+        [
+          876,
+          336
+        ],
+        [
+          877,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 883,
+        "y": 345
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-533",
+      "name": "R533",
+      "type": "classroom",
+      "polygon": [
+        [
+          941,
+          346
+        ],
+        [
+          941,
+          315
+        ],
+        [
+          916,
+          315
+        ],
+        [
+          915,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 928,
+        "y": 331
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-531",
+      "name": "R531",
+      "type": "office",
+      "polygon": [
+        [
+          915,
+          345
+        ],
+        [
+          915,
+          376
+        ],
+        [
+          941,
+          376
+        ],
+        [
+          941,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 928,
+        "y": 361
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-535",
+      "name": "R535",
+      "type": "office",
+      "polygon": [
+        [
+          941,
+          315
+        ],
+        [
+          972,
+          315
+        ],
+        [
+          972,
+          377
+        ],
+        [
+          941,
+          376
+        ]
+      ],
+      "labelAnchor": {
+        "x": 957,
+        "y": 346
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-537",
+      "name": "R537",
+      "type": "office",
+      "polygon": [
+        [
+          972,
+          315
+        ],
+        [
+          1012,
+          315
+        ],
+        [
+          1012,
+          377
+        ],
+        [
+          972,
+          377
+        ]
+      ],
+      "labelAnchor": {
+        "x": 992,
+        "y": 346
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-539",
+      "name": "R539",
+      "type": "office",
+      "polygon": [
+        [
+          1012,
+          315
+        ],
+        [
+          1052,
+          315
+        ],
+        [
+          1052,
+          362
+        ],
+        [
+          1058,
+          362
+        ],
+        [
+          1057,
+          376
+        ],
+        [
+          1013,
+          377
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1041,
+        "y": 351
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-503",
+      "name": "R503",
+      "type": "office",
+      "polygon": [
+        [
+          774,
+          453
+        ],
+        [
+          773,
+          495
+        ],
+        [
+          829,
+          495
+        ],
+        [
+          829,
+          454
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 474
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-504",
+      "name": "R504",
+      "type": "office",
+      "polygon": [
+        [
+          773,
+          494
+        ],
+        [
+          774,
+          545
+        ],
+        [
+          829,
+          545
+        ],
+        [
+          829,
+          495
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 520
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-506",
+      "name": "R506",
+      "type": "office",
+      "polygon": [
+        [
+          774,
+          544
+        ],
+        [
+          829,
+          545
+        ],
+        [
+          829,
+          587
+        ],
+        [
+          774,
+          587
+        ]
+      ],
+      "labelAnchor": {
+        "x": 802,
+        "y": 566
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-508",
+      "name": "R508",
+      "type": "office",
+      "polygon": [
+        [
+          774,
+          587
+        ],
+        [
+          774,
+          627
+        ],
+        [
+          829,
+          628
+        ],
+        [
+          829,
+          587
+        ]
+      ],
+      "labelAnchor": {
+        "x": 802,
+        "y": 607
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-510",
+      "name": "R510",
+      "type": "office",
+      "polygon": [
+        [
+          774,
+          626
+        ],
+        [
+          774,
+          666
+        ],
+        [
+          828,
+          667
+        ],
+        [
+          828,
+          628
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 647
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-511",
+      "name": "R511",
+      "type": "office",
+      "polygon": [
+        [
+          773,
+          666
+        ],
+        [
+          827,
+          666
+        ],
+        [
+          827,
+          706
+        ],
+        [
+          773,
+          706
+        ]
+      ],
+      "labelAnchor": {
+        "x": 800,
+        "y": 686
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-512",
+      "name": "R512",
+      "type": "office",
+      "polygon": [
+        [
+          773,
+          707
+        ],
+        [
+          826,
+          707
+        ],
+        [
+          826,
+          745
+        ],
+        [
+          773,
+          745
+        ]
+      ],
+      "labelAnchor": {
+        "x": 800,
+        "y": 726
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          853,
+          432
+        ],
+        [
+          913,
+          432
+        ],
+        [
+          913,
+          463
+        ],
+        [
+          853,
+          464
+        ]
+      ],
+      "labelAnchor": {
+        "x": 883,
+        "y": 448
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "4",
+        "5",
+        "6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-room-505",
+      "name": "R505",
+      "type": "office",
+      "polygon": [
+        [
+          852,
+          463
+        ],
+        [
+          913,
+          463
+        ],
+        [
+          912,
+          432
+        ],
+        [
+          950,
+          432
+        ],
+        [
+          950,
+          527
+        ],
+        [
+          852,
+          527
+        ]
+      ],
+      "labelAnchor": {
+        "x": 905,
+        "y": 474
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-507",
+      "name": "R507",
+      "type": "office",
+      "polygon": [
+        [
+          950,
+          526
+        ],
+        [
+          949,
+          627
+        ],
+        [
+          860,
+          627
+        ],
+        [
+          859,
+          527
+        ]
+      ],
+      "labelAnchor": {
+        "x": 905,
+        "y": 577
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-513",
+      "name": "R513",
+      "type": "office",
+      "polygon": [
+        [
+          876,
+          627
+        ],
+        [
+          889,
+          666
+        ],
+        [
+          952,
+          666
+        ],
+        [
+          952,
+          627
+        ]
+      ],
+      "labelAnchor": {
+        "x": 917,
+        "y": 647
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-514",
+      "name": "R514",
+      "type": "office",
+      "polygon": [
+        [
+          889,
+          666
+        ],
+        [
+          903,
+          707
+        ],
+        [
+          952,
+          706
+        ],
+        [
+          951,
+          666
+        ]
+      ],
+      "labelAnchor": {
+        "x": 924,
+        "y": 686
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-room-515",
+      "name": "R515",
+      "type": "office",
+      "polygon": [
+        [
+          902,
+          707
+        ],
+        [
+          911,
+          724
+        ],
+        [
+          911,
+          746
+        ],
+        [
+          952,
+          746
+        ],
+        [
+          952,
+          706
+        ]
+      ],
+      "labelAnchor": {
+        "x": 926,
+        "y": 726
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          856,
+          725
+        ],
+        [
+          893,
+          725
+        ],
+        [
+          893,
+          745
+        ],
+        [
+          856,
+          745
+        ]
+      ],
+      "labelAnchor": {
+        "x": 875,
+        "y": 735
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "4",
+        "5",
+        "6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-room-509",
+      "name": "R509",
+      "type": "office",
+      "polygon": [
+        [
+          860,
+          626
+        ],
+        [
+          851,
+          626
+        ],
+        [
+          851,
+          654
+        ],
+        [
+          884,
+          653
+        ],
+        [
+          877,
+          627
+        ]
+      ],
+      "labelAnchor": {
+        "x": 865,
+        "y": 637
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-elevator",
+      "name": "Elevator",
+      "type": "elevator",
+      "polygon": [
+        [
+          853,
+          431
+        ],
+        [
+          853,
+          405
+        ],
+        [
+          949,
+          404
+        ],
+        [
+          950,
+          432
+        ]
+      ],
+      "labelAnchor": {
+        "x": 901,
+        "y": 418
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-study-area",
+      "name": "Study Area",
+      "type": "other",
+      "polygon": [
+        [
+          594,
+          320
+        ],
+        [
+          697,
+          320
+        ],
+        [
+          698,
+          296
+        ],
+        [
+          593,
+          295
+        ]
+      ],
+      "labelAnchor": {
+        "x": 646,
+        "y": 308
+      },
+      "neighbors": [
+        "sc-5-room-524",
+        "sc-5-room-524a",
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-main-hallway-5",
+      "name": "Main Hallway 5",
+      "type": "corridor",
+      "polygon": [
+        [
+          480,
+          323
+        ],
+        [
+          480,
+          339
+        ],
+        [
+          677,
+          340
+        ],
+        [
+          678,
+          377
+        ],
+        [
+          773,
+          378
+        ],
+        [
+          774,
+          453
+        ],
+        [
+          829,
+          454
+        ],
+        [
+          826,
+          745
+        ],
+        [
+          856,
+          744
+        ],
+        [
+          856,
+          724
+        ],
+        [
+          893,
+          725
+        ],
+        [
+          893,
+          745
+        ],
+        [
+          911,
+          745
+        ],
+        [
+          911,
+          725
+        ],
+        [
+          885,
+          652
+        ],
+        [
+          852,
+          654
+        ],
+        [
+          851,
+          626
+        ],
+        [
+          861,
+          626
+        ],
+        [
+          859,
+          527
+        ],
+        [
+          851,
+          527
+        ],
+        [
+          852,
+          405
+        ],
+        [
+          949,
+          404
+        ],
+        [
+          950,
+          376
+        ],
+        [
+          914,
+          376
+        ],
+        [
+          915,
+          315
+        ],
+        [
+          1052,
+          315
+        ],
+        [
+          1052,
+          361
+        ],
+        [
+          1058,
+          361
+        ],
+        [
+          1057,
+          375
+        ],
+        [
+          1090,
+          376
+        ],
+        [
+          1091,
+          344
+        ],
+        [
+          1067,
+          343
+        ],
+        [
+          1067,
+          296
+        ],
+        [
+          902,
+          297
+        ],
+        [
+          902,
+          355
+        ],
+        [
+          870,
+          355
+        ],
+        [
+          871,
+          344
+        ],
+        [
+          719,
+          345
+        ],
+        [
+          719,
+          352
+        ],
+        [
+          696,
+          352
+        ],
+        [
+          697,
+          320
+        ]
+      ],
+      "labelAnchor": {
+        "x": 866,
+        "y": 458
+      },
+      "neighbors": [
+        "sc-5-room-519",
+        "sc-5-room-523",
+        "sc-5-room-516",
+        "sc-5-room-520",
+        "sc-5-room-522",
+        "sc-5-study-area",
+        "sc-5-room-526",
+        "sc-5-room-525",
+        "sc-5-room-527",
+        "sc-5-room-530",
+        "sc-5-room-532",
+        "sc-5-room-534",
+        "sc-5-room-536",
+        "sc-5-room-533",
+        "sc-5-room-531",
+        "sc-5-room-535",
+        "sc-5-room-537",
+        "sc-5-room-539",
+        "sc-5-room-505",
+        "sc-5-room-504",
+        "sc-5-room-506",
+        "sc-5-room-508",
+        "sc-5-room-510",
+        "sc-5-room-511",
+        "sc-5-room-512",
+        "sc-5-room-507",
+        "sc-5-room-509",
+        "sc-5-room-513",
+        "sc-5-room-514",
+        "sc-5-room-515"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-519",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 519",
+      "type": "door",
+      "polygon": [
+        [
+          486,
+          339
+        ],
+        [
+          487,
+          347
+        ],
+        [
+          496,
+          347
+        ],
+        [
+          496,
+          338
+        ]
+      ],
+      "labelAnchor": {
+        "x": 491,
+        "y": 343
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-519"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-519"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-523",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 523",
+      "type": "door",
+      "polygon": [
+        [
+          526,
+          339
+        ],
+        [
+          543,
+          339
+        ],
+        [
+          543,
+          348
+        ],
+        [
+          528,
+          347
+        ]
+      ],
+      "labelAnchor": {
+        "x": 535,
+        "y": 343
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-523"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-523"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-516",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 516",
+      "type": "door",
+      "polygon": [
+        [
+          505,
+          321
+        ],
+        [
+          505,
+          312
+        ],
+        [
+          515,
+          313
+        ],
+        [
+          515,
+          319
+        ]
+      ],
+      "labelAnchor": {
+        "x": 510,
+        "y": 316
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-516"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-516"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-519",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 519",
+      "type": "door",
+      "polygon": [
+        [
+          535,
+          320
+        ],
+        [
+          535,
+          312
+        ],
+        [
+          544,
+          311
+        ],
+        [
+          544,
+          321
+        ]
+      ],
+      "labelAnchor": {
+        "x": 540,
+        "y": 316
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-519"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-519"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-520",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 520",
+      "type": "door",
+      "polygon": [
+        [
+          566,
+          320
+        ],
+        [
+          565,
+          312
+        ],
+        [
+          576,
+          312
+        ],
+        [
+          576,
+          321
+        ]
+      ],
+      "labelAnchor": {
+        "x": 571,
+        "y": 316
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-520"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-520"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-522",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 522",
+      "type": "door",
+      "polygon": [
+        [
+          601,
+          294
+        ],
+        [
+          601,
+          288
+        ],
+        [
+          608,
+          288
+        ],
+        [
+          608,
+          297
+        ]
+      ],
+      "labelAnchor": {
+        "x": 605,
+        "y": 292
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-522"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-522"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-524a",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 524a",
+      "type": "door",
+      "polygon": [
+        [
+          631,
+          295
+        ],
+        [
+          631,
+          289
+        ],
+        [
+          641,
+          289
+        ],
+        [
+          641,
+          297
+        ]
+      ],
+      "labelAnchor": {
+        "x": 636,
+        "y": 293
+      },
+      "neighbors": [
+        "sc-5-study-area",
+        "sc-5-room-524a"
+      ],
+      "connects": [
+        "sc-5-study-area",
+        "sc-5-room-524a"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-study-area-sc-5-room-524",
+      "name": "Door Sc 5 Study Area Sc 5 Room 524",
+      "type": "door",
+      "polygon": [
+        [
+          660,
+          295
+        ],
+        [
+          659,
+          286
+        ],
+        [
+          666,
+          286
+        ],
+        [
+          667,
+          296
+        ]
+      ],
+      "labelAnchor": {
+        "x": 663,
+        "y": 291
+      },
+      "neighbors": [
+        "sc-5-study-area",
+        "sc-5-room-524"
+      ],
+      "connects": [
+        "sc-5-study-area",
+        "sc-5-room-524"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-study-area",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Study Area",
+      "type": "connection",
+      "polygon": [
+        [
+          634,
+          320
+        ],
+        [
+          634,
+          313
+        ],
+        [
+          643,
+          313
+        ],
+        [
+          643,
+          319
+        ]
+      ],
+      "labelAnchor": {
+        "x": 639,
+        "y": 316
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-study-area"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-study-area"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-526",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 526",
+      "type": "door",
+      "polygon": [
+        [
+          686,
+          296
+        ],
+        [
+          686,
+          287
+        ],
+        [
+          692,
+          287
+        ],
+        [
+          691,
+          297
+        ]
+      ],
+      "labelAnchor": {
+        "x": 689,
+        "y": 292
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-526"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-526"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-room-526-sc-5-room-528",
+      "name": "Door Sc 5 Room 526 Sc 5 Room 528",
+      "type": "door",
+      "polygon": [
+        [
+          717,
+          269
+        ],
+        [
+          727,
+          271
+        ],
+        [
+          727,
+          276
+        ],
+        [
+          718,
+          278
+        ]
+      ],
+      "labelAnchor": {
+        "x": 722,
+        "y": 274
+      },
+      "neighbors": [
+        "sc-5-room-526",
+        "sc-5-room-528"
+      ],
+      "connects": [
+        "sc-5-room-526",
+        "sc-5-room-528"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-room-525-sc-5-main-hallway-5",
+      "name": "Door Sc 5 Room 525 Sc 5 Main Hallway 5",
+      "type": "door",
+      "polygon": [
+        [
+          605,
+          340
+        ],
+        [
+          617,
+          342
+        ],
+        [
+          617,
+          351
+        ],
+        [
+          611,
+          351
+        ]
+      ],
+      "labelAnchor": {
+        "x": 613,
+        "y": 346
+      },
+      "neighbors": [
+        "sc-5-room-525",
+        "sc-5-main-hallway-5"
+      ],
+      "connects": [
+        "sc-5-room-525",
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-room-527-sc-5-main-hallway-5",
+      "name": "Door Sc 5 Room 527 Sc 5 Main Hallway 5",
+      "type": "door",
+      "polygon": [
+        [
+          649,
+          337
+        ],
+        [
+          660,
+          339
+        ],
+        [
+          660,
+          346
+        ],
+        [
+          649,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 655,
+        "y": 342
+      },
+      "neighbors": [
+        "sc-5-room-527",
+        "sc-5-main-hallway-5"
+      ],
+      "connects": [
+        "sc-5-room-527",
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-530",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 530",
+      "type": "door",
+      "polygon": [
+        [
+          810,
+          344
+        ],
+        [
+          810,
+          335
+        ],
+        [
+          823,
+          336
+        ],
+        [
+          823,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 817,
+        "y": 340
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-530"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-530"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-532",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 532",
+      "type": "door",
+      "polygon": [
+        [
+          883,
+          354
+        ],
+        [
+          883,
+          347
+        ],
+        [
+          890,
+          348
+        ],
+        [
+          890,
+          354
+        ]
+      ],
+      "labelAnchor": {
+        "x": 887,
+        "y": 351
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-532"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-532"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-534",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 534",
+      "type": "door",
+      "polygon": [
+        [
+          901,
+          322
+        ],
+        [
+          892,
+          322
+        ],
+        [
+          892,
+          329
+        ],
+        [
+          901,
+          329
+        ]
+      ],
+      "labelAnchor": {
+        "x": 897,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-534"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-534"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-536",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 536",
+      "type": "door",
+      "polygon": [
+        [
+          901,
+          304
+        ],
+        [
+          894,
+          304
+        ],
+        [
+          894,
+          309
+        ],
+        [
+          901,
+          310
+        ]
+      ],
+      "labelAnchor": {
+        "x": 898,
+        "y": 307
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-536"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-536"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-533",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 533",
+      "type": "door",
+      "polygon": [
+        [
+          917,
+          316
+        ],
+        [
+          925,
+          315
+        ],
+        [
+          925,
+          323
+        ],
+        [
+          915,
+          323
+        ]
+      ],
+      "labelAnchor": {
+        "x": 921,
+        "y": 319
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-533"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-533"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-531",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 531",
+      "type": "door",
+      "polygon": [
+        [
+          915,
+          354
+        ],
+        [
+          922,
+          354
+        ],
+        [
+          922,
+          363
+        ],
+        [
+          914,
+          363
+        ]
+      ],
+      "labelAnchor": {
+        "x": 918,
+        "y": 359
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-531"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-531"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-535",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 535",
+      "type": "door",
+      "polygon": [
+        [
+          950,
+          315
+        ],
+        [
+          960,
+          315
+        ],
+        [
+          960,
+          324
+        ],
+        [
+          948,
+          324
+        ]
+      ],
+      "labelAnchor": {
+        "x": 955,
+        "y": 320
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-535"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-535"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-room-537-sc-5-main-hallway-5",
+      "name": "Door Sc 5 Room 537 Sc 5 Main Hallway 5",
+      "type": "door",
+      "polygon": [
+        [
+          985,
+          315
+        ],
+        [
+          999,
+          315
+        ],
+        [
+          998,
+          323
+        ],
+        [
+          985,
+          323
+        ]
+      ],
+      "labelAnchor": {
+        "x": 992,
+        "y": 319
+      },
+      "neighbors": [
+        "sc-5-room-537",
+        "sc-5-main-hallway-5"
+      ],
+      "connects": [
+        "sc-5-room-537",
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-539",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 539",
+      "type": "door",
+      "polygon": [
+        [
+          1029,
+          315
+        ],
+        [
+          1040,
+          314
+        ],
+        [
+          1041,
+          323
+        ],
+        [
+          1030,
+          323
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1035,
+        "y": 319
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-539"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-539"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-505",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 505",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          470
+        ],
+        [
+          816,
+          469
+        ],
+        [
+          816,
+          478
+        ],
+        [
+          828,
+          478
+        ]
+      ],
+      "labelAnchor": {
+        "x": 822,
+        "y": 474
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-505"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-505"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-504",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 504",
+      "type": "door",
+      "polygon": [
+        [
+          827,
+          509
+        ],
+        [
+          816,
+          509
+        ],
+        [
+          815,
+          521
+        ],
+        [
+          827,
+          521
+        ]
+      ],
+      "labelAnchor": {
+        "x": 821,
+        "y": 515
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-504"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-504"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-506",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 506",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          570
+        ],
+        [
+          820,
+          570
+        ],
+        [
+          820,
+          578
+        ],
+        [
+          828,
+          578
+        ]
+      ],
+      "labelAnchor": {
+        "x": 824,
+        "y": 574
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-506"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-506"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-508",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 508",
+      "type": "door",
+      "polygon": [
+        [
+          827,
+          606
+        ],
+        [
+          817,
+          606
+        ],
+        [
+          817,
+          615
+        ],
+        [
+          828,
+          616
+        ]
+      ],
+      "labelAnchor": {
+        "x": 822,
+        "y": 611
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-508"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-508"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-510",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 510",
+      "type": "door",
+      "polygon": [
+        [
+          826,
+          649
+        ],
+        [
+          815,
+          650
+        ],
+        [
+          814,
+          659
+        ],
+        [
+          827,
+          659
+        ]
+      ],
+      "labelAnchor": {
+        "x": 821,
+        "y": 654
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-510"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-510"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-511",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 511",
+      "type": "door",
+      "polygon": [
+        [
+          825,
+          693
+        ],
+        [
+          816,
+          694
+        ],
+        [
+          816,
+          702
+        ],
+        [
+          826,
+          702
+        ]
+      ],
+      "labelAnchor": {
+        "x": 821,
+        "y": 698
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-511"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-511"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-512",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 512",
+      "type": "door",
+      "polygon": [
+        [
+          825,
+          724
+        ],
+        [
+          816,
+          724
+        ],
+        [
+          816,
+          735
+        ],
+        [
+          825,
+          734
+        ]
+      ],
+      "labelAnchor": {
+        "x": 821,
+        "y": 729
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-512"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-512"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-505",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 505",
+      "type": "door",
+      "polygon": [
+        [
+          851,
+          489
+        ],
+        [
+          863,
+          489
+        ],
+        [
+          863,
+          501
+        ],
+        [
+          851,
+          501
+        ]
+      ],
+      "labelAnchor": {
+        "x": 857,
+        "y": 495
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-505"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-505"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-507",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 507",
+      "type": "door",
+      "polygon": [
+        [
+          860,
+          569
+        ],
+        [
+          870,
+          569
+        ],
+        [
+          869,
+          580
+        ],
+        [
+          858,
+          579
+        ]
+      ],
+      "labelAnchor": {
+        "x": 864,
+        "y": 574
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-507"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-507"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-509",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 509",
+      "type": "door",
+      "polygon": [
+        [
+          851,
+          640
+        ],
+        [
+          861,
+          640
+        ],
+        [
+          860,
+          647
+        ],
+        [
+          851,
+          646
+        ]
+      ],
+      "labelAnchor": {
+        "x": 856,
+        "y": 643
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-509"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-509"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-513",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 513",
+      "type": "door",
+      "polygon": [
+        [
+          886,
+          651
+        ],
+        [
+          895,
+          653
+        ],
+        [
+          895,
+          663
+        ],
+        [
+          889,
+          663
+        ]
+      ],
+      "labelAnchor": {
+        "x": 891,
+        "y": 658
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-513"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-513"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-514",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 514",
+      "type": "door",
+      "polygon": [
+        [
+          898,
+          690
+        ],
+        [
+          907,
+          691
+        ],
+        [
+          907,
+          702
+        ],
+        [
+          900,
+          700
+        ]
+      ],
+      "labelAnchor": {
+        "x": 903,
+        "y": 696
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-514"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-514"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-515",
+      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 515",
+      "type": "door",
+      "polygon": [
+        [
+          911,
+          733
+        ],
+        [
+          919,
+          733
+        ],
+        [
+          919,
+          741
+        ],
+        [
+          910,
+          741
+        ]
+      ],
+      "labelAnchor": {
+        "x": 915,
+        "y": 737
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-515"
+      ],
+      "connects": [
+        "sc-5-main-hallway-5",
+        "sc-5-room-515"
+      ],
+      "showLabel": false
+    }
+  ]
+}

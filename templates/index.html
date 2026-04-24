@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Science Center Floor Explorer</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#F5F5F0;color:#333;
+         height:100vh;display:flex;flex-direction:column}
+
+    /* ── Header ── */
+    header{background:#fff;border-bottom:1px solid #E0E0E0;padding:8px 16px;
+           display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap}
+    header h1{font-size:1rem;font-weight:600;color:#444;white-space:nowrap}
+    .hgroup{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .hgroup label{font-size:.8rem;color:#666;white-space:nowrap}
+
+    /* inputs */
+    input.inp,select.inp{
+      padding:5px 8px;border:1px solid #D0D0D0;border-radius:6px;
+      background:#fff;font-size:.8rem;color:#333;outline:none;
+      transition:border-color .15s}
+    input.inp:focus,select.inp:focus{border-color:#90B8D0}
+    input.inp.valid  {border-color:#5BAD6A}
+    input.inp.invalid{border-color:#D06060}
+
+    /* search wrapper with icon */
+    .swrap{position:relative;display:flex;align-items:center}
+    .swrap .ico{position:absolute;left:7px;pointer-events:none;color:#999}
+    .swrap input{padding-left:25px;width:175px}
+    .swrap input:focus{width:210px}
+    .swrap input.has-results{border-color:#5BAD6A}
+    .swrap input.no-results {border-color:#D06060}
+
+    /* nav input widths */
+    input.nav-inp{width:160px}
+
+    /* dropdown */
+    .drop{position:absolute;top:calc(100% + 3px);left:0;min-width:220px;
+          background:#fff;border:1px solid #D0D0D0;border-radius:6px;
+          box-shadow:0 4px 12px rgba(0,0,0,.12);max-height:220px;overflow-y:auto;
+          z-index:400;display:none;white-space:nowrap}
+    .drop.open{display:block}
+    .di{padding:5px 11px;font-size:.78rem;cursor:pointer;
+        display:flex;justify-content:space-between;gap:10px;
+        border-bottom:1px solid #F0F0F0}
+    .di:last-child{border-bottom:none}
+    .di:hover{background:#EEF5FA}
+    .di .meta{font-size:.7rem;color:#999}
+    .di.no-res{color:#999;text-align:center;cursor:default}
+
+    /* buttons */
+    .btn{padding:5px 13px;border-radius:6px;border:none;
+         font-size:.8rem;font-weight:600;cursor:pointer;transition:background .15s}
+    .btn-go  {background:#F4A535;color:#fff}.btn-go:hover{background:#d48f20}
+    .btn-clr {background:#eee;color:#555}.btn-clr:hover{background:#ddd}
+
+    /* elevator toggle */
+    .toggle-wrap{display:flex;align-items:center;gap:5px;font-size:.78rem;color:#555}
+    .toggle-wrap input[type=checkbox]{accent-color:#4A90C4;width:14px;height:14px}
+
+    /* ── Main layout ── */
+    .main{flex:1;display:flex;align-items:stretch;overflow:hidden}
+
+    /* floor sidebar */
+    .floor-nav{width:56px;background:#fff;border-right:1px solid #E0E0E0;
+               display:flex;flex-direction:column;align-items:center;
+               justify-content:center;gap:5px;padding:10px 0;flex-shrink:0}
+    .nav-btn{width:34px;height:34px;border:1px solid #D0D0D0;border-radius:7px;
+             background:#fff;font-size:.95rem;cursor:pointer;
+             display:flex;align-items:center;justify-content:center;
+             transition:background .15s,border-color .15s;color:#555}
+    .nav-btn:hover:not(:disabled){background:#EEF5FA;border-color:#90B8D0}
+    .nav-btn:disabled{opacity:.3;cursor:default}
+    .floor-list{display:flex;flex-direction:column-reverse;gap:3px;margin:3px 0}
+    .pip{width:26px;height:20px;border-radius:4px;background:#F0F0F0;
+         border:1px solid #DDD;font-size:.6rem;font-weight:700;
+         display:flex;align-items:center;justify-content:center;
+         color:#888;cursor:pointer;transition:background .1s}
+    .pip:hover{background:#E0EEF8}
+    .pip.active{background:#4A90C4;border-color:#3A7AAA;color:#fff}
+    .pip.on-route{box-shadow:0 0 0 2px #F4A535}
+
+    /* SVG canvas */
+    .canvas-wrap{flex:1;display:flex;padding:10px;overflow:hidden}
+    #floor-svg{display:block;width:100%;height:100%;transition:opacity .2s}
+    #floor-svg.fading{opacity:0}
+
+    /* legend */
+    .legend{width:130px;background:#fff;border-left:1px solid #E0E0E0;
+            padding:12px 10px;font-size:.72rem;overflow-y:auto;flex-shrink:0}
+    .legend h3{font-size:.76rem;color:#555;margin-bottom:7px;font-weight:600}
+    .li{display:flex;align-items:center;gap:5px;margin-bottom:5px}
+    .sw{width:12px;height:12px;border-radius:3px;border:1px solid #aaa;flex-shrink:0}
+    hr.lsep{border:none;border-top:1px solid #EEE;margin:7px 0}
+
+    /* animated path */
+    @keyframes march{from{stroke-dashoffset:22}to{stroke-dashoffset:0}}
+    .nav-path{fill:none;stroke:#E05C10;stroke-width:3;stroke-linecap:round;
+              stroke-dasharray:11 7;animation:march .45s linear infinite;
+              pointer-events:none}
+    .nav-marker{pointer-events:none}
+    @keyframes pulse{0%,100%{r:8;opacity:.9}50%{r:12;opacity:.5}}
+    .nav-pulse{pointer-events:none;fill:#4A90C4;animation:pulse 1.2s ease-in-out infinite}
+
+    /* I am here button */
+    .btn-here{background:#4A90C4;color:#fff;font-size:.78rem;padding:4px 11px}
+    .btn-here:hover{background:#3a7aaa}
+
+    /* tooltip */
+    #tip{position:fixed;background:rgba(28,28,28,.88);color:#fff;
+         padding:4px 9px;border-radius:5px;font-size:.75rem;
+         pointer-events:none;display:none;z-index:99;white-space:nowrap}
+
+    /* route info banner */
+    #route-info{background:#FFF8EC;border-top:1px solid #F4D090;
+                padding:4px 16px;font-size:.75rem;color:#7A5500;
+                display:none;flex-shrink:0;gap:16px;align-items:center;
+                flex-wrap:wrap}
+    #route-info.visible{display:flex}
+    #route-info .ri-floors{font-weight:600}
+    #route-info .ri-close{margin-left:auto;cursor:pointer;opacity:.6;font-size:.85rem}
+    #route-info .ri-close:hover{opacity:1}
+
+    footer{background:#fff;border-top:1px solid #E0E0E0;
+           padding:5px 16px;font-size:.72rem;color:#999;flex-shrink:0}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🏛 Science Center</h1>
+
+  <!-- Search -->
+  <div class="hgroup">
+    <div class="swrap">
+      <svg class="ico" width="12" height="12" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="7"/><line x1="17" y1="17" x2="22" y2="22"/>
+      </svg>
+      <input id="search-input" class="inp" type="text" placeholder="Search rooms…" autocomplete="off">
+      <div id="search-drop" class="drop"></div>
+    </div>
+  </div>
+
+  <!-- Type filter -->
+  <div class="hgroup">
+    <label>Filter:</label>
+    <select id="type-filter" class="inp"><option value="">— All types —</option></select>
+  </div>
+
+  <!-- Navigation -->
+  <div class="hgroup" style="margin-left:auto">
+    <label>From:</label>
+    <div class="swrap">
+      <input id="nav-from" class="inp nav-inp" type="text" placeholder="room / floor" autocomplete="off">
+      <div id="nav-from-drop" class="drop"></div>
+    </div>
+    <label>To:</label>
+    <div class="swrap">
+      <input id="nav-to" class="inp nav-inp" type="text" placeholder="room / floor" autocomplete="off">
+      <div id="nav-to-drop" class="drop"></div>
+    </div>
+    <div class="toggle-wrap">
+      <input type="checkbox" id="elev-toggle" checked>
+      <label for="elev-toggle">Elevator</label>
+    </div>
+    <button class="btn btn-go"  id="btn-go">Go</button>
+    <button class="btn btn-clr" id="btn-clr">✕</button>
+  </div>
+</header>
+
+<div class="main">
+  <!-- Floor nav -->
+  <div class="floor-nav">
+    <button class="nav-btn" id="btn-up">▲</button>
+    <div class="floor-list" id="floor-list"></div>
+    <button class="nav-btn" id="btn-down">▼</button>
+  </div>
+
+  <!-- SVG -->
+  <div class="canvas-wrap">
+    <svg id="floor-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <defs>
+        <!-- Hatch scaled to floor-plan coordinates (~1650 wide): 30-unit cell is clearly visible -->
+        <pattern id="hatch" patternUnits="userSpaceOnUse" width="30" height="30" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="30" stroke="#999" stroke-width="2"/>
+        </pattern>
+      </defs>
+      <g id="rooms-layer"></g>
+      <!-- Stairwells rendered in a separate layer on top so corridor polygons don't cover them -->
+      <g id="stairs-layer"></g>
+      <g id="labels-layer"></g>
+      <g id="sym-layer"></g>
+      <g id="path-layer"></g>
+    </svg>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <h3>Legend</h3>
+    <div id="legend-items"></div>
+    <hr class="lsep">
+    <div class="li">
+      <svg width="12" height="12"><line x1="2" y1="2" x2="10" y2="10" stroke="#555" stroke-width="1.5"/>
+        <line x1="10" y1="2" x2="2" y2="10" stroke="#555" stroke-width="1.5"/></svg>
+      <span>Elevator</span>
+    </div>
+    <div class="li">
+      <svg width="12" height="12">
+        <defs><pattern id="h2" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="4" stroke="#AAA" stroke-width="1"/></pattern></defs>
+        <rect width="12" height="12" fill="url(#h2)" stroke="#aaa" stroke-width="1"/>
+      </svg>
+      <span>Stairwell</span>
+    </div>
+    <hr class="lsep">
+    <div class="li">
+      <svg width="22" height="7">
+        <line x1="0" y1="3.5" x2="22" y2="3.5" stroke="#E05C10" stroke-width="3"
+              stroke-dasharray="7 4" stroke-linecap="round"/>
+      </svg>
+      <span>Route</span>
+    </div>
+    <div class="li">
+      <svg width="12" height="12"><circle cx="6" cy="6" r="5" fill="#4CAF50" stroke="#fff" stroke-width="1"/></svg>
+      <span>Start</span>
+    </div>
+    <div class="li">
+      <svg width="12" height="12"><circle cx="6" cy="6" r="5" fill="#F44336" stroke="#fff" stroke-width="1"/></svg>
+      <span>End</span>
+    </div>
+  </div>
+</div>
+
+<!-- Route info banner -->
+<div id="route-info">
+  <span>Route via floors:</span>
+  <span class="ri-floors" id="ri-floors"></span>
+  <span id="ri-dist"></span>
+  <button class="btn btn-here" id="btn-here" style="display:none"></button>
+  <span class="ri-close" id="ri-close" title="Clear route">✕ Clear</span>
+</div>
+
+<div id="tip"></div>
+<footer id="status-bar">Loading…</footer>
+
+<script>
+// ── Palette ───────────────────────────────────────────────────────────────────
+const PASTEL={office:'#B5D5E8',classroom:'#C8E6C9',library:'#E8D5B7',
+  lecture:'#D7C8E8',stairwell:'#ECECEC',elevator:'#FFF9C4',
+  corridor:'#F0F0F0',entrance:'#FFD6E0',other:'#E0E8D8'};
+const GREY='#CCCCCC', HI_FILTER='#85D08A', HI_SEARCH='#FFCA28';
+const DOOR_TYPES=new Set(['door','connection']);
+const HIDE_LABEL=new Set(['door','connection','stairwell','elevator','corridor']);
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let floors=[], floorIdx=0, floorCache={}, activeFilter='', activeSearch='';
+let roomIndex=[];          // [{floorId,id,name,type}]
+let navFrom=null, navTo=null;   // {floorId,id,name}
+let currentWaypoints=[];   // full route from server
+let floorsVisited=[];      // ordered floor ids in current route
+let routeFloorIdx=0;       // index into floorsVisited for current step
+
+// ── DOM ───────────────────────────────────────────────────────────────────────
+const svg         =document.getElementById('floor-svg');
+const roomsL      =document.getElementById('rooms-layer');
+const stairsL     =document.getElementById('stairs-layer');
+const labelsL     =document.getElementById('labels-layer');
+const symL        =document.getElementById('sym-layer');
+const pathL       =document.getElementById('path-layer');
+const btnUp       =document.getElementById('btn-up');
+const btnDown     =document.getElementById('btn-down');
+const floorList   =document.getElementById('floor-list');
+const typeFilter  =document.getElementById('type-filter');
+const legendItems =document.getElementById('legend-items');
+const tip         =document.getElementById('tip');
+const statusBar   =document.getElementById('status-bar');
+const searchInput =document.getElementById('search-input');
+const searchDrop  =document.getElementById('search-drop');
+const navFromEl   =document.getElementById('nav-from');
+const navToEl     =document.getElementById('nav-to');
+const navFromDrop =document.getElementById('nav-from-drop');
+const navToDrop   =document.getElementById('nav-to-drop');
+const elevToggle  =document.getElementById('elev-toggle');
+const routeInfo   =document.getElementById('route-info');
+const riFloors    =document.getElementById('ri-floors');
+const riDist      =document.getElementById('ri-dist');
+const riClose     =document.getElementById('ri-close');
+const btnHere     =document.getElementById('btn-here');
+
+// ── Normalise ─────────────────────────────────────────────────────────────────
+function norm(s){
+  return s.toLowerCase().replace(/\broom\s*/g,'').replace(/\br(\d)/g,'$1').trim();
+}
+function matches(q,name){
+  if(!q) return false;
+  const qn=norm(q), nn=norm(name);
+  if(nn.includes(qn)) return true;
+  const qt=qn.split(/\s+/).filter(Boolean);
+  const nt=nn.split(/[\s\-_()]+/).filter(Boolean);
+  return qt.every(a=>nt.some(b=>b.includes(a)));
+}
+
+// ── Generic dropdown ──────────────────────────────────────────────────────────
+function makeDropdown(inputEl,dropEl,getItems,onSelect){
+  inputEl.addEventListener('input',()=>{
+    const q=inputEl.value.trim();
+    dropEl.innerHTML='';
+    if(!q){dropEl.classList.remove('open');return;}
+    const hits=getItems().filter(r=>matches(q,r.name)).slice(0,10);
+    if(!hits.length){
+      dropEl.innerHTML='<div class="di no-res">No matches</div>';
+      dropEl.classList.add('open');return;
+    }
+    hits.forEach(h=>{
+      const d=document.createElement('div');d.className='di';
+      d.innerHTML=`<span>${h.name}</span><span class="meta">F${h.floorId} · ${h.type}</span>`;
+      d.addEventListener('mousedown',e=>{e.preventDefault();onSelect(h);dropEl.classList.remove('open');});
+      dropEl.appendChild(d);
+    });
+    dropEl.classList.add('open');
+  });
+  inputEl.addEventListener('blur',()=>setTimeout(()=>dropEl.classList.remove('open'),150));
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+async function init(){
+  const res=await fetch('/api/floors');
+  floors=(await res.json()).floors;
+  floors.forEach((f,i)=>{
+    const p=document.createElement('div');p.className='pip';
+    p.textContent=f;p.dataset.idx=i;
+    p.addEventListener('click',()=>goToFloor(i));
+    floorList.appendChild(p);
+  });
+  floorIdx=0;
+  await loadFloor(floors[floorIdx]);
+  updateNav();
+}
+
+async function loadFloor(fid){
+  statusBar.textContent=`Loading floor ${fid}…`;
+  if(!floorCache[fid]){
+    const r=await fetch(`/api/floor/${fid}`);
+    floorCache[fid]=await r.json();
+  }
+  renderFloor(floorCache[fid]);
+  updatePips();
+  const n=floorCache[fid].rooms.filter(r=>!DOOR_TYPES.has(r.type)).length;
+  statusBar.textContent=`Floor ${fid} · ${n} rooms`;
+}
+
+// ── Centroid ──────────────────────────────────────────────────────────────────
+function cent(pts){
+  return[pts.reduce((s,[x])=>s+x,0)/pts.length,
+         pts.reduce((s,[,y])=>s+y,0)/pts.length];
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function renderFloor(data){
+  const rooms=data.rooms;
+  let mnX=1e9,mnY=1e9,mxX=-1e9,mxY=-1e9;
+  rooms.forEach(r=>(r.polygon||[]).forEach(([x,y])=>{
+    if(x<mnX)mnX=x;if(y<mnY)mnY=y;if(x>mxX)mxX=x;if(y>mxY)mxY=y;
+  }));
+  const pad=30;
+  svg.setAttribute('viewBox',`${mnX-pad} ${mnY-pad} ${mxX-mnX+2*pad} ${mxY-mnY+2*pad}`);
+  roomsL.innerHTML=stairsL.innerHTML=labelsL.innerHTML=symL.innerHTML='';
+  pathL.innerHTML='';
+  const seen=new Set();
+
+  // Two-pass render: corridors/rooms first, stairwells on top so corridor fill doesn't cover them
+  const stairwellRooms=[], otherRooms=[];
+  rooms.forEach(room=>{
+    if((room.type||'other')==='stairwell') stairwellRooms.push(room);
+    else otherRooms.push(room);
+  });
+
+  [...otherRooms,...stairwellRooms].forEach(room=>{
+    const pts=room.polygon;
+    if(!pts||!pts.length)return;
+    const t=room.type||'other';
+    if(DOOR_TYPES.has(t))return;
+    seen.add(t);
+    const[cx,cy]=cent(pts);
+    const ptStr=pts.map(([x,y])=>`${x},${y}`).join(' ');
+
+    const poly=document.createElementNS('http://www.w3.org/2000/svg','polygon');
+    poly.setAttribute('points',ptStr);
+    poly.setAttribute('fill',t==='stairwell'?'url(#hatch)':(PASTEL[t]||GREY));
+    poly.setAttribute('stroke',t==='stairwell'?'#666':'#888');
+    poly.setAttribute('stroke-width',t==='stairwell'?'1.2':'0.8');
+    poly.dataset.type=t;poly.dataset.name=room.name;poly.dataset.id=room.id;
+    poly.style.transition='fill .25s,opacity .25s';
+    poly.addEventListener('mousemove',e=>showTip(e,`${room.name} (${t})`));
+    poly.addEventListener('mouseleave',hideTip);
+    // Stairwells go into dedicated top layer
+    (t==='stairwell'?stairsL:roomsL).appendChild(poly);
+
+    // Elevator: grid of × crosses (3×3 arrangement)
+    if(t==='elevator'){
+      const xs=pts.map(([x])=>x),ys=pts.map(([,y])=>y);
+      const w=Math.max(...xs)-Math.min(...xs), h=Math.max(...ys)-Math.min(...ys);
+      const arm=Math.min(w,h)*0.12;
+      const cols=w>h*1.5?3:2, rows=h>w*1.5?3:2;
+      for(let row=0;row<rows;row++){
+        for(let col=0;col<cols;col++){
+          const ox=cx+(col-(cols-1)/2)*(w/(cols+0.5));
+          const oy=cy+(row-(rows-1)/2)*(h/(rows+0.5));
+          [[ox-arm,oy-arm,ox+arm,oy+arm],[ox+arm,oy-arm,ox-arm,oy+arm]].forEach(([x1,y1,x2,y2])=>{
+            const ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+            ln.setAttribute('x1',x1);ln.setAttribute('y1',y1);
+            ln.setAttribute('x2',x2);ln.setAttribute('y2',y2);
+            ln.setAttribute('stroke','#555');ln.setAttribute('stroke-width','1.5');
+            ln.style.pointerEvents='none';symL.appendChild(ln);
+          });
+        }
+      }
+    }
+
+    // Label
+    if(room.showLabel&&!HIDE_LABEL.has(t)){
+      const la=room.labelAnchor||{};
+      const lx=la.x!==undefined?la.x:cx, ly=la.y!==undefined?la.y:cy;
+      const txt=document.createElementNS('http://www.w3.org/2000/svg','text');
+      txt.setAttribute('x',lx);txt.setAttribute('y',ly);
+      txt.setAttribute('text-anchor','middle');txt.setAttribute('dominant-baseline','middle');
+      txt.setAttribute('font-size','5');txt.setAttribute('fill','#333');
+      txt.style.pointerEvents='none';txt.textContent=room.name;
+      labelsL.appendChild(txt);
+    }
+  });
+
+  buildLegend(seen);
+  applyFilter(activeFilter);
+  if(activeSearch)applySearch(activeSearch);
+  drawRouteForFloor(floors[floorIdx]);
+}
+
+// ── Filter ────────────────────────────────────────────────────────────────────
+function allPolygons(){
+  return[...roomsL.querySelectorAll('polygon'),...stairsL.querySelectorAll('polygon')];
+}
+function applyFilter(type){
+  activeFilter=type;
+  if(activeSearch)return;
+  allPolygons().forEach(p=>{
+    const t=p.dataset.type;
+    if(!type){p.setAttribute('fill',t==='stairwell'?'url(#hatch)':(PASTEL[t]||GREY));p.setAttribute('opacity','1');}
+    else if(t===type){p.setAttribute('fill',HI_FILTER);p.setAttribute('opacity','1');}
+    else{p.setAttribute('fill',t==='stairwell'?'url(#hatch)':GREY);p.setAttribute('opacity','.45');}
+  });
+}
+
+// ── Search ────────────────────────────────────────────────────────────────────
+function applySearch(q){
+  activeSearch=q;
+  if(!q){applyFilter(activeFilter);return;}
+  allPolygons().forEach(p=>{
+    const hit=matches(q,p.dataset.name);
+    p.setAttribute('fill',hit?HI_SEARCH:(p.dataset.type==='stairwell'?'url(#hatch)':GREY));
+    p.setAttribute('opacity',hit?'1':'.35');
+  });
+}
+
+// ── Legend ────────────────────────────────────────────────────────────────────
+function buildLegend(seen){
+  legendItems.innerHTML='';
+  [...seen].filter(t=>!DOOR_TYPES.has(t)).sort().forEach(t=>{
+    const d=document.createElement('div');d.className='li';
+    const s=document.createElement('div');s.className='sw';s.style.background=PASTEL[t]||GREY;
+    const l=document.createElement('span');l.textContent=t.charAt(0).toUpperCase()+t.slice(1);
+    d.appendChild(s);d.appendChild(l);legendItems.appendChild(d);
+  });
+}
+
+async function buildTypeDropdown(){
+  const allTypes=new Set();
+  for(const fid of floors){
+    if(!floorCache[fid]){const r=await fetch(`/api/floor/${fid}`);floorCache[fid]=await r.json();}
+    floorCache[fid].rooms.forEach(r=>{if(!DOOR_TYPES.has(r.type))allTypes.add(r.type);});
+  }
+  [...allTypes].sort().forEach(t=>{
+    const o=document.createElement('option');o.value=t;
+    o.textContent=t.charAt(0).toUpperCase()+t.slice(1);typeFilter.appendChild(o);
+  });
+  buildRoomIndex();
+  renderFloor(floorCache[floors[floorIdx]]);
+  statusBar.textContent=`Floor ${floors[floorIdx]} · ready`;
+}
+
+function buildRoomIndex(){
+  roomIndex=[];
+  for(const fid of floors){
+    (floorCache[fid]||{rooms:[]}).rooms.forEach(r=>{
+      if(!DOOR_TYPES.has(r.type)&&r.type!=='corridor')
+        roomIndex.push({floorId:fid,id:r.id,name:r.name,type:r.type});
+    });
+  }
+}
+
+// ── Right-angle path rendering ────────────────────────────────────────────────
+// Only inserts L-shaped corners between consecutive corridor nodes.
+// Door/connection nodes are at actual doorway positions — use them directly.
+const NAVIGABLE=new Set(['corridor','door','connection','entrance','stairwell','elevator']);
+
+function toRightAngle(wps){
+  if(wps.length<2)return wps.map(w=>[w.x,w.y]);
+  const out=[[wps[0].x,wps[0].y]];
+  for(let i=1;i<wps.length;i++){
+    const[px,py]=out[out.length-1];
+    const{x,y,orientation,type}=wps[i];
+    const prevType=wps[i-1].type;
+    // Right-angle corner only between two corridor segments
+    if(prevType==='corridor'&&type==='corridor'){
+      const dx=Math.abs(x-px),dy=Math.abs(y-py);
+      let cx,cy;
+      if(orientation==='h'){cx=px;cy=y;}
+      else if(orientation==='v'){cx=x;cy=py;}
+      else if(dx>=dy){cx=x;cy=py;}
+      else{cx=px;cy=y;}
+      if(Math.abs(cx-px)>0.5||Math.abs(cy-py)>0.5) out.push([cx,cy]);
+    }
+    out.push([x,y]);
+  }
+  return out;
+}
+
+function drawRouteForFloor(fid){
+  pathL.innerHTML='';
+  if(!currentWaypoints.length)return;
+
+  const all=currentWaypoints.filter(w=>w.floor===fid&&!w.floor_change);
+  if(all.length<1)return;
+
+  // Main animated path: only through navigable nodes (corridors, doors, stairwells)
+  const navWps=all.filter(w=>NAVIGABLE.has(w.type));
+  if(navWps.length>=2){
+    const pts=toRightAngle(navWps);
+    const d='M '+pts.map(([x,y])=>`${x},${y}`).join(' L ');
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',d);path.classList.add('nav-path');
+    pathL.appendChild(path);
+  }
+
+  const first=all[0], last=all[all.length-1];
+
+  // Stub: dashed line from start room to first navigable node (if start is a room)
+  if(!NAVIGABLE.has(first.type)&&navWps.length>0){
+    addStub(first.x,first.y,navWps[0].x,navWps[0].y);
+  }
+  // Stub: dashed line from last navigable node to end room (if end is a room)
+  if(!NAVIGABLE.has(last.type)&&navWps.length>0){
+    const ln=navWps[navWps.length-1];
+    addStub(ln.x,ln.y,last.x,last.y);
+  }
+
+  // Start marker (green) — only on the floor where the global journey begins
+  if(currentWaypoints[0].floor===fid) addMarker(first.x,first.y,'#4CAF50');
+  // End marker (red) — only on the destination floor
+  if(currentWaypoints[currentWaypoints.length-1].floor===fid) addMarker(last.x,last.y,'#F44336');
+
+  // Floor-change indicators (stair/elevator S/E circles)
+  currentWaypoints.forEach(w=>{
+    if(w.floor===fid&&w.floor_change) addFloorChangeMark(w.x,w.y,w.type);
+  });
+
+  // Pulsing exit marker at the last waypoint when route continues to another floor
+  const stepIdx=floorsVisited.indexOf(fid);
+  if(stepIdx!==-1&&stepIdx<floorsVisited.length-1){
+    if(last) addPulseMarker(last.x,last.y);
+  }
+}
+
+function addMarker(x,y,fill){
+  const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r','7');
+  c.setAttribute('fill',fill);c.setAttribute('stroke','#fff');c.setAttribute('stroke-width','1.5');
+  c.classList.add('nav-marker');pathL.appendChild(c);
+}
+
+function addStub(x1,y1,x2,y2){
+  const ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+  ln.setAttribute('x1',x1);ln.setAttribute('y1',y1);
+  ln.setAttribute('x2',x2);ln.setAttribute('y2',y2);
+  ln.setAttribute('stroke','#E05C10');ln.setAttribute('stroke-width','2');
+  ln.setAttribute('stroke-dasharray','4 4');ln.setAttribute('stroke-linecap','round');
+  ln.style.pointerEvents='none';pathL.appendChild(ln);
+}
+
+function addPulseMarker(x,y){
+  const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r','8');
+  c.setAttribute('stroke','#4A90C4');c.setAttribute('stroke-width','2.5');
+  c.setAttribute('fill','rgba(74,144,196,0.25)');
+  c.classList.add('nav-pulse');pathL.appendChild(c);
+}
+
+function addFloorChangeMark(x,y,type){
+  const sym=type==='elevator'?'E':'S';
+  const bg=type==='elevator'?'#9C27B0':'#FF9800';
+  const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r','6');
+  c.setAttribute('fill',bg);c.setAttribute('stroke','#fff');c.setAttribute('stroke-width','1.2');
+  c.classList.add('nav-marker');pathL.appendChild(c);
+  const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+  t.setAttribute('x',x);t.setAttribute('y',y);t.setAttribute('text-anchor','middle');
+  t.setAttribute('dominant-baseline','middle');t.setAttribute('font-size','5');
+  t.setAttribute('fill','#fff');t.style.pointerEvents='none';t.textContent=sym;
+  pathL.appendChild(t);
+}
+
+// ── Navigate ──────────────────────────────────────────────────────────────────
+async function navigate(){
+  if(!navFrom||!navTo){statusBar.textContent='Select valid From and To rooms.';return;}
+  statusBar.textContent='Finding route…';
+  try{
+    const res=await fetch('/api/navigate',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        from_floor:navFrom.floorId, from_id:navFrom.id,
+        to_floor:navTo.floorId,     to_id:navTo.id,
+        use_elevator:elevToggle.checked
+      })
+    });
+    const data=await res.json();
+    if(data.error){statusBar.textContent=`Route error: ${data.error}`;return;}
+    currentWaypoints=data.waypoints;
+    floorsVisited=data.floors_visited;
+    routeFloorIdx=0;
+
+    // Update route banner
+    riFloors.textContent=data.floors_visited.join(' → ');
+    riDist.textContent=`~${data.total_px} px`;
+    routeInfo.classList.add('visible');
+    updateHereButton();
+
+    // Highlight floor pips on route
+    document.querySelectorAll('.pip').forEach(p=>{
+      p.classList.toggle('on-route',data.floors_visited.includes(floors[p.dataset.idx]));
+    });
+
+    // Jump to starting floor and draw
+    const startFloorIdx=floors.indexOf(navFrom.floorId);
+    if(startFloorIdx!==floorIdx) goToFloor(startFloorIdx);
+    else drawRouteForFloor(floors[floorIdx]);
+
+    statusBar.textContent=`Route: ${data.waypoints.length} hops across floors ${riFloors.textContent}`;
+  }catch(e){statusBar.textContent=`Error: ${e.message}`;}
+}
+
+function clearRoute(){
+  currentWaypoints=[];floorsVisited=[];routeFloorIdx=0;
+  pathL.innerHTML='';
+  routeInfo.classList.remove('visible');
+  btnHere.style.display='none';
+  navFromEl.value=navToEl.value='';
+  navFromEl.className=navToEl.className='inp nav-inp';
+  navFrom=navTo=null;
+  document.querySelectorAll('.pip').forEach(p=>p.classList.remove('on-route'));
+  statusBar.textContent=`Floor ${floors[floorIdx]} · ready`;
+}
+
+// A transit floor has only floor_change waypoints (pure pass-through, no real stops)
+function isTransitFloor(fid){
+  const wps=currentWaypoints.filter(w=>w.floor===fid);
+  return wps.length>0&&wps.every(w=>w.floor_change);
+}
+
+// Find the next non-transit floor after current step (skips pass-through stairwell hops)
+function nextDestFloorIdx(){
+  for(let i=routeFloorIdx+1;i<floorsVisited.length;i++){
+    if(!isTransitFloor(floorsVisited[i])||i===floorsVisited.length-1) return i;
+  }
+  return Math.min(routeFloorIdx+1,floorsVisited.length-1);
+}
+
+function updateHereButton(){
+  const destIdx=nextDestFloorIdx();
+  const destFid=floorsVisited[destIdx];
+  if(destFid&&destIdx>routeFloorIdx){
+    btnHere.textContent=`📍 I am here → Floor ${destFid}`;
+    btnHere.style.display='inline-block';
+  }else{
+    btnHere.style.display='none';
+  }
+}
+
+btnHere.addEventListener('click',()=>{
+  routeFloorIdx=nextDestFloorIdx();
+  const nextFid=floorsVisited[routeFloorIdx];
+  const idx=floors.indexOf(nextFid);
+  goToFloor(idx);
+  updateHereButton();
+});
+
+document.getElementById('btn-go').addEventListener('click',navigate);
+document.getElementById('btn-clr').addEventListener('click',clearRoute);
+riClose.addEventListener('click',clearRoute);
+
+// ── Nav autocomplete ──────────────────────────────────────────────────────────
+makeDropdown(navFromEl,navFromDrop,()=>roomIndex,h=>{
+  navFromEl.value=h.name;navFrom=h;navFromEl.classList.add('valid');navFromEl.classList.remove('invalid');
+});
+makeDropdown(navToEl,navToDrop,()=>roomIndex,h=>{
+  navToEl.value=h.name;navTo=h;navToEl.classList.add('valid');navToEl.classList.remove('invalid');
+});
+
+// ── Search ────────────────────────────────────────────────────────────────────
+searchInput.addEventListener('input',()=>{
+  const q=searchInput.value.trim();
+  searchDrop.innerHTML='';
+  if(!q){searchDrop.classList.remove('open');searchInput.className='inp';applySearch('');return;}
+  const hits=roomIndex.filter(r=>matches(q,r.name)).slice(0,12);
+  if(!hits.length){
+    searchDrop.innerHTML='<div class="di no-res">No rooms found</div>';
+    searchDrop.classList.add('open');
+    searchInput.classList.add('no-results');searchInput.classList.remove('has-results');
+  }else{
+    searchInput.classList.add('has-results');searchInput.classList.remove('no-results');
+    hits.forEach(h=>{
+      const d=document.createElement('div');d.className='di';
+      d.innerHTML=`<span>${h.name}</span><span class="meta">F${h.floorId} · ${h.type}</span>`;
+      d.addEventListener('mousedown',e=>{
+        e.preventDefault();searchInput.value=h.name;searchDrop.classList.remove('open');
+        const ti=floors.indexOf(h.floorId);
+        if(ti!==floorIdx)goToFloor(ti,()=>applySearch(h.name));
+        else applySearch(h.name);
+      });
+      searchDrop.appendChild(d);
+    });
+    searchDrop.classList.add('open');
+  }
+  applySearch(q);
+});
+searchInput.addEventListener('blur',()=>setTimeout(()=>searchDrop.classList.remove('open'),150));
+searchInput.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    searchInput.value='';searchDrop.classList.remove('open');
+    searchInput.className='inp';activeSearch='';applyFilter(activeFilter);
+  }
+});
+
+typeFilter.addEventListener('change',()=>applyFilter(typeFilter.value));
+
+// ── Floor navigation ──────────────────────────────────────────────────────────
+function goToFloor(idx,cb){
+  if(idx<0||idx>=floors.length)return;
+  floorIdx=idx;svg.classList.add('fading');
+  // Sync routeFloorIdx when user jumps to a floor that's part of the route
+  if(floorsVisited.length){
+    const fi=floorsVisited.indexOf(floors[idx]);
+    if(fi!==-1){routeFloorIdx=fi;updateHereButton();}
+  }
+  setTimeout(async()=>{
+    await loadFloor(floors[floorIdx]);
+    svg.classList.remove('fading');
+    if(cb)cb();
+  },180);
+  updateNav();
+}
+function updateNav(){
+  btnUp.disabled=floorIdx>=floors.length-1;
+  btnDown.disabled=floorIdx<=0;
+  updatePips();
+}
+function updatePips(){
+  document.querySelectorAll('.pip').forEach(p=>{
+    p.classList.toggle('active',parseInt(p.dataset.idx)===floorIdx);
+  });
+}
+btnUp.addEventListener('click',()=>goToFloor(floorIdx+1));
+btnDown.addEventListener('click',()=>goToFloor(floorIdx-1));
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+function showTip(e,text){
+  tip.textContent=text;tip.style.display='block';
+  tip.style.left=(e.clientX+12)+'px';tip.style.top=(e.clientY+12)+'px';
+}
+function hideTip(){tip.style.display='none';}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+init().then(()=>buildTypeDropdown()).catch(e=>{
+  statusBar.textContent=`Error: ${e.message}`;console.error(e);
+});
+</script>
+</body>
+</html>
