@@ -1,0 +1,3168 @@
+{
+  "floor": 2,
+  "viewBox": {
+    "width": 1650,
+    "height": 1275
+  },
+  "buildingOutline": [],
+  "rooms": [
+    {
+      "id": "sc-2-elevator",
+      "name": "Elevator",
+      "type": "elevator",
+      "polygon": [
+        [
+          849,
+          401
+        ],
+        [
+          953,
+          402
+        ],
+        [
+          953,
+          432
+        ],
+        [
+          850,
+          432
+        ]
+      ],
+      "labelAnchor": {
+        "x": 901,
+        "y": 417
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          852,
+          431
+        ],
+        [
+          915,
+          431
+        ],
+        [
+          914,
+          463
+        ],
+        [
+          851,
+          463
+        ]
+      ],
+      "labelAnchor": {
+        "x": 883,
+        "y": 447
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1363,
+          298
+        ],
+        [
+          1394,
+          298
+        ],
+        [
+          1393,
+          345
+        ],
+        [
+          1364,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1379,
+        "y": 322
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-cabot-library",
+      "name": "Cabot Library",
+      "type": "library",
+      "polygon": [
+        [
+          772,
+          721
+        ],
+        [
+          1453,
+          718
+        ],
+        [
+          1452,
+          948
+        ],
+        [
+          773,
+          948
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1113,
+        "y": 834
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-209",
+      "name": "R209",
+      "type": "office",
+      "polygon": [
+        [
+          830,
+          377
+        ],
+        [
+          773,
+          377
+        ],
+        [
+          773,
+          402
+        ],
+        [
+          830,
+          402
+        ]
+      ],
+      "labelAnchor": {
+        "x": 802,
+        "y": 390
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-209-1",
+      "name": "R209.1",
+      "type": "office",
+      "polygon": [
+        [
+          773,
+          401
+        ],
+        [
+          773,
+          427
+        ],
+        [
+          830,
+          427
+        ],
+        [
+          829,
+          402
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 414
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-209-2",
+      "name": "R209.2",
+      "type": "office",
+      "polygon": [
+        [
+          773,
+          427
+        ],
+        [
+          773,
+          452
+        ],
+        [
+          830,
+          452
+        ],
+        [
+          830,
+          426
+        ]
+      ],
+      "labelAnchor": {
+        "x": 802,
+        "y": 439
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-209-3",
+      "name": "R209.3",
+      "type": "office",
+      "polygon": [
+        [
+          772,
+          452
+        ],
+        [
+          773,
+          478
+        ],
+        [
+          830,
+          478
+        ],
+        [
+          829,
+          451
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 465
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-209-4",
+      "name": "R209.4",
+      "type": "office",
+      "polygon": [
+        [
+          772,
+          477
+        ],
+        [
+          772,
+          503
+        ],
+        [
+          830,
+          503
+        ],
+        [
+          829,
+          477
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 490
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-209-5",
+      "name": "R209.5",
+      "type": "office",
+      "polygon": [
+        [
+          773,
+          503
+        ],
+        [
+          774,
+          529
+        ],
+        [
+          830,
+          529
+        ],
+        [
+          830,
+          504
+        ]
+      ],
+      "labelAnchor": {
+        "x": 802,
+        "y": 516
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-221",
+      "name": "R221",
+      "type": "classroom",
+      "polygon": [
+        [
+          774,
+          528
+        ],
+        [
+          773,
+          625
+        ],
+        [
+          828,
+          624
+        ],
+        [
+          829,
+          529
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 577
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-223",
+      "name": "R223",
+      "type": "office",
+      "polygon": [
+        [
+          915,
+          431
+        ],
+        [
+          954,
+          431
+        ],
+        [
+          953,
+          477
+        ],
+        [
+          915,
+          476
+        ]
+      ],
+      "labelAnchor": {
+        "x": 934,
+        "y": 454
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-roomm-261",
+      "name": "Roomm 261",
+      "type": "office",
+      "polygon": [
+        [
+          850,
+          463
+        ],
+        [
+          850,
+          483
+        ],
+        [
+          879,
+          484
+        ],
+        [
+          879,
+          464
+        ]
+      ],
+      "labelAnchor": {
+        "x": 865,
+        "y": 474
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-262",
+      "name": "R262",
+      "type": "office",
+      "polygon": [
+        [
+          879,
+          463
+        ],
+        [
+          898,
+          463
+        ],
+        [
+          896,
+          484
+        ],
+        [
+          879,
+          483
+        ]
+      ],
+      "labelAnchor": {
+        "x": 888,
+        "y": 473
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-262a",
+      "name": "R262A",
+      "type": "office",
+      "polygon": [
+        [
+          898,
+          463
+        ],
+        [
+          915,
+          462
+        ],
+        [
+          915,
+          484
+        ],
+        [
+          897,
+          484
+        ]
+      ],
+      "labelAnchor": {
+        "x": 906,
+        "y": 473
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-225",
+      "name": "R225",
+      "type": "office",
+      "polygon": [
+        [
+          951,
+          516
+        ],
+        [
+          918,
+          516
+        ],
+        [
+          919,
+          563
+        ],
+        [
+          952,
+          563
+        ]
+      ],
+      "labelAnchor": {
+        "x": 935,
+        "y": 540
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-263",
+      "name": "R263",
+      "type": "office",
+      "polygon": [
+        [
+          850,
+          503
+        ],
+        [
+          920,
+          503
+        ],
+        [
+          919,
+          583
+        ],
+        [
+          851,
+          583
+        ]
+      ],
+      "labelAnchor": {
+        "x": 885,
+        "y": 543
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-226",
+      "name": "R226",
+      "type": "classroom",
+      "polygon": [
+        [
+          919,
+          563
+        ],
+        [
+          952,
+          563
+        ],
+        [
+          952,
+          651
+        ],
+        [
+          851,
+          652
+        ],
+        [
+          850,
+          584
+        ],
+        [
+          919,
+          583
+        ]
+      ],
+      "labelAnchor": {
+        "x": 907,
+        "y": 599
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-229",
+      "name": "R229",
+      "type": "classroom",
+      "polygon": [
+        [
+          952,
+          651
+        ],
+        [
+          952,
+          720
+        ],
+        [
+          851,
+          720
+        ],
+        [
+          851,
+          652
+        ]
+      ],
+      "labelAnchor": {
+        "x": 902,
+        "y": 686
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-222",
+      "name": "R222",
+      "type": "classroom",
+      "polygon": [
+        [
+          773,
+          625
+        ],
+        [
+          772,
+          721
+        ],
+        [
+          830,
+          721
+        ],
+        [
+          828,
+          624
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 673
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-251",
+      "name": "R251",
+      "type": "classroom",
+      "polygon": [
+        [
+          1337,
+          436
+        ],
+        [
+          1398,
+          437
+        ],
+        [
+          1398,
+          558
+        ],
+        [
+          1338,
+          558
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1368,
+        "y": 497
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-272"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-272",
+      "name": "R272",
+      "type": "classroom",
+      "polygon": [
+        [
+          1338,
+          558
+        ],
+        [
+          1339,
+          644
+        ],
+        [
+          1398,
+          644
+        ],
+        [
+          1398,
+          558
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1368,
+        "y": 601
+      },
+      "neighbors": [
+        "sc-2-room-251",
+        "sc-2-room-251-a-c",
+        "sc-2-hallway-250"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1336,
+          668
+        ],
+        [
+          1337,
+          683
+        ],
+        [
+          1383,
+          683
+        ],
+        [
+          1383,
+          697
+        ],
+        [
+          1366,
+          698
+        ],
+        [
+          1366,
+          711
+        ],
+        [
+          1397,
+          711
+        ],
+        [
+          1397,
+          668
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1371,
+        "y": 690
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "1",
+        "2",
+        "3"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-room-250-a-b",
+      "name": "R250 A-B",
+      "type": "classroom",
+      "polygon": [
+        [
+          1264,
+          605
+        ],
+        [
+          1338,
+          605
+        ],
+        [
+          1339,
+          644
+        ],
+        [
+          1265,
+          644
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1302,
+        "y": 625
+      },
+      "neighbors": [
+        "sc-2-hallway-250"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-251-a-c",
+      "name": "R251 A-C",
+      "type": "classroom",
+      "polygon": [
+        [
+          1397,
+          499
+        ],
+        [
+          1457,
+          499
+        ],
+        [
+          1456,
+          643
+        ],
+        [
+          1397,
+          642
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1427,
+        "y": 571
+      },
+      "neighbors": [
+        "sc-2-room-272"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-250",
+      "name": "R250",
+      "type": "classroom",
+      "polygon": [
+        [
+          1338,
+          435
+        ],
+        [
+          1337,
+          407
+        ],
+        [
+          1264,
+          408
+        ],
+        [
+          1264,
+          604
+        ],
+        [
+          1339,
+          604
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1308,
+        "y": 492
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-253",
+      "name": "R253",
+      "type": "classroom",
+      "polygon": [
+        [
+          1264,
+          644
+        ],
+        [
+          1264,
+          680
+        ],
+        [
+          1318,
+          680
+        ],
+        [
+          1317,
+          645
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1291,
+        "y": 662
+      },
+      "neighbors": [
+        "sc-2-hallway-250"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-254",
+      "name": "R254",
+      "type": "classroom",
+      "polygon": [
+        [
+          1264,
+          679
+        ],
+        [
+          1265,
+          718
+        ],
+        [
+          1319,
+          718
+        ],
+        [
+          1318,
+          679
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1292,
+        "y": 699
+      },
+      "neighbors": [
+        "sc-2-hallway-250"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-258",
+      "name": "R258",
+      "type": "classroom",
+      "polygon": [
+        [
+          1419,
+          643
+        ],
+        [
+          1456,
+          642
+        ],
+        [
+          1456,
+          690
+        ],
+        [
+          1420,
+          690
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1438,
+        "y": 666
+      },
+      "neighbors": [
+        "sc-2-hallway-250"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-255",
+      "name": "R255",
+      "type": "classroom",
+      "polygon": [
+        [
+          1420,
+          689
+        ],
+        [
+          1420,
+          696
+        ],
+        [
+          1398,
+          697
+        ],
+        [
+          1398,
+          717
+        ],
+        [
+          1457,
+          718
+        ],
+        [
+          1456,
+          690
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1425,
+        "y": 701
+      },
+      "neighbors": [
+        "sc-2-hallway-250"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-hallway-250",
+      "name": "Hallway 250",
+      "type": "corridor",
+      "polygon": [
+        [
+          1419,
+          642
+        ],
+        [
+          1317,
+          644
+        ],
+        [
+          1319,
+          717
+        ],
+        [
+          1398,
+          717
+        ],
+        [
+          1397,
+          711
+        ],
+        [
+          1366,
+          711
+        ],
+        [
+          1365,
+          698
+        ],
+        [
+          1383,
+          696
+        ],
+        [
+          1383,
+          683
+        ],
+        [
+          1337,
+          683
+        ],
+        [
+          1335,
+          667
+        ],
+        [
+          1397,
+          667
+        ],
+        [
+          1398,
+          696
+        ],
+        [
+          1420,
+          696
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1374,
+        "y": 688
+      },
+      "neighbors": [
+        "sc-2-room-272",
+        "sc-2-room-250-a-b",
+        "sc-2-room-253",
+        "sc-2-room-254",
+        "sc-2-room-255",
+        "sc-2-room-258"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-room-252",
+      "name": "R252",
+      "type": "classroom",
+      "polygon": [
+        [
+          1396,
+          498
+        ],
+        [
+          1397,
+          408
+        ],
+        [
+          1457,
+          409
+        ],
+        [
+          1457,
+          498
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1427,
+        "y": 453
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-215",
+      "name": "R215",
+      "type": "classroom",
+      "polygon": [
+        [
+          1418,
+          298
+        ],
+        [
+          1418,
+          257
+        ],
+        [
+          1362,
+          257
+        ],
+        [
+          1363,
+          297
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1390,
+        "y": 277
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-216",
+      "name": "R216",
+      "type": "classroom",
+      "polygon": [
+        [
+          1341,
+          184
+        ],
+        [
+          1416,
+          184
+        ],
+        [
+          1417,
+          257
+        ],
+        [
+          1340,
+          257
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1379,
+        "y": 221
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-private-no-access",
+      "name": "Private (No access)",
+      "type": "other",
+      "polygon": [
+        [
+          1394,
+          298
+        ],
+        [
+          1418,
+          298
+        ],
+        [
+          1418,
+          343
+        ],
+        [
+          1392,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1406,
+        "y": 321
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          84,
+          308
+        ],
+        [
+          84,
+          345
+        ],
+        [
+          134,
+          346
+        ],
+        [
+          134,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 109,
+        "y": 327
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "1",
+        "2",
+        "3"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-room-201",
+      "name": "R201",
+      "type": "classroom",
+      "polygon": [
+        [
+          198,
+          192
+        ],
+        [
+          154,
+          192
+        ],
+        [
+          154,
+          344
+        ],
+        [
+          196,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 176,
+        "y": 268
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-202",
+      "name": "R202",
+      "type": "classroom",
+      "polygon": [
+        [
+          196,
+          292
+        ],
+        [
+          281,
+          292
+        ],
+        [
+          281,
+          346
+        ],
+        [
+          195,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 238,
+        "y": 319
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-203",
+      "name": "R203",
+      "type": "classroom",
+      "polygon": [
+        [
+          196,
+          292
+        ],
+        [
+          197,
+          192
+        ],
+        [
+          387,
+          192
+        ],
+        [
+          387,
+          293
+        ],
+        [
+          328,
+          293
+        ],
+        [
+          328,
+          346
+        ],
+        [
+          280,
+          346
+        ],
+        [
+          281,
+          292
+        ]
+      ],
+      "labelAnchor": {
+        "x": 298,
+        "y": 281
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-206",
+      "name": "R206",
+      "type": "classroom",
+      "polygon": [
+        [
+          386,
+          192
+        ],
+        [
+          584,
+          193
+        ],
+        [
+          584,
+          293
+        ],
+        [
+          541,
+          293
+        ],
+        [
+          541,
+          345
+        ],
+        [
+          486,
+          345
+        ],
+        [
+          486,
+          291
+        ],
+        [
+          387,
+          292
+        ]
+      ],
+      "labelAnchor": {
+        "x": 499,
+        "y": 281
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-204",
+      "name": "R204",
+      "type": "classroom",
+      "polygon": [
+        [
+          328,
+          345
+        ],
+        [
+          327,
+          294
+        ],
+        [
+          451,
+          292
+        ],
+        [
+          451,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 389,
+        "y": 319
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-205",
+      "name": "R205",
+      "type": "classroom",
+      "polygon": [
+        [
+          451,
+          345
+        ],
+        [
+          485,
+          345
+        ],
+        [
+          486,
+          292
+        ],
+        [
+          450,
+          292
+        ]
+      ],
+      "labelAnchor": {
+        "x": 468,
+        "y": 319
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-207",
+      "name": "R207",
+      "type": "classroom",
+      "polygon": [
+        [
+          541,
+          294
+        ],
+        [
+          584,
+          293
+        ],
+        [
+          584,
+          346
+        ],
+        [
+          541,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 563,
+        "y": 320
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-210",
+      "name": "R210",
+      "type": "classroom",
+      "polygon": [
+        [
+          584,
+          193
+        ],
+        [
+          1028,
+          192
+        ],
+        [
+          1029,
+          297
+        ],
+        [
+          1038,
+          297
+        ],
+        [
+          1037,
+          346
+        ],
+        [
+          584,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 883,
+        "y": 278
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-211",
+      "name": "R211",
+      "type": "classroom",
+      "polygon": [
+        [
+          1070,
+          343
+        ],
+        [
+          1070,
+          303
+        ],
+        [
+          1135,
+          301
+        ],
+        [
+          1135,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1103,
+        "y": 323
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-213",
+      "name": "R213",
+      "type": "classroom",
+      "polygon": [
+        [
+          1219,
+          344
+        ],
+        [
+          1219,
+          303
+        ],
+        [
+          1286,
+          303
+        ],
+        [
+          1286,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1253,
+        "y": 324
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-room-212",
+      "name": "R212",
+      "type": "classroom",
+      "polygon": [
+        [
+          1036,
+          346
+        ],
+        [
+          1037,
+          298
+        ],
+        [
+          1029,
+          297
+        ],
+        [
+          1028,
+          193
+        ],
+        [
+          1340,
+          191
+        ],
+        [
+          1340,
+          344
+        ],
+        [
+          1286,
+          344
+        ],
+        [
+          1286,
+          302
+        ],
+        [
+          1219,
+          302
+        ],
+        [
+          1219,
+          343
+        ],
+        [
+          1135,
+          342
+        ],
+        [
+          1136,
+          300
+        ],
+        [
+          1070,
+          302
+        ],
+        [
+          1070,
+          342
+        ],
+        [
+          1069,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1153,
+        "y": 306
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-hallway-2",
+      "name": "Hallway 2",
+      "type": "corridor",
+      "polygon": [
+        [
+          133,
+          308
+        ],
+        [
+          153,
+          308
+        ],
+        [
+          153,
+          345
+        ],
+        [
+          1340,
+          344
+        ],
+        [
+          1340,
+          258
+        ],
+        [
+          1362,
+          259
+        ],
+        [
+          1364,
+          344
+        ],
+        [
+          1423,
+          344
+        ],
+        [
+          1423,
+          408
+        ],
+        [
+          1397,
+          408
+        ],
+        [
+          1396,
+          437
+        ],
+        [
+          1337,
+          436
+        ],
+        [
+          1336,
+          407
+        ],
+        [
+          1274,
+          408
+        ],
+        [
+          1273,
+          378
+        ],
+        [
+          951,
+          378
+        ],
+        [
+          952,
+          402
+        ],
+        [
+          849,
+          402
+        ],
+        [
+          851,
+          482
+        ],
+        [
+          915,
+          483
+        ],
+        [
+          914,
+          475
+        ],
+        [
+          953,
+          475
+        ],
+        [
+          953,
+          516
+        ],
+        [
+          920,
+          516
+        ],
+        [
+          920,
+          503
+        ],
+        [
+          850,
+          503
+        ],
+        [
+          851,
+          721
+        ],
+        [
+          830,
+          721
+        ],
+        [
+          830,
+          378
+        ],
+        [
+          773,
+          378
+        ],
+        [
+          773,
+          432
+        ],
+        [
+          753,
+          433
+        ],
+        [
+          753,
+          377
+        ],
+        [
+          133,
+          376
+        ]
+      ],
+      "labelAnchor": {
+        "x": 954,
+        "y": 422
+      },
+      "neighbors": [
+        "sc-2-room-201",
+        "sc-2-room-202",
+        "sc-2-room-203",
+        "sc-2-room-204",
+        "sc-2-room-205",
+        "sc-2-room-206",
+        "sc-2-room-207",
+        "sc-2-room-210",
+        "sc-2-room-211",
+        "sc-2-room-212",
+        "sc-2-room-213",
+        "sc-2-room-216",
+        "sc-2-room-215",
+        "sc-2-room-250",
+        "sc-2-room-251",
+        "sc-2-room-252",
+        "sc-2-room-209",
+        "sc-2-room-209-1",
+        "sc-2-room-209-2",
+        "sc-2-room-209-3",
+        "sc-2-room-209-4",
+        "sc-2-room-209-5",
+        "sc-2-room-263",
+        "sc-2-room-226",
+        "sc-2-room-229",
+        "sc-2-room-222",
+        "sc-2-room-221"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          676,
+          414
+        ],
+        [
+          752,
+          414
+        ],
+        [
+          753,
+          433
+        ],
+        [
+          695,
+          431
+        ],
+        [
+          696,
+          462
+        ],
+        [
+          677,
+          432
+        ]
+      ],
+      "labelAnchor": {
+        "x": 708,
+        "y": 431
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "1",
+        "2"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-201",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-201)",
+      "type": "door",
+      "polygon": [
+        [
+          169,
+          341
+        ],
+        [
+          169,
+          333
+        ],
+        [
+          177,
+          333
+        ],
+        [
+          177,
+          340
+        ]
+      ],
+      "labelAnchor": {
+        "x": 173,
+        "y": 337
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-201"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-201"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-room-202-sc-2-hallway-2",
+      "name": "Door (sc-2-room-202 \u2194 sc-2-hallway-2)",
+      "type": "door",
+      "polygon": [
+        [
+          232,
+          344
+        ],
+        [
+          232,
+          335
+        ],
+        [
+          242,
+          335
+        ],
+        [
+          243,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 237,
+        "y": 340
+      },
+      "neighbors": [
+        "sc-2-room-202",
+        "sc-2-hallway-2"
+      ],
+      "connects": [
+        "sc-2-room-202",
+        "sc-2-hallway-2"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-203",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-203)",
+      "type": "door",
+      "polygon": [
+        [
+          299,
+          344
+        ],
+        [
+          299,
+          337
+        ],
+        [
+          307,
+          337
+        ],
+        [
+          307,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 303,
+        "y": 341
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-203"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-203"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-204",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-204)",
+      "type": "door",
+      "polygon": [
+        [
+          413,
+          343
+        ],
+        [
+          414,
+          332
+        ],
+        [
+          425,
+          333
+        ],
+        [
+          425,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 419,
+        "y": 338
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-204"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-204"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-205",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-205)",
+      "type": "door",
+      "polygon": [
+        [
+          464,
+          344
+        ],
+        [
+          463,
+          333
+        ],
+        [
+          468,
+          333
+        ],
+        [
+          469,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 466,
+        "y": 338
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-205"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-205"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-206",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-206)",
+      "type": "door",
+      "polygon": [
+        [
+          507,
+          343
+        ],
+        [
+          507,
+          335
+        ],
+        [
+          516,
+          335
+        ],
+        [
+          516,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 512,
+        "y": 339
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-206"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-206"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-207",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-207)",
+      "type": "door",
+      "polygon": [
+        [
+          558,
+          343
+        ],
+        [
+          558,
+          336
+        ],
+        [
+          568,
+          336
+        ],
+        [
+          568,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 563,
+        "y": 340
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-207"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-207"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-210",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-210)",
+      "type": "door",
+      "polygon": [
+        [
+          855,
+          342
+        ],
+        [
+          855,
+          333
+        ],
+        [
+          867,
+          333
+        ],
+        [
+          867,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 861,
+        "y": 338
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-210"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-210"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-211",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-211)",
+      "type": "door",
+      "polygon": [
+        [
+          1097,
+          343
+        ],
+        [
+          1096,
+          331
+        ],
+        [
+          1108,
+          331
+        ],
+        [
+          1108,
+          342
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1102,
+        "y": 337
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-211"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-211"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-212",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-212)",
+      "type": "door",
+      "polygon": [
+        [
+          1169,
+          342
+        ],
+        [
+          1168,
+          332
+        ],
+        [
+          1179,
+          332
+        ],
+        [
+          1179,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1174,
+        "y": 337
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-212"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-212"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-213",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-213)",
+      "type": "door",
+      "polygon": [
+        [
+          1243,
+          342
+        ],
+        [
+          1243,
+          333
+        ],
+        [
+          1257,
+          333
+        ],
+        [
+          1256,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1250,
+        "y": 338
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-213"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-213"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-216",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-216)",
+      "type": "door",
+      "polygon": [
+        [
+          1345,
+          256
+        ],
+        [
+          1345,
+          246
+        ],
+        [
+          1353,
+          246
+        ],
+        [
+          1354,
+          256
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1349,
+        "y": 251
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-216"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-216"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-215",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-215)",
+      "type": "door",
+      "polygon": [
+        [
+          1362,
+          280
+        ],
+        [
+          1370,
+          280
+        ],
+        [
+          1370,
+          289
+        ],
+        [
+          1362,
+          288
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1366,
+        "y": 284
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-215"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-215"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-250",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-250)",
+      "type": "door",
+      "polygon": [
+        [
+          1336,
+          415
+        ],
+        [
+          1326,
+          415
+        ],
+        [
+          1326,
+          425
+        ],
+        [
+          1336,
+          425
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1331,
+        "y": 420
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-250"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-250"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-251",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-251)",
+      "type": "door",
+      "polygon": [
+        [
+          1362,
+          439
+        ],
+        [
+          1362,
+          449
+        ],
+        [
+          1371,
+          449
+        ],
+        [
+          1372,
+          437
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1367,
+        "y": 444
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-251"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-251"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-252",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-252)",
+      "type": "door",
+      "polygon": [
+        [
+          1397,
+          415
+        ],
+        [
+          1402,
+          416
+        ],
+        [
+          1401,
+          425
+        ],
+        [
+          1395,
+          425
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1399,
+        "y": 420
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-252"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-252"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-room-251-sc-2-room-272",
+      "name": "Door (sc-2-room-251 \u2194 sc-2-room-272)",
+      "type": "door",
+      "polygon": [
+        [
+          1360,
+          558
+        ],
+        [
+          1360,
+          568
+        ],
+        [
+          1375,
+          569
+        ],
+        [
+          1374,
+          557
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1367,
+        "y": 563
+      },
+      "neighbors": [
+        "sc-2-room-251",
+        "sc-2-room-272"
+      ],
+      "connects": [
+        "sc-2-room-251",
+        "sc-2-room-272"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-room-272-sc-2-room-251-a-c",
+      "name": "Door (sc-2-room-272 \u2194 sc-2-room-251-a-c)",
+      "type": "door",
+      "polygon": [
+        [
+          1398,
+          562
+        ],
+        [
+          1408,
+          563
+        ],
+        [
+          1408,
+          578
+        ],
+        [
+          1397,
+          578
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1403,
+        "y": 570
+      },
+      "neighbors": [
+        "sc-2-room-272",
+        "sc-2-room-251-a-c"
+      ],
+      "connects": [
+        "sc-2-room-272",
+        "sc-2-room-251-a-c"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-room-272-sc-2-hallway-250",
+      "name": "Door (sc-2-room-272 \u2194 sc-2-hallway-250)",
+      "type": "door",
+      "polygon": [
+        [
+          1357,
+          642
+        ],
+        [
+          1357,
+          652
+        ],
+        [
+          1372,
+          650
+        ],
+        [
+          1372,
+          641
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1365,
+        "y": 646
+      },
+      "neighbors": [
+        "sc-2-room-272",
+        "sc-2-hallway-250"
+      ],
+      "connects": [
+        "sc-2-room-272",
+        "sc-2-hallway-250"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-room-250-a-b-sc-2-hallway-250",
+      "name": "Door (sc-2-room-250-a-b \u2194 sc-2-hallway-250)",
+      "type": "door",
+      "polygon": [
+        [
+          1329,
+          643
+        ],
+        [
+          1329,
+          630
+        ],
+        [
+          1321,
+          630
+        ],
+        [
+          1320,
+          644
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1325,
+        "y": 637
+      },
+      "neighbors": [
+        "sc-2-room-250-a-b",
+        "sc-2-hallway-250"
+      ],
+      "connects": [
+        "sc-2-room-250-a-b",
+        "sc-2-hallway-250"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-250-sc-2-room-253",
+      "name": "Door (sc-2-hallway-250 \u2194 sc-2-room-253)",
+      "type": "door",
+      "polygon": [
+        [
+          1316,
+          658
+        ],
+        [
+          1307,
+          658
+        ],
+        [
+          1307,
+          665
+        ],
+        [
+          1314,
+          667
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1311,
+        "y": 662
+      },
+      "neighbors": [
+        "sc-2-hallway-250",
+        "sc-2-room-253"
+      ],
+      "connects": [
+        "sc-2-hallway-250",
+        "sc-2-room-253"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-250-sc-2-room-254",
+      "name": "Door (sc-2-hallway-250 \u2194 sc-2-room-254)",
+      "type": "door",
+      "polygon": [
+        [
+          1318,
+          693
+        ],
+        [
+          1309,
+          693
+        ],
+        [
+          1309,
+          698
+        ],
+        [
+          1319,
+          700
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1314,
+        "y": 696
+      },
+      "neighbors": [
+        "sc-2-hallway-250",
+        "sc-2-room-254"
+      ],
+      "connects": [
+        "sc-2-hallway-250",
+        "sc-2-room-254"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-room-255-sc-2-hallway-250",
+      "name": "Door (sc-2-room-255 \u2194 sc-2-hallway-250)",
+      "type": "door",
+      "polygon": [
+        [
+          1407,
+          696
+        ],
+        [
+          1409,
+          704
+        ],
+        [
+          1416,
+          704
+        ],
+        [
+          1416,
+          696
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1412,
+        "y": 700
+      },
+      "neighbors": [
+        "sc-2-room-255",
+        "sc-2-hallway-250"
+      ],
+      "connects": [
+        "sc-2-room-255",
+        "sc-2-hallway-250"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-250-sc-2-room-258",
+      "name": "Door (sc-2-hallway-250 \u2194 sc-2-room-258)",
+      "type": "door",
+      "polygon": [
+        [
+          1419,
+          661
+        ],
+        [
+          1428,
+          662
+        ],
+        [
+          1428,
+          672
+        ],
+        [
+          1418,
+          670
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1423,
+        "y": 666
+      },
+      "neighbors": [
+        "sc-2-hallway-250",
+        "sc-2-room-258"
+      ],
+      "connects": [
+        "sc-2-hallway-250",
+        "sc-2-room-258"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-209",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-209)",
+      "type": "door",
+      "polygon": [
+        [
+          831,
+          387
+        ],
+        [
+          820,
+          386
+        ],
+        [
+          820,
+          392
+        ],
+        [
+          829,
+          393
+        ]
+      ],
+      "labelAnchor": {
+        "x": 825,
+        "y": 390
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-209"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-209"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-209-1",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-209-1)",
+      "type": "door",
+      "polygon": [
+        [
+          828,
+          409
+        ],
+        [
+          818,
+          410
+        ],
+        [
+          818,
+          420
+        ],
+        [
+          829,
+          419
+        ]
+      ],
+      "labelAnchor": {
+        "x": 823,
+        "y": 415
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-1"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-1"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-209-2",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-209-2)",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          437
+        ],
+        [
+          819,
+          437
+        ],
+        [
+          819,
+          445
+        ],
+        [
+          828,
+          446
+        ]
+      ],
+      "labelAnchor": {
+        "x": 824,
+        "y": 441
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-2"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-2"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-209-3",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-209-3)",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          461
+        ],
+        [
+          819,
+          461
+        ],
+        [
+          819,
+          468
+        ],
+        [
+          831,
+          469
+        ]
+      ],
+      "labelAnchor": {
+        "x": 825,
+        "y": 465
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-3"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-3"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-209-4",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-209-4)",
+      "type": "door",
+      "polygon": [
+        [
+          828,
+          487
+        ],
+        [
+          818,
+          487
+        ],
+        [
+          818,
+          497
+        ],
+        [
+          830,
+          497
+        ]
+      ],
+      "labelAnchor": {
+        "x": 824,
+        "y": 492
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-4"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-4"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-209-5",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-209-5)",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          512
+        ],
+        [
+          817,
+          512
+        ],
+        [
+          817,
+          523
+        ],
+        [
+          830,
+          523
+        ]
+      ],
+      "labelAnchor": {
+        "x": 823,
+        "y": 518
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-5"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-209-5"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-263",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-263)",
+      "type": "door",
+      "polygon": [
+        [
+          849,
+          541
+        ],
+        [
+          859,
+          542
+        ],
+        [
+          859,
+          551
+        ],
+        [
+          851,
+          551
+        ]
+      ],
+      "labelAnchor": {
+        "x": 855,
+        "y": 546
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-263"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-263"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-226",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-226)",
+      "type": "door",
+      "polygon": [
+        [
+          851,
+          631
+        ],
+        [
+          859,
+          631
+        ],
+        [
+          859,
+          639
+        ],
+        [
+          850,
+          639
+        ]
+      ],
+      "labelAnchor": {
+        "x": 855,
+        "y": 635
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-226"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-226"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-229",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-229)",
+      "type": "door",
+      "polygon": [
+        [
+          850,
+          665
+        ],
+        [
+          861,
+          666
+        ],
+        [
+          861,
+          676
+        ],
+        [
+          851,
+          675
+        ]
+      ],
+      "labelAnchor": {
+        "x": 856,
+        "y": 671
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-229"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-229"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-222",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-222)",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          664
+        ],
+        [
+          816,
+          664
+        ],
+        [
+          816,
+          679
+        ],
+        [
+          828,
+          679
+        ]
+      ],
+      "labelAnchor": {
+        "x": 822,
+        "y": 672
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-222"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-222"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-door-sc-2-hallway-2-sc-2-room-221",
+      "name": "Door (sc-2-hallway-2 \u2194 sc-2-room-221)",
+      "type": "door",
+      "polygon": [
+        [
+          828,
+          569
+        ],
+        [
+          814,
+          569
+        ],
+        [
+          814,
+          582
+        ],
+        [
+          829,
+          581
+        ]
+      ],
+      "labelAnchor": {
+        "x": 821,
+        "y": 575
+      },
+      "neighbors": [
+        "sc-2-hallway-2",
+        "sc-2-room-221"
+      ],
+      "connects": [
+        "sc-2-hallway-2",
+        "sc-2-room-221"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1134,
+          841
+        ],
+        [
+          1134,
+          920
+        ],
+        [
+          1187,
+          920
+        ],
+        [
+          1187,
+          841
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1161,
+        "y": 881
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "1",
+        "2"
+      ],
+      "showLabel": false
+    }
+  ]
+}

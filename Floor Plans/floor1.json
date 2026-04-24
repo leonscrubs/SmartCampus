@@ -39,7 +39,8 @@
       "connects": [
         "outside",
         ""
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-clover-food",
@@ -101,8 +102,10 @@
       },
       "neighbors": [
         "sc-hw-main",
-        "sc-1-courtyard"
-      ]
+        "sc-1-courtyard",
+        "sc-1-cabot-library"
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cabot-library",
@@ -139,13 +142,15 @@
         "y": 831
       },
       "neighbors": [
-        "sc-1-courtyard"
-      ]
+        "sc-1-courtyard",
+        "sc-1-clover-food"
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-courtyard",
       "name": "Courtyard",
-      "type": "other",
+      "type": "classroom",
       "polygon": [
         [
           951,
@@ -189,7 +194,8 @@
         "sc-1-cr-136",
         "sc-1-clover-food",
         "sc-1-cabot-library"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-side-entrance-oxford-street",
@@ -224,46 +230,12 @@
       "connects": [
         "outside",
         "sc-1-courtyard"
-      ]
-    },
-    {
-      "id": "sc-1-door-sc-1-courtyard-sc-1-cr-136",
-      "name": "Door (sc-1-courtyard \u2194 sc-1-cr-136)",
-      "type": "door",
-      "polygon": [
-        [
-          1356,
-          408
-        ],
-        [
-          1378,
-          408
-        ],
-        [
-          1377,
-          416
-        ],
-        [
-          1357,
-          416
-        ]
       ],
-      "labelAnchor": {
-        "x": 1367,
-        "y": 412
-      },
-      "neighbors": [
-        "sc-1-courtyard",
-        "sc-1-cr-136"
-      ],
-      "connects": [
-        "sc-1-courtyard",
-        "sc-1-cr-136"
-      ]
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-140.01",
-      "name": "Room 142.01",
+      "name": "R142.01",
       "type": "classroom",
       "polygon": [
         [
@@ -289,11 +261,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.03",
-      "name": "Room 142.03",
+      "name": "R142.03",
       "type": "classroom",
       "polygon": [
         [
@@ -319,11 +292,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.02",
-      "name": "Room 142.02",
+      "name": "R142.02",
       "type": "classroom",
       "polygon": [
         [
@@ -349,11 +323,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.05",
-      "name": "Room 142.05",
+      "name": "R142.05",
       "type": "classroom",
       "polygon": [
         [
@@ -379,11 +354,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.07",
-      "name": "Room 142.07",
+      "name": "R142.07",
       "type": "classroom",
       "polygon": [
         [
@@ -409,11 +385,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.09",
-      "name": "Room 142.09",
+      "name": "R142.09",
       "type": "classroom",
       "polygon": [
         [
@@ -439,11 +416,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.11",
-      "name": "Room 142.11",
+      "name": "R142.11",
       "type": "classroom",
       "polygon": [
         [
@@ -469,11 +447,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.13",
-      "name": "Room 142.13",
+      "name": "R142.13",
       "type": "classroom",
       "polygon": [
         [
@@ -497,11 +476,12 @@
         "x": 1428,
         "y": 621
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.15",
-      "name": "Room 142.15",
+      "name": "R142.15",
       "type": "classroom",
       "polygon": [
         [
@@ -525,11 +505,12 @@
         "x": 1428,
         "y": 663
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.08",
-      "name": "Room 142.08",
+      "name": "R142.08",
       "type": "classroom",
       "polygon": [
         [
@@ -555,11 +536,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.10",
-      "name": "Room 142.10",
+      "name": "R142.10",
       "type": "classroom",
       "polygon": [
         [
@@ -583,11 +565,12 @@
         "x": 1360,
         "y": 617
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.12",
-      "name": "Room 142.12",
+      "name": "R142.12",
       "type": "classroom",
       "polygon": [
         [
@@ -611,11 +594,12 @@
         "x": 1361,
         "y": 649
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-142.14",
-      "name": "Room 142.14",
+      "name": "R142.14",
       "type": "classroom",
       "polygon": [
         [
@@ -641,11 +625,12 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-136",
-      "name": "Room 136",
+      "name": "R136",
       "type": "classroom",
       "polygon": [
         [
@@ -677,7 +662,8 @@
         "x": 1333,
         "y": 518
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-1-hw-142",
@@ -749,7 +735,8 @@
         "sc-1-cr-142.05",
         "sc-1-cr-142.07",
         "sc-1-cr-142.09"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-main-entrance-backside",
@@ -784,7 +771,8 @@
       "connects": [
         "outside",
         ""
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-side-entrance-oxford-street",
@@ -819,7 +807,8 @@
       "connects": [
         "outside",
         ""
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-stair-B1",
@@ -827,20 +816,20 @@
       "type": "stairwell",
       "polygon": [
         [
-          776,
-          390
+          778,
+          414
         ],
         [
-          824,
-          390
+          779,
+          500
         ],
         [
-          824,
-          527
+          797,
+          499
         ],
         [
-          776,
-          527
+          798,
+          415
         ]
       ],
       "labelAnchor": {
@@ -851,7 +840,8 @@
       "connectsFloors": [
         0,
         1
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-stair-12",
@@ -891,7 +881,8 @@
       "connectsFloors": [
         1,
         2
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-sa",
@@ -921,7 +912,8 @@
       },
       "neighbors": [
         "sc-1-hw-142"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-hw-main",
@@ -1118,7 +1110,8 @@
         "sc-1-lecture-hall-b",
         "sc-1-lecture-hall-c",
         "sc-1-lecture-hall-d"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-sa-142",
@@ -1146,147 +1139,8 @@
         "x": 1348,
         "y": 552
       },
-      "neighbors": []
-    },
-    {
-      "id": "sc-1-door-sc-hw-main-sc-1-hw-142",
-      "name": "Door (sc-hw-main \u2194 sc-1-hw-142)",
-      "type": "door",
-      "polygon": [
-        [
-          1397,
-          407
-        ],
-        [
-          1423,
-          408
-        ],
-        [
-          1422,
-          414
-        ],
-        [
-          1397,
-          414
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1410,
-        "y": 411
-      },
-      "neighbors": [
-        "sc-hw-main",
-        "sc-1-hw-142"
-      ],
-      "connects": [
-        "sc-hw-main",
-        "sc-1-hw-142"
-      ]
-    },
-    {
-      "id": "sc-1-door-sc-1-hw-142-sc-1-cr-140-01",
-      "name": "Door (sc-1-hw-142 \u2194 sc-1-cr-140.01)",
-      "type": "door",
-      "polygon": [
-        [
-          1423,
-          414
-        ],
-        [
-          1432,
-          414
-        ],
-        [
-          1432,
-          424
-        ],
-        [
-          1421,
-          424
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1427,
-        "y": 419
-      },
-      "neighbors": [
-        "sc-1-hw-142",
-        "sc-1-cr-140.01"
-      ],
-      "connects": [
-        "sc-1-hw-142",
-        "sc-1-cr-140.01"
-      ]
-    },
-    {
-      "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-03",
-      "name": "Door (sc-1-hw-142 \u2194 sc-1-cr-142.03)",
-      "type": "door",
-      "polygon": [
-        [
-          1423,
-          454
-        ],
-        [
-          1423,
-          467
-        ],
-        [
-          1431,
-          467
-        ],
-        [
-          1431,
-          454
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1427,
-        "y": 461
-      },
-      "neighbors": [
-        "sc-1-hw-142",
-        "sc-1-cr-142.03"
-      ],
-      "connects": [
-        "sc-1-hw-142",
-        "sc-1-cr-142.03"
-      ]
-    },
-    {
-      "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-02",
-      "name": "Door (sc-1-hw-142 \u2194 sc-1-cr-142.02)",
-      "type": "door",
-      "polygon": [
-        [
-          1383,
-          466
-        ],
-        [
-          1371,
-          466
-        ],
-        [
-          1371,
-          477
-        ],
-        [
-          1383,
-          477
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1377,
-        "y": 472
-      },
-      "neighbors": [
-        "sc-1-hw-142",
-        "sc-1-cr-142.02"
-      ],
-      "connects": [
-        "sc-1-hw-142",
-        "sc-1-cr-142.02"
-      ]
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-sa",
@@ -1321,7 +1175,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-sa"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-08",
@@ -1356,7 +1211,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.08"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-10",
@@ -1391,7 +1247,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.10"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-10",
@@ -1426,7 +1283,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.11"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-14",
@@ -1461,7 +1319,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.14"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-05",
@@ -1496,7 +1355,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.05"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-07",
@@ -1531,7 +1391,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.07"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-09",
@@ -1566,7 +1427,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.09"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-11",
@@ -1601,7 +1463,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.11"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hw-142-sc-1-cr-142-05",
@@ -1636,7 +1499,8 @@
       "connects": [
         "sc-1-hw-142",
         "sc-1-cr-142.05"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-clover-food",
@@ -1687,7 +1551,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-clover-food"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-clover-food-sc-1-courtyard",
@@ -1722,7 +1587,8 @@
       "connects": [
         "sc-1-clover-food",
         "sc-1-courtyard"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-clover-food-sc-1-courtyard",
@@ -1757,7 +1623,8 @@
       "connects": [
         "sc-1-clover-food",
         "sc-1-courtyard"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-cabot-library-sc-1-courtyard",
@@ -1792,7 +1659,8 @@
       "connects": [
         "sc-1-cabot-library",
         "sc-1-courtyard"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-cabot-library-sc-1-courtyard",
@@ -1827,7 +1695,8 @@
       "connects": [
         "sc-1-cabot-library",
         "sc-1-courtyard"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-cabot-library-sc-1-courtyard",
@@ -1862,11 +1731,12 @@
       "connects": [
         "sc-1-cabot-library",
         "sc-1-courtyard"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-cr-115a",
-      "name": "Room 115A",
+      "name": "R115A",
       "type": "classroom",
       "polygon": [
         [
@@ -1892,11 +1762,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-115b",
-      "name": "Room 115B",
+      "name": "R115B",
       "type": "classroom",
       "polygon": [
         [
@@ -1923,11 +1794,12 @@
       "neighbors": [
         "sc-hw-main",
         "sc-1-cr-115c"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-115c",
-      "name": "Room 115C",
+      "name": "R115C",
       "type": "classroom",
       "polygon": [
         [
@@ -1953,11 +1825,12 @@
       },
       "neighbors": [
         "sc-1-cr-115b"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-114a",
-      "name": "Room 114A",
+      "name": "R114A",
       "type": "classroom",
       "polygon": [
         [
@@ -1984,11 +1857,12 @@
       "neighbors": [
         "sc-hw-main",
         "sc-1-cr-114"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-114",
-      "name": "Room 114",
+      "name": "R114",
       "type": "classroom",
       "polygon": [
         [
@@ -2014,11 +1888,12 @@
       },
       "neighbors": [
         "sc-1-cr-114a"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-115E",
-      "name": "Room 115E",
+      "name": "R115E",
       "type": "classroom",
       "polygon": [
         [
@@ -2044,11 +1919,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-115",
-      "name": "Room 115",
+      "name": "R115",
       "type": "classroom",
       "polygon": [
         [
@@ -2106,11 +1982,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-116",
-      "name": "Room 116",
+      "name": "R116",
       "type": "classroom",
       "polygon": [
         [
@@ -2140,11 +2017,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-116b",
-      "name": "Room 116B",
+      "name": "R116B",
       "type": "classroom",
       "polygon": [
         [
@@ -2170,11 +2048,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-117a",
-      "name": "Room 117A",
+      "name": "R117A",
       "type": "classroom",
       "polygon": [
         [
@@ -2200,11 +2079,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-116c",
-      "name": "Room 116C",
+      "name": "R116C",
       "type": "classroom",
       "polygon": [
         [
@@ -2230,11 +2110,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-116d",
-      "name": "Room 116D",
+      "name": "R116D",
       "type": "classroom",
       "polygon": [
         [
@@ -2258,11 +2139,12 @@
         "x": 1237,
         "y": 323
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-117c",
-      "name": "Room 117C",
+      "name": "R117C",
       "type": "classroom",
       "polygon": [
         [
@@ -2288,11 +2170,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-117d",
-      "name": "Room 117D",
+      "name": "R117D",
       "type": "classroom",
       "polygon": [
         [
@@ -2318,11 +2201,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-118a",
-      "name": "Room 118A",
+      "name": "R118A",
       "type": "classroom",
       "polygon": [
         [
@@ -2348,11 +2232,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-cr-118b",
-      "name": "Room 118B",
+      "name": "R118B",
       "type": "classroom",
       "polygon": [
         [
@@ -2378,7 +2263,8 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-stair-b1",
@@ -2410,11 +2296,12 @@
       "connectsFloors": [
         0,
         1
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-cr-117",
-      "name": "Room 117",
+      "name": "R117",
       "type": "classroom",
       "polygon": [
         [
@@ -2488,7 +2375,8 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-115",
@@ -2523,7 +2411,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-115"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-115a",
@@ -2558,7 +2447,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-115a"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-115b",
@@ -2593,7 +2483,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-115b"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-cr-115b-sc-1-cr-115c",
@@ -2628,7 +2519,8 @@
       "connects": [
         "sc-1-cr-115b",
         "sc-1-cr-115c"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-114",
@@ -2663,7 +2555,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-114a"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-cr-114a-sc-1-cr-114",
@@ -2698,7 +2591,8 @@
       "connects": [
         "sc-1-cr-114a",
         "sc-1-cr-114"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-115e",
@@ -2733,7 +2627,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-115E"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-115",
@@ -2768,7 +2663,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-115"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-116",
@@ -2803,7 +2699,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-116"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-116b",
@@ -2838,7 +2735,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-116b"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-117a",
@@ -2873,7 +2771,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-117a"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-116c",
@@ -2908,7 +2807,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-116c"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-117c",
@@ -2943,7 +2843,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-117c"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-117",
@@ -2978,7 +2879,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-117"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-117d",
@@ -3013,7 +2915,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-117d"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-118a",
@@ -3048,7 +2951,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-118a"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-cr-118b",
@@ -3083,11 +2987,12 @@
       "connects": [
         "sc-hw-main",
         "sc-1-cr-118b"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-room-108",
-      "name": "Room 108",
+      "name": "R108",
       "type": "office",
       "polygon": [
         [
@@ -3113,11 +3018,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-107a",
-      "name": "Room 107A",
+      "name": "R107A",
       "type": "office",
       "polygon": [
         [
@@ -3143,11 +3049,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-109",
-      "name": "Room 109",
+      "name": "R109",
       "type": "classroom",
       "polygon": [
         [
@@ -3173,11 +3080,12 @@
       },
       "neighbors": [
         "sc-1-hallway-100-110"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-110",
-      "name": "Room 110",
+      "name": "R110",
       "type": "classroom",
       "polygon": [
         [
@@ -3203,11 +3111,12 @@
       },
       "neighbors": [
         "sc-1-hallway-100-110"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-111",
-      "name": "Room 111",
+      "name": "R111",
       "type": "classroom",
       "polygon": [
         [
@@ -3233,11 +3142,12 @@
       },
       "neighbors": [
         "sc-1-hallway-100-110"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-113",
-      "name": "Room 113",
+      "name": "R113",
       "type": "classroom",
       "polygon": [
         [
@@ -3263,11 +3173,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-112",
-      "name": "Room 112",
+      "name": "R112",
       "type": "classroom",
       "polygon": [
         [
@@ -3293,11 +3204,12 @@
       },
       "neighbors": [
         "sc-1-hallway-100-110"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-108a",
-      "name": "Room 108A",
+      "name": "R108A",
       "type": "office",
       "polygon": [
         [
@@ -3323,7 +3235,8 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-hallway-100-110",
@@ -3364,7 +3277,8 @@
         "sc-1-room-110",
         "sc-1-room-111",
         "sc-1-room-112"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-room-108a",
@@ -3399,7 +3313,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-room-108a"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-room-108",
@@ -3434,7 +3349,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-room-108"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-room-107a",
@@ -3469,7 +3385,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-room-107a"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hallway-100-110-sc-1-room-109",
@@ -3504,7 +3421,8 @@
       "connects": [
         "sc-1-hallway-100-110",
         "sc-1-room-109"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hallway-100-110-sc-1-room-110",
@@ -3539,7 +3457,8 @@
       "connects": [
         "sc-1-hallway-100-110",
         "sc-1-room-110"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hallway-100-110-sc-1-room-111",
@@ -3574,7 +3493,8 @@
       "connects": [
         "sc-1-hallway-100-110",
         "sc-1-room-111"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-hallway-100-110-sc-1-room-112",
@@ -3609,7 +3529,8 @@
       "connects": [
         "sc-1-hallway-100-110",
         "sc-1-room-112"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-room-113",
@@ -3644,11 +3565,12 @@
       "connects": [
         "sc-hw-main",
         "sc-1-room-113"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-room-102",
-      "name": "Room 102",
+      "name": "R102",
       "type": "classroom",
       "polygon": [
         [
@@ -3675,11 +3597,12 @@
       "neighbors": [
         "sc-hw-main",
         "sc-1-room-103"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-103",
-      "name": "Room 103",
+      "name": "R103",
       "type": "classroom",
       "polygon": [
         [
@@ -3705,11 +3628,12 @@
       },
       "neighbors": [
         "sc-1-room-102"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-104",
-      "name": "Room 104",
+      "name": "R104",
       "type": "classroom",
       "polygon": [
         [
@@ -3735,11 +3659,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-105",
-      "name": "Room 105",
+      "name": "R105",
       "type": "classroom",
       "polygon": [
         [
@@ -3765,11 +3690,12 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-room-106",
-      "name": "Room 106",
+      "name": "R106",
       "type": "classroom",
       "polygon": [
         [
@@ -3795,7 +3721,8 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-room-102",
@@ -3830,7 +3757,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-room-102"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-1-room-102-sc-1-room-103",
@@ -3865,7 +3793,8 @@
       "connects": [
         "sc-1-room-102",
         "sc-1-room-103"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-room-104",
@@ -3900,7 +3829,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-room-104"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-room-105",
@@ -3935,7 +3865,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-room-105"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-room-106",
@@ -3970,7 +3901,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-room-106"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-lecture-hall-d",
@@ -4008,7 +3940,8 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-lecture-hall-c",
@@ -4062,7 +3995,8 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-lecture-hall-b",
@@ -4124,7 +4058,8 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-lecture-hall-a",
@@ -4174,7 +4109,8 @@
       },
       "neighbors": [
         "sc-hw-main"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-1-stairwell",
@@ -4206,7 +4142,8 @@
       "connectsFloors": [
         0,
         1
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-stairwell",
@@ -4238,7 +4175,8 @@
       "connectsFloors": [
         0,
         1
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-stairwell",
@@ -4270,7 +4208,8 @@
       "connectsFloors": [
         0,
         1
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-preparation-area-authorized",
@@ -4350,7 +4289,8 @@
         "x": 378,
         "y": 706
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-lecture-hall-a",
@@ -4385,7 +4325,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-lecture-hall-a"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-lecture-hall-b",
@@ -4420,7 +4361,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-lecture-hall-b"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-lecture-hall-b",
@@ -4455,7 +4397,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-lecture-hall-b"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-lecture-hall-c",
@@ -4490,7 +4433,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-lecture-hall-c"
-      ]
+      ],
+      "showLabel": false
     },
     {
       "id": "sc-1-door-sc-hw-main-sc-1-lecture-hall-c",
@@ -4525,42 +4469,8 @@
       "connects": [
         "sc-hw-main",
         "sc-1-lecture-hall-c"
-      ]
-    },
-    {
-      "id": "sc-1-door-sc-hw-main-sc-1-lecture-hall-d",
-      "name": "Door (sc-hw-main \u2194 sc-1-lecture-hall-d)",
-      "type": "door",
-      "polygon": [
-        [
-          711,
-          779
-        ],
-        [
-          731,
-          777
-        ],
-        [
-          733,
-          813
-        ],
-        [
-          709,
-          811
-        ]
       ],
-      "labelAnchor": {
-        "x": 721,
-        "y": 795
-      },
-      "neighbors": [
-        "sc-hw-main",
-        "sc-1-lecture-hall-d"
-      ],
-      "connects": [
-        "sc-hw-main",
-        "sc-1-lecture-hall-d"
-      ]
+      "showLabel": false
     },
     {
       "id": "sc-1-side-entrance",
@@ -4595,7 +4505,118 @@
       "connects": [
         "outside",
         ""
-      ]
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-1-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1134,
+          863
+        ],
+        [
+          1134,
+          918
+        ],
+        [
+          1187,
+          917
+        ],
+        [
+          1186,
+          863
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1160,
+        "y": 890
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "1",
+        "2"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-1-door-sc-1-clover-food-sc-1-cabot-library",
+      "name": "Door (sc-1-clover-food \u2194 sc-1-cabot-library)",
+      "type": "door",
+      "polygon": [
+        [
+          879,
+          720
+        ],
+        [
+          879,
+          729
+        ],
+        [
+          896,
+          729
+        ],
+        [
+          896,
+          718
+        ]
+      ],
+      "labelAnchor": {
+        "x": 888,
+        "y": 724
+      },
+      "neighbors": [
+        "sc-1-clover-food",
+        "sc-1-cabot-library"
+      ],
+      "connects": [
+        "sc-1-clover-food",
+        "sc-1-cabot-library"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-1-elevator",
+      "name": "Elevator",
+      "type": "elevator",
+      "polygon": [
+        [
+          848,
+          403
+        ],
+        [
+          951,
+          401
+        ],
+        [
+          951,
+          433
+        ],
+        [
+          848,
+          432
+        ]
+      ],
+      "labelAnchor": {
+        "x": 900,
+        "y": 417
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
     }
   ]
 }
