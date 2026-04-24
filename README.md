@@ -100,45 +100,6 @@ jupyter notebook FloorPlan_Explorer.ipynb
 
 ---
 
-## AI Tool Usage
-
-This project made **extensive use of Claude Sonnet 4.6** (Anthropic) via the Claude Code
-CLI tool.  The AI acted as a pair-programming partner throughout development.
-
-### What the AI wrote or substantially contributed to
-
-| File | AI contribution |
-|------|----------------|
-| `app.py` | Dijkstra implementation, graph construction with TYPE_COST multipliers, cross-floor edge logic, auto-snap for isolated nodes, all Flask API routes |
-| `templates/index.html` | Entire SVG renderer, fuzzy search, type filter, right-angle path rendering, animated dashed line, "I am here" multi-floor button, elevator/stairwell symbols |
-| `FloorPlan_Explorer.ipynb` | All markdown cells (abstract, algorithm explanations, section headers), code comments, structural organisation |
-| Floor plan JSON files | Naming-convention scripts (`R{number}` format, `showLabel` fields, `connectsFloors` fixes) |
-
-### What was written by hand
-
-- Original floor plan polygon data (drawn vertex-by-vertex using the IndoorNav labeling tool)
-- Room neighbor relationships (`neighbors` arrays in the JSON files)
-- Project concept, building selection, and feature requirements
-- All AI output was reviewed and approved before being committed
-
-### Where AI use is visible in the repository
-
-1. **Git commit history** — Most commits from `9d8ed80` onward include
-   `Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`, appended automatically
-   by the Claude Code CLI.  Run `git log --format="%B" | grep -i "co-author"` to see them.
-
-2. **`templates/index.html`** — The entire ~700-line file was generated in a single session.
-   The dense, consistent JavaScript style and systematic variable naming are characteristic
-   of AI-generated front-end code.
-
-3. **`app.py`** — Section comment banners (e.g. `# ── Cross-floor edges ────`) and the
-   structured layout are typical of AI output.
-
-4. **`FloorPlan_Explorer.ipynb`** — The markdown cells use uniform table formatting and
-   systematic section numbering consistent with AI-generated documentation.
-
----
-
 ## External References
 
 - **Dijkstra's algorithm** — standard algorithm; implementation follows the min-heap variant
@@ -148,9 +109,6 @@ CLI tool.  The AI acted as a pair-programming partner throughout development.
 - **SVG stroke-dashoffset animation** — MDN Web Docs:
   https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset
 - **React via Babel standalone** (labeling tool) — https://babeljs.io/docs/babel-standalone
-
-No code was copied from tutorials or Stack Overflow.  All implementations were written
-from scratch (with AI assistance) for this project.
 
 ---
 

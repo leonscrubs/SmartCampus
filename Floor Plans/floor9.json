@@ -1,0 +1,375 @@
+{
+  "floor": 9,
+  "viewBox": {
+    "width": 1650,
+    "height": 1275
+  },
+  "buildingOutline": [],
+  "rooms": [
+    {
+      "id": "sc-6-elevator-machine-room",
+      "name": "Elevator Machine Room",
+      "type": "other",
+      "polygon": [
+        [
+          502,
+          356
+        ],
+        [
+          567,
+          356
+        ],
+        [
+          567,
+          396
+        ],
+        [
+          502,
+          396
+        ]
+      ],
+      "labelAnchor": {
+        "x": 535,
+        "y": 376
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          566,
+          396
+        ],
+        [
+          566,
+          409
+        ],
+        [
+          456,
+          410
+        ],
+        [
+          455,
+          395
+        ]
+      ],
+      "labelAnchor": {
+        "x": 511,
+        "y": 403
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-harvard-telescope-club",
+      "name": "Harvard Telescope Club",
+      "type": "other",
+      "polygon": [
+        [
+          456,
+          343
+        ],
+        [
+          455,
+          394
+        ],
+        [
+          501,
+          395
+        ],
+        [
+          502,
+          342
+        ]
+      ],
+      "labelAnchor": {
+        "x": 479,
+        "y": 369
+      },
+      "neighbors": [
+        "sc-6-stairwell"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-901",
+      "name": "R901",
+      "type": "office",
+      "polygon": [
+        [
+          456,
+          306
+        ],
+        [
+          492,
+          307
+        ],
+        [
+          491,
+          326
+        ],
+        [
+          456,
+          326
+        ]
+      ],
+      "labelAnchor": {
+        "x": 474,
+        "y": 316
+      },
+      "neighbors": [
+        "sc-6-stairwell"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-900s",
+      "name": "R900S",
+      "type": "office",
+      "polygon": [
+        [
+          505,
+          305
+        ],
+        [
+          505,
+          318
+        ],
+        [
+          519,
+          319
+        ],
+        [
+          517,
+          341
+        ],
+        [
+          502,
+          341
+        ],
+        [
+          502,
+          356
+        ],
+        [
+          568,
+          357
+        ],
+        [
+          568,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 523,
+        "y": 330
+      },
+      "neighbors": [
+        "sc-6-stairwell"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          455,
+          326
+        ],
+        [
+          504,
+          326
+        ],
+        [
+          504,
+          341
+        ],
+        [
+          456,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 480,
+        "y": 334
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-hallway-9",
+      "name": "Hallway 9",
+      "type": "corridor",
+      "polygon": [
+        [
+          482,
+          306
+        ],
+        [
+          482,
+          293
+        ],
+        [
+          506,
+          293
+        ],
+        [
+          505,
+          318
+        ],
+        [
+          519,
+          319
+        ],
+        [
+          517,
+          341
+        ],
+        [
+          504,
+          341
+        ],
+        [
+          505,
+          327
+        ],
+        [
+          490,
+          325
+        ],
+        [
+          491,
+          306
+        ]
+      ],
+      "labelAnchor": {
+        "x": 500,
+        "y": 317
+      },
+      "neighbors": [],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-stairwell-sc-6-harvard-telescope-club",
+      "name": "Door Sc 6 Stairwell Sc 6 Harvard Telescope Club",
+      "type": "door",
+      "polygon": [
+        [
+          488,
+          338
+        ],
+        [
+          488,
+          346
+        ],
+        [
+          495,
+          346
+        ],
+        [
+          495,
+          339
+        ]
+      ],
+      "labelAnchor": {
+        "x": 492,
+        "y": 342
+      },
+      "neighbors": [
+        "sc-6-stairwell",
+        "sc-6-harvard-telescope-club"
+      ],
+      "connects": [
+        "sc-6-stairwell",
+        "sc-6-harvard-telescope-club"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-stairwell-sc-6-room-900s",
+      "name": "Door Sc 6 Stairwell Sc 6 Room 900s",
+      "type": "door",
+      "polygon": [
+        [
+          517,
+          328
+        ],
+        [
+          523,
+          328
+        ],
+        [
+          523,
+          337
+        ],
+        [
+          517,
+          337
+        ]
+      ],
+      "labelAnchor": {
+        "x": 520,
+        "y": 333
+      },
+      "neighbors": [
+        "sc-6-stairwell",
+        "sc-6-room-900s"
+      ],
+      "connects": [
+        "sc-6-stairwell",
+        "sc-6-room-900s"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-stairwell-sc-6-room-901",
+      "name": "Door Sc 6 Stairwell Sc 6 Room 901",
+      "type": "door",
+      "polygon": [
+        [
+          491,
+          310
+        ],
+        [
+          484,
+          310
+        ],
+        [
+          484,
+          317
+        ],
+        [
+          491,
+          317
+        ]
+      ],
+      "labelAnchor": {
+        "x": 488,
+        "y": 314
+      },
+      "neighbors": [
+        "sc-6-stairwell",
+        "sc-6-room-901"
+      ],
+      "connects": [
+        "sc-6-stairwell",
+        "sc-6-room-901"
+      ],
+      "showLabel": false
+    }
+  ]
+}
