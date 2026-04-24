@@ -1,0 +1,2963 @@
+{
+  "floor": "6-9",
+  "viewBox": {
+    "width": 1650,
+    "height": 1275
+  },
+  "buildingOutline": [],
+  "rooms": [
+    {
+      "id": "sc-6-room-602",
+      "name": "R602",
+      "type": "office",
+      "polygon": [
+        [
+          1039,
+          724
+        ],
+        [
+          1073,
+          724
+        ],
+        [
+          1073,
+          741
+        ],
+        [
+          1039,
+          741
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1056,
+        "y": 733
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-603",
+      "name": "R603",
+      "type": "office",
+      "polygon": [
+        [
+          1072,
+          741
+        ],
+        [
+          1038,
+          741
+        ],
+        [
+          1038,
+          764
+        ],
+        [
+          1073,
+          764
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1055,
+        "y": 753
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-604",
+      "name": "R604",
+      "type": "office",
+      "polygon": [
+        [
+          1038,
+          764
+        ],
+        [
+          1038,
+          785
+        ],
+        [
+          1073,
+          785
+        ],
+        [
+          1072,
+          764
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1055,
+        "y": 775
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-605",
+      "name": "R605",
+      "type": "office",
+      "polygon": [
+        [
+          1038,
+          785
+        ],
+        [
+          1038,
+          808
+        ],
+        [
+          1073,
+          808
+        ],
+        [
+          1073,
+          784
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1056,
+        "y": 796
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-606",
+      "name": "R606",
+      "type": "office",
+      "polygon": [
+        [
+          1038,
+          808
+        ],
+        [
+          1038,
+          830
+        ],
+        [
+          1073,
+          830
+        ],
+        [
+          1072,
+          807
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1055,
+        "y": 819
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-607",
+      "name": "R607",
+      "type": "office",
+      "polygon": [
+        [
+          1038,
+          830
+        ],
+        [
+          1038,
+          856
+        ],
+        [
+          1073,
+          856
+        ],
+        [
+          1073,
+          830
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1056,
+        "y": 843
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-608",
+      "name": "R608",
+      "type": "office",
+      "polygon": [
+        [
+          1038,
+          856
+        ],
+        [
+          1038,
+          881
+        ],
+        [
+          1065,
+          882
+        ],
+        [
+          1064,
+          856
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1051,
+        "y": 869
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1087,
+          749
+        ],
+        [
+          1126,
+          749
+        ],
+        [
+          1126,
+          767
+        ],
+        [
+          1088,
+          768
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1107,
+        "y": 758
+      },
+      "neighbors": [
+        "sc-6-roof-terrace",
+        "sc-6-harvard-telescope-club",
+        "sc-6-room-900s",
+        "sc-6-room-901"
+      ],
+      "connectsFloors": [
+        "5",
+        "6",
+        "7"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-room-614",
+      "name": "R614",
+      "type": "office",
+      "polygon": [
+        [
+          1126,
+          749
+        ],
+        [
+          1149,
+          749
+        ],
+        [
+          1149,
+          781
+        ],
+        [
+          1126,
+          780
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1138,
+        "y": 765
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-613",
+      "name": "R613",
+      "type": "office",
+      "polygon": [
+        [
+          1118,
+          779
+        ],
+        [
+          1118,
+          807
+        ],
+        [
+          1149,
+          808
+        ],
+        [
+          1149,
+          780
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1134,
+        "y": 794
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-600",
+      "name": "R600",
+      "type": "office",
+      "polygon": [
+        [
+          1185,
+          697
+        ],
+        [
+          1090,
+          696
+        ],
+        [
+          1090,
+          714
+        ],
+        [
+          1185,
+          713
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1138,
+        "y": 705
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1039,
+          670
+        ],
+        [
+          1007,
+          671
+        ],
+        [
+          1007,
+          695
+        ],
+        [
+          1040,
+          695
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1023,
+        "y": 683
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "5",
+        "6",
+        "7"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-roof-terrace",
+      "name": "Roof Terrace",
+      "type": "other",
+      "polygon": [
+        [
+          1038,
+          881
+        ],
+        [
+          1038,
+          941
+        ],
+        [
+          1149,
+          941
+        ],
+        [
+          1149,
+          882
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1094,
+        "y": 911
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-hallway-7",
+        "sc-6-stairwell",
+        "sc-6-room-804"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-610",
+      "name": "R610",
+      "type": "classroom",
+      "polygon": [
+        [
+          1117,
+          779
+        ],
+        [
+          1083,
+          779
+        ],
+        [
+          1082,
+          848
+        ],
+        [
+          1100,
+          848
+        ],
+        [
+          1099,
+          880
+        ],
+        [
+          1148,
+          881
+        ],
+        [
+          1149,
+          808
+        ],
+        [
+          1118,
+          806
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1112,
+        "y": 829
+      },
+      "neighbors": [
+        "sc-6-hallway-6"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-hallway-6",
+      "name": "Hallway 6",
+      "type": "corridor",
+      "polygon": [
+        [
+          1039,
+          670
+        ],
+        [
+          1054,
+          670
+        ],
+        [
+          1054,
+          678
+        ],
+        [
+          1100,
+          676
+        ],
+        [
+          1100,
+          695
+        ],
+        [
+          1089,
+          695
+        ],
+        [
+          1090,
+          714
+        ],
+        [
+          1149,
+          713
+        ],
+        [
+          1149,
+          748
+        ],
+        [
+          1087,
+          749
+        ],
+        [
+          1087,
+          767
+        ],
+        [
+          1125,
+          766
+        ],
+        [
+          1126,
+          779
+        ],
+        [
+          1083,
+          779
+        ],
+        [
+          1081,
+          848
+        ],
+        [
+          1100,
+          848
+        ],
+        [
+          1099,
+          880
+        ],
+        [
+          1065,
+          881
+        ],
+        [
+          1063,
+          856
+        ],
+        [
+          1073,
+          855
+        ],
+        [
+          1073,
+          723
+        ],
+        [
+          1039,
+          724
+        ],
+        [
+          1038,
+          714
+        ],
+        [
+          1007,
+          715
+        ],
+        [
+          1005,
+          696
+        ],
+        [
+          1039,
+          695
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1077,
+        "y": 751
+      },
+      "neighbors": [
+        "sc-6-room-600",
+        "sc-6-room-614",
+        "sc-6-room-613",
+        "sc-6-room-610",
+        "sc-6-roof-terrace",
+        "sc-6-room-608",
+        "sc-6-room-606",
+        "sc-6-room-605",
+        "sc-6-room-604",
+        "sc-6-room-603",
+        "sc-6-room-602"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-600",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 600",
+      "type": "door",
+      "polygon": [
+        [
+          1101,
+          714
+        ],
+        [
+          1100,
+          705
+        ],
+        [
+          1108,
+          705
+        ],
+        [
+          1108,
+          714
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1104,
+        "y": 710
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-600"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-600"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-614",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 614",
+      "type": "door",
+      "polygon": [
+        [
+          1126,
+          771
+        ],
+        [
+          1131,
+          772
+        ],
+        [
+          1131,
+          776
+        ],
+        [
+          1126,
+          776
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1129,
+        "y": 774
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-614"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-614"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-613",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 613",
+      "type": "door",
+      "polygon": [
+        [
+          1121,
+          780
+        ],
+        [
+          1125,
+          779
+        ],
+        [
+          1125,
+          784
+        ],
+        [
+          1119,
+          784
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1123,
+        "y": 782
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-613"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-613"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-610",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 610",
+      "type": "door",
+      "polygon": [
+        [
+          1099,
+          861
+        ],
+        [
+          1106,
+          862
+        ],
+        [
+          1106,
+          869
+        ],
+        [
+          1099,
+          869
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1103,
+        "y": 865
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-610"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-610"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-roof-terrace",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Roof Terrace",
+      "type": "door",
+      "polygon": [
+        [
+          1078,
+          883
+        ],
+        [
+          1078,
+          891
+        ],
+        [
+          1085,
+          891
+        ],
+        [
+          1085,
+          881
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1082,
+        "y": 887
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-roof-terrace"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-roof-terrace"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-room-608-sc-6-hallway-6",
+      "name": "Door Sc 6 Room 608 Sc 6 Hallway 6",
+      "type": "door",
+      "polygon": [
+        [
+          1064,
+          864
+        ],
+        [
+          1057,
+          864
+        ],
+        [
+          1057,
+          870
+        ],
+        [
+          1064,
+          870
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1061,
+        "y": 867
+      },
+      "neighbors": [
+        "sc-6-room-608",
+        "sc-6-hallway-6"
+      ],
+      "connects": [
+        "sc-6-room-608",
+        "sc-6-hallway-6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-607",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 607",
+      "type": "door",
+      "polygon": [
+        [
+          1072,
+          840
+        ],
+        [
+          1065,
+          840
+        ],
+        [
+          1065,
+          847
+        ],
+        [
+          1073,
+          847
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1069,
+        "y": 844
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-607"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-607"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-607",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 607",
+      "type": "door",
+      "polygon": [
+        [
+          1073,
+          815
+        ],
+        [
+          1066,
+          815
+        ],
+        [
+          1066,
+          823
+        ],
+        [
+          1073,
+          823
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1070,
+        "y": 819
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-606"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-606"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-605",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 605",
+      "type": "door",
+      "polygon": [
+        [
+          1073,
+          792
+        ],
+        [
+          1065,
+          792
+        ],
+        [
+          1065,
+          799
+        ],
+        [
+          1072,
+          799
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1069,
+        "y": 796
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-605"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-605"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-604",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 604",
+      "type": "door",
+      "polygon": [
+        [
+          1072,
+          771
+        ],
+        [
+          1064,
+          771
+        ],
+        [
+          1064,
+          776
+        ],
+        [
+          1071,
+          777
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1068,
+        "y": 774
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-604"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-604"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-603",
+      "name": "Door Sc 6 Hallway 6 Sc 6 Room 603",
+      "type": "door",
+      "polygon": [
+        [
+          1072,
+          749
+        ],
+        [
+          1065,
+          749
+        ],
+        [
+          1065,
+          756
+        ],
+        [
+          1072,
+          757
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1069,
+        "y": 753
+      },
+      "neighbors": [
+        "sc-6-hallway-6",
+        "sc-6-room-603"
+      ],
+      "connects": [
+        "sc-6-hallway-6",
+        "sc-6-room-603"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-room-602-sc-6-hallway-6",
+      "name": "Door Sc 6 Room 602 Sc 6 Hallway 6",
+      "type": "door",
+      "polygon": [
+        [
+          1072,
+          730
+        ],
+        [
+          1064,
+          730
+        ],
+        [
+          1064,
+          736
+        ],
+        [
+          1071,
+          737
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1068,
+        "y": 733
+      },
+      "neighbors": [
+        "sc-6-room-602",
+        "sc-6-hallway-6"
+      ],
+      "connects": [
+        "sc-6-room-602",
+        "sc-6-hallway-6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-room-710",
+      "name": "R710",
+      "type": "office",
+      "polygon": [
+        [
+          451,
+          724
+        ],
+        [
+          486,
+          724
+        ],
+        [
+          486,
+          748
+        ],
+        [
+          451,
+          748
+        ]
+      ],
+      "labelAnchor": {
+        "x": 469,
+        "y": 736
+      },
+      "neighbors": [
+        "sc-6-hallway-7"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-711",
+      "name": "R711",
+      "type": "office",
+      "polygon": [
+        [
+          451,
+          749
+        ],
+        [
+          451,
+          776
+        ],
+        [
+          486,
+          775
+        ],
+        [
+          485,
+          749
+        ]
+      ],
+      "labelAnchor": {
+        "x": 468,
+        "y": 762
+      },
+      "neighbors": [
+        "sc-6-hallway-7"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-712",
+      "name": "R712",
+      "type": "office",
+      "polygon": [
+        [
+          450,
+          775
+        ],
+        [
+          450,
+          796
+        ],
+        [
+          485,
+          795
+        ],
+        [
+          485,
+          775
+        ]
+      ],
+      "labelAnchor": {
+        "x": 468,
+        "y": 785
+      },
+      "neighbors": [
+        "sc-6-hallway-7"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-713",
+      "name": "R713",
+      "type": "office",
+      "polygon": [
+        [
+          450,
+          796
+        ],
+        [
+          450,
+          822
+        ],
+        [
+          485,
+          822
+        ],
+        [
+          485,
+          794
+        ]
+      ],
+      "labelAnchor": {
+        "x": 468,
+        "y": 809
+      },
+      "neighbors": [
+        "sc-6-hallway-7"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-714",
+      "name": "R714",
+      "type": "office",
+      "polygon": [
+        [
+          500,
+          822
+        ],
+        [
+          500,
+          790
+        ],
+        [
+          525,
+          789
+        ],
+        [
+          525,
+          822
+        ]
+      ],
+      "labelAnchor": {
+        "x": 513,
+        "y": 806
+      },
+      "neighbors": [
+        "sc-6-hallway-7"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-715",
+      "name": "R715",
+      "type": "office",
+      "polygon": [
+        [
+          524,
+          790
+        ],
+        [
+          543,
+          790
+        ],
+        [
+          542,
+          797
+        ],
+        [
+          560,
+          796
+        ],
+        [
+          560,
+          822
+        ],
+        [
+          524,
+          822
+        ]
+      ],
+      "labelAnchor": {
+        "x": 542,
+        "y": 803
+      },
+      "neighbors": [
+        "sc-6-hallway-7"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-716",
+      "name": "R716",
+      "type": "office",
+      "polygon": [
+        [
+          533,
+          768
+        ],
+        [
+          538,
+          768
+        ],
+        [
+          538,
+          748
+        ],
+        [
+          561,
+          748
+        ],
+        [
+          560,
+          795
+        ],
+        [
+          542,
+          796
+        ],
+        [
+          542,
+          789
+        ],
+        [
+          533,
+          788
+        ]
+      ],
+      "labelAnchor": {
+        "x": 543,
+        "y": 775
+      },
+      "neighbors": [
+        "sc-6-hallway-7"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          499,
+          748
+        ],
+        [
+          538,
+          749
+        ],
+        [
+          538,
+          768
+        ],
+        [
+          499,
+          768
+        ]
+      ],
+      "labelAnchor": {
+        "x": 519,
+        "y": 758
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-room-720",
+      "name": "R720",
+      "type": "office",
+      "polygon": [
+        [
+          485,
+          694
+        ],
+        [
+          485,
+          714
+        ],
+        [
+          505,
+          713
+        ],
+        [
+          504,
+          694
+        ]
+      ],
+      "labelAnchor": {
+        "x": 495,
+        "y": 704
+      },
+      "neighbors": [
+        "sc-6-hallway-7"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-706",
+      "name": "R706",
+      "type": "office",
+      "polygon": [
+        [
+          504,
+          713
+        ],
+        [
+          504,
+          695
+        ],
+        [
+          499,
+          694
+        ],
+        [
+          499,
+          678
+        ],
+        [
+          536,
+          677
+        ],
+        [
+          536,
+          714
+        ]
+      ],
+      "labelAnchor": {
+        "x": 513,
+        "y": 695
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-702"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-701",
+      "name": "R701",
+      "type": "office",
+      "polygon": [
+        [
+          535,
+          699
+        ],
+        [
+          561,
+          699
+        ],
+        [
+          560,
+          714
+        ],
+        [
+          535,
+          713
+        ]
+      ],
+      "labelAnchor": {
+        "x": 548,
+        "y": 706
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-702",
+      "name": "R702",
+      "type": "office",
+      "polygon": [
+        [
+          536,
+          677
+        ],
+        [
+          560,
+          677
+        ],
+        [
+          560,
+          698
+        ],
+        [
+          535,
+          699
+        ]
+      ],
+      "labelAnchor": {
+        "x": 548,
+        "y": 688
+      },
+      "neighbors": [
+        "sc-6-room-706"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          466,
+          678
+        ],
+        [
+          498,
+          678
+        ],
+        [
+          498,
+          694
+        ],
+        [
+          466,
+          694
+        ]
+      ],
+      "labelAnchor": {
+        "x": 482,
+        "y": 686
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-hallway-7",
+      "name": "Hallway 7",
+      "type": "corridor",
+      "polygon": [
+        [
+          466,
+          677
+        ],
+        [
+          450,
+          677
+        ],
+        [
+          451,
+          723
+        ],
+        [
+          486,
+          724
+        ],
+        [
+          485,
+          822
+        ],
+        [
+          500,
+          822
+        ],
+        [
+          500,
+          790
+        ],
+        [
+          533,
+          789
+        ],
+        [
+          533,
+          768
+        ],
+        [
+          499,
+          767
+        ],
+        [
+          498,
+          747
+        ],
+        [
+          561,
+          747
+        ],
+        [
+          559,
+          713
+        ],
+        [
+          485,
+          713
+        ],
+        [
+          487,
+          692
+        ],
+        [
+          465,
+          694
+        ]
+      ],
+      "labelAnchor": {
+        "x": 497,
+        "y": 742
+      },
+      "neighbors": [
+        "sc-6-roof-terrace",
+        "sc-6-room-713",
+        "sc-6-room-712",
+        "sc-6-room-711",
+        "sc-6-room-710",
+        "sc-6-room-714",
+        "sc-6-room-715",
+        "sc-6-room-716",
+        "sc-6-room-706",
+        "sc-6-room-720"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-roof-terrace",
+      "name": "Roof Terrace",
+      "type": "other",
+      "polygon": [
+        [
+          449,
+          822
+        ],
+        [
+          449,
+          882
+        ],
+        [
+          560,
+          882
+        ],
+        [
+          559,
+          822
+        ]
+      ],
+      "labelAnchor": {
+        "x": 504,
+        "y": 852
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-roof-terrace",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Roof Terrace",
+      "type": "door",
+      "polygon": [
+        [
+          489,
+          823
+        ],
+        [
+          489,
+          830
+        ],
+        [
+          496,
+          830
+        ],
+        [
+          496,
+          823
+        ]
+      ],
+      "labelAnchor": {
+        "x": 493,
+        "y": 827
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-roof-terrace"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-roof-terrace"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-713",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 713",
+      "type": "door",
+      "polygon": [
+        [
+          485,
+          805
+        ],
+        [
+          476,
+          805
+        ],
+        [
+          476,
+          812
+        ],
+        [
+          485,
+          812
+        ]
+      ],
+      "labelAnchor": {
+        "x": 481,
+        "y": 809
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-713"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-713"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-712",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 712",
+      "type": "door",
+      "polygon": [
+        [
+          485,
+          782
+        ],
+        [
+          477,
+          781
+        ],
+        [
+          477,
+          789
+        ],
+        [
+          485,
+          789
+        ]
+      ],
+      "labelAnchor": {
+        "x": 481,
+        "y": 785
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-712"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-712"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-711",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 711",
+      "type": "door",
+      "polygon": [
+        [
+          486,
+          757
+        ],
+        [
+          479,
+          756
+        ],
+        [
+          479,
+          764
+        ],
+        [
+          485,
+          763
+        ]
+      ],
+      "labelAnchor": {
+        "x": 482,
+        "y": 760
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-711"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-711"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-710",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 710",
+      "type": "door",
+      "polygon": [
+        [
+          485,
+          732
+        ],
+        [
+          476,
+          731
+        ],
+        [
+          476,
+          738
+        ],
+        [
+          484,
+          739
+        ]
+      ],
+      "labelAnchor": {
+        "x": 480,
+        "y": 735
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-710"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-710"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-714",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 714",
+      "type": "door",
+      "polygon": [
+        [
+          507,
+          789
+        ],
+        [
+          507,
+          795
+        ],
+        [
+          514,
+          795
+        ],
+        [
+          515,
+          789
+        ]
+      ],
+      "labelAnchor": {
+        "x": 511,
+        "y": 792
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-714"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-714"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-715",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 715",
+      "type": "door",
+      "polygon": [
+        [
+          527,
+          789
+        ],
+        [
+          534,
+          790
+        ],
+        [
+          533,
+          795
+        ],
+        [
+          526,
+          795
+        ]
+      ],
+      "labelAnchor": {
+        "x": 530,
+        "y": 792
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-715"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-715"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-716",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 716",
+      "type": "door",
+      "polygon": [
+        [
+          533,
+          773
+        ],
+        [
+          544,
+          772
+        ],
+        [
+          543,
+          781
+        ],
+        [
+          533,
+          782
+        ]
+      ],
+      "labelAnchor": {
+        "x": 538,
+        "y": 777
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-716"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-716"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-706",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 706",
+      "type": "door",
+      "polygon": [
+        [
+          515,
+          712
+        ],
+        [
+          514,
+          702
+        ],
+        [
+          524,
+          702
+        ],
+        [
+          523,
+          711
+        ]
+      ],
+      "labelAnchor": {
+        "x": 519,
+        "y": 707
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-706"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-706"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-7-sc-6-room-720",
+      "name": "Door Sc 6 Hallway 7 Sc 6 Room 720",
+      "type": "door",
+      "polygon": [
+        [
+          491,
+          712
+        ],
+        [
+          491,
+          705
+        ],
+        [
+          498,
+          705
+        ],
+        [
+          498,
+          713
+        ]
+      ],
+      "labelAnchor": {
+        "x": 495,
+        "y": 709
+      },
+      "neighbors": [
+        "sc-6-hallway-7",
+        "sc-6-room-720"
+      ],
+      "connects": [
+        "sc-6-hallway-7",
+        "sc-6-room-720"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-room-706-sc-6-room-702",
+      "name": "Door Sc 6 Room 706 Sc 6 Room 702",
+      "type": "door",
+      "polygon": [
+        [
+          535,
+          681
+        ],
+        [
+          540,
+          681
+        ],
+        [
+          540,
+          687
+        ],
+        [
+          534,
+          687
+        ]
+      ],
+      "labelAnchor": {
+        "x": 537,
+        "y": 684
+      },
+      "neighbors": [
+        "sc-6-room-706",
+        "sc-6-room-702"
+      ],
+      "connects": [
+        "sc-6-room-706",
+        "sc-6-room-702"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-room-706-sc-6-room-702",
+      "name": "Door Sc 6 Room 706 Sc 6 Room 702",
+      "type": "door",
+      "polygon": [
+        [
+          535,
+          704
+        ],
+        [
+          541,
+          704
+        ],
+        [
+          540,
+          709
+        ],
+        [
+          534,
+          710
+        ]
+      ],
+      "labelAnchor": {
+        "x": 538,
+        "y": 707
+      },
+      "neighbors": [
+        "sc-6-room-706",
+        "sc-6-room-702"
+      ],
+      "connects": [
+        "sc-6-room-706",
+        "sc-6-room-702"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-elevator",
+      "name": "Elevator",
+      "type": "elevator",
+      "polygon": [
+        [
+          1087,
+          731
+        ],
+        [
+          1087,
+          749
+        ],
+        [
+          1150,
+          750
+        ],
+        [
+          1150,
+          729
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1119,
+        "y": 740
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-elevator",
+      "name": "Elevator",
+      "type": "elevator",
+      "polygon": [
+        [
+          499,
+          732
+        ],
+        [
+          498,
+          747
+        ],
+        [
+          561,
+          747
+        ],
+        [
+          559,
+          732
+        ]
+      ],
+      "labelAnchor": {
+        "x": 529,
+        "y": 740
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-elevator",
+      "name": "Elevator",
+      "type": "elevator",
+      "polygon": [
+        [
+          1038,
+          374
+        ],
+        [
+          1038,
+          393
+        ],
+        [
+          1098,
+          392
+        ],
+        [
+          1099,
+          374
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1068,
+        "y": 383
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-roof-terrace",
+      "name": "Roof Terrace",
+      "type": "other",
+      "polygon": [
+        [
+          990,
+          406
+        ],
+        [
+          989,
+          467
+        ],
+        [
+          1099,
+          466
+        ],
+        [
+          1098,
+          407
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1044,
+        "y": 437
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-804",
+      "name": "R804",
+      "type": "classroom",
+      "polygon": [
+        [
+          989,
+          343
+        ],
+        [
+          1040,
+          342
+        ],
+        [
+          1039,
+          406
+        ],
+        [
+          990,
+          406
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1015,
+        "y": 374
+      },
+      "neighbors": [
+        "sc-6-roof-terrace",
+        "sc-6-hallway-8"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1039,
+          393
+        ],
+        [
+          1098,
+          392
+        ],
+        [
+          1098,
+          407
+        ],
+        [
+          1039,
+          406
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1069,
+        "y": 400
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-room-803",
+      "name": "R803",
+      "type": "office",
+      "polygon": [
+        [
+          1066,
+          303
+        ],
+        [
+          1066,
+          325
+        ],
+        [
+          1099,
+          325
+        ],
+        [
+          1098,
+          302
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1082,
+        "y": 314
+      },
+      "neighbors": [
+        "sc-6-hallway-8"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-802",
+      "name": "R802",
+      "type": "office",
+      "polygon": [
+        [
+          1065,
+          324
+        ],
+        [
+          1065,
+          360
+        ],
+        [
+          1099,
+          360
+        ],
+        [
+          1098,
+          324
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1082,
+        "y": 342
+      },
+      "neighbors": [
+        "sc-6-hallway-8"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1002,
+          322
+        ],
+        [
+          1002,
+          337
+        ],
+        [
+          1035,
+          337
+        ],
+        [
+          1035,
+          321
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1019,
+        "y": 329
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "7",
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-hallway-8",
+      "name": "Hallway 8",
+      "type": "corridor",
+      "polygon": [
+        [
+          988,
+          302
+        ],
+        [
+          989,
+          342
+        ],
+        [
+          1040,
+          343
+        ],
+        [
+          1040,
+          374
+        ],
+        [
+          1099,
+          374
+        ],
+        [
+          1099,
+          360
+        ],
+        [
+          1065,
+          360
+        ],
+        [
+          1065,
+          302
+        ],
+        [
+          1035,
+          302
+        ],
+        [
+          1036,
+          336
+        ],
+        [
+          1002,
+          337
+        ],
+        [
+          1002,
+          321
+        ],
+        [
+          1034,
+          320
+        ],
+        [
+          1036,
+          302
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1038,
+        "y": 334
+      },
+      "neighbors": [
+        "sc-6-room-804",
+        "sc-6-room-802",
+        "sc-6-room-803"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-door-sc-6-stairwell-sc-6-roof-terrace",
+      "name": "Door Sc 6 Stairwell Sc 6 Roof Terrace",
+      "type": "door",
+      "polygon": [
+        [
+          1085,
+          404
+        ],
+        [
+          1085,
+          411
+        ],
+        [
+          1096,
+          411
+        ],
+        [
+          1096,
+          400
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1091,
+        "y": 407
+      },
+      "neighbors": [
+        "sc-6-stairwell",
+        "sc-6-roof-terrace"
+      ],
+      "connects": [
+        "sc-6-stairwell",
+        "sc-6-roof-terrace"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-room-804-sc-6-roof-terrace",
+      "name": "Door Sc 6 Room 804 Sc 6 Roof Terrace",
+      "type": "door",
+      "polygon": [
+        [
+          997,
+          402
+        ],
+        [
+          1008,
+          403
+        ],
+        [
+          1008,
+          408
+        ],
+        [
+          996,
+          408
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1002,
+        "y": 405
+      },
+      "neighbors": [
+        "sc-6-room-804",
+        "sc-6-roof-terrace"
+      ],
+      "connects": [
+        "sc-6-room-804",
+        "sc-6-roof-terrace"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-8-sc-6-room-804",
+      "name": "Door Sc 6 Hallway 8 Sc 6 Room 804",
+      "type": "door",
+      "polygon": [
+        [
+          1039,
+          353
+        ],
+        [
+          1032,
+          353
+        ],
+        [
+          1032,
+          358
+        ],
+        [
+          1039,
+          359
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1036,
+        "y": 356
+      },
+      "neighbors": [
+        "sc-6-hallway-8",
+        "sc-6-room-804"
+      ],
+      "connects": [
+        "sc-6-hallway-8",
+        "sc-6-room-804"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-8-sc-6-room-802",
+      "name": "Door Sc 6 Hallway 8 Sc 6 Room 802",
+      "type": "door",
+      "polygon": [
+        [
+          1065,
+          350
+        ],
+        [
+          1072,
+          350
+        ],
+        [
+          1072,
+          356
+        ],
+        [
+          1064,
+          356
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1068,
+        "y": 353
+      },
+      "neighbors": [
+        "sc-6-hallway-8",
+        "sc-6-room-802"
+      ],
+      "connects": [
+        "sc-6-hallway-8",
+        "sc-6-room-802"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-hallway-8-sc-6-room-803",
+      "name": "Door Sc 6 Hallway 8 Sc 6 Room 803",
+      "type": "door",
+      "polygon": [
+        [
+          1065,
+          308
+        ],
+        [
+          1071,
+          307
+        ],
+        [
+          1071,
+          317
+        ],
+        [
+          1064,
+          318
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1068,
+        "y": 313
+      },
+      "neighbors": [
+        "sc-6-hallway-8",
+        "sc-6-room-803"
+      ],
+      "connects": [
+        "sc-6-hallway-8",
+        "sc-6-room-803"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-elevator-machine-room",
+      "name": "Elevator Machine Room",
+      "type": "other",
+      "polygon": [
+        [
+          502,
+          356
+        ],
+        [
+          567,
+          356
+        ],
+        [
+          567,
+          396
+        ],
+        [
+          502,
+          396
+        ]
+      ],
+      "labelAnchor": {
+        "x": 535,
+        "y": 376
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          566,
+          396
+        ],
+        [
+          566,
+          409
+        ],
+        [
+          456,
+          410
+        ],
+        [
+          455,
+          395
+        ]
+      ],
+      "labelAnchor": {
+        "x": 511,
+        "y": 403
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-harvard-telescope-club",
+      "name": "Harvard Telescope Club",
+      "type": "other",
+      "polygon": [
+        [
+          456,
+          343
+        ],
+        [
+          455,
+          394
+        ],
+        [
+          501,
+          395
+        ],
+        [
+          502,
+          342
+        ]
+      ],
+      "labelAnchor": {
+        "x": 479,
+        "y": 369
+      },
+      "neighbors": [
+        "sc-6-stairwell"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-901",
+      "name": "R901",
+      "type": "office",
+      "polygon": [
+        [
+          456,
+          306
+        ],
+        [
+          492,
+          307
+        ],
+        [
+          491,
+          326
+        ],
+        [
+          456,
+          326
+        ]
+      ],
+      "labelAnchor": {
+        "x": 474,
+        "y": 316
+      },
+      "neighbors": [
+        "sc-6-stairwell"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-room-900s",
+      "name": "R900S",
+      "type": "office",
+      "polygon": [
+        [
+          505,
+          305
+        ],
+        [
+          505,
+          318
+        ],
+        [
+          519,
+          319
+        ],
+        [
+          517,
+          341
+        ],
+        [
+          502,
+          341
+        ],
+        [
+          502,
+          356
+        ],
+        [
+          568,
+          357
+        ],
+        [
+          568,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 523,
+        "y": 330
+      },
+      "neighbors": [
+        "sc-6-stairwell"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-stairwell",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          455,
+          326
+        ],
+        [
+          504,
+          326
+        ],
+        [
+          504,
+          341
+        ],
+        [
+          456,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 480,
+        "y": 334
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-hallway-9",
+      "name": "Hallway 9",
+      "type": "corridor",
+      "polygon": [
+        [
+          482,
+          306
+        ],
+        [
+          482,
+          293
+        ],
+        [
+          506,
+          293
+        ],
+        [
+          505,
+          318
+        ],
+        [
+          519,
+          319
+        ],
+        [
+          517,
+          341
+        ],
+        [
+          504,
+          341
+        ],
+        [
+          505,
+          327
+        ],
+        [
+          490,
+          325
+        ],
+        [
+          491,
+          306
+        ]
+      ],
+      "labelAnchor": {
+        "x": 500,
+        "y": 317
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-6-door-sc-6-stairwell-sc-6-harvard-telescope-club",
+      "name": "Door Sc 6 Stairwell Sc 6 Harvard Telescope Club",
+      "type": "door",
+      "polygon": [
+        [
+          488,
+          338
+        ],
+        [
+          488,
+          346
+        ],
+        [
+          495,
+          346
+        ],
+        [
+          495,
+          339
+        ]
+      ],
+      "labelAnchor": {
+        "x": 492,
+        "y": 342
+      },
+      "neighbors": [
+        "sc-6-stairwell",
+        "sc-6-harvard-telescope-club"
+      ],
+      "connects": [
+        "sc-6-stairwell",
+        "sc-6-harvard-telescope-club"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-stairwell-sc-6-room-900s",
+      "name": "Door Sc 6 Stairwell Sc 6 Room 900s",
+      "type": "door",
+      "polygon": [
+        [
+          517,
+          328
+        ],
+        [
+          523,
+          328
+        ],
+        [
+          523,
+          337
+        ],
+        [
+          517,
+          337
+        ]
+      ],
+      "labelAnchor": {
+        "x": 520,
+        "y": 333
+      },
+      "neighbors": [
+        "sc-6-stairwell",
+        "sc-6-room-900s"
+      ],
+      "connects": [
+        "sc-6-stairwell",
+        "sc-6-room-900s"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-door-sc-6-stairwell-sc-6-room-901",
+      "name": "Door Sc 6 Stairwell Sc 6 Room 901",
+      "type": "door",
+      "polygon": [
+        [
+          491,
+          310
+        ],
+        [
+          484,
+          310
+        ],
+        [
+          484,
+          317
+        ],
+        [
+          491,
+          317
+        ]
+      ],
+      "labelAnchor": {
+        "x": 488,
+        "y": 314
+      },
+      "neighbors": [
+        "sc-6-stairwell",
+        "sc-6-room-901"
+      ],
+      "connects": [
+        "sc-6-stairwell",
+        "sc-6-room-901"
+      ],
+      "showLabel": false
+    }
+  ]
+}
