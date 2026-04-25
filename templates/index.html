@@ -260,6 +260,7 @@ let floors=[], floorIdx=0, floorCache={}, activeFilter='', activeSearch='';
 let roomIndex=[];          // [{floorId,id,name,type}]
 let navFrom=null, navTo=null;   // {floorId,id,name}
 let currentWaypoints=[];   // full route from server
+let routePointsByFloor={}; // floor id -> [{x,y}] Manhattan draw points from server
 let floorsVisited=[];      // ordered floor ids in current route
 let routeFloorIdx=0;       // index into floorsVisited for current step
 
@@ -502,28 +503,32 @@ function buildRoomIndex(){
 }
 
 // ── Right-angle path rendering ────────────────────────────────────────────────
-// Only inserts L-shaped corners between consecutive corridor nodes.
-// Door/connection nodes are at actual doorway positions — use them directly.
-const NAVIGABLE=new Set(['corridor','door','connection','entrance','stairwell','elevator']);
+// Convert every route edge into an axis-aligned Manhattan segment:
+// p1 -> bend -> p2. The bend direction follows the target waypoint orientation
+// when known, so horizontal corridor nodes are entered horizontally and vertical
+// corridor nodes are entered vertically.
+function orthogonalSegment(a,b){
+  const p1=[a.x,a.y],p2=[b.x,b.y];
+  if(Math.abs(a.x-b.x)<0.5||Math.abs(a.y-b.y)<0.5)return[p1,p2];
+  let bend;
+  if(b.orientation==='h')bend=[a.x,b.y];          // vertical, then horizontal
+  else if(b.orientation==='v')bend=[b.x,a.y];     // horizontal, then vertical
+  else{
+    const dx=Math.abs(b.x-a.x),dy=Math.abs(b.y-a.y);
+    bend=dx>=dy?[b.x,a.y]:[a.x,b.y];
+  }
+  return[p1,bend,p2];
+}
 
-function toRightAngle(wps){
+function toManhattanPath(wps){
   if(wps.length<2)return wps.map(w=>[w.x,w.y]);
   const out=[[wps[0].x,wps[0].y]];
   for(let i=1;i<wps.length;i++){
-    const[px,py]=out[out.length-1];
-    const{x,y,orientation,type}=wps[i];
-    const prevType=wps[i-1].type;
-    // Right-angle corner only between two corridor segments
-    if(prevType==='corridor'&&type==='corridor'){
-      const dx=Math.abs(x-px),dy=Math.abs(y-py);
-      let cx,cy;
-      if(orientation==='h'){cx=px;cy=y;}
-      else if(orientation==='v'){cx=x;cy=py;}
-      else if(dx>=dy){cx=x;cy=py;}
-      else{cx=px;cy=y;}
-      if(Math.abs(cx-px)>0.5||Math.abs(cy-py)>0.5) out.push([cx,cy]);
+    const seg=orthogonalSegment(wps[i-1],wps[i]);
+    for(const pt of seg.slice(1)){
+      const last=out[out.length-1];
+      if(Math.abs(pt[0]-last[0])>0.5||Math.abs(pt[1]-last[1])>0.5)out.push(pt);
     }
-    out.push([x,y]);
   }
   return out;
 }
@@ -535,10 +540,11 @@ function drawRouteForFloor(fid){
   const all=currentWaypoints.filter(w=>w.floor===fid&&!w.floor_change);
   if(all.length<1)return;
 
-  // Main animated path: only through navigable nodes (corridors, doors, stairwells)
-  const navWps=all.filter(w=>NAVIGABLE.has(w.type));
-  if(navWps.length>=2){
-    const pts=toRightAngle(navWps);
+  // Main animated path: all visible waypoints, with every edge forced into
+  // horizontal/vertical legs so the route looks like a real indoor walking path.
+  const serverPts=routePointsByFloor[fid]||[];
+  if(serverPts.length>=2){
+    const pts=serverPts.map(p=>[p.x,p.y]);
     const d='M '+pts.map(([x,y])=>`${x},${y}`).join(' L ');
     const path=document.createElementNS('http://www.w3.org/2000/svg','path');
     path.setAttribute('d',d);path.classList.add('nav-path');
@@ -546,16 +552,6 @@ function drawRouteForFloor(fid){
   }
 
   const first=all[0], last=all[all.length-1];
-
-  // Stub: dashed line from start room to first navigable node (if start is a room)
-  if(!NAVIGABLE.has(first.type)&&navWps.length>0){
-    addStub(first.x,first.y,navWps[0].x,navWps[0].y);
-  }
-  // Stub: dashed line from last navigable node to end room (if end is a room)
-  if(!NAVIGABLE.has(last.type)&&navWps.length>0){
-    const ln=navWps[navWps.length-1];
-    addStub(ln.x,ln.y,last.x,last.y);
-  }
 
   // Start marker (green) — only on the floor where the global journey begins
   if(currentWaypoints[0].floor===fid) addMarker(first.x,first.y,'#4CAF50');
@@ -579,15 +575,6 @@ function addMarker(x,y,fill){
   c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r','7');
   c.setAttribute('fill',fill);c.setAttribute('stroke','#fff');c.setAttribute('stroke-width','1.5');
   c.classList.add('nav-marker');pathL.appendChild(c);
-}
-
-function addStub(x1,y1,x2,y2){
-  const ln=document.createElementNS('http://www.w3.org/2000/svg','line');
-  ln.setAttribute('x1',x1);ln.setAttribute('y1',y1);
-  ln.setAttribute('x2',x2);ln.setAttribute('y2',y2);
-  ln.setAttribute('stroke','#E05C10');ln.setAttribute('stroke-width','2');
-  ln.setAttribute('stroke-dasharray','4 4');ln.setAttribute('stroke-linecap','round');
-  ln.style.pointerEvents='none';pathL.appendChild(ln);
 }
 
 function addPulseMarker(x,y){
@@ -628,6 +615,7 @@ async function navigate(){
     const data=await res.json();
     if(data.error){statusBar.textContent=`Route error: ${data.error}`;return;}
     currentWaypoints=data.waypoints;
+    routePointsByFloor=data.route_points_by_floor||{};
     floorsVisited=data.floors_visited;
     routeFloorIdx=0;
 
@@ -652,7 +640,7 @@ async function navigate(){
 }
 
 function clearRoute(){
-  currentWaypoints=[];floorsVisited=[];routeFloorIdx=0;
+  currentWaypoints=[];routePointsByFloor={};floorsVisited=[];routeFloorIdx=0;
   pathL.innerHTML='';
   routeInfo.classList.remove('visible');
   btnHere.style.display='none';
