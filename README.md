@@ -6,9 +6,7 @@
 
 ## What This Project Does
 
-This project is an interactive **indoor navigation and floor-plan explorer** for the
-Harvard Science Center.  It solves the problem that Google Maps handles outdoor routing
-well but gives no guidance once you step inside a building.
+This project is an interactive **indoor navigation tool and floor-plan explorer** for the Science Center. Google Maps handles outdoor routes well, but does not give guidance once you step inside a building, which is the gap our project aims to solve. To do this, we use hand-drawn floor plans of the Science Center and our code to find the optimal route from A to B, based on user filters.
 
 The system has two components:
 
@@ -19,16 +17,15 @@ The system has two components:
 
 ### Mapping server features
 
-- **Floor browser** — sidebar arrows and floor badges let you jump between floors 1, 2, 3, and 5.
-- **Room search** — fuzzy matching accepts `322`, `Room 322`, `R322`, `Cabot`, etc.
-- **Type filter** — dropdown greys out all rooms except the selected type (office, classroom, …).
-- **Navigation** — type any two rooms in the *From / To* fields; the server computes the shortest
-  path via Dijkstra and draws an animated dashed line that follows hallways.  Rooms cost 80× more
-  to traverse than corridors, so the route always prefers hallways.
-- **Multi-floor routing** — stairwells and elevators connect floors.  An **"I am here"** button
-  appears at each floor-change point; pressing it advances the map to the next floor on the route,
-  skipping pure transit floors automatically.
-- **Elevator toggle** — checkbox forces stairs-only routing.
+- **Floor browser** — sidebar arrows and floor badges let you jump between floors 1, 2, 3, and 5 (Floor 4 omitted from raw floor plans).
+- **Room search** — fuzzy matching accepts variants of the same room - for example, `322`, `Room 322`, `R322`, `Cabot`, etc.
+- **Type filter** — When user selects for a specific type of room, dropdown greys out all rooms except the selected type (office, classroom, …).
+- **Navigation** — When the user types any two rooms in the *From / To* fields, the server computes the shortest
+  path via Dijkstra and draws an animated dashed line that follows hallway geometry. User-facing rooms are entered and exited through designated door or connection nodes; direct corridor-to-room shortcuts are ignored.
+- **Multi-floor routing** — stairwells and elevators connect floors by matching the closest same-type connector coordinates on adjacent floors.  An **"I am here"** button
+  appears at each floor-change point; pressing it advances the map to the target floor on the route,
+  skipping in-between, or transit, floors automatically.
+- **Elevator toggle** — checkbox selects elevator-only cross-floor routing when enabled and stair-only cross-floor routing when disabled.
 
 ---
 
@@ -38,15 +35,15 @@ The system has two components:
 smartcampus/
 ├── app.py                    # Flask mapping server (Dijkstra, graph, API)
 ├── templates/
-│   └── index.html            # Single-page UI (SVG renderer, search, navigation)
+│   └── index.html            # Single-page UI (SVG renderer, search, navigation all without reloading)
 ├── Floor Plans/
-│   ├── floor1.json           # Annotated floor plan data (one file per floor)
+│   ├── floor1.json           # Annotated floor plan data (one file per floor, floor 4 omitted since was not received properly in plans)
 │   ├── floor2.json
 │   ├── floor3.json
 │   └── floor5.json
 ├── IndoorNav/
 │   ├── serve.py              # Labeling server (port 3000)
-│   └── src/                  # React annotation tool source
+│   └── src/                  # React annotation tool source (to hand-draw maps)
 ├── FloorPlan_Explorer.ipynb  # ← submission notebook
 └── README.md                 # ← this file
 ```
@@ -84,9 +81,7 @@ python3 IndoorNav/serve.py
 # Opens http://localhost:3000
 ```
 
-It serves a React app via Babel standalone — no build step is needed.  Load a floor-plan
-PNG as the background, draw room polygons by clicking vertices, assign type / name / neighbors,
-and export the result as a JSON file for `app.py` to consume.
+It runs a React app directly in the browser using Babel (so there’s no build step). You can load a floor plan image, click to draw room shapes, label them (type, name, neighbors), and export everything as a JSON file that `app.py` can use.
 
 ### Running the notebook
 
@@ -100,15 +95,33 @@ jupyter notebook FloorPlan_Explorer.ipynb
 
 ---
 
+## AI Tool Usage
+
+In some parts of the project, we made use of AI, helping us with debugging, improving efficiency and visual elements that we struggled with, and informing our understanding and helping write code on certain topics outside the class scope, e.g. the single-page UI we created using React and the .html landscape, or Dijkstra's algorithm.
+
+### Specific parts where AI helped write code or inform our understanding
+
+| File | AI contribution |
+|------|----------------|
+| `app.py` | Here, we used AI to help us with the Dijkstra's algorithm portion - in particular, we used AI or Google searches online to create TYPE_COST multipliers in our graph that weighed hallways as lower-cost relative to classrooms or offices,  to implement this into our graphing system. and implementation, and to construct the graphs mapping source to target destinations and visualizing optimal routes. |
+| `templates/index.html` | AI helped us here with visual aspects - specifically, it helped us in terms of making our path right-angled v.s. straight-line, creating an animated dashed line, developing the "I am here" multi-floor button to improve UI and User Experience, and visual symbols for elevators and stairwells. |
+| `FloorPlan_Explorer.ipynb` | We utilized AI to help us with creating the labeling system that we used to label our floor-plans with doors, rooms, hallways, and cross-floor connections. |
+
+
+
+
+---
+
 ## External References
 
-- **Dijkstra's algorithm** — standard algorithm; implementation follows the min-heap variant
-  from CLRS *Introduction to Algorithms*.  No code was copied.
 - **Flask** — https://flask.palletsprojects.com/
 - **Matplotlib `Polygon` patch** — https://matplotlib.org/stable/api/patches_api.html
 - **SVG stroke-dashoffset animation** — MDN Web Docs:
   https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset
 - **React via Babel standalone** (labeling tool) — https://babeljs.io/docs/babel-standalone
+
+No code was copied from tutorials or Stack Overflow.  All implementations were written
+from scratch (with AI assistance as mentioned in the section above) for this project.
 
 ---
 
