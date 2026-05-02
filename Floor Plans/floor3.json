@@ -1209,7 +1209,7 @@
     {
       "id": "sc-3-restroom",
       "name": "Restroom",
-      "type": "other",
+      "type": "restroom",
       "polygon": [
         [
           206,

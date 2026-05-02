@@ -56,6 +56,17 @@
     .btn-go  {background:#F4A535;color:#fff}.btn-go:hover{background:#d48f20}
     .btn-clr {background:#eee;color:#555}.btn-clr:hover{background:#ddd}
 
+    /* add-stop toggle */
+    .btn-addstop{background:none;border:1px dashed #B0C8D8;color:#4A90C4;
+                 font-size:.72rem;font-weight:500;padding:3px 8px;border-radius:5px;
+                 cursor:pointer;white-space:nowrap}
+    .btn-addstop:hover{background:#EEF5FA}
+    .via-row{display:flex;align-items:center;gap:5px}
+    .via-row label{font-size:.78rem;color:#9C27B0;font-weight:600;white-space:nowrap}
+    .btn-via-clr{background:none;border:none;color:#999;font-size:.9rem;
+                 cursor:pointer;padding:0 2px;line-height:1}
+    .btn-via-clr:hover{color:#c00}
+
     /* elevator toggle */
     .toggle-wrap{display:flex;align-items:center;gap:5px;font-size:.78rem;color:#555}
     .toggle-wrap input[type=checkbox]{accent-color:#4A90C4;width:14px;height:14px}
@@ -125,6 +136,17 @@
 
     footer{background:#fff;border-top:1px solid #E0E0E0;
            padding:5px 16px;font-size:.72rem;color:#999;flex-shrink:0}
+
+    /* indirect-access toast */
+    #indirect-notice{
+      position:fixed;bottom:36px;right:16px;
+      background:#FFF3CD;border:1px solid #FBBF24;border-radius:6px;
+      padding:8px 12px;font-size:.72rem;color:#7A4E00;
+      max-width:280px;line-height:1.4;
+      box-shadow:0 2px 8px rgba(0,0,0,.15);
+      display:none;z-index:900;
+    }
+    #indirect-notice.visible{display:block}
   </style>
 </head>
 <body>
@@ -161,6 +183,16 @@
     <div class="swrap">
       <input id="nav-to" class="inp nav-inp" type="text" placeholder="room / floor" autocomplete="off">
       <div id="nav-to-drop" class="drop"></div>
+    </div>
+    <button class="btn-addstop" id="btn-addstop" title="Add a stop on the way">+ Add stop</button>
+    <div class="via-row" id="via-row" style="display:none">
+      <label>Via:</label>
+      <div class="swrap">
+        <input id="nav-via" class="inp nav-inp" type="text"
+               placeholder="room or restroom…" autocomplete="off" style="width:150px">
+        <div id="nav-via-drop" class="drop"></div>
+      </div>
+      <button class="btn-via-clr" id="btn-via-clr" title="Remove stop">✕</button>
     </div>
     <div class="toggle-wrap">
       <input type="checkbox" id="elev-toggle" checked>
@@ -231,6 +263,13 @@
       <svg width="12" height="12"><circle cx="6" cy="6" r="5" fill="#F44336" stroke="#fff" stroke-width="1"/></svg>
       <span>End</span>
     </div>
+    <div class="li">
+      <svg width="12" height="12">
+        <rect x="1" y="1" width="10" height="10" transform="rotate(45 6 6)"
+              fill="#9C27B0" stroke="#fff" stroke-width="1"/>
+      </svg>
+      <span>Via stop</span>
+    </div>
   </div>
 </div>
 
@@ -243,6 +282,7 @@
   <span class="ri-close" id="ri-close" title="Clear route">✕ Clear</span>
 </div>
 
+<div id="indirect-notice"></div>
 <div id="tip"></div>
 <footer id="status-bar">Loading…</footer>
 
@@ -250,19 +290,53 @@
 // ── Palette ───────────────────────────────────────────────────────────────────
 const PASTEL={office:'#B5D5E8',classroom:'#C8E6C9',library:'#E8D5B7',
   lecture:'#D7C8E8',stairwell:'#ECECEC',elevator:'#FFF9C4',
-  corridor:'#F0F0F0',entrance:'#FFD6E0',other:'#E0E8D8'};
+  corridor:'#F0F0F0',entrance:'#FFD6E0',other:'#E0E8D8',
+  restroom:'#B8E0F4',water_fountain:'#A5E0D5',vending_machine:'#F5C6A0'};
 const GREY='#CCCCCC', HI_FILTER='#85D08A', HI_SEARCH='#FFCA28';
 const DOOR_TYPES=new Set(['door','connection']);
 const HIDE_LABEL=new Set(['door','connection','stairwell','elevator','corridor']);
+const AMENITY_TYPES=new Set(['restroom','water_fountain','vending_machine']);
+
+const AMENITY_KEYWORDS={
+  restroom:       ['restroom','bathroom','toilet','wc','washroom'],
+  water_fountain: ['water','fountain','drinking'],
+  vending_machine:['vending','snack'],
+};
+function detectAmenityKind(q){
+  const s=q.toLowerCase().trim();
+  if(s.length<2) return null;
+  // For each kind, find the shortest keyword that starts with the query.
+  // Pick the kind whose best match covers the highest fraction of its keyword
+  // (i.e. query "wat" covers 3/5 of "water" — better than 3/8 of "washroom").
+  let best=null, bestScore=0;
+  for(const [k,words] of Object.entries(AMENITY_KEYWORDS)){
+    for(const w of words){
+      if(w.startsWith(s)){
+        const score=s.length/w.length; // higher = more specific match
+        if(score>bestScore){bestScore=score;best=k;}
+      }
+    }
+  }
+  if(best) return best;
+  // Fallback: substring match
+  for(const [k,words] of Object.entries(AMENITY_KEYWORDS))
+    if(words.some(w=>s.includes(w)||w.includes(s))) return k;
+  return null;
+}
+function amenityLabel(kind){
+  return {restroom:'Closest Restroom',water_fountain:'Closest Water Fountain',
+          vending_machine:'Closest Vending Machine'}[kind]||kind;
+}
 
 // ── State ─────────────────────────────────────────────────────────────────────
 let floors=[], floorIdx=0, floorCache={}, activeFilter='', activeSearch='';
 let roomIndex=[];          // [{floorId,id,name,type}]
-let navFrom=null, navTo=null;   // {floorId,id,name}
+let navFrom=null, navTo=null, navVia=null;   // {floorId,id,name} or {amenity,name}
 let currentWaypoints=[];   // full route from server
 let routePointsByFloor={}; // floor id -> [{x,y}] Manhattan draw points from server
 let floorsVisited=[];      // ordered floor ids in current route
 let routeFloorIdx=0;       // index into floorsVisited for current step
+let currentViaStop=null;   // via_stop from server response
 
 // ── DOM ───────────────────────────────────────────────────────────────────────
 const svg         =document.getElementById('floor-svg');
@@ -275,16 +349,22 @@ const btnUp       =document.getElementById('btn-up');
 const btnDown     =document.getElementById('btn-down');
 const floorList   =document.getElementById('floor-list');
 const typeFilter  =document.getElementById('type-filter');
-const legendItems =document.getElementById('legend-items');
-const tip         =document.getElementById('tip');
+const legendItems     =document.getElementById('legend-items');
+const tip             =document.getElementById('tip');
+const indirectNotice  =document.getElementById('indirect-notice');
 const statusBar   =document.getElementById('status-bar');
 const searchInput =document.getElementById('search-input');
 const searchDrop  =document.getElementById('search-drop');
 const navFromEl   =document.getElementById('nav-from');
 const navToEl     =document.getElementById('nav-to');
+const navViaEl    =document.getElementById('nav-via');
 const navFromDrop =document.getElementById('nav-from-drop');
 const navToDrop   =document.getElementById('nav-to-drop');
+const navViaDrop  =document.getElementById('nav-via-drop');
 const elevToggle  =document.getElementById('elev-toggle');
+const btnAddStop  =document.getElementById('btn-addstop');
+const viaRow      =document.getElementById('via-row');
+const btnViaClr   =document.getElementById('btn-via-clr');
 const routeInfo   =document.getElementById('route-info');
 const riFloors    =document.getElementById('ri-floors');
 const riDist      =document.getElementById('ri-dist');
@@ -558,6 +638,9 @@ function drawRouteForFloor(fid){
   // End marker (red) — only on the destination floor
   if(currentWaypoints[currentWaypoints.length-1].floor===fid) addMarker(last.x,last.y,'#F44336');
 
+  // Via-stop diamond marker (purple) — draw on the floor the via stop is on
+  if(currentViaStop&&currentViaStop.floor===fid) addViaMarker(currentViaStop.x,currentViaStop.y);
+
   // Floor-change indicators (stair/elevator S/E circles)
   currentWaypoints.forEach(w=>{
     if(w.floor===fid&&w.floor_change) addFloorChangeMark(w.x,w.y,w.type);
@@ -599,18 +682,39 @@ function addFloorChangeMark(x,y,type){
   pathL.appendChild(t);
 }
 
+function addViaMarker(x,y){
+  const r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+  r.setAttribute('x',x-7);r.setAttribute('y',y-7);
+  r.setAttribute('width',14);r.setAttribute('height',14);
+  r.setAttribute('transform',`rotate(45 ${x} ${y})`);
+  r.setAttribute('fill','#9C27B0');
+  r.setAttribute('stroke','#fff');r.setAttribute('stroke-width','1.5');
+  r.classList.add('nav-marker');pathL.appendChild(r);
+}
+
 // ── Navigate ──────────────────────────────────────────────────────────────────
 async function navigate(){
   if(!navFrom||!navTo){statusBar.textContent='Select valid From and To rooms.';return;}
+  if(navFrom.amenity){statusBar.textContent='Error: From must be a room, not an amenity.';return;}
   statusBar.textContent='Finding route…';
   try{
+    // Build request body
+    const body={
+      from_floor:navFrom.floorId, from_id:navFrom.id,
+      use_elevator:elevToggle.checked
+    };
+    if(navTo.amenity){
+      body.to_amenity=navTo.amenity;
+    }else{
+      body.to_floor=navTo.floorId;
+      body.to_id=navTo.id;
+    }
+    if(navVia&&navVia.amenity) body.via_amenity=navVia.amenity;
+    else if(navVia&&navVia.floorId) {body.via_floor=navVia.floorId;body.via_id=navVia.id;}
+
     const res=await fetch('/api/navigate',{
       method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        from_floor:navFrom.floorId, from_id:navFrom.id,
-        to_floor:navTo.floorId,     to_id:navTo.id,
-        use_elevator:elevToggle.checked
-      })
+      body:JSON.stringify(body)
     });
     const data=await res.json();
     if(data.error){statusBar.textContent=`Route error: ${data.error}`;return;}
@@ -618,10 +722,28 @@ async function navigate(){
     routePointsByFloor=data.route_points_by_floor||{};
     floorsVisited=data.floors_visited;
     routeFloorIdx=0;
+    currentViaStop=data.via_stop||null;
 
     // Update route banner
-    riFloors.textContent=data.floors_visited.join(' → ');
+    let floorsText=data.floors_visited.join(' → ');
+    if(currentViaStop) floorsText+=` (via ${currentViaStop.name||'stop'})`;
+    riFloors.textContent=floorsText;
     riDist.textContent=`~${data.total_px} px`;
+
+    // Indirect access notice
+    if(data.indirect_access){
+      const ia=data.indirect_access;
+      const destName=(ia.destination&&ia.destination.name)||'This room';
+      const viaNames=(ia.intermediate_rooms||[]).map(r=>r.name).filter(Boolean);
+      const viaText=viaNames.length ? ` through ${viaNames.join(' and ')}` : '';
+      indirectNotice.textContent=`⚠ ${destName} has no direct hallway entrance and can only be reached${viaText}. The route shown leads to the nearest accessible door.`;
+      indirectNotice.classList.add('visible');
+      statusBar.textContent=`Route: ${data.waypoints.length} hops across floors ${floorsText}`;
+    }else{
+      indirectNotice.classList.remove('visible');
+      statusBar.textContent=`Route: ${data.waypoints.length} hops across floors ${data.floors_visited.join(' → ')}`;
+    }
+
     routeInfo.classList.add('visible');
     updateHereButton();
 
@@ -635,17 +757,21 @@ async function navigate(){
     if(startFloorIdx!==floorIdx) goToFloor(startFloorIdx);
     else drawRouteForFloor(floors[floorIdx]);
 
-    statusBar.textContent=`Route: ${data.waypoints.length} hops across floors ${riFloors.textContent}`;
   }catch(e){statusBar.textContent=`Error: ${e.message}`;}
 }
 
 function clearRoute(){
   currentWaypoints=[];routePointsByFloor={};floorsVisited=[];routeFloorIdx=0;
+  currentViaStop=null;
   pathL.innerHTML='';
   routeInfo.classList.remove('visible');
+  indirectNotice.classList.remove('visible');
   btnHere.style.display='none';
   navFromEl.value=navToEl.value='';
+  navViaEl.value='';navVia=null;
   navFromEl.className=navToEl.className='inp nav-inp';
+  navViaEl.className='inp nav-inp';
+  viaRow.style.display='none';btnAddStop.style.display='';
   navFrom=navTo=null;
   document.querySelectorAll('.pip').forEach(p=>p.classList.remove('on-route'));
   statusBar.textContent=`Floor ${floors[floorIdx]} · ready`;
@@ -689,11 +815,102 @@ document.getElementById('btn-clr').addEventListener('click',clearRoute);
 riClose.addEventListener('click',clearRoute);
 
 // ── Nav autocomplete ──────────────────────────────────────────────────────────
-makeDropdown(navFromEl,navFromDrop,()=>roomIndex,h=>{
-  navFromEl.value=h.name;navFrom=h;navFromEl.classList.add('valid');navFromEl.classList.remove('invalid');
+// navDropdown: like makeDropdown but optionally prepends amenity shortcut items
+function navDropdown(inputEl,dropEl,allowAmenity,onSelect){
+  inputEl.addEventListener('input',()=>{
+    const q=inputEl.value.trim();
+    dropEl.innerHTML='';
+    if(!q){dropEl.classList.remove('open');return;}
+    const items=[];
+    // Prepend amenity shortcut if query matches a keyword and amenity is allowed
+    if(allowAmenity){
+      const kind=detectAmenityKind(q);
+      if(kind) items.push({_amenity:kind,name:amenityLabel(kind),type:kind,floorId:'★'});
+    }
+    // Normal room matches
+    const hits=roomIndex.filter(r=>matches(q,r.name)).slice(0,10);
+    items.push(...hits);
+    if(!items.length){
+      dropEl.innerHTML='<div class="di no-res">No matches</div>';
+      dropEl.classList.add('open');return;
+    }
+    items.forEach(h=>{
+      const d=document.createElement('div');d.className='di';
+      if(h._amenity){
+        d.innerHTML=`<span>${h.name}</span><span class="meta">amenity</span>`;
+      }else{
+        d.innerHTML=`<span>${h.name}</span><span class="meta">F${h.floorId} · ${h.type}</span>`;
+      }
+      d.addEventListener('mousedown',e=>{e.preventDefault();onSelect(h);dropEl.classList.remove('open');});
+      dropEl.appendChild(d);
+    });
+    dropEl.classList.add('open');
+  });
+  inputEl.addEventListener('blur',()=>setTimeout(()=>dropEl.classList.remove('open'),150));
+}
+
+navDropdown(navFromEl,navFromDrop,false,h=>{
+  navFromEl.value=h.name;
+  navFrom=h._amenity?{amenity:h._amenity,name:h.name}:h;
+  navFromEl.classList.add('valid');navFromEl.classList.remove('invalid');
 });
-makeDropdown(navToEl,navToDrop,()=>roomIndex,h=>{
-  navToEl.value=h.name;navTo=h;navToEl.classList.add('valid');navToEl.classList.remove('invalid');
+navDropdown(navToEl,navToDrop,true,h=>{
+  navToEl.value=h.name;
+  navTo=h._amenity?{amenity:h._amenity,name:h.name}:h;
+  navToEl.classList.add('valid');navToEl.classList.remove('invalid');
+});
+
+// Via field: accepts amenity keywords OR regular room names
+navViaEl.addEventListener('input',()=>{
+  const q=navViaEl.value.trim();
+  navViaDrop.innerHTML='';
+  if(!q){navViaDrop.classList.remove('open');navVia=null;return;}
+  const items=[];
+  const kind=detectAmenityKind(q);
+  if(kind) items.push({_amenity:kind,name:amenityLabel(kind)+' (closest on the way)',type:kind,floorId:'★'});
+  items.push(...roomIndex.filter(r=>matches(q,r.name)).slice(0,8));
+  if(!items.length){
+    navViaDrop.innerHTML='<div class="di no-res">No matches</div>';
+    navViaDrop.classList.add('open');return;
+  }
+  items.forEach(h=>{
+    const d=document.createElement('div');d.className='di';
+    if(h._amenity){
+      d.innerHTML=`<span>${h.name}</span><span class="meta">amenity</span>`;
+      d.addEventListener('mousedown',e=>{
+        e.preventDefault();
+        navVia={amenity:h._amenity,name:amenityLabel(h._amenity)};
+        navViaEl.value=amenityLabel(h._amenity);
+        navViaEl.classList.add('valid');navViaEl.classList.remove('invalid');
+        navViaDrop.classList.remove('open');
+      });
+    }else{
+      d.innerHTML=`<span>${h.name}</span><span class="meta">F${h.floorId} · ${h.type}</span>`;
+      d.addEventListener('mousedown',e=>{
+        e.preventDefault();
+        navVia={floorId:h.floorId,id:h.id,name:h.name};
+        navViaEl.value=h.name;
+        navViaEl.classList.add('valid');navViaEl.classList.remove('invalid');
+        navViaDrop.classList.remove('open');
+      });
+    }
+    navViaDrop.appendChild(d);
+  });
+  navViaDrop.classList.add('open');
+});
+navViaEl.addEventListener('blur',()=>setTimeout(()=>navViaDrop.classList.remove('open'),150));
+
+// Toggle via row visibility
+btnAddStop.addEventListener('click',()=>{
+  viaRow.style.display='flex';
+  btnAddStop.style.display='none';
+  navViaEl.focus();
+});
+btnViaClr.addEventListener('click',()=>{
+  navVia=null;navViaEl.value='';
+  navViaEl.className='inp nav-inp';
+  viaRow.style.display='none';
+  btnAddStop.style.display='';
 });
 
 // ── Search ────────────────────────────────────────────────────────────────────

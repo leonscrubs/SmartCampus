@@ -17,17 +17,20 @@ FLOOR_FILES = {
 # Rooms are prohibitively expensive so the path never cuts through them
 # unless there is genuinely no corridor alternative.
 TYPE_COST = {
-    'corridor':   1.0,
-    'entrance':   2.0,
-    'door':       0.1,
-    'connection': 0.1,
-    'stairwell':  3.0,
-    'elevator':   3.0,
-    'other':      80.0,
-    'library':    80.0,
-    'classroom':  80.0,
-    'office':     80.0,
-    'lecture':    80.0,
+    'corridor':        1.0,
+    'entrance':        2.0,
+    'door':            0.1,
+    'connection':      0.1,
+    'stairwell':       3.0,
+    'elevator':        3.0,
+    'other':           80.0,
+    'library':         80.0,
+    'classroom':       80.0,
+    'office':          80.0,
+    'lecture':         80.0,
+    'restroom':        2.0,
+    'water_fountain':  2.0,
+    'vending_machine': 2.0,
 }
 
 FLOOR_CHANGE_COST = 600   # pixel-equivalent penalty per adjacent floor hop
@@ -36,6 +39,14 @@ ROOM_ENTRY_TYPES = {'office', 'classroom', 'library', 'lecture', 'other'}
 LOW_COST_TYPES = {'corridor', 'entrance', 'door', 'connection', 'stairwell', 'elevator'}
 SNAP_TARGET_TYPES = {'corridor', 'entrance'}
 HALLWAY_ACCESS_TYPES = {'door', 'connection', 'stairwell', 'elevator', 'entrance'}
+
+AMENITY_TYPES = {'restroom', 'water_fountain', 'vending_machine'}
+
+AMENITY_KIND_ALIASES = {
+    'restroom':       ['restroom', 'bathroom', 'toilet', 'wc', 'washroom'],
+    'water_fountain': ['water_fountain', 'water', 'fountain', 'drinking'],
+    'vending_machine': ['vending_machine', 'vending', 'snack', 'machine'],
+}
 
 # Index position of each floor — used to compute inter-floor distance cost
 FLOOR_IDX = {f: i for i, f in enumerate(FLOOR_ORDER)}
@@ -308,6 +319,89 @@ def dijkstra(nodes, adj, start, goal):
     return path if path[0] == start else None
 
 
+def dijkstra_all(nodes, adj, start):
+    dist = {start: 0.0}
+    prev = {}
+    pq = [(0.0, start)]
+    while pq:
+        d, u = heapq.heappop(pq)
+        if d > dist.get(u, math.inf):
+            continue
+        for v, w in adj.get(u, []):
+            nd = d + w
+            if nd < dist.get(v, math.inf):
+                dist[v] = nd
+                prev[v] = u
+                heapq.heappush(pq, (nd, v))
+    return dist, prev
+
+
+def find_nearest_amenity(nodes, adj, start_key, kind):
+    dist, _ = dijkstra_all(nodes, adj, start_key)
+    best_key, best_cost = None, math.inf
+    for k, n in nodes.items():
+        if n['type'] == kind and k in dist and dist[k] < best_cost:
+            best_key, best_cost = k, dist[k]
+    return best_key
+
+
+def find_best_via(nodes, adj, start_key, goal_key, kind):
+    d_from, _ = dijkstra_all(nodes, adj, start_key)
+    d_to,   _ = dijkstra_all(nodes, adj, goal_key)
+    best_key, best_cost = None, math.inf
+    for k, n in nodes.items():
+        if n['type'] != kind:
+            continue
+        if k not in d_from or k not in d_to:
+            continue
+        c = d_from[k] + d_to[k]
+        if c < best_cost:
+            best_key, best_cost = k, c
+    return best_key
+
+
+def truncate_indirect_path(path_keys, nodes, adj):
+    if len(path_keys) < 2:
+        return path_keys, [], None
+    goal_type = nodes.get(path_keys[-1], {}).get('type', '')
+    if goal_type not in ROOM_ENTRY_TYPES:
+        return path_keys, [], None
+
+    intermediates = []
+    cut_idx = None
+
+    for i in range(len(path_keys) - 2, -1, -1):
+        n = nodes[path_keys[i]]
+        t = n['type']
+        if t == 'corridor' or t == 'entrance':
+            # The node right after this (i+1) is the gateway door into the room chain
+            cut_idx = i + 1
+            break
+        if t in ROOM_ENTRY_TYPES:
+            intermediates.insert(0, {'id': n['id'], 'name': n['name'], 'floor': n['floor']})
+
+    if not intermediates or cut_idx is None:
+        return path_keys, [], None
+
+    truncated = path_keys[:cut_idx + 1]  # include gateway door as final node
+    stop = nodes[truncated[-1]]
+    stop_info = {
+        'id':    stop['id'],
+        'x':     round(stop['cx'], 1),
+        'y':     round(stop['cy'], 1),
+        'floor': stop['floor'],
+    }
+    return truncated, intermediates, stop_info
+
+
+def normalize_amenity_kind(text):
+    t = text.lower().replace('-', '_').replace(' ', '_')
+    for kind, aliases in AMENITY_KIND_ALIASES.items():
+        if t in aliases or t == kind:
+            return kind
+    return None
+
+
 def as_point(node):
     return {'x': round(node['cx'], 1), 'y': round(node['cy'], 1)}
 
@@ -342,7 +436,11 @@ def corridor_manhattan_points(a, b, corridor_node):
     polygon = corridor_node.get('polygon', [])
     if not polygon:
         return [a, b]
-    if segment_inside_polygon(a, b, polygon):
+    # Only take the direct path if it is already axis-aligned (pure horizontal or
+    # vertical). A diagonal segment that happens to lie inside the polygon still
+    # looks wrong on screen — force a Manhattan bend in that case.
+    already_straight = abs(a['x'] - b['x']) < 0.5 or abs(a['y'] - b['y']) < 0.5
+    if already_straight and segment_inside_polygon(a, b, polygon):
         return [a, b]
 
     candidates = [
@@ -430,7 +528,9 @@ def corridor_rectilinear_path(a, b, polygon):
                 heapq.heappush(pq, (nd, nxt))
 
     if goal not in dist:
-        return [a, b]
+        # No path inside the polygon — force a Manhattan L-path rather than a diagonal.
+        bend = {'x': a['x'], 'y': b['y']}
+        return [a, bend, b]
 
     path = []
     cur = goal
@@ -466,9 +566,33 @@ def route_draw_points(path_keys, nodes):
         # Do not connect doorways directly. The middle leg is routed inside the
         # corridor polygon so the line follows the hallway instead of cutting
         # across rooms or walls.
+        # Intermediate room pass-through: door → room → door
+        # The room is not start or end — skip its centroid and connect the doors directly.
+        if (a['type'] in DOOR_TYPES and b['type'] in ROOM_ENTRY_TYPES
+                and i + 2 < len(path_keys)
+                and path_keys[i + 1] != path_keys[-1]):
+            c = nodes[path_keys[i + 2]]
+            if c['type'] in DOOR_TYPES and c['floor'] == b['floor']:
+                add_point(points, a_pt)
+                i += 2
+                continue
+
+        # corridor → corridor → door/connection/amenity:
+        # Route entirely inside the second corridor — find where corridor_a "enters"
+        # corridor_b and where the exit door exits corridor_b, then Manhattan inside b.
+        if a['type'] == 'corridor' and b['type'] == 'corridor' and i + 2 < len(path_keys):
+            c = nodes[path_keys[i + 2]]
+            if c['floor'] == b['floor'] and (c['type'] in HALLWAY_ACCESS_TYPES or c['type'] in AMENITY_TYPES):
+                entry_from_a = corridor_entry_point(a, b)  # where corridor_a meets corridor_b
+                entry_from_c = corridor_entry_point(c, b)  # where exit node meets corridor_b
+                for point in [a_pt, *corridor_manhattan_points(entry_from_a, entry_from_c, b), as_point(c)]:
+                    add_point(points, point)
+                i += 2
+                continue
+
         if a['type'] in HALLWAY_ACCESS_TYPES and b['type'] == 'corridor' and i + 2 < len(path_keys):
             c = nodes[path_keys[i + 2]]
-            if c['floor'] == b['floor'] and c['type'] in HALLWAY_ACCESS_TYPES:
+            if c['floor'] == b['floor'] and (c['type'] in HALLWAY_ACCESS_TYPES or c['type'] in AMENITY_TYPES):
                 start_lane = corridor_entry_point(a, b)
                 end_lane = corridor_entry_point(c, b)
                 for point in [a_pt, *corridor_manhattan_points(start_lane, end_lane, b), as_point(c)]:
@@ -482,13 +606,34 @@ def route_draw_points(path_keys, nodes):
             edge_points = [a_pt, corridor_entry_point(a, b)]
         elif a['type'] == 'corridor' and b['type'] in HALLWAY_ACCESS_TYPES:
             edge_points = [corridor_entry_point(b, a), b_pt]
+        elif a['type'] == 'corridor' and b['type'] in AMENITY_TYPES:
+            # Amenity sits just outside the corridor: find the wall entry point,
+            # then draw a short straight line into the amenity.
+            entry = corridor_entry_point(b, a)
+            edge_points = [entry, b_pt]
+        elif a['type'] in AMENITY_TYPES and b['type'] == 'corridor':
+            entry = corridor_entry_point(a, b)
+            edge_points = [a_pt, entry]
         elif a['type'] == 'corridor' and b['type'] == 'corridor':
             edge_points = corridor_manhattan_points(a_pt, b_pt, a)
 
         for point in edge_points:
             add_point(points, point)
         i += 1
-    return points
+    return _ensure_manhattan(points)
+
+
+def _ensure_manhattan(points):
+    if len(points) < 2:
+        return points
+    result = [points[0]]
+    for i in range(1, len(points)):
+        a = result[-1]
+        b = points[i]
+        if abs(b['x'] - a['x']) > 0.5 and abs(b['y'] - a['y']) > 0.5:
+            result.append({'x': a['x'], 'y': b['y']})
+        result.append(b)
+    return result
 
 
 @app.route('/')
@@ -521,6 +666,10 @@ def api_navigate():
     to_id      = body.get('to_id', '')
     use_elev   = body.get('use_elevator', True)
     use_stairs = not use_elev
+    to_amenity  = body.get('to_amenity')
+    via_amenity = body.get('via_amenity')
+    via_floor   = str(body.get('via_floor', ''))
+    via_id      = body.get('via_id', '')
 
     try:
         nodes, adj = build_graph(use_elevator=use_elev, use_stairs=use_stairs)
@@ -528,16 +677,94 @@ def api_navigate():
         return jsonify({'error': str(e)}), 500
 
     start_key = f"{from_floor}:{from_id}"
-    goal_key  = f"{to_floor}:{to_id}"
 
     if start_key not in nodes:
         return jsonify({'error': f'Start not in graph: {start_key}'}), 400
-    if goal_key not in nodes:
-        return jsonify({'error': f'Goal not in graph: {goal_key}'}), 400
+
+    # ── Feature B: resolve amenity destination ────────────────────────────────
+    resolved_amenity = None
+    if to_amenity:
+        kind = normalize_amenity_kind(to_amenity)
+        if not kind:
+            return jsonify({'error': f'Unknown amenity type: {to_amenity}'}), 400
+        goal_key = find_nearest_amenity(nodes, adj, start_key, kind)
+        if not goal_key:
+            return jsonify({'error': f'No {kind} found or reachable from start'}), 404
+        gn = nodes[goal_key]
+        to_floor = gn['floor']
+        to_id    = gn['id']
+        resolved_amenity = {
+            'kind': kind, 'floor': gn['floor'],
+            'id': gn['id'], 'name': gn['name'],
+        }
+    else:
+        # Existing lookup
+        goal_key = f"{to_floor}:{to_id}"
+        if goal_key not in nodes:
+            return jsonify({'error': f'Goal not in graph: {goal_key}'}), 400
 
     path_keys = dijkstra(nodes, adj, start_key, goal_key)
+
+    # ── Feature C: via stop (amenity or specific room) ───────────────────────
+    via_stop = None
+    if via_amenity:
+        via_kind = normalize_amenity_kind(via_amenity)
+        if not via_kind:
+            return jsonify({'error': f'Unknown via amenity: {via_amenity}'}), 400
+        via_key = find_best_via(nodes, adj, start_key, goal_key, via_kind)
+        if not via_key:
+            return jsonify({'error': f'No {via_kind} reachable for via stop'}), 404
+        p1 = dijkstra(nodes, adj, start_key, via_key)
+        p2 = dijkstra(nodes, adj, via_key, goal_key)
+        if p1 and p2:
+            path_keys = p1 + p2[1:]
+            vn = nodes[via_key]
+            via_stop = {
+                'kind':  via_kind,
+                'floor': vn['floor'],
+                'id':    vn['id'],
+                'name':  vn['name'],
+                'x':     round(vn['cx'], 1),
+                'y':     round(vn['cy'], 1),
+                'waypoint_index': len(p1) - 1,
+            }
+    elif via_floor and via_id:
+        via_key = f"{via_floor}:{via_id}"
+        if via_key not in nodes:
+            return jsonify({'error': f'Via room not in graph: {via_key}'}), 400
+        p1 = dijkstra(nodes, adj, start_key, via_key)
+        p2 = dijkstra(nodes, adj, via_key, goal_key)
+        if p1 and p2:
+            path_keys = p1 + p2[1:]
+            vn = nodes[via_key]
+            via_stop = {
+                'kind':  vn['type'],
+                'floor': vn['floor'],
+                'id':    vn['id'],
+                'name':  vn['name'],
+                'x':     round(vn['cx'], 1),
+                'y':     round(vn['cy'], 1),
+                'waypoint_index': len(p1) - 1,
+            }
+
     if not path_keys:
         return jsonify({'error': 'No path found'}), 404
+
+    # ── Feature A: indirect room access ──────────────────────────────────────
+    indirect_access = None
+    trunc, inters, stop_info = truncate_indirect_path(path_keys, nodes, adj)
+    if inters:
+        goal_n = nodes[path_keys[-1]]
+        indirect_access = {
+            'destination': {
+                'id':    goal_n['id'],
+                'name':  goal_n['name'],
+                'floor': goal_n['floor'],
+            },
+            'intermediate_rooms': inters,
+            'stop_at': stop_info,
+        }
+        path_keys = trunc
 
     prev_floor = None
     waypoints  = []
@@ -574,7 +801,43 @@ def api_navigate():
         'route_points_by_floor':  route_points_by_floor,
         'total_px':               round(total_px),
         'floors_visited':         floors_visited,
+        # new
+        'indirect_access':        indirect_access,   # None if not applicable
+        'resolved_amenity':       resolved_amenity,  # None if not applicable
+        'via_stop':               via_stop,          # None if not applicable
     })
+
+
+@app.route('/api/amenities')
+def api_amenities():
+    kind       = request.args.get('kind', '')
+    from_floor = request.args.get('from_floor', '')
+    from_id    = request.args.get('from_id', '')
+    use_elev   = request.args.get('use_elevator', 'true').lower() == 'true'
+
+    try:
+        nodes, adj = build_graph(use_elevator=use_elev, use_stairs=not use_elev)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    start_key = f"{from_floor}:{from_id}" if from_floor and from_id else None
+    d_from = {}
+    if start_key and start_key in nodes:
+        d_from, _ = dijkstra_all(nodes, adj, start_key)
+
+    items = []
+    for k, n in nodes.items():
+        if n['type'] == kind:
+            items.append({
+                'floor': n['floor'],
+                'id':    n['id'],
+                'name':  n['name'],
+                'x':     round(n['cx'], 1),
+                'y':     round(n['cy'], 1),
+                'cost':  d_from.get(k),
+            })
+    items.sort(key=lambda i: (math.inf if i['cost'] is None else i['cost']))
+    return jsonify({'amenities': items, 'nearest': items[0] if items else None})
 
 
 if __name__ == '__main__':

@@ -2939,6 +2939,99 @@
         "sc-5-room-515"
       ],
       "showLabel": false
+    },
+    {
+      "id": "sc-5-restroom",
+      "name": "Restroom",
+      "type": "restroom",
+      "polygon": [
+        [
+          840,
+          440
+        ],
+        [
+          860,
+          440
+        ],
+        [
+          860,
+          460
+        ],
+        [
+          840,
+          460
+        ]
+      ],
+      "labelAnchor": {
+        "x": 850,
+        "y": 450
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-5-water-fountain",
+      "name": "Water Fountain",
+      "type": "water_fountain",
+      "polygon": [
+        [
+          840,
+          465
+        ],
+        [
+          855,
+          465
+        ],
+        [
+          855,
+          480
+        ],
+        [
+          840,
+          480
+        ]
+      ],
+      "labelAnchor": {
+        "x": 847,
+        "y": 472
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-vending",
+      "name": "Vending Machine",
+      "type": "vending_machine",
+      "polygon": [
+        [
+          840,
+          485
+        ],
+        [
+          855,
+          485
+        ],
+        [
+          855,
+          500
+        ],
+        [
+          840,
+          500
+        ]
+      ],
+      "labelAnchor": {
+        "x": 847,
+        "y": 492
+      },
+      "neighbors": [
+        "sc-5-main-hallway-5"
+      ],
+      "showLabel": false
     }
   ]
 }

@@ -3163,6 +3163,99 @@
         "2"
       ],
       "showLabel": false
+    },
+    {
+      "id": "sc-2-restroom",
+      "name": "Restroom",
+      "type": "restroom",
+      "polygon": [
+        [
+          930,
+          420
+        ],
+        [
+          950,
+          420
+        ],
+        [
+          950,
+          440
+        ],
+        [
+          930,
+          440
+        ]
+      ],
+      "labelAnchor": {
+        "x": 940,
+        "y": 430
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": true
+    },
+    {
+      "id": "sc-2-water-fountain",
+      "name": "Water Fountain",
+      "type": "water_fountain",
+      "polygon": [
+        [
+          930,
+          445
+        ],
+        [
+          945,
+          445
+        ],
+        [
+          945,
+          460
+        ],
+        [
+          930,
+          460
+        ]
+      ],
+      "labelAnchor": {
+        "x": 937,
+        "y": 452
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-2-vending",
+      "name": "Vending Machine",
+      "type": "vending_machine",
+      "polygon": [
+        [
+          930,
+          465
+        ],
+        [
+          945,
+          465
+        ],
+        [
+          945,
+          480
+        ],
+        [
+          930,
+          480
+        ]
+      ],
+      "labelAnchor": {
+        "x": 937,
+        "y": 472
+      },
+      "neighbors": [
+        "sc-2-hallway-2"
+      ],
+      "showLabel": false
     }
   ]
 }
