@@ -3032,41 +3032,6 @@
         "sc-5-main-hallway-5"
       ],
       "showLabel": false
-    },
-    {
-      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-restroom",
-      "name": "Door (sc-5-main-hallway-5 \u2194 sc-5-restroom)",
-      "type": "door",
-      "polygon": [
-        [
-          829,
-          418
-        ],
-        [
-          823,
-          418
-        ],
-        [
-          823,
-          426
-        ],
-        [
-          828,
-          427
-        ]
-      ],
-      "labelAnchor": {
-        "x": 826,
-        "y": 422
-      },
-      "neighbors": [
-        "sc-5-main-hallway-5",
-        "sc-5-restroom"
-      ],
-      "connects": [
-        "sc-5-main-hallway-5",
-        "sc-5-restroom"
-      ]
     }
   ]
 }

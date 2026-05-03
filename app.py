@@ -3,13 +3,18 @@ import json, os, math, heapq
 
 app = Flask(__name__)
 
-FLOOR_ORDER = ['1', '2', '3', '5']
+FLOOR_ORDER = ['B', '1', '2', '3', '5', '6', '7', '8', '9']
 
 FLOOR_FILES = {
+    'B': 'Floor Plans/floorB.json',
     '1': 'Floor Plans/floor1.json',
     '2': 'Floor Plans/floor2.json',
     '3': 'Floor Plans/floor3.json',
     '5': 'Floor Plans/floor5.json',
+    '6': 'Floor Plans/floor6.json',
+    '7': 'Floor Plans/floor7.json',
+    '8': 'Floor Plans/floor8.json',
+    '9': 'Floor Plans/floor9.json',
 }
 
 # Cost multiplier applied to the pixel distance of each edge.
@@ -205,11 +210,14 @@ def build_graph(use_elevator=True, use_stairs=True):
     # within SNAP_RADIUS on the same floor.
     SNAP_RADIUS = 600
     def needs_snap(key):
+        edges = adj.get(key, [])
         if nodes[key]['type'] in ROOM_ENTRY_TYPES:
-            return False
+            # Rooms normally reach the network through their door neighbors.
+            # Only snap if the room is fully orphaned (e.g. floor JSON lists
+            # no neighbors at all), otherwise leave doors as the gateway.
+            return not edges
         if nodes[key]['type'] in DOOR_TYPES:
             return False
-        edges = adj.get(key, [])
         if not edges:
             return True
         # Snap if no neighbor is a low-cost navigable type

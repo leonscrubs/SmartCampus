@@ -5345,69 +5345,6 @@
         "sc-3-study-hall"
       ],
       "showLabel": false
-    },
-    {
-      "id": "sc-3-door-sc-3-restroom-sc-3-main-hallway-3",
-      "name": "Door (sc-3-restroom \u2194 sc-3-main-hallway-3)",
-      "type": "door",
-      "polygon": [
-        [
-          829,
-          423
-        ],
-        [
-          817,
-          423
-        ],
-        [
-          817,
-          430
-        ],
-        [
-          831,
-          431
-        ]
-      ],
-      "labelAnchor": {
-        "x": 824,
-        "y": 427
-      },
-      "neighbors": [
-        "sc-3-restroom",
-        "sc-3-main-hallway-3"
-      ],
-      "connects": [
-        "sc-3-restroom",
-        "sc-3-main-hallway-3"
-      ]
-    },
-    {
-      "id": "sc-3-water-fountain",
-      "name": "Water Fountain",
-      "type": "water_fountain",
-      "polygon": [
-        [
-          829,
-          378
-        ],
-        [
-          837,
-          378
-        ],
-        [
-          837,
-          386
-        ],
-        [
-          830,
-          386
-        ]
-      ],
-      "labelAnchor": {
-        "x": 833,
-        "y": 382
-      },
-      "neighbors": []
     }
   ]
 }

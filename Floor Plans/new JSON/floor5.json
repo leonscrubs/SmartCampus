@@ -136,8 +136,7 @@
         "x": 840,
         "y": 306
       },
-      "neighbors": [],
-      "showLabel": true
+      "neighbors": []
     },
     {
       "id": "sc-5-stairwell",
@@ -170,8 +169,7 @@
         "4",
         "5",
         "6"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-room-519",
@@ -221,8 +219,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-516",
@@ -252,8 +249,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-519",
@@ -281,8 +277,7 @@
         "x": 539,
         "y": 308
       },
-      "neighbors": [],
-      "showLabel": true
+      "neighbors": []
     },
     {
       "id": "sc-5-room-520",
@@ -312,8 +307,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-523",
@@ -343,8 +337,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-525",
@@ -374,8 +367,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-527",
@@ -405,8 +397,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-522",
@@ -436,8 +427,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-524a",
@@ -467,8 +457,7 @@
       },
       "neighbors": [
         "sc-5-study-area"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-524",
@@ -498,8 +487,7 @@
       },
       "neighbors": [
         "sc-5-study-area"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-526",
@@ -538,8 +526,7 @@
       "neighbors": [
         "sc-5-main-hallway-5",
         "sc-5-room-528"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-528",
@@ -569,8 +556,7 @@
       },
       "neighbors": [
         "sc-5-room-526"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-stairwell",
@@ -603,8 +589,7 @@
         "4",
         "5",
         "6"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-room-530",
@@ -646,8 +631,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-536",
@@ -677,8 +661,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-534",
@@ -708,8 +691,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-532",
@@ -747,8 +729,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-533",
@@ -778,8 +759,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-531",
@@ -809,8 +789,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-535",
@@ -840,8 +819,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-537",
@@ -871,8 +849,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-539",
@@ -910,8 +887,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-503",
@@ -939,8 +915,7 @@
         "x": 801,
         "y": 474
       },
-      "neighbors": [],
-      "showLabel": true
+      "neighbors": []
     },
     {
       "id": "sc-5-room-504",
@@ -970,8 +945,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-506",
@@ -1001,8 +975,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-508",
@@ -1032,8 +1005,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-510",
@@ -1063,8 +1035,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-511",
@@ -1094,8 +1065,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-512",
@@ -1125,8 +1095,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-stairwell",
@@ -1159,8 +1128,7 @@
         "4",
         "5",
         "6"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-room-505",
@@ -1198,8 +1166,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-507",
@@ -1229,8 +1196,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-513",
@@ -1260,8 +1226,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-514",
@@ -1291,8 +1256,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-room-515",
@@ -1326,8 +1290,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-stairwell",
@@ -1360,8 +1323,7 @@
         "4",
         "5",
         "6"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-room-509",
@@ -1395,8 +1357,7 @@
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-elevator",
@@ -1436,8 +1397,7 @@
         "7",
         "8",
         "9"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-study-area",
@@ -1469,8 +1429,7 @@
         "sc-5-room-524",
         "sc-5-room-524a",
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-main-hallway-5",
@@ -1676,9 +1635,9 @@
         "sc-5-room-509",
         "sc-5-room-513",
         "sc-5-room-514",
-        "sc-5-room-515"
-      ],
-      "showLabel": false
+        "sc-5-room-515",
+        "sc-5-restroom"
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-519",
@@ -1713,8 +1672,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-519"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-523",
@@ -1749,8 +1707,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-523"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-516",
@@ -1785,8 +1742,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-516"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-519",
@@ -1821,8 +1777,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-519"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-520",
@@ -1857,8 +1812,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-520"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-522",
@@ -1893,8 +1847,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-522"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-524a",
@@ -1929,8 +1882,7 @@
       "connects": [
         "sc-5-study-area",
         "sc-5-room-524a"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-study-area-sc-5-room-524",
@@ -1965,8 +1917,7 @@
       "connects": [
         "sc-5-study-area",
         "sc-5-room-524"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-study-area",
@@ -2001,8 +1952,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-study-area"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-526",
@@ -2037,8 +1987,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-526"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-room-526-sc-5-room-528",
@@ -2073,8 +2022,7 @@
       "connects": [
         "sc-5-room-526",
         "sc-5-room-528"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-room-525-sc-5-main-hallway-5",
@@ -2109,8 +2057,7 @@
       "connects": [
         "sc-5-room-525",
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-room-527-sc-5-main-hallway-5",
@@ -2145,8 +2092,7 @@
       "connects": [
         "sc-5-room-527",
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-530",
@@ -2181,8 +2127,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-530"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-532",
@@ -2217,8 +2162,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-532"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-534",
@@ -2253,8 +2197,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-534"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-536",
@@ -2289,8 +2232,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-536"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-533",
@@ -2325,8 +2267,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-533"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-531",
@@ -2361,8 +2302,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-531"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-535",
@@ -2397,8 +2337,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-535"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-room-537-sc-5-main-hallway-5",
@@ -2433,8 +2372,7 @@
       "connects": [
         "sc-5-room-537",
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-539",
@@ -2469,8 +2407,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-539"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-505",
@@ -2505,8 +2442,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-505"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-504",
@@ -2541,8 +2477,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-504"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-506",
@@ -2577,8 +2512,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-506"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-508",
@@ -2613,8 +2547,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-508"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-510",
@@ -2649,8 +2582,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-510"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-511",
@@ -2685,8 +2617,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-511"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-512",
@@ -2721,8 +2652,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-512"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-505",
@@ -2757,8 +2687,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-505"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-507",
@@ -2793,8 +2722,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-507"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-509",
@@ -2829,8 +2757,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-509"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-513",
@@ -2865,8 +2792,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-513"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-514",
@@ -2901,8 +2827,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-514"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-515",
@@ -2937,8 +2862,7 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-515"
-      ],
-      "showLabel": false
+      ]
     },
     {
       "id": "sc-5-restroom",
@@ -2946,30 +2870,29 @@
       "type": "restroom",
       "polygon": [
         [
-          840,
-          440
+          772,
+          376
         ],
         [
-          860,
-          440
+          829,
+          376
         ],
         [
-          860,
-          460
+          830,
+          454
         ],
         [
-          840,
-          460
+          774,
+          452
         ]
       ],
       "labelAnchor": {
-        "x": 850,
-        "y": 450
+        "x": 801,
+        "y": 415
       },
       "neighbors": [
         "sc-5-main-hallway-5"
-      ],
-      "showLabel": true
+      ]
     },
     {
       "id": "sc-5-water-fountain",
@@ -2977,65 +2900,31 @@
       "type": "water_fountain",
       "polygon": [
         [
-          840,
-          465
+          828,
+          383
         ],
         [
-          855,
-          465
+          836,
+          383
         ],
         [
-          855,
-          480
+          836,
+          390
         ],
         [
-          840,
-          480
+          829,
+          391
         ]
       ],
       "labelAnchor": {
-        "x": 847,
-        "y": 472
+        "x": 832,
+        "y": 387
       },
-      "neighbors": [
-        "sc-5-main-hallway-5"
-      ],
-      "showLabel": false
-    },
-    {
-      "id": "sc-5-vending",
-      "name": "Vending Machine",
-      "type": "vending_machine",
-      "polygon": [
-        [
-          840,
-          485
-        ],
-        [
-          855,
-          485
-        ],
-        [
-          855,
-          500
-        ],
-        [
-          840,
-          500
-        ]
-      ],
-      "labelAnchor": {
-        "x": 847,
-        "y": 492
-      },
-      "neighbors": [
-        "sc-5-main-hallway-5"
-      ],
-      "showLabel": false
+      "neighbors": []
     },
     {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-restroom",
-      "name": "Door (sc-5-main-hallway-5 \u2194 sc-5-restroom)",
+      "name": "Door (sc-5-main-hallway-5 ↔ sc-5-restroom)",
       "type": "door",
       "polygon": [
         [
