@@ -416,7 +416,7 @@ async function init(){
     p.addEventListener('click',()=>goToFloor(i));
     floorList.appendChild(p);
   });
-  floorIdx=0;
+  floorIdx=Math.max(0,floors.indexOf('1'));
   await loadFloor(floors[floorIdx]);
   updateNav();
 }

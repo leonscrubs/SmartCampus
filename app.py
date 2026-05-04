@@ -272,26 +272,25 @@ def build_graph(use_elevator=True, use_stairs=True):
         connectors_by_floor_type.setdefault((node['floor'], node['type']), []).append((key, node))
 
     for key_a, na in connectors:
-        candidates = []
         for adj_floor in FLOOR_ORDER:
             if (na['floor'], adj_floor) not in adjacent_pairs:
                 continue
+            candidates = []
             for key_b, nb in connectors_by_floor_type.get((adj_floor, na['type']), []):
                 if not (set(na['connectsFloors']) & set(nb['connectsFloors'])):
                     continue
                 coord_dist = euclid((na['cx'], na['cy']), (nb['cx'], nb['cy']))
                 candidates.append((coord_dist, key_b, nb))
-
-        if not candidates:
-            continue
-        coord_dist, key_b, nb = min(candidates, key=lambda item: item[0])
-        pair = tuple(sorted([key_a, key_b]))
-        if pair in used_pairs:
-            continue
-        used_pairs.add(pair)
-        cost = FLOOR_CHANGE_COST + coord_dist * 0.25
-        adj[key_a].append((key_b, cost))
-        adj[key_b].append((key_a, cost))
+            if not candidates:
+                continue
+            coord_dist, key_b, nb = min(candidates, key=lambda item: item[0])
+            pair = tuple(sorted([key_a, key_b]))
+            if pair in used_pairs:
+                continue
+            used_pairs.add(pair)
+            cost = FLOOR_CHANGE_COST + coord_dist * 0.25
+            adj[key_a].append((key_b, cost))
+            adj[key_b].append((key_a, cost))
 
     _graph_cache[cache_key] = (nodes, adj)
     return nodes, adj
