@@ -170,7 +170,7 @@ def build_graph(use_elevator=True, use_stairs=True):
                 'id': rid, 'name': room.get('name', rid),
                 'polygon': pts,
                 'orientation': 'h' if w >= h else 'v',
-                'connectsFloors': [str(x) for x in room.get('connectsFloors', [])],
+                'connectsFloors': ['B' if str(x) == '0' else str(x) for x in room.get('connectsFloors', [])],
             }
             adj.setdefault(key, [])
 
@@ -271,7 +271,15 @@ def build_graph(use_elevator=True, use_stairs=True):
     for key, node in connectors:
         connectors_by_floor_type.setdefault((node['floor'], node['type']), []).append((key, node))
 
+    def poly_area(pts):
+        n = len(pts)
+        a = sum(pts[i][0]*pts[(i+1)%n][1] - pts[(i+1)%n][0]*pts[i][1] for i in range(n))
+        return abs(a) / 2
+
+    AREA_RATIO_MAX = 1.25  # stairwell polygons must be within 25% in area
+
     for key_a, na in connectors:
+        area_a = poly_area(na['polygon']) if na['type'] == 'stairwell' else None
         for adj_floor in FLOOR_ORDER:
             if (na['floor'], adj_floor) not in adjacent_pairs:
                 continue
@@ -279,6 +287,12 @@ def build_graph(use_elevator=True, use_stairs=True):
             for key_b, nb in connectors_by_floor_type.get((adj_floor, na['type']), []):
                 if not (set(na['connectsFloors']) & set(nb['connectsFloors'])):
                     continue
+                # For stairwells, reject pairs whose polygon areas differ by more than 25%
+                if area_a is not None:
+                    area_b = poly_area(nb['polygon'])
+                    ratio = max(area_a, area_b) / max(min(area_a, area_b), 1)
+                    if ratio > AREA_RATIO_MAX:
+                        continue
                 coord_dist = euclid((na['cx'], na['cy']), (nb['cx'], nb['cy']))
                 candidates.append((coord_dist, key_b, nb))
             if not candidates:
