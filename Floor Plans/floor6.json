@@ -222,45 +222,6 @@
       "showLabel": true
     },
     {
-      "id": "sc-6-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          1087,
-          749
-        ],
-        [
-          1126,
-          749
-        ],
-        [
-          1126,
-          767
-        ],
-        [
-          1088,
-          768
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1107,
-        "y": 758
-      },
-      "neighbors": [
-        "sc-6-roof-terrace",
-        "sc-6-harvard-telescope-club",
-        "sc-6-room-900s",
-        "sc-6-room-901"
-      ],
-      "connectsFloors": [
-        "5",
-        "6",
-        "7"
-      ],
-      "showLabel": false
-    },
-    {
       "id": "sc-6-room-614",
       "name": "R614",
       "type": "office",
@@ -354,40 +315,6 @@
       "showLabel": true
     },
     {
-      "id": "sc-6-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          1039,
-          670
-        ],
-        [
-          1007,
-          671
-        ],
-        [
-          1007,
-          695
-        ],
-        [
-          1040,
-          695
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1023,
-        "y": 683
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "5",
-        "6",
-        "7"
-      ],
-      "showLabel": false
-    },
-    {
       "id": "sc-6-roof-terrace",
       "name": "Roof Terrace",
       "type": "other",
@@ -416,7 +343,7 @@
       "neighbors": [
         "sc-6-hallway-6",
         "sc-6-hallway-7",
-        "sc-6-stairwell",
+        "sc-6-stairwell-1",
         "sc-6-room-804"
       ],
       "showLabel": true
@@ -850,42 +777,6 @@
       "showLabel": false
     },
     {
-      "id": "sc-6-door-sc-6-hallway-6-sc-6-room-607",
-      "name": "Door Sc 6 Hallway 6 Sc 6 Room 607",
-      "type": "door",
-      "polygon": [
-        [
-          1073,
-          815
-        ],
-        [
-          1066,
-          815
-        ],
-        [
-          1066,
-          823
-        ],
-        [
-          1073,
-          823
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1070,
-        "y": 819
-      },
-      "neighbors": [
-        "sc-6-hallway-6",
-        "sc-6-room-606"
-      ],
-      "connects": [
-        "sc-6-hallway-6",
-        "sc-6-room-606"
-      ],
-      "showLabel": false
-    },
-    {
       "id": "sc-6-door-sc-6-hallway-6-sc-6-room-605",
       "name": "Door Sc 6 Hallway 6 Sc 6 Room 605",
       "type": "door",
@@ -1067,6 +958,79 @@
         "7",
         "8",
         "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-stairwell-1",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1087,
+          749
+        ],
+        [
+          1126,
+          749
+        ],
+        [
+          1126,
+          767
+        ],
+        [
+          1088,
+          768
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1107,
+        "y": 758
+      },
+      "neighbors": [
+        "sc-6-roof-terrace",
+        "sc-6-harvard-telescope-club",
+        "sc-6-room-900s",
+        "sc-6-room-901"
+      ],
+      "connectsFloors": [
+        "5",
+        "6",
+        "7"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-6-stairwell-2",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1039,
+          670
+        ],
+        [
+          1007,
+          671
+        ],
+        [
+          1007,
+          695
+        ],
+        [
+          1040,
+          695
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1023,
+        "y": 683
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "5",
+        "6",
+        "7"
       ],
       "showLabel": false
     }

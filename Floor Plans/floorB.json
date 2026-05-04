@@ -58,11 +58,12 @@
       },
       "neighbors": [
         "sc-b-west-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b07",
-      "name": "B07",
+      "name": "RB07",
       "type": "classroom",
       "polygon": [
         [
@@ -104,11 +105,12 @@
       },
       "neighbors": [
         "sc-b-west-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b09a",
-      "name": "B09A",
+      "name": "RB09A",
       "type": "classroom",
       "polygon": [
         [
@@ -139,11 +141,12 @@
       "neighbors": [
         "sc-b-west-hallway",
         "sc-b-b09c"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b08a",
-      "name": "B08A",
+      "name": "RB08A",
       "type": "classroom",
       "polygon": [
         [
@@ -177,11 +180,12 @@
       },
       "neighbors": [
         "sc-b-west-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b10a",
-      "name": "B10A",
+      "name": "RB10A",
       "type": "classroom",
       "polygon": [
         [
@@ -207,11 +211,12 @@
       },
       "neighbors": [
         "sc-b-east-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b10",
-      "name": "B10",
+      "name": "RB10",
       "type": "classroom",
       "polygon": [
         [
@@ -237,11 +242,12 @@
       },
       "neighbors": [
         "sc-b-east-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b08",
-      "name": "B08",
+      "name": "RB08",
       "type": "classroom",
       "polygon": [
         [
@@ -283,11 +289,12 @@
       },
       "neighbors": [
         "sc-b-west-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b06-10",
-      "name": "B06.10",
+      "name": "RB06.10",
       "type": "classroom",
       "polygon": [
         [
@@ -313,11 +320,12 @@
       },
       "neighbors": [
         "sc-b-b06"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b06-20",
-      "name": "B06.20",
+      "name": "RB06.20",
       "type": "classroom",
       "polygon": [
         [
@@ -343,11 +351,12 @@
       },
       "neighbors": [
         "sc-b-b06"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b06-30",
-      "name": "B06.30",
+      "name": "RB06.30",
       "type": "classroom",
       "polygon": [
         [
@@ -373,11 +382,12 @@
       },
       "neighbors": [
         "sc-b-b06"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b06-40",
-      "name": "B06.40",
+      "name": "RB06.40",
       "type": "classroom",
       "polygon": [
         [
@@ -403,11 +413,12 @@
       },
       "neighbors": [
         "sc-b-b06"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b06",
-      "name": "B06",
+      "name": "RB06",
       "type": "classroom",
       "polygon": [
         [
@@ -446,11 +457,12 @@
         "sc-b-b06-30",
         "sc-b-b06-20",
         "sc-b-b06-10"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b06-50",
-      "name": "B06.50",
+      "name": "RB06.50",
       "type": "classroom",
       "polygon": [
         [
@@ -485,11 +497,12 @@
       "neighbors": [
         "sc-b-b06-60",
         "sc-b-b06"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b06-60",
-      "name": "B06.60",
+      "name": "RB06.60",
       "type": "classroom",
       "polygon": [
         [
@@ -515,7 +528,8 @@
       },
       "neighbors": [
         "sc-b-b06-50"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-stair-2",
@@ -561,7 +575,7 @@
     },
     {
       "id": "sc-b-b01a",
-      "name": "B01A",
+      "name": "RB01A",
       "type": "classroom",
       "polygon": [
         [
@@ -596,11 +610,12 @@
       "neighbors": [
         "sc-b-west-hallway",
         "sc-b-b01b"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b01b",
-      "name": "B01B",
+      "name": "RB01B",
       "type": "classroom",
       "polygon": [
         [
@@ -626,11 +641,12 @@
       },
       "neighbors": [
         "sc-b-b01a"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b05-10",
-      "name": "B05.10",
+      "name": "RB05.10",
       "type": "classroom",
       "polygon": [
         [
@@ -692,11 +708,12 @@
       },
       "neighbors": [
         "sc-b-b05"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b05",
-      "name": "B05",
+      "name": "RB05",
       "type": "classroom",
       "polygon": [
         [
@@ -723,11 +740,12 @@
       "neighbors": [
         "sc-b-west-hallway",
         "sc-b-b05-10"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b09c",
-      "name": "B09C",
+      "name": "RB09C",
       "type": "classroom",
       "polygon": [
         [
@@ -750,11 +768,12 @@
       "neighbors": [
         "sc-b-b09a",
         "sc-b-b09e"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b09e",
-      "name": "B09E",
+      "name": "RB09E",
       "type": "classroom",
       "polygon": [
         [
@@ -790,11 +809,12 @@
         "sc-b-b09b",
         "sc-b-b09c",
         "sc-b-b09d"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b09d",
-      "name": "B09D",
+      "name": "RB09D",
       "type": "classroom",
       "polygon": [
         [
@@ -824,11 +844,12 @@
       },
       "neighbors": [
         "sc-b-b09e"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b11",
-      "name": "B11",
+      "name": "RB11",
       "type": "classroom",
       "polygon": [
         [
@@ -854,11 +875,12 @@
       },
       "neighbors": [
         "sc-b-east-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b12",
-      "name": "B12",
+      "name": "RB12",
       "type": "classroom",
       "polygon": [
         [
@@ -900,11 +922,12 @@
       },
       "neighbors": [
         "sc-b-east-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b09b",
-      "name": "B09B",
+      "name": "RB09B",
       "type": "classroom",
       "polygon": [
         [
@@ -931,7 +954,8 @@
       "neighbors": [
         "sc-b-east-hallway",
         "sc-b-b09e"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-stair-1",
@@ -975,7 +999,7 @@
     },
     {
       "id": "sc-b-b16",
-      "name": "B16",
+      "name": "RB16",
       "type": "classroom",
       "polygon": [
         [
@@ -1002,11 +1026,12 @@
       "neighbors": [
         "sc-b-b14",
         "sc-b-b17"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14",
-      "name": "B14",
+      "name": "RB14",
       "type": "classroom",
       "polygon": [
         [
@@ -1039,11 +1064,12 @@
         "sc-b-b14-31",
         "sc-b-b16",
         "sc-b-b14-30"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14-21",
-      "name": "B14.21",
+      "name": "RB14.21",
       "type": "classroom",
       "polygon": [
         [
@@ -1069,11 +1095,12 @@
       },
       "neighbors": [
         "sc-b-b14"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14-20",
-      "name": "B14.20",
+      "name": "RB14.20",
       "type": "classroom",
       "polygon": [
         [
@@ -1107,11 +1134,12 @@
       },
       "neighbors": [
         "sc-b-b14"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14-22",
-      "name": "B14.22",
+      "name": "RB14.22",
       "type": "classroom",
       "polygon": [
         [
@@ -1137,11 +1165,12 @@
       },
       "neighbors": [
         "sc-b-b14"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14-23",
-      "name": "B14.23",
+      "name": "RB14.23",
       "type": "classroom",
       "polygon": [
         [
@@ -1167,11 +1196,12 @@
       },
       "neighbors": [
         "sc-b-b14"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14-31",
-      "name": "B14.31",
+      "name": "RB14.31",
       "type": "classroom",
       "polygon": [
         [
@@ -1198,11 +1228,12 @@
       "neighbors": [
         "sc-b-b14-32",
         "sc-b-b14"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14-32",
-      "name": "B14.32",
+      "name": "RB14.32",
       "type": "classroom",
       "polygon": [
         [
@@ -1228,11 +1259,12 @@
       },
       "neighbors": [
         "sc-b-b14-31"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14-30",
-      "name": "B14.30",
+      "name": "RB14.30",
       "type": "classroom",
       "polygon": [
         [
@@ -1262,11 +1294,12 @@
       },
       "neighbors": [
         "sc-b-b14"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b14-33",
-      "name": "B14.33",
+      "name": "RB14.33",
       "type": "classroom",
       "polygon": [
         [
@@ -1298,11 +1331,12 @@
         "x": 941,
         "y": 672
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-b-b17",
-      "name": "B17",
+      "name": "RB17",
       "type": "classroom",
       "polygon": [
         [
@@ -1332,11 +1366,12 @@
       },
       "neighbors": [
         "sc-b-b16"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b18a",
-      "name": "B18A",
+      "name": "RB18A",
       "type": "classroom",
       "polygon": [
         [
@@ -1363,11 +1398,12 @@
       "neighbors": [
         "sc-b-b18",
         "sc-b-north-east-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b18",
-      "name": "B18",
+      "name": "RB18",
       "type": "classroom",
       "polygon": [
         [
@@ -1393,11 +1429,12 @@
       },
       "neighbors": [
         "sc-b-b18a"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b12b",
-      "name": "B12B",
+      "name": "RB12B",
       "type": "classroom",
       "polygon": [
         [
@@ -1423,11 +1460,12 @@
       },
       "neighbors": [
         "sc-b-north-east-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-b12c",
-      "name": "B12C",
+      "name": "RB12C",
       "type": "classroom",
       "polygon": [
         [
@@ -1453,7 +1491,8 @@
       },
       "neighbors": [
         "sc-b-north-east-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-west-hallway",
@@ -3163,7 +3202,7 @@
     },
     {
       "id": "sc-b-ll01",
-      "name": "LL01",
+      "name": "RLL01",
       "type": "classroom",
       "polygon": [
         [
@@ -3189,11 +3228,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll02",
-      "name": "LL02",
+      "name": "RLL02",
       "type": "classroom",
       "polygon": [
         [
@@ -3219,11 +3259,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll03",
-      "name": "LL03",
+      "name": "RLL03",
       "type": "classroom",
       "polygon": [
         [
@@ -3249,11 +3290,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll04",
-      "name": "LL04",
+      "name": "RLL04",
       "type": "classroom",
       "polygon": [
         [
@@ -3279,11 +3321,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll05",
-      "name": "LL05",
+      "name": "RLL05",
       "type": "classroom",
       "polygon": [
         [
@@ -3309,11 +3352,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll06",
-      "name": "LL06",
+      "name": "RLL06",
       "type": "classroom",
       "polygon": [
         [
@@ -3339,11 +3383,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll07",
-      "name": "LL07",
+      "name": "RLL07",
       "type": "classroom",
       "polygon": [
         [
@@ -3369,11 +3414,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll08",
-      "name": "LL08",
+      "name": "RLL08",
       "type": "classroom",
       "polygon": [
         [
@@ -3399,11 +3445,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll09",
-      "name": "LL09",
+      "name": "RLL09",
       "type": "classroom",
       "polygon": [
         [
@@ -3429,11 +3476,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll10",
-      "name": "LL10",
+      "name": "RLL10",
       "type": "classroom",
       "polygon": [
         [
@@ -3459,11 +3507,12 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-ll11",
-      "name": "LL11",
+      "name": "RLL11",
       "type": "classroom",
       "polygon": [
         [
@@ -3489,7 +3538,8 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-cabot-elevator",
@@ -4078,7 +4128,7 @@
     },
     {
       "id": "sc-b-ll12",
-      "name": "LL12",
+      "name": "RLL12",
       "type": "classroom",
       "polygon": [
         [
@@ -4104,7 +4154,8 @@
       },
       "neighbors": [
         "sc-b-cabot-hallway"
-      ]
+      ],
+      "showLabel": true
     },
     {
       "id": "sc-b-door-sc-b-ll12-sc-b-cabot-hallway",
@@ -4249,7 +4300,8 @@
         "x": 762,
         "y": 593
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-b-hallway-basement",
@@ -4342,7 +4394,8 @@
         "x": 714,
         "y": 522
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-b-vending-machine",
@@ -4370,7 +4423,8 @@
         "x": 837,
         "y": 398
       },
-      "neighbors": []
+      "neighbors": [],
+      "showLabel": true
     },
     {
       "id": "sc-b-elevator",

@@ -34,9 +34,9 @@ TYPE_COST = {
     'classroom':       80.0,
     'office':          80.0,
     'lecture':         80.0,
-    'restroom':        2.0,
-    'water_fountain':  2.0,
-    'vending_machine': 2.0,
+    'restroom':        0.5,
+    'water_fountain':  0.5,
+    'vending_machine': 0.5,
 }
 
 FLOOR_CHANGE_COST = 600   # pixel-equivalent penalty per adjacent floor hop
@@ -277,7 +277,7 @@ def build_graph(use_elevator=True, use_stairs=True):
         a = sum(pts[i][0]*pts[(i+1)%n][1] - pts[(i+1)%n][0]*pts[i][1] for i in range(n))
         return abs(a) / 2
 
-    AREA_RATIO_MAX = 1.5  # stairwell polygons must be within 50% in area
+    AREA_RATIO_MAX = 2.5  # stairwell polygons must be within 150% in area
 
     # Track which connectors have already been paired per adjacent floor,
     # so one connector cannot link to multiple partners on the same floor.
@@ -292,7 +292,12 @@ def build_graph(use_elevator=True, use_stairs=True):
                 continue
             candidates = []
             for key_b, nb in connectors_by_floor_type.get((adj_floor, na['type']), []):
-                if not (set(na['connectsFloors']) & set(nb['connectsFloors'])):
+                # Both connectors must explicitly include BOTH endpoint floors.
+                # A stairwell on floor A can only link to floor B if it lists B in
+                # connectsFloors; likewise the floor-B stairwell must list floor A.
+                cf_a = set(na['connectsFloors'])
+                cf_b = set(nb['connectsFloors'])
+                if adj_floor not in cf_a or na['floor'] not in cf_b:
                     continue
                 # For stairwells, reject pairs whose polygon areas differ by more than 50%
                 if area_a is not None:

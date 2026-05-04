@@ -140,79 +140,25 @@
       "showLabel": true
     },
     {
-      "id": "sc-5-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          413,
-          321
-        ],
-        [
-          413,
-          340
-        ],
-        [
-          481,
-          340
-        ],
-        [
-          480,
-          322
-        ]
-      ],
-      "labelAnchor": {
-        "x": 447,
-        "y": 331
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "4",
-        "5",
-        "6"
-      ],
-      "showLabel": false
-    },
-    {
       "id": "sc-5-room-519",
       "name": "R519",
       "type": "office",
       "polygon": [
         [
-          505,
-          339
+          526,
+          321
         ],
         [
-          505,
-          377
+          552,
+          321
         ],
         [
-          412,
-          377
+          552,
+          295
         ],
         [
-          412,
-          353
-        ],
-        [
-          384,
-          353
-        ],
-        [
-          383,
-          322
-        ],
-        [
-          412,
-          322
-        ],
-        [
-          412,
-          340
-        ],
-        [
-          481,
-          340
+          527,
+          295
         ]
       ],
       "labelAnchor": {
@@ -253,35 +199,6 @@
       "neighbors": [
         "sc-5-main-hallway-5"
       ],
-      "showLabel": true
-    },
-    {
-      "id": "sc-5-room-519",
-      "name": "R519",
-      "type": "office",
-      "polygon": [
-        [
-          526,
-          321
-        ],
-        [
-          552,
-          321
-        ],
-        [
-          552,
-          295
-        ],
-        [
-          527,
-          295
-        ]
-      ],
-      "labelAnchor": {
-        "x": 539,
-        "y": 308
-      },
-      "neighbors": [],
       "showLabel": true
     },
     {
@@ -571,40 +488,6 @@
         "sc-5-room-526"
       ],
       "showLabel": true
-    },
-    {
-      "id": "sc-5-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          795,
-          302
-        ],
-        [
-          717,
-          302
-        ],
-        [
-          719,
-          346
-        ],
-        [
-          797,
-          346
-        ]
-      ],
-      "labelAnchor": {
-        "x": 757,
-        "y": 324
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "4",
-        "5",
-        "6"
-      ],
-      "showLabel": false
     },
     {
       "id": "sc-5-room-530",
@@ -1129,40 +1012,6 @@
       "showLabel": true
     },
     {
-      "id": "sc-5-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          853,
-          432
-        ],
-        [
-          913,
-          432
-        ],
-        [
-          913,
-          463
-        ],
-        [
-          853,
-          464
-        ]
-      ],
-      "labelAnchor": {
-        "x": 883,
-        "y": 448
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "4",
-        "5",
-        "6"
-      ],
-      "showLabel": false
-    },
-    {
       "id": "sc-5-room-505",
       "name": "R505",
       "type": "office",
@@ -1328,40 +1177,6 @@
         "sc-5-main-hallway-5"
       ],
       "showLabel": true
-    },
-    {
-      "id": "sc-5-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          856,
-          725
-        ],
-        [
-          893,
-          725
-        ],
-        [
-          893,
-          745
-        ],
-        [
-          856,
-          745
-        ]
-      ],
-      "labelAnchor": {
-        "x": 875,
-        "y": 735
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "4",
-        "5",
-        "6"
-      ],
-      "showLabel": false
     },
     {
       "id": "sc-5-room-509",
@@ -1785,42 +1600,6 @@
       "connects": [
         "sc-5-main-hallway-5",
         "sc-5-room-516"
-      ],
-      "showLabel": false
-    },
-    {
-      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-519",
-      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 519",
-      "type": "door",
-      "polygon": [
-        [
-          535,
-          320
-        ],
-        [
-          535,
-          312
-        ],
-        [
-          544,
-          311
-        ],
-        [
-          544,
-          321
-        ]
-      ],
-      "labelAnchor": {
-        "x": 540,
-        "y": 316
-      },
-      "neighbors": [
-        "sc-5-main-hallway-5",
-        "sc-5-room-519"
-      ],
-      "connects": [
-        "sc-5-main-hallway-5",
-        "sc-5-room-519"
       ],
       "showLabel": false
     },
@@ -2725,42 +2504,6 @@
       "showLabel": false
     },
     {
-      "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-505",
-      "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 505",
-      "type": "door",
-      "polygon": [
-        [
-          851,
-          489
-        ],
-        [
-          863,
-          489
-        ],
-        [
-          863,
-          501
-        ],
-        [
-          851,
-          501
-        ]
-      ],
-      "labelAnchor": {
-        "x": 857,
-        "y": 495
-      },
-      "neighbors": [
-        "sc-5-main-hallway-5",
-        "sc-5-room-505"
-      ],
-      "connects": [
-        "sc-5-main-hallway-5",
-        "sc-5-room-505"
-      ],
-      "showLabel": false
-    },
-    {
       "id": "sc-5-door-sc-5-main-hallway-5-sc-5-room-507",
       "name": "Door Sc 5 Main Hallway 5 Sc 5 Room 507",
       "type": "door",
@@ -2946,25 +2689,25 @@
       "type": "restroom",
       "polygon": [
         [
-          840,
-          440
+          772,
+          376
         ],
         [
-          860,
-          440
+          829,
+          376
         ],
         [
-          860,
-          460
+          830,
+          454
         ],
         [
-          840,
-          460
+          774,
+          452
         ]
       ],
       "labelAnchor": {
-        "x": 850,
-        "y": 450
+        "x": 801,
+        "y": 415
       },
       "neighbors": [
         "sc-5-main-hallway-5"
@@ -2977,25 +2720,25 @@
       "type": "water_fountain",
       "polygon": [
         [
-          840,
-          465
+          828,
+          383
         ],
         [
-          855,
-          465
+          836,
+          383
         ],
         [
-          855,
-          480
+          836,
+          390
         ],
         [
-          840,
-          480
+          829,
+          391
         ]
       ],
       "labelAnchor": {
-        "x": 847,
-        "y": 472
+        "x": 832,
+        "y": 387
       },
       "neighbors": [
         "sc-5-main-hallway-5"
@@ -3067,6 +2810,142 @@
         "sc-5-main-hallway-5",
         "sc-5-restroom"
       ]
+    },
+    {
+      "id": "sc-5-stairwell-1",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          413,
+          321
+        ],
+        [
+          413,
+          340
+        ],
+        [
+          481,
+          340
+        ],
+        [
+          480,
+          322
+        ]
+      ],
+      "labelAnchor": {
+        "x": 447,
+        "y": 331
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "4",
+        "5",
+        "6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-stairwell-2",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          795,
+          302
+        ],
+        [
+          717,
+          302
+        ],
+        [
+          719,
+          346
+        ],
+        [
+          797,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 757,
+        "y": 324
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "4",
+        "5",
+        "6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-stairwell-3",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          853,
+          432
+        ],
+        [
+          913,
+          432
+        ],
+        [
+          913,
+          463
+        ],
+        [
+          853,
+          464
+        ]
+      ],
+      "labelAnchor": {
+        "x": 883,
+        "y": 448
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "4",
+        "5",
+        "6"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-5-stairwell-4",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          856,
+          725
+        ],
+        [
+          893,
+          725
+        ],
+        [
+          893,
+          745
+        ],
+        [
+          856,
+          745
+        ]
+      ],
+      "labelAnchor": {
+        "x": 875,
+        "y": 735
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "4",
+        "5",
+        "6"
+      ],
+      "showLabel": false
     }
   ]
 }

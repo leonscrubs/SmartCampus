@@ -7,7 +7,7 @@
   "buildingOutline": [],
   "rooms": [
     {
-      "id": "sc-6-elevator-machine-room",
+      "id": "sc-9-elevator-machine-room",
       "name": "Elevator Machine Room",
       "type": "other",
       "polygon": [
@@ -36,40 +36,7 @@
       "showLabel": true
     },
     {
-      "id": "sc-6-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          566,
-          396
-        ],
-        [
-          566,
-          409
-        ],
-        [
-          456,
-          410
-        ],
-        [
-          455,
-          395
-        ]
-      ],
-      "labelAnchor": {
-        "x": 511,
-        "y": 403
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "8",
-        "9"
-      ],
-      "showLabel": false
-    },
-    {
-      "id": "sc-6-harvard-telescope-club",
+      "id": "sc-9-harvard-telescope-club",
       "name": "Harvard Telescope Club",
       "type": "other",
       "polygon": [
@@ -95,12 +62,12 @@
         "y": 369
       },
       "neighbors": [
-        "sc-6-stairwell"
+        "sc-9-stairwell-1"
       ],
       "showLabel": true
     },
     {
-      "id": "sc-6-room-901",
+      "id": "sc-9-room-901",
       "name": "R901",
       "type": "office",
       "polygon": [
@@ -126,12 +93,12 @@
         "y": 316
       },
       "neighbors": [
-        "sc-6-stairwell"
+        "sc-9-stairwell-1"
       ],
       "showLabel": true
     },
     {
-      "id": "sc-6-room-900s",
+      "id": "sc-9-room-900s",
       "name": "R900S",
       "type": "office",
       "polygon": [
@@ -173,45 +140,12 @@
         "y": 330
       },
       "neighbors": [
-        "sc-6-stairwell"
+        "sc-9-stairwell-1"
       ],
       "showLabel": true
     },
     {
-      "id": "sc-6-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          455,
-          326
-        ],
-        [
-          504,
-          326
-        ],
-        [
-          504,
-          341
-        ],
-        [
-          456,
-          343
-        ]
-      ],
-      "labelAnchor": {
-        "x": 480,
-        "y": 334
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "8",
-        "9"
-      ],
-      "showLabel": false
-    },
-    {
-      "id": "sc-6-hallway-9",
+      "id": "sc-9-hallway-9",
       "name": "Hallway 9",
       "type": "corridor",
       "polygon": [
@@ -264,7 +198,7 @@
       "showLabel": false
     },
     {
-      "id": "sc-6-door-sc-6-stairwell-sc-6-harvard-telescope-club",
+      "id": "sc-9-door-sc-9-stairwell-1-1-sc-6-harvard-telescope-club",
       "name": "Door Sc 6 Stairwell Sc 6 Harvard Telescope Club",
       "type": "door",
       "polygon": [
@@ -290,8 +224,8 @@
         "y": 342
       },
       "neighbors": [
-        "sc-6-stairwell",
-        "sc-6-harvard-telescope-club"
+        "sc-9-stairwell-1",
+        "sc-9-harvard-telescope-club"
       ],
       "connects": [
         "sc-6-stairwell",
@@ -300,7 +234,7 @@
       "showLabel": false
     },
     {
-      "id": "sc-6-door-sc-6-stairwell-sc-6-room-900s",
+      "id": "sc-9-door-sc-9-stairwell-1-1-sc-6-room-900s",
       "name": "Door Sc 6 Stairwell Sc 6 Room 900s",
       "type": "door",
       "polygon": [
@@ -326,8 +260,8 @@
         "y": 333
       },
       "neighbors": [
-        "sc-6-stairwell",
-        "sc-6-room-900s"
+        "sc-9-stairwell-1",
+        "sc-9-room-900s"
       ],
       "connects": [
         "sc-6-stairwell",
@@ -336,7 +270,7 @@
       "showLabel": false
     },
     {
-      "id": "sc-6-door-sc-6-stairwell-sc-6-room-901",
+      "id": "sc-9-door-sc-9-stairwell-1-1-sc-6-room-901",
       "name": "Door Sc 6 Stairwell Sc 6 Room 901",
       "type": "door",
       "polygon": [
@@ -362,12 +296,78 @@
         "y": 314
       },
       "neighbors": [
-        "sc-6-stairwell",
-        "sc-6-room-901"
+        "sc-9-stairwell-1",
+        "sc-9-room-901"
       ],
       "connects": [
         "sc-6-stairwell",
         "sc-6-room-901"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-9-stairwell-1",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          566,
+          396
+        ],
+        [
+          566,
+          409
+        ],
+        [
+          456,
+          410
+        ],
+        [
+          455,
+          395
+        ]
+      ],
+      "labelAnchor": {
+        "x": 511,
+        "y": 403
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "8",
+        "9"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-9-stairwell-2",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          455,
+          326
+        ],
+        [
+          504,
+          326
+        ],
+        [
+          504,
+          341
+        ],
+        [
+          456,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 480,
+        "y": 334
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "8",
+        "9"
       ],
       "showLabel": false
     }

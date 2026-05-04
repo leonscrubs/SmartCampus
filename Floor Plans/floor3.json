@@ -7,44 +7,7 @@
   "buildingOutline": [],
   "rooms": [
     {
-      "id": "sc-3-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          1418,
-          278
-        ],
-        [
-          1455,
-          278
-        ],
-        [
-          1454,
-          343
-        ],
-        [
-          1419,
-          343
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1437,
-        "y": 311
-      },
-      "neighbors": [
-        "outside",
-        "sc-3-room-23"
-      ],
-      "connectsFloors": [
-        "2",
-        "3",
-        "4"
-      ],
-      "showLabel": false
-    },
-    {
-      "id": "sc-3-door-sc-3-stairwell-outside",
+      "id": "sc-3-door-sc-3-stairwell-1-outside",
       "name": "Door (sc-3-stairwell \u2194 outside)",
       "type": "door",
       "polygon": [
@@ -74,7 +37,7 @@
         "y": 501
       },
       "neighbors": [
-        "sc-3-stairwell",
+        "sc-3-stairwell-1",
         "outside"
       ],
       "connects": [
@@ -139,43 +102,9 @@
         "y": 518
       },
       "neighbors": [
-        "sc-3-stairwell"
+        "sc-3-stairwell-1"
       ],
       "showLabel": true
-    },
-    {
-      "id": "sc-3-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          852,
-          432
-        ],
-        [
-          852,
-          462
-        ],
-        [
-          910,
-          463
-        ],
-        [
-          909,
-          432
-        ]
-      ],
-      "labelAnchor": {
-        "x": 881,
-        "y": 447
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "2",
-        "3",
-        "4"
-      ],
-      "showLabel": false
     },
     {
       "id": "sc-3-elevator",
@@ -596,38 +525,7 @@
     },
     {
       "id": "sc-3-room-330",
-      "name": "R333",
-      "type": "office",
-      "polygon": [
-        [
-          896,
-          646
-        ],
-        [
-          913,
-          646
-        ],
-        [
-          914,
-          666
-        ],
-        [
-          894,
-          666
-        ]
-      ],
-      "labelAnchor": {
-        "x": 904,
-        "y": 656
-      },
-      "neighbors": [
-        "sc-3-math-library"
-      ],
-      "showLabel": true
-    },
-    {
-      "id": "sc-3-room-330",
-      "name": "R333",
+      "name": "R330",
       "type": "office",
       "polygon": [
         [
@@ -656,10 +554,12 @@
         ]
       ],
       "labelAnchor": {
-        "x": 906,
-        "y": 678
+        "x": 904,
+        "y": 656
       },
-      "neighbors": [],
+      "neighbors": [
+        "sc-3-math-library"
+      ],
       "showLabel": true
     },
     {
@@ -911,39 +811,6 @@
       "showLabel": true
     },
     {
-      "id": "sc-3-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          854,
-          725
-        ],
-        [
-          854,
-          753
-        ],
-        [
-          913,
-          753
-        ],
-        [
-          914,
-          724
-        ]
-      ],
-      "labelAnchor": {
-        "x": 884,
-        "y": 739
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "3",
-        "4"
-      ],
-      "showLabel": false
-    },
-    {
       "id": "sc-3-math-library",
       "name": "Math Library",
       "type": "library",
@@ -1048,41 +915,6 @@
         "sc-3-main-hallway-3"
       ],
       "showLabel": true
-    },
-    {
-      "id": "sc-3-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          84,
-          308
-        ],
-        [
-          84,
-          345
-        ],
-        [
-          155,
-          345
-        ],
-        [
-          154,
-          307
-        ]
-      ],
-      "labelAnchor": {
-        "x": 119,
-        "y": 326
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "showLabel": false
     },
     {
       "id": "sc-3-room-300",
@@ -1271,37 +1103,6 @@
     {
       "id": "sc-3-room-300e",
       "name": "R300E",
-      "type": "office",
-      "polygon": [
-        [
-          250,
-          183
-        ],
-        [
-          278,
-          182
-        ],
-        [
-          279,
-          220
-        ],
-        [
-          250,
-          219
-        ]
-      ],
-      "labelAnchor": {
-        "x": 264,
-        "y": 201
-      },
-      "neighbors": [
-        "sc-3-hallway-300"
-      ],
-      "showLabel": true
-    },
-    {
-      "id": "sc-3-room-300e",
-      "name": "R300E",
       "type": "classroom",
       "polygon": [
         [
@@ -1322,10 +1123,12 @@
         ]
       ],
       "labelAnchor": {
-        "x": 294,
-        "y": 200
+        "x": 264,
+        "y": 201
       },
-      "neighbors": [],
+      "neighbors": [
+        "sc-3-hallway-300"
+      ],
       "showLabel": true
     },
     {
@@ -1608,41 +1411,6 @@
         "sc-3-main-hallway-3"
       ],
       "showLabel": true
-    },
-    {
-      "id": "sc-3-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          719,
-          304
-        ],
-        [
-          797,
-          303
-        ],
-        [
-          798,
-          344
-        ],
-        [
-          720,
-          345
-        ]
-      ],
-      "labelAnchor": {
-        "x": 759,
-        "y": 324
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "showLabel": false
     },
     {
       "id": "sc-3-room-309a",
@@ -2319,57 +2087,6 @@
       "showLabel": true
     },
     {
-      "id": "sc-3-stairwell",
-      "name": "Stairwell",
-      "type": "stairwell",
-      "polygon": [
-        [
-          1352,
-          684
-        ],
-        [
-          1352,
-          698
-        ],
-        [
-          1383,
-          698
-        ],
-        [
-          1383,
-          683
-        ],
-        [
-          1398,
-          684
-        ],
-        [
-          1397,
-          719
-        ],
-        [
-          1336,
-          718
-        ],
-        [
-          1336,
-          683
-        ]
-      ],
-      "labelAnchor": {
-        "x": 1367,
-        "y": 696
-      },
-      "neighbors": [],
-      "connectsFloors": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "showLabel": false
-    },
-    {
       "id": "sc-3-room-361",
       "name": "R361",
       "type": "office",
@@ -2888,7 +2605,8 @@
         "sc-3-room-364",
         "sc-3-room-365",
         "sc-3-room-366",
-        "sc-3-study-hall"
+        "sc-3-study-hall",
+        "sc-3-door-sc-3-restroom-2-sc-3-main-hallway-3"
       ],
       "showLabel": false
     },
@@ -3139,42 +2857,6 @@
       "labelAnchor": {
         "x": 237,
         "y": 214
-      },
-      "neighbors": [
-        "sc-3-hallway-300",
-        "sc-3-room-300d"
-      ],
-      "connects": [
-        "sc-3-hallway-300",
-        "sc-3-room-300d"
-      ],
-      "showLabel": false
-    },
-    {
-      "id": "sc-3-door-sc-3-hallway-300-sc-3-room-300d",
-      "name": "Door (sc-3-hallway-300 \u2194 sc-3-room-300d)",
-      "type": "door",
-      "polygon": [
-        [
-          266,
-          219
-        ],
-        [
-          265,
-          209
-        ],
-        [
-          274,
-          209
-        ],
-        [
-          275,
-          221
-        ]
-      ],
-      "labelAnchor": {
-        "x": 270,
-        "y": 215
       },
       "neighbors": [
         "sc-3-hallway-300",
@@ -4003,42 +3685,6 @@
       "labelAnchor": {
         "x": 822,
         "y": 471
-      },
-      "neighbors": [
-        "sc-3-main-hallway-3",
-        "sc-3-room-320"
-      ],
-      "connects": [
-        "sc-3-main-hallway-3",
-        "sc-3-room-320"
-      ],
-      "showLabel": false
-    },
-    {
-      "id": "sc-3-door-sc-3-main-hallway-3-sc-3-room-320",
-      "name": "Door (sc-3-main-hallway-3 \u2194 sc-3-room-320)",
-      "type": "door",
-      "polygon": [
-        [
-          828,
-          468
-        ],
-        [
-          817,
-          468
-        ],
-        [
-          817,
-          475
-        ],
-        [
-          829,
-          476
-        ]
-      ],
-      "labelAnchor": {
-        "x": 823,
-        "y": 472
       },
       "neighbors": [
         "sc-3-main-hallway-3",
@@ -5408,6 +5054,294 @@
         "y": 382
       },
       "neighbors": []
+    },
+    {
+      "id": "sc-3-stairwell-1",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1418,
+          278
+        ],
+        [
+          1455,
+          278
+        ],
+        [
+          1454,
+          343
+        ],
+        [
+          1419,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1437,
+        "y": 311
+      },
+      "neighbors": [
+        "sc-3-room-23"
+      ],
+      "connectsFloors": [
+        "2",
+        "3",
+        "4"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-3-stairwell-2",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          852,
+          432
+        ],
+        [
+          852,
+          462
+        ],
+        [
+          910,
+          463
+        ],
+        [
+          909,
+          432
+        ]
+      ],
+      "labelAnchor": {
+        "x": 881,
+        "y": 447
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "2",
+        "3",
+        "4"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-3-stairwell-3",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          854,
+          725
+        ],
+        [
+          854,
+          753
+        ],
+        [
+          913,
+          753
+        ],
+        [
+          914,
+          724
+        ]
+      ],
+      "labelAnchor": {
+        "x": 884,
+        "y": 739
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "3",
+        "4"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-3-stairwell-4",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          84,
+          308
+        ],
+        [
+          84,
+          345
+        ],
+        [
+          155,
+          345
+        ],
+        [
+          154,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 119,
+        "y": 326
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-3-stairwell-5",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          719,
+          304
+        ],
+        [
+          797,
+          303
+        ],
+        [
+          798,
+          344
+        ],
+        [
+          720,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 759,
+        "y": 324
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-3-stairwell-6",
+      "name": "Stairwell",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1352,
+          684
+        ],
+        [
+          1352,
+          698
+        ],
+        [
+          1383,
+          698
+        ],
+        [
+          1383,
+          683
+        ],
+        [
+          1398,
+          684
+        ],
+        [
+          1397,
+          719
+        ],
+        [
+          1336,
+          718
+        ],
+        [
+          1336,
+          683
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1367,
+        "y": 696
+      },
+      "neighbors": [],
+      "connectsFloors": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "showLabel": false
+    },
+    {
+      "id": "sc-3-restroom-2",
+      "name": "Restroom",
+      "type": "restroom",
+      "polygon": [
+        [
+          772,
+          378
+        ],
+        [
+          830,
+          378
+        ],
+        [
+          829,
+          461
+        ],
+        [
+          772,
+          459
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 419
+      },
+      "neighbors": [],
+      "showLabel": true
+    },
+    {
+      "id": "sc-3-door-sc-3-restroom-2-sc-3-main-hallway-3",
+      "name": "Door (sc-3-restroom \u2194 sc-3-main-hallway-3)",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          423
+        ],
+        [
+          817,
+          423
+        ],
+        [
+          817,
+          430
+        ],
+        [
+          831,
+          431
+        ]
+      ],
+      "labelAnchor": {
+        "x": 824,
+        "y": 427
+      },
+      "neighbors": [
+        "sc-3-restroom-2",
+        "sc-3-main-hallway-3"
+      ],
+      "connects": [
+        "sc-3-restroom",
+        "sc-3-main-hallway-3"
+      ]
     }
   ]
 }
