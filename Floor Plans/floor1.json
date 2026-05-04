@@ -1084,7 +1084,8 @@
         "sc-1-lecture-hall-a",
         "sc-1-lecture-hall-b",
         "sc-1-lecture-hall-c",
-        "sc-1-lecture-hall-d"
+        "sc-1-lecture-hall-d",
+        "sc-1-door-sc-hw-main-sc-1-restroom"
       ]
     },
     {
@@ -4730,6 +4731,67 @@
         "y": 326
       },
       "neighbors": []
+    },
+    {
+      "id": "sc-1-restroom",
+      "name": "Restroom",
+      "type": "restroom",
+      "polygon": [
+        [
+          660,
+          321
+        ],
+        [
+          652,
+          321
+        ],
+        [
+          652,
+          330
+        ],
+        [
+          660,
+          330
+        ]
+      ],
+      "labelAnchor": {
+        "x": 656,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-hw-main"
+      ]
+    },
+    {
+      "id": "sc-1-door-sc-hw-main-sc-1-restroom",
+      "name": "Door (sc-hw-main \u2194 sc-1-restroom)",
+      "type": "door",
+      "polygon": [
+        [
+          661,
+          323
+        ],
+        [
+          661,
+          328
+        ],
+        [
+          664,
+          328
+        ],
+        [
+          664,
+          323
+        ]
+      ],
+      "labelAnchor": {
+        "x": 662,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-hw-main",
+        "sc-1-restroom"
+      ]
     }
   ]
 }

@@ -3,13 +3,14 @@ import json, os, math, heapq
 
 app = Flask(__name__)
 
-FLOOR_ORDER = ['B', '1', '2', '3', '5', '6', '7', '8', '9']
+FLOOR_ORDER = ['B', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 FLOOR_FILES = {
     'B': 'Floor Plans/floorB.json',
     '1': 'Floor Plans/floor1.json',
     '2': 'Floor Plans/floor2.json',
     '3': 'Floor Plans/floor3.json',
+    '4': 'Floor Plans/floor4.json',
     '5': 'Floor Plans/floor5.json',
     '6': 'Floor Plans/floor6.json',
     '7': 'Floor Plans/floor7.json',

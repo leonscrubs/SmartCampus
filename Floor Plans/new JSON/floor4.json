@@ -1,0 +1,6378 @@
+{
+  "floor": 4,
+  "viewBox": {
+    "width": 1650,
+    "height": 1275
+  },
+  "buildingOutline": [],
+  "rooms": [
+    {
+      "id": "sc-4-400d",
+      "name": "400D",
+      "type": "classroom",
+      "polygon": [
+        [
+          156,
+          184
+        ],
+        [
+          155,
+          238
+        ],
+        [
+          188,
+          236
+        ],
+        [
+          188,
+          183
+        ]
+      ],
+      "labelAnchor": {
+        "x": 172,
+        "y": 210
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400e",
+      "name": "400E",
+      "type": "classroom",
+      "polygon": [
+        [
+          219,
+          222
+        ],
+        [
+          191,
+          222
+        ],
+        [
+          190,
+          186
+        ],
+        [
+          217,
+          184
+        ]
+      ],
+      "labelAnchor": {
+        "x": 204,
+        "y": 204
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400f",
+      "name": "400F",
+      "type": "classroom",
+      "polygon": [
+        [
+          251,
+          220
+        ],
+        [
+          222,
+          221
+        ],
+        [
+          220,
+          182
+        ],
+        [
+          252,
+          183
+        ]
+      ],
+      "labelAnchor": {
+        "x": 236,
+        "y": 202
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400g",
+      "name": "400G",
+      "type": "classroom",
+      "polygon": [
+        [
+          283,
+          224
+        ],
+        [
+          253,
+          224
+        ],
+        [
+          252,
+          181
+        ],
+        [
+          280,
+          182
+        ]
+      ],
+      "labelAnchor": {
+        "x": 267,
+        "y": 203
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400h",
+      "name": "400H",
+      "type": "classroom",
+      "polygon": [
+        [
+          312,
+          222
+        ],
+        [
+          287,
+          222
+        ],
+        [
+          281,
+          182
+        ],
+        [
+          307,
+          182
+        ]
+      ],
+      "labelAnchor": {
+        "x": 297,
+        "y": 202
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400j",
+      "name": "400J",
+      "type": "classroom",
+      "polygon": [
+        [
+          308,
+          276
+        ],
+        [
+          272,
+          274
+        ],
+        [
+          272,
+          239
+        ],
+        [
+          308,
+          239
+        ]
+      ],
+      "labelAnchor": {
+        "x": 290,
+        "y": 257
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400k",
+      "name": "400K",
+      "type": "classroom",
+      "polygon": [
+        [
+          311,
+          311
+        ],
+        [
+          271,
+          312
+        ],
+        [
+          272,
+          274
+        ],
+        [
+          305,
+          277
+        ]
+      ],
+      "labelAnchor": {
+        "x": 290,
+        "y": 294
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400m",
+      "name": "400M",
+      "type": "classroom",
+      "polygon": [
+        [
+          310,
+          351
+        ],
+        [
+          272,
+          350
+        ],
+        [
+          272,
+          314
+        ],
+        [
+          310,
+          313
+        ]
+      ],
+      "labelAnchor": {
+        "x": 291,
+        "y": 332
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400c",
+      "name": "400C",
+      "type": "classroom",
+      "polygon": [
+        [
+          190,
+          269
+        ],
+        [
+          156,
+          269
+        ],
+        [
+          156,
+          240
+        ],
+        [
+          187,
+          238
+        ]
+      ],
+      "labelAnchor": {
+        "x": 172,
+        "y": 254
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400b",
+      "name": "400B",
+      "type": "classroom",
+      "polygon": [
+        [
+          190,
+          298
+        ],
+        [
+          157,
+          297
+        ],
+        [
+          155,
+          271
+        ],
+        [
+          189,
+          271
+        ]
+      ],
+      "labelAnchor": {
+        "x": 173,
+        "y": 284
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400a",
+      "name": "400A",
+      "type": "classroom",
+      "polygon": [
+        [
+          194,
+          327
+        ],
+        [
+          158,
+          327
+        ],
+        [
+          156,
+          299
+        ],
+        [
+          190,
+          299
+        ]
+      ],
+      "labelAnchor": {
+        "x": 175,
+        "y": 313
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-403c",
+      "name": "403C",
+      "type": "classroom",
+      "polygon": [
+        [
+          312,
+          305
+        ],
+        [
+          416,
+          306
+        ],
+        [
+          411,
+          190
+        ],
+        [
+          309,
+          193
+        ]
+      ],
+      "labelAnchor": {
+        "x": 362,
+        "y": 249
+      },
+      "neighbors": [
+        "sc-4-403e"
+      ]
+    },
+    {
+      "id": "sc-4-403e",
+      "name": "403E",
+      "type": "classroom",
+      "polygon": [
+        [
+          446,
+          306
+        ],
+        [
+          419,
+          308
+        ],
+        [
+          412,
+          190
+        ],
+        [
+          447,
+          192
+        ]
+      ],
+      "labelAnchor": {
+        "x": 431,
+        "y": 249
+      },
+      "neighbors": [
+        "sc-4-403c",
+        "sc-4-403d",
+        "sc-4-403-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-403d",
+      "name": "403D",
+      "type": "classroom",
+      "polygon": [
+        [
+          543,
+          305
+        ],
+        [
+          449,
+          304
+        ],
+        [
+          448,
+          192
+        ],
+        [
+          541,
+          192
+        ]
+      ],
+      "labelAnchor": {
+        "x": 495,
+        "y": 248
+      },
+      "neighbors": [
+        "sc-4-403e",
+        "sc-4-403-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-408c",
+      "name": "408C",
+      "type": "classroom",
+      "polygon": [
+        [
+          644,
+          307
+        ],
+        [
+          541,
+          306
+        ],
+        [
+          543,
+          195
+        ],
+        [
+          643,
+          194
+        ]
+      ],
+      "labelAnchor": {
+        "x": 593,
+        "y": 251
+      },
+      "neighbors": [
+        "sc-4-408d"
+      ]
+    },
+    {
+      "id": "sc-4-408d",
+      "name": "408D",
+      "type": "classroom",
+      "polygon": [
+        [
+          646,
+          308
+        ],
+        [
+          778,
+          307
+        ],
+        [
+          774,
+          193
+        ],
+        [
+          645,
+          194
+        ]
+      ],
+      "labelAnchor": {
+        "x": 711,
+        "y": 251
+      },
+      "neighbors": [
+        "sc-4-408c",
+        "sc-4-408b"
+      ]
+    },
+    {
+      "id": "sc-4-405",
+      "name": "405",
+      "type": "classroom",
+      "polygon": [
+        [
+          507,
+          347
+        ],
+        [
+          567,
+          348
+        ],
+        [
+          562,
+          307
+        ],
+        [
+          504,
+          309
+        ]
+      ],
+      "labelAnchor": {
+        "x": 535,
+        "y": 328
+      },
+      "neighbors": [
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-406",
+      "name": "406",
+      "type": "classroom",
+      "polygon": [
+        [
+          592,
+          347
+        ],
+        [
+          569,
+          346
+        ],
+        [
+          562,
+          310
+        ],
+        [
+          591,
+          309
+        ]
+      ],
+      "labelAnchor": {
+        "x": 579,
+        "y": 328
+      },
+      "neighbors": [
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-407",
+      "name": "407",
+      "type": "classroom",
+      "polygon": [
+        [
+          645,
+          347
+        ],
+        [
+          595,
+          346
+        ],
+        [
+          593,
+          307
+        ],
+        [
+          643,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 619,
+        "y": 327
+      },
+      "neighbors": [
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-408b",
+      "name": "408B",
+      "type": "classroom",
+      "polygon": [
+        [
+          699,
+          345
+        ],
+        [
+          647,
+          345
+        ],
+        [
+          645,
+          307
+        ],
+        [
+          699,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 673,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-west-hallway",
+        "sc-4-408d"
+      ]
+    },
+    {
+      "id": "sc-4-402a",
+      "name": "402A",
+      "type": "classroom",
+      "polygon": [
+        [
+          410,
+          347
+        ],
+        [
+          387,
+          347
+        ],
+        [
+          387,
+          308
+        ],
+        [
+          410,
+          308
+        ]
+      ],
+      "labelAnchor": {
+        "x": 399,
+        "y": 328
+      },
+      "neighbors": [
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-401",
+      "name": "401",
+      "type": "classroom",
+      "polygon": [
+        [
+          332,
+          343
+        ],
+        [
+          358,
+          345
+        ],
+        [
+          358,
+          306
+        ],
+        [
+          328,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 344,
+        "y": 325
+      },
+      "neighbors": [
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-402",
+      "name": "402",
+      "type": "classroom",
+      "polygon": [
+        [
+          386,
+          345
+        ],
+        [
+          361,
+          345
+        ],
+        [
+          360,
+          307
+        ],
+        [
+          386,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 373,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-410",
+      "name": "410",
+      "type": "classroom",
+      "polygon": [
+        [
+          823,
+          345
+        ],
+        [
+          855,
+          346
+        ],
+        [
+          855,
+          306
+        ],
+        [
+          821,
+          306
+        ]
+      ],
+      "labelAnchor": {
+        "x": 839,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-411",
+      "name": "411",
+      "type": "classroom",
+      "polygon": [
+        [
+          875,
+          348
+        ],
+        [
+          952,
+          346
+        ],
+        [
+          952,
+          307
+        ],
+        [
+          873,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 913,
+        "y": 327
+      },
+      "neighbors": [
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-412",
+      "name": "412",
+      "type": "classroom",
+      "polygon": [
+        [
+          953,
+          347
+        ],
+        [
+          1030,
+          347
+        ],
+        [
+          1029,
+          306
+        ],
+        [
+          953,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 991,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-413a",
+      "name": "413A",
+      "type": "classroom",
+      "polygon": [
+        [
+          1058,
+          346
+        ],
+        [
+          1031,
+          346
+        ],
+        [
+          1029,
+          305
+        ],
+        [
+          1058,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1044,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-central-hallway",
+        "sc-4-413c"
+      ]
+    },
+    {
+      "id": "sc-4-413c",
+      "name": "413C",
+      "type": "classroom",
+      "polygon": [
+        [
+          950,
+          193
+        ],
+        [
+          1043,
+          193
+        ],
+        [
+          1044,
+          303
+        ],
+        [
+          953,
+          303
+        ]
+      ],
+      "labelAnchor": {
+        "x": 998,
+        "y": 248
+      },
+      "neighbors": [
+        "sc-4-413a",
+        "sc-4-413d"
+      ]
+    },
+    {
+      "id": "sc-4-409",
+      "name": "409",
+      "type": "classroom",
+      "polygon": [
+        [
+          777,
+          194
+        ],
+        [
+          950,
+          194
+        ],
+        [
+          949,
+          304
+        ],
+        [
+          781,
+          304
+        ]
+      ],
+      "labelAnchor": {
+        "x": 864,
+        "y": 249
+      },
+      "neighbors": [
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-413d",
+      "name": "413D",
+      "type": "classroom",
+      "polygon": [
+        [
+          1044,
+          196
+        ],
+        [
+          1186,
+          195
+        ],
+        [
+          1185,
+          302
+        ],
+        [
+          1045,
+          303
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1115,
+        "y": 249
+      },
+      "neighbors": [
+        "sc-4-413c",
+        "sc-4-413b"
+      ]
+    },
+    {
+      "id": "sc-4-413b",
+      "name": "413B",
+      "type": "classroom",
+      "polygon": [
+        [
+          1085,
+          344
+        ],
+        [
+          1106,
+          345
+        ],
+        [
+          1107,
+          305
+        ],
+        [
+          1085,
+          304
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1096,
+        "y": 325
+      },
+      "neighbors": [
+        "sc-4-413d",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-414",
+      "name": "414",
+      "type": "classroom",
+      "polygon": [
+        [
+          1136,
+          346
+        ],
+        [
+          1108,
+          346
+        ],
+        [
+          1109,
+          305
+        ],
+        [
+          1135,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1122,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-415",
+      "name": "415",
+      "type": "classroom",
+      "polygon": [
+        [
+          1163,
+          347
+        ],
+        [
+          1138,
+          346
+        ],
+        [
+          1136,
+          305
+        ],
+        [
+          1165,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1151,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-416",
+      "name": "416",
+      "type": "classroom",
+      "polygon": [
+        [
+          1185,
+          346
+        ],
+        [
+          1235,
+          347
+        ],
+        [
+          1230,
+          307
+        ],
+        [
+          1184,
+          309
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1209,
+        "y": 327
+      },
+      "neighbors": [
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-417",
+      "name": "417",
+      "type": "classroom",
+      "polygon": [
+        [
+          1264,
+          347
+        ],
+        [
+          1236,
+          347
+        ],
+        [
+          1231,
+          307
+        ],
+        [
+          1263,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1249,
+        "y": 327
+      },
+      "neighbors": [
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-418a",
+      "name": "418A",
+      "type": "classroom",
+      "polygon": [
+        [
+          1293,
+          346
+        ],
+        [
+          1266,
+          347
+        ],
+        [
+          1264,
+          305
+        ],
+        [
+          1291,
+          306
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1279,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-east-hallway",
+        "sc-4-418c"
+      ]
+    },
+    {
+      "id": "sc-4-418c",
+      "name": "418C",
+      "type": "classroom",
+      "polygon": [
+        [
+          1187,
+          199
+        ],
+        [
+          1277,
+          193
+        ],
+        [
+          1278,
+          302
+        ],
+        [
+          1187,
+          304
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1232,
+        "y": 250
+      },
+      "neighbors": [
+        "sc-4-418d",
+        "sc-4-418a"
+      ]
+    },
+    {
+      "id": "sc-4-418d",
+      "name": "418D",
+      "type": "classroom",
+      "polygon": [
+        [
+          1420,
+          305
+        ],
+        [
+          1282,
+          302
+        ],
+        [
+          1279,
+          194
+        ],
+        [
+          1417,
+          191
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1350,
+        "y": 248
+      },
+      "neighbors": [
+        "sc-4-418c",
+        "sc-4-418b"
+      ]
+    },
+    {
+      "id": "sc-4-418b",
+      "name": "418B",
+      "type": "classroom",
+      "polygon": [
+        [
+          1321,
+          346
+        ],
+        [
+          1349,
+          347
+        ],
+        [
+          1348,
+          306
+        ],
+        [
+          1316,
+          306
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1334,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-418d"
+      ]
+    },
+    {
+      "id": "sc-4-419",
+      "name": "419",
+      "type": "classroom",
+      "polygon": [
+        [
+          1398,
+          352
+        ],
+        [
+          1353,
+          349
+        ],
+        [
+          1351,
+          305
+        ],
+        [
+          1399,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1375,
+        "y": 328
+      },
+      "neighbors": [
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-451",
+      "name": "451",
+      "type": "classroom",
+      "polygon": [
+        [
+          1266,
+          410
+        ],
+        [
+          1304,
+          411
+        ],
+        [
+          1306,
+          458
+        ],
+        [
+          1268,
+          458
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1286,
+        "y": 434
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-452",
+      "name": "452",
+      "type": "classroom",
+      "polygon": [
+        [
+          1305,
+          508
+        ],
+        [
+          1267,
+          510
+        ],
+        [
+          1266,
+          460
+        ],
+        [
+          1306,
+          460
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1286,
+        "y": 485
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-453",
+      "name": "453",
+      "type": "classroom",
+      "polygon": [
+        [
+          1306,
+          538
+        ],
+        [
+          1263,
+          537
+        ],
+        [
+          1267,
+          513
+        ],
+        [
+          1305,
+          509
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1285,
+        "y": 524
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-454",
+      "name": "454",
+      "type": "classroom",
+      "polygon": [
+        [
+          1305,
+          561
+        ],
+        [
+          1266,
+          560
+        ],
+        [
+          1266,
+          539
+        ],
+        [
+          1305,
+          538
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1286,
+        "y": 550
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-455",
+      "name": "455",
+      "type": "classroom",
+      "polygon": [
+        [
+          1307,
+          591
+        ],
+        [
+          1265,
+          589
+        ],
+        [
+          1266,
+          562
+        ],
+        [
+          1304,
+          562
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1286,
+        "y": 576
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-456",
+      "name": "456",
+      "type": "classroom",
+      "polygon": [
+        [
+          1307,
+          619
+        ],
+        [
+          1267,
+          618
+        ],
+        [
+          1267,
+          590
+        ],
+        [
+          1307,
+          591
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1287,
+        "y": 605
+      },
+      "neighbors": []
+    },
+    {
+      "id": "sc-4-457",
+      "name": "457",
+      "type": "classroom",
+      "polygon": [
+        [
+          1305,
+          670
+        ],
+        [
+          1265,
+          670
+        ],
+        [
+          1266,
+          619
+        ],
+        [
+          1306,
+          621
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1286,
+        "y": 645
+      },
+      "neighbors": [
+        "sc-4-480",
+        "sc-4-458"
+      ]
+    },
+    {
+      "id": "sc-4-458",
+      "name": "458",
+      "type": "classroom",
+      "polygon": [
+        [
+          1306,
+          720
+        ],
+        [
+          1265,
+          720
+        ],
+        [
+          1268,
+          670
+        ],
+        [
+          1305,
+          671
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1286,
+        "y": 695
+      },
+      "neighbors": [
+        "sc-4-457"
+      ]
+    },
+    {
+      "id": "sc-4-459",
+      "name": "459",
+      "type": "classroom",
+      "polygon": [
+        [
+          1339,
+          717
+        ],
+        [
+          1310,
+          719
+        ],
+        [
+          1308,
+          686
+        ],
+        [
+          1343,
+          686
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1325,
+        "y": 702
+      },
+      "neighbors": [
+        "sc-4-stairwell-5",
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-460",
+      "name": "460",
+      "type": "classroom",
+      "polygon": [
+        [
+          1402,
+          720
+        ],
+        [
+          1458,
+          720
+        ],
+        [
+          1459,
+          684
+        ],
+        [
+          1399,
+          684
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1430,
+        "y": 702
+      },
+      "neighbors": [
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-461",
+      "name": "461",
+      "type": "classroom",
+      "polygon": [
+        [
+          1459,
+          680
+        ],
+        [
+          1459,
+          636
+        ],
+        [
+          1419,
+          635
+        ],
+        [
+          1418,
+          682
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1439,
+        "y": 658
+      },
+      "neighbors": [
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-462",
+      "name": "462",
+      "type": "classroom",
+      "polygon": [
+        [
+          1458,
+          633
+        ],
+        [
+          1421,
+          636
+        ],
+        [
+          1419,
+          608
+        ],
+        [
+          1460,
+          608
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1440,
+        "y": 621
+      },
+      "neighbors": [
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-467",
+      "name": "467",
+      "type": "classroom",
+      "polygon": [
+        [
+          1421,
+          461
+        ],
+        [
+          1458,
+          459
+        ],
+        [
+          1459,
+          509
+        ],
+        [
+          1423,
+          511
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1440,
+        "y": 485
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-466",
+      "name": "466",
+      "type": "classroom",
+      "polygon": [
+        [
+          1459,
+          532
+        ],
+        [
+          1421,
+          532
+        ],
+        [
+          1421,
+          512
+        ],
+        [
+          1457,
+          508
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1440,
+        "y": 521
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-465",
+      "name": "465",
+      "type": "classroom",
+      "polygon": [
+        [
+          1460,
+          559
+        ],
+        [
+          1419,
+          559
+        ],
+        [
+          1422,
+          535
+        ],
+        [
+          1459,
+          535
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1440,
+        "y": 547
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-464",
+      "name": "464",
+      "type": "classroom",
+      "polygon": [
+        [
+          1415,
+          584
+        ],
+        [
+          1462,
+          585
+        ],
+        [
+          1458,
+          561
+        ],
+        [
+          1421,
+          566
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1439,
+        "y": 574
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-463",
+      "name": "463",
+      "type": "classroom",
+      "polygon": [
+        [
+          1426,
+          609
+        ],
+        [
+          1460,
+          606
+        ],
+        [
+          1460,
+          586
+        ],
+        [
+          1418,
+          586
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1441,
+        "y": 597
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-474",
+      "name": "474",
+      "type": "classroom",
+      "polygon": [
+        [
+          1354,
+          404
+        ],
+        [
+          1383,
+          406
+        ],
+        [
+          1383,
+          376
+        ],
+        [
+          1355,
+          378
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1369,
+        "y": 391
+      },
+      "neighbors": [
+        "sc-4-east-hallway",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-420",
+      "name": "420",
+      "type": "classroom",
+      "polygon": [
+        [
+          773,
+          460
+        ],
+        [
+          827,
+          460
+        ],
+        [
+          826,
+          485
+        ],
+        [
+          769,
+          485
+        ],
+        [
+          775,
+          485
+        ]
+      ],
+      "labelAnchor": {
+        "x": 794,
+        "y": 475
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-422",
+      "name": "422",
+      "type": "classroom",
+      "polygon": [
+        [
+          825,
+          507
+        ],
+        [
+          776,
+          508
+        ],
+        [
+          776,
+          489
+        ],
+        [
+          827,
+          487
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 498
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-423",
+      "name": "423",
+      "type": "classroom",
+      "polygon": [
+        [
+          827,
+          532
+        ],
+        [
+          777,
+          532
+        ],
+        [
+          777,
+          510
+        ],
+        [
+          825,
+          508
+        ]
+      ],
+      "labelAnchor": {
+        "x": 802,
+        "y": 521
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-425",
+      "name": "425",
+      "type": "classroom",
+      "polygon": [
+        [
+          827,
+          589
+        ],
+        [
+          772,
+          588
+        ],
+        [
+          775,
+          534
+        ],
+        [
+          830,
+          534
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 561
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-427",
+      "name": "427",
+      "type": "classroom",
+      "polygon": [
+        [
+          827,
+          630
+        ],
+        [
+          774,
+          629
+        ],
+        [
+          776,
+          588
+        ],
+        [
+          825,
+          587
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 609
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-429",
+      "name": "429",
+      "type": "classroom",
+      "polygon": [
+        [
+          827,
+          651
+        ],
+        [
+          772,
+          650
+        ],
+        [
+          773,
+          634
+        ],
+        [
+          828,
+          631
+        ]
+      ],
+      "labelAnchor": {
+        "x": 800,
+        "y": 642
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-430",
+      "name": "430",
+      "type": "classroom",
+      "polygon": [
+        [
+          828,
+          687
+        ],
+        [
+          774,
+          688
+        ],
+        [
+          775,
+          650
+        ],
+        [
+          828,
+          650
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 669
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-432",
+      "name": "432",
+      "type": "classroom",
+      "polygon": [
+        [
+          828,
+          725
+        ],
+        [
+          774,
+          726
+        ],
+        [
+          776,
+          690
+        ],
+        [
+          827,
+          689
+        ]
+      ],
+      "labelAnchor": {
+        "x": 801,
+        "y": 708
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-421h",
+      "name": "421H",
+      "type": "classroom",
+      "polygon": [
+        [
+          921,
+          460
+        ],
+        [
+          955,
+          460
+        ],
+        [
+          955,
+          433
+        ],
+        [
+          914,
+          433
+        ]
+      ],
+      "labelAnchor": {
+        "x": 936,
+        "y": 447
+      },
+      "neighbors": [
+        "sc-4-421"
+      ]
+    },
+    {
+      "id": "sc-4-421",
+      "name": "421",
+      "type": "classroom",
+      "polygon": [
+        [
+          852,
+          529
+        ],
+        [
+          956,
+          530
+        ],
+        [
+          955,
+          461
+        ],
+        [
+          852,
+          461
+        ]
+      ],
+      "labelAnchor": {
+        "x": 904,
+        "y": 495
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway",
+        "sc-4-421h"
+      ]
+    },
+    {
+      "id": "sc-4-436",
+      "name": "436",
+      "type": "classroom",
+      "polygon": [
+        [
+          777,
+          728
+        ],
+        [
+          953,
+          729
+        ],
+        [
+          954,
+          844
+        ],
+        [
+          774,
+          850
+        ]
+      ],
+      "labelAnchor": {
+        "x": 865,
+        "y": 788
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-431",
+      "name": "431",
+      "type": "classroom",
+      "polygon": [
+        [
+          854,
+          669
+        ],
+        [
+          952,
+          667
+        ],
+        [
+          953,
+          726
+        ],
+        [
+          850,
+          726
+        ]
+      ],
+      "labelAnchor": {
+        "x": 902,
+        "y": 697
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-428",
+      "name": "428",
+      "type": "classroom",
+      "polygon": [
+        [
+          854,
+          612
+        ],
+        [
+          953,
+          607
+        ],
+        [
+          952,
+          666
+        ],
+        [
+          854,
+          666
+        ]
+      ],
+      "labelAnchor": {
+        "x": 903,
+        "y": 638
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-426",
+      "name": "426",
+      "type": "classroom",
+      "polygon": [
+        [
+          853,
+          554
+        ],
+        [
+          873,
+          552
+        ],
+        [
+          873,
+          534
+        ],
+        [
+          953,
+          533
+        ],
+        [
+          954,
+          606
+        ],
+        [
+          854,
+          611
+        ]
+      ],
+      "labelAnchor": {
+        "x": 893,
+        "y": 565
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-424",
+      "name": "424",
+      "type": "classroom",
+      "polygon": [
+        [
+          852,
+          533
+        ],
+        [
+          870,
+          533
+        ],
+        [
+          872,
+          550
+        ],
+        [
+          854,
+          552
+        ]
+      ],
+      "labelAnchor": {
+        "x": 862,
+        "y": 542
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-475",
+      "name": "475",
+      "type": "classroom",
+      "polygon": [
+        [
+          1338,
+          429
+        ],
+        [
+          1386,
+          429
+        ],
+        [
+          1387,
+          441
+        ],
+        [
+          1335,
+          448
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1362,
+        "y": 437
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-469",
+      "name": "469",
+      "type": "classroom",
+      "polygon": [
+        [
+          1382,
+          460
+        ],
+        [
+          1338,
+          461
+        ],
+        [
+          1340,
+          513
+        ],
+        [
+          1386,
+          513
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1362,
+        "y": 487
+      },
+      "neighbors": [
+        "sc-4-inner-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-passenger-elevator",
+      "name": "Passenger Elevator",
+      "type": "elevator",
+      "polygon": [
+        [
+          854,
+          430
+        ],
+        [
+          953,
+          429
+        ],
+        [
+          953,
+          401
+        ],
+        [
+          852,
+          404
+        ]
+      ],
+      "labelAnchor": {
+        "x": 903,
+        "y": 416
+      },
+      "neighbors": [
+        "sc-4-elevator-hallway"
+      ],
+      "connectsFloors": [
+        "B",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "sc-4-stairwell-4",
+      "name": "Stairwell 4",
+      "type": "stairwell",
+      "polygon": [
+        [
+          854,
+          431
+        ],
+        [
+          912,
+          432
+        ],
+        [
+          920,
+          460
+        ],
+        [
+          851,
+          459
+        ]
+      ],
+      "labelAnchor": {
+        "x": 884,
+        "y": 446
+      },
+      "neighbors": [
+        "sc-4-elevator-hallway"
+      ],
+      "connectsFloors": [
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "sc-4-stairwell-1",
+      "name": "Stairwell 1",
+      "type": "stairwell",
+      "polygon": [
+        [
+          720,
+          344
+        ],
+        [
+          799,
+          344
+        ],
+        [
+          798,
+          306
+        ],
+        [
+          719,
+          309
+        ]
+      ],
+      "labelAnchor": {
+        "x": 759,
+        "y": 326
+      },
+      "neighbors": [
+        "sc-4-central-hallway"
+      ],
+      "connectsFloors": [
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "sc-4-stairwell-3",
+      "name": "Stairwell 3",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1456,
+          343
+        ],
+        [
+          1421,
+          344
+        ],
+        [
+          1419,
+          279
+        ],
+        [
+          1454,
+          279
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1438,
+        "y": 311
+      },
+      "neighbors": [
+        "sc-4-east-hallway"
+      ],
+      "connectsFloors": [
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "sc-4-stairwell-2",
+      "name": "Stairwell 2",
+      "type": "stairwell",
+      "polygon": [
+        [
+          156,
+          345
+        ],
+        [
+          155,
+          308
+        ],
+        [
+          86,
+          311
+        ],
+        [
+          86,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 121,
+        "y": 327
+      },
+      "neighbors": [
+        "sc-4-west-hallway"
+      ],
+      "connectsFloors": [
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "sc-4-400n",
+      "name": "400N",
+      "type": "classroom",
+      "polygon": [
+        [
+          209,
+          303
+        ],
+        [
+          257,
+          303
+        ],
+        [
+          253,
+          265
+        ],
+        [
+          209,
+          267
+        ]
+      ],
+      "labelAnchor": {
+        "x": 232,
+        "y": 285
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400p",
+      "name": "400P",
+      "type": "classroom",
+      "polygon": [
+        [
+          255,
+          240
+        ],
+        [
+          207,
+          240
+        ],
+        [
+          210,
+          268
+        ],
+        [
+          255,
+          266
+        ]
+      ],
+      "labelAnchor": {
+        "x": 232,
+        "y": 254
+      },
+      "neighbors": [
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-math-lounge-hallway",
+      "name": "Math Lounge Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          830,
+          727
+        ],
+        [
+          850,
+          727
+        ],
+        [
+          852,
+          462
+        ],
+        [
+          827,
+          460
+        ]
+      ],
+      "labelAnchor": {
+        "x": 840,
+        "y": 594
+      },
+      "neighbors": [
+        "sc-4-432",
+        "sc-4-436",
+        "sc-4-431",
+        "sc-4-430",
+        "sc-4-429",
+        "sc-4-428",
+        "sc-4-427",
+        "sc-4-426",
+        "sc-4-425",
+        "sc-4-424",
+        "sc-4-423",
+        "sc-4-422",
+        "sc-4-420",
+        "sc-4-421",
+        "sc-4-elevator-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-elevator-hallway",
+      "name": "Elevator Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          827,
+          459
+        ],
+        [
+          827,
+          376
+        ],
+        [
+          950,
+          376
+        ],
+        [
+          950,
+          399
+        ],
+        [
+          852,
+          401
+        ],
+        [
+          851,
+          458
+        ]
+      ],
+      "labelAnchor": {
+        "x": 876,
+        "y": 412
+      },
+      "neighbors": [
+        "sc-4-central-hallway",
+        "sc-4-math-lounge-hallway",
+        "sc-4-stairwell-4",
+        "sc-4-passenger-elevator"
+      ]
+    },
+    {
+      "id": "sc-4-west-hallway",
+      "name": "West Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          156,
+          351
+        ],
+        [
+          701,
+          346
+        ],
+        [
+          701,
+          380
+        ],
+        [
+          156,
+          378
+        ]
+      ],
+      "labelAnchor": {
+        "x": 429,
+        "y": 364
+      },
+      "neighbors": [
+        "sc-4-401",
+        "sc-4-402",
+        "sc-4-402a",
+        "sc-4-405",
+        "sc-4-406",
+        "sc-4-407",
+        "sc-4-408b",
+        "sc-4-central-hallway",
+        "sc-4-stairwell-2",
+        "sc-4-400-hallway",
+        "sc-4-403-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-central-hallway",
+      "name": "Central Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          703,
+          381
+        ],
+        [
+          1056,
+          379
+        ],
+        [
+          1058,
+          348
+        ],
+        [
+          700,
+          347
+        ]
+      ],
+      "labelAnchor": {
+        "x": 879,
+        "y": 364
+      },
+      "neighbors": [
+        "sc-4-west-hallway",
+        "sc-4-stairwell-1",
+        "sc-4-410",
+        "sc-4-411",
+        "sc-4-412",
+        "sc-4-413a",
+        "sc-4-east-hallway",
+        "sc-4-elevator-hallway",
+        "sc-4-409"
+      ]
+    },
+    {
+      "id": "sc-4-east-hallway",
+      "name": "East Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          1055,
+          379
+        ],
+        [
+          1439,
+          376
+        ],
+        [
+          1437,
+          347
+        ],
+        [
+          1059,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1248,
+        "y": 362
+      },
+      "neighbors": [
+        "sc-4-central-hallway",
+        "sc-4-414",
+        "sc-4-413b",
+        "sc-4-415",
+        "sc-4-416",
+        "sc-4-417",
+        "sc-4-418a",
+        "sc-4-419",
+        "sc-4-stairwell-3",
+        "sc-4-474"
+      ]
+    },
+    {
+      "id": "sc-4-480",
+      "name": "480",
+      "type": "classroom",
+      "polygon": [
+        [
+          1307,
+          669
+        ],
+        [
+          1417,
+          668
+        ],
+        [
+          1416,
+          586
+        ],
+        [
+          1308,
+          584
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1362,
+        "y": 627
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway",
+        "sc-4-482",
+        "sc-4-457",
+        "sc-4-459",
+        "sc-4-460",
+        "sc-4-461",
+        "sc-4-462"
+      ]
+    },
+    {
+      "id": "sc-4-482",
+      "name": "482",
+      "type": "classroom",
+      "polygon": [
+        [
+          1339,
+          684
+        ],
+        [
+          1337,
+          670
+        ],
+        [
+          1309,
+          671
+        ],
+        [
+          1309,
+          686
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1324,
+        "y": 678
+      },
+      "neighbors": [
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400a-sc-4-west-hallway",
+      "name": "Door (sc-4-400a ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          191,
+          306
+        ],
+        [
+          191,
+          309
+        ],
+        [
+          191,
+          309
+        ],
+        [
+          191,
+          309
+        ]
+      ],
+      "labelAnchor": {
+        "x": 191,
+        "y": 308
+      },
+      "neighbors": [
+        "sc-4-400a",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400a",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400b-sc-4-west-hallway",
+      "name": "Door (sc-4-400b ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          190,
+          284
+        ],
+        [
+          190,
+          284
+        ],
+        [
+          190,
+          284
+        ],
+        [
+          190,
+          284
+        ]
+      ],
+      "labelAnchor": {
+        "x": 190,
+        "y": 284
+      },
+      "neighbors": [
+        "sc-4-400b",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400b",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400c-sc-4-west-hallway",
+      "name": "Door (sc-4-400c ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          189,
+          253
+        ],
+        [
+          189,
+          253
+        ],
+        [
+          189,
+          253
+        ],
+        [
+          189,
+          253
+        ]
+      ],
+      "labelAnchor": {
+        "x": 189,
+        "y": 253
+      },
+      "neighbors": [
+        "sc-4-400c",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400c",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400d-sc-4-west-hallway",
+      "name": "Door (sc-4-400d ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          188,
+          226
+        ],
+        [
+          188,
+          226
+        ],
+        [
+          188,
+          226
+        ],
+        [
+          188,
+          226
+        ]
+      ],
+      "labelAnchor": {
+        "x": 188,
+        "y": 226
+      },
+      "neighbors": [
+        "sc-4-400d",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400d",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400p-sc-4-west-hallway",
+      "name": "Door (sc-4-400p ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          209,
+          255
+        ],
+        [
+          209,
+          255
+        ],
+        [
+          209,
+          255
+        ],
+        [
+          209,
+          255
+        ]
+      ],
+      "labelAnchor": {
+        "x": 209,
+        "y": 255
+      },
+      "neighbors": [
+        "sc-4-400p",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400p",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400n-sc-4-west-hallway",
+      "name": "Door (sc-4-400n ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          210,
+          285
+        ],
+        [
+          210,
+          285
+        ],
+        [
+          210,
+          285
+        ],
+        [
+          210,
+          285
+        ]
+      ],
+      "labelAnchor": {
+        "x": 210,
+        "y": 285
+      },
+      "neighbors": [
+        "sc-4-400n",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400n",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400e-sc-4-west-hallway",
+      "name": "Door (sc-4-400e ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          209,
+          224
+        ],
+        [
+          209,
+          224
+        ],
+        [
+          209,
+          224
+        ],
+        [
+          209,
+          224
+        ]
+      ],
+      "labelAnchor": {
+        "x": 209,
+        "y": 224
+      },
+      "neighbors": [
+        "sc-4-400e",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400e",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400f-sc-4-west-hallway",
+      "name": "Door (sc-4-400f ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          234,
+          219
+        ],
+        [
+          234,
+          220
+        ],
+        [
+          234,
+          220
+        ],
+        [
+          234,
+          220
+        ],
+        [
+          234,
+          220
+        ]
+      ],
+      "labelAnchor": {
+        "x": 234,
+        "y": 220
+      },
+      "neighbors": [
+        "sc-4-400f",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400f",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400g-sc-4-west-hallway",
+      "name": "Door (sc-4-400g ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          267,
+          223
+        ],
+        [
+          267,
+          223
+        ],
+        [
+          267,
+          223
+        ],
+        [
+          267,
+          223
+        ]
+      ],
+      "labelAnchor": {
+        "x": 267,
+        "y": 223
+      },
+      "neighbors": [
+        "sc-4-400g",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400g",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-west-hallway-sc-4-400h",
+      "name": "Door (sc-4-400-hallway ↔ sc-4-400h)",
+      "type": "door",
+      "polygon": [
+        [
+          298,
+          223
+        ],
+        [
+          298,
+          223
+        ],
+        [
+          298,
+          223
+        ],
+        [
+          298,
+          223
+        ]
+      ],
+      "labelAnchor": {
+        "x": 298,
+        "y": 223
+      },
+      "neighbors": [
+        "sc-4-400-hallway",
+        "sc-4-400h"
+      ],
+      "connects": [
+        "sc-4-400-hallway",
+        "sc-4-400h"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400j-sc-4-west-hallway",
+      "name": "Door (sc-4-400j ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          271,
+          257
+        ],
+        [
+          271,
+          257
+        ],
+        [
+          271,
+          257
+        ],
+        [
+          271,
+          257
+        ]
+      ],
+      "labelAnchor": {
+        "x": 271,
+        "y": 257
+      },
+      "neighbors": [
+        "sc-4-400j",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400j",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400k-sc-4-west-hallway",
+      "name": "Door (sc-4-400k ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          272,
+          288
+        ],
+        [
+          272,
+          288
+        ],
+        [
+          272,
+          288
+        ],
+        [
+          272,
+          288
+        ]
+      ],
+      "labelAnchor": {
+        "x": 272,
+        "y": 288
+      },
+      "neighbors": [
+        "sc-4-400k",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400k",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-400m-sc-4-west-hallway",
+      "name": "Door (sc-4-400m ↔ sc-4-400-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          270,
+          344
+        ],
+        [
+          270,
+          344
+        ],
+        [
+          270,
+          344
+        ],
+        [
+          270,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 270,
+        "y": 344
+      },
+      "neighbors": [
+        "sc-4-400m",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-400m",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-401-sc-4-west-hallway",
+      "name": "Door (sc-4-401 ↔ sc-4-west-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          339,
+          347
+        ],
+        [
+          339,
+          347
+        ],
+        [
+          339,
+          347
+        ],
+        [
+          339,
+          347
+        ]
+      ],
+      "labelAnchor": {
+        "x": 339,
+        "y": 347
+      },
+      "neighbors": [
+        "sc-4-401",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-401",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-402-sc-4-west-hallway",
+      "name": "Door (sc-4-402 ↔ sc-4-west-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          372,
+          346
+        ],
+        [
+          372,
+          346
+        ],
+        [
+          372,
+          346
+        ],
+        [
+          372,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 372,
+        "y": 346
+      },
+      "neighbors": [
+        "sc-4-402",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-402",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-402a-sc-4-west-hallway",
+      "name": "Door (sc-4-402a ↔ sc-4-west-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          398,
+          346
+        ],
+        [
+          398,
+          346
+        ],
+        [
+          398,
+          346
+        ],
+        [
+          398,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 398,
+        "y": 346
+      },
+      "neighbors": [
+        "sc-4-402a",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-402a",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-403e-sc-4-west-hallway",
+      "name": "Door (sc-4-403e ↔ sc-4-403-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          432,
+          308
+        ],
+        [
+          432,
+          308
+        ],
+        [
+          432,
+          308
+        ],
+        [
+          432,
+          308
+        ]
+      ],
+      "labelAnchor": {
+        "x": 432,
+        "y": 308
+      },
+      "neighbors": [
+        "sc-4-403e",
+        "sc-4-403-hallway"
+      ],
+      "connects": [
+        "sc-4-403e",
+        "sc-4-403-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-403d-sc-4-west-hallway",
+      "name": "Door (sc-4-403d ↔ sc-4-403-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          479,
+          305
+        ],
+        [
+          479,
+          305
+        ],
+        [
+          479,
+          305
+        ],
+        [
+          479,
+          305
+        ]
+      ],
+      "labelAnchor": {
+        "x": 479,
+        "y": 305
+      },
+      "neighbors": [
+        "sc-4-403d",
+        "sc-4-403-hallway"
+      ],
+      "connects": [
+        "sc-4-403d",
+        "sc-4-403-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-405-sc-4-west-hallway",
+      "name": "Door (sc-4-405 ↔ sc-4-west-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          532,
+          340
+        ],
+        [
+          532,
+          340
+        ],
+        [
+          532,
+          340
+        ],
+        [
+          532,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 532,
+        "y": 341
+      },
+      "neighbors": [
+        "sc-4-405",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-405",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-406-sc-4-west-hallway",
+      "name": "Door (sc-4-406 ↔ sc-4-west-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          578,
+          345
+        ],
+        [
+          578,
+          345
+        ],
+        [
+          578,
+          345
+        ],
+        [
+          578,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 578,
+        "y": 345
+      },
+      "neighbors": [
+        "sc-4-406",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-406",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-403c-sc-4-403e",
+      "name": "Door (sc-4-403c ↔ sc-4-403e)",
+      "type": "door",
+      "polygon": [
+        [
+          415,
+          265
+        ],
+        [
+          415,
+          265
+        ],
+        [
+          415,
+          265
+        ],
+        [
+          415,
+          265
+        ]
+      ],
+      "labelAnchor": {
+        "x": 415,
+        "y": 265
+      },
+      "neighbors": [
+        "sc-4-403c",
+        "sc-4-403e"
+      ],
+      "connects": [
+        "sc-4-403c",
+        "sc-4-403e"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-403e-sc-4-403d",
+      "name": "Door (sc-4-403e ↔ sc-4-403d)",
+      "type": "door",
+      "polygon": [
+        [
+          447,
+          252
+        ],
+        [
+          447,
+          252
+        ],
+        [
+          447,
+          252
+        ],
+        [
+          447,
+          252
+        ]
+      ],
+      "labelAnchor": {
+        "x": 447,
+        "y": 252
+      },
+      "neighbors": [
+        "sc-4-403e",
+        "sc-4-403d"
+      ],
+      "connects": [
+        "sc-4-403e",
+        "sc-4-403d"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-407-sc-4-west-hallway",
+      "name": "Door (sc-4-407 ↔ sc-4-west-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          619,
+          343
+        ],
+        [
+          619,
+          343
+        ],
+        [
+          619,
+          343
+        ],
+        [
+          619,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 619,
+        "y": 343
+      },
+      "neighbors": [
+        "sc-4-407",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-407",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-408b-sc-4-west-hallway",
+      "name": "Door (sc-4-408b ↔ sc-4-west-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          671,
+          343
+        ],
+        [
+          671,
+          343
+        ],
+        [
+          671,
+          343
+        ],
+        [
+          671,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 671,
+        "y": 343
+      },
+      "neighbors": [
+        "sc-4-408b",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-408b",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-408c-sc-4-408d",
+      "name": "Door (sc-4-408c ↔ sc-4-408d)",
+      "type": "door",
+      "polygon": [
+        [
+          644,
+          258
+        ],
+        [
+          644,
+          258
+        ],
+        [
+          644,
+          258
+        ],
+        [
+          644,
+          258
+        ]
+      ],
+      "labelAnchor": {
+        "x": 644,
+        "y": 258
+      },
+      "neighbors": [
+        "sc-4-408c",
+        "sc-4-408d"
+      ],
+      "connects": [
+        "sc-4-408c",
+        "sc-4-408d"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-west-hallway-sc-4-central-hallway",
+      "name": "Door (sc-4-west-hallway ↔ sc-4-central-hallway)",
+      "type": "connection",
+      "polygon": [
+        [
+          700,
+          361
+        ],
+        [
+          700,
+          361
+        ],
+        [
+          700,
+          361
+        ],
+        [
+          700,
+          361
+        ]
+      ],
+      "labelAnchor": {
+        "x": 700,
+        "y": 361
+      },
+      "neighbors": [
+        "sc-4-west-hallway",
+        "sc-4-central-hallway"
+      ],
+      "connects": [
+        "sc-4-west-hallway",
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-stairwell-1-sc-4-central-hallway",
+      "name": "Door (sc-4-stairwell-1 ↔ sc-4-central-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          715,
+          345
+        ],
+        [
+          715,
+          345
+        ],
+        [
+          715,
+          345
+        ],
+        [
+          715,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 715,
+        "y": 345
+      },
+      "neighbors": [
+        "sc-4-stairwell-1",
+        "sc-4-central-hallway"
+      ],
+      "connects": [
+        "sc-4-stairwell-1",
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-410-sc-4-central-hallway",
+      "name": "Door (sc-4-410 ↔ sc-4-central-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          838,
+          344
+        ],
+        [
+          838,
+          344
+        ],
+        [
+          838,
+          344
+        ],
+        [
+          838,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 838,
+        "y": 344
+      },
+      "neighbors": [
+        "sc-4-410",
+        "sc-4-central-hallway"
+      ],
+      "connects": [
+        "sc-4-410",
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-411-sc-4-central-hallway",
+      "name": "Door (sc-4-411 ↔ sc-4-central-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          914,
+          345
+        ],
+        [
+          914,
+          345
+        ],
+        [
+          914,
+          345
+        ],
+        [
+          914,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 914,
+        "y": 345
+      },
+      "neighbors": [
+        "sc-4-411",
+        "sc-4-central-hallway"
+      ],
+      "connects": [
+        "sc-4-411",
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-408d-sc-4-408b",
+      "name": "Door (sc-4-408d ↔ sc-4-408b)",
+      "type": "door",
+      "polygon": [
+        [
+          657,
+          307
+        ],
+        [
+          657,
+          307
+        ],
+        [
+          657,
+          307
+        ],
+        [
+          657,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 657,
+        "y": 307
+      },
+      "neighbors": [
+        "sc-4-408d",
+        "sc-4-408b"
+      ],
+      "connects": [
+        "sc-4-408d",
+        "sc-4-408b"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-412-sc-4-central-hallway",
+      "name": "Door (sc-4-412 ↔ sc-4-central-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          993,
+          344
+        ],
+        [
+          993,
+          344
+        ],
+        [
+          993,
+          344
+        ],
+        [
+          993,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 993,
+        "y": 344
+      },
+      "neighbors": [
+        "sc-4-412",
+        "sc-4-central-hallway"
+      ],
+      "connects": [
+        "sc-4-412",
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-413a-sc-4-central-hallway",
+      "name": "Door (sc-4-413a ↔ sc-4-central-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1043,
+          344
+        ],
+        [
+          1043,
+          344
+        ],
+        [
+          1043,
+          344
+        ],
+        [
+          1043,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1043,
+        "y": 344
+      },
+      "neighbors": [
+        "sc-4-413a",
+        "sc-4-central-hallway"
+      ],
+      "connects": [
+        "sc-4-413a",
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-central-hallway-sc-4-east-hallway",
+      "name": "Door (sc-4-central-hallway ↔ sc-4-east-hallway)",
+      "type": "connection",
+      "polygon": [
+        [
+          1059,
+          363
+        ],
+        [
+          1059,
+          363
+        ],
+        [
+          1059,
+          363
+        ],
+        [
+          1059,
+          363
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1059,
+        "y": 363
+      },
+      "neighbors": [
+        "sc-4-central-hallway",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-central-hallway",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-central-hallway-sc-4-elevator-hallway",
+      "name": "Door (sc-4-central-hallway ↔ sc-4-elevator-hallway)",
+      "type": "connection",
+      "polygon": [
+        [
+          867,
+          378
+        ],
+        [
+          867,
+          378
+        ],
+        [
+          867,
+          378
+        ],
+        [
+          867,
+          378
+        ]
+      ],
+      "labelAnchor": {
+        "x": 867,
+        "y": 378
+      },
+      "neighbors": [
+        "sc-4-central-hallway",
+        "sc-4-elevator-hallway"
+      ],
+      "connects": [
+        "sc-4-central-hallway",
+        "sc-4-elevator-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-436-sc-4-elevator-hallway",
+      "name": "Door (sc-4-436 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          839,
+          727
+        ],
+        [
+          839,
+          727
+        ],
+        [
+          839,
+          727
+        ],
+        [
+          839,
+          727
+        ]
+      ],
+      "labelAnchor": {
+        "x": 839,
+        "y": 727
+      },
+      "neighbors": [
+        "sc-4-436",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-436",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-432-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-432 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          707
+        ],
+        [
+          829,
+          707
+        ],
+        [
+          829,
+          707
+        ],
+        [
+          829,
+          707
+        ]
+      ],
+      "labelAnchor": {
+        "x": 829,
+        "y": 707
+      },
+      "neighbors": [
+        "sc-4-432",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-432",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-430-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-430 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          829,
+          668
+        ],
+        [
+          829,
+          668
+        ],
+        [
+          829,
+          668
+        ],
+        [
+          829,
+          668
+        ]
+      ],
+      "labelAnchor": {
+        "x": 829,
+        "y": 668
+      },
+      "neighbors": [
+        "sc-4-430",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-430",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-431-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-431 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          853,
+          702
+        ],
+        [
+          853,
+          702
+        ],
+        [
+          853,
+          702
+        ],
+        [
+          853,
+          702
+        ]
+      ],
+      "labelAnchor": {
+        "x": 853,
+        "y": 702
+      },
+      "neighbors": [
+        "sc-4-431",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-431",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-429-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-429 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          828,
+          640
+        ],
+        [
+          828,
+          640
+        ],
+        [
+          828,
+          640
+        ],
+        [
+          828,
+          640
+        ]
+      ],
+      "labelAnchor": {
+        "x": 828,
+        "y": 640
+      },
+      "neighbors": [
+        "sc-4-429",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-429",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-428-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-428 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          853,
+          637
+        ],
+        [
+          853,
+          637
+        ],
+        [
+          853,
+          637
+        ],
+        [
+          853,
+          637
+        ]
+      ],
+      "labelAnchor": {
+        "x": 853,
+        "y": 637
+      },
+      "neighbors": [
+        "sc-4-428",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-428",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-427-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-427 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          827,
+          614
+        ],
+        [
+          827,
+          614
+        ],
+        [
+          827,
+          614
+        ],
+        [
+          827,
+          614
+        ]
+      ],
+      "labelAnchor": {
+        "x": 827,
+        "y": 614
+      },
+      "neighbors": [
+        "sc-4-427",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-427",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-426-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-426 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          852,
+          580
+        ],
+        [
+          852,
+          580
+        ],
+        [
+          852,
+          580
+        ],
+        [
+          852,
+          580
+        ]
+      ],
+      "labelAnchor": {
+        "x": 852,
+        "y": 580
+      },
+      "neighbors": [
+        "sc-4-426",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-426",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-425-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-425 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          826,
+          564
+        ],
+        [
+          826,
+          564
+        ],
+        [
+          826,
+          564
+        ],
+        [
+          826,
+          564
+        ],
+        [
+          826,
+          564
+        ]
+      ],
+      "labelAnchor": {
+        "x": 826,
+        "y": 564
+      },
+      "neighbors": [
+        "sc-4-425",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-425",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-424-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-424 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ],
+        [
+          854,
+          541
+        ]
+      ],
+      "labelAnchor": {
+        "x": 854,
+        "y": 541
+      },
+      "neighbors": [
+        "sc-4-424",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-424",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-423-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-423 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          827,
+          522
+        ],
+        [
+          827,
+          522
+        ],
+        [
+          827,
+          522
+        ],
+        [
+          827,
+          522
+        ]
+      ],
+      "labelAnchor": {
+        "x": 827,
+        "y": 522
+      },
+      "neighbors": [
+        "sc-4-423",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-423",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-422-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-422 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          827,
+          496
+        ],
+        [
+          827,
+          496
+        ],
+        [
+          827,
+          496
+        ],
+        [
+          827,
+          496
+        ]
+      ],
+      "labelAnchor": {
+        "x": 827,
+        "y": 496
+      },
+      "neighbors": [
+        "sc-4-422",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-422",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-420-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-420 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          827,
+          472
+        ],
+        [
+          827,
+          472
+        ],
+        [
+          827,
+          472
+        ],
+        [
+          827,
+          472
+        ]
+      ],
+      "labelAnchor": {
+        "x": 827,
+        "y": 472
+      },
+      "neighbors": [
+        "sc-4-420",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-420",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-421-sc-4-math-lounge-hallway",
+      "name": "Door (sc-4-421 ↔ sc-4-math-lounge-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          853,
+          499
+        ],
+        [
+          853,
+          499
+        ],
+        [
+          853,
+          499
+        ],
+        [
+          853,
+          499
+        ]
+      ],
+      "labelAnchor": {
+        "x": 853,
+        "y": 499
+      },
+      "neighbors": [
+        "sc-4-421",
+        "sc-4-math-lounge-hallway"
+      ],
+      "connects": [
+        "sc-4-421",
+        "sc-4-math-lounge-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-421h-sc-4-421",
+      "name": "Door (sc-4-421h ↔ sc-4-421)",
+      "type": "door",
+      "polygon": [
+        [
+          940,
+          458
+        ],
+        [
+          940,
+          458
+        ],
+        [
+          940,
+          458
+        ],
+        [
+          940,
+          458
+        ]
+      ],
+      "labelAnchor": {
+        "x": 940,
+        "y": 458
+      },
+      "neighbors": [
+        "sc-4-421h",
+        "sc-4-421"
+      ],
+      "connects": [
+        "sc-4-421h",
+        "sc-4-421"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-math-lounge-hallway-sc-4-elevator-hallway",
+      "name": "Door (sc-4-math-lounge-hallway ↔ sc-4-elevator-hallway)",
+      "type": "connection",
+      "polygon": [
+        [
+          841,
+          460
+        ],
+        [
+          841,
+          460
+        ],
+        [
+          841,
+          460
+        ],
+        [
+          841,
+          460
+        ]
+      ],
+      "labelAnchor": {
+        "x": 841,
+        "y": 460
+      },
+      "neighbors": [
+        "sc-4-math-lounge-hallway",
+        "sc-4-elevator-hallway"
+      ],
+      "connects": [
+        "sc-4-math-lounge-hallway",
+        "sc-4-elevator-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-stairwell-4-sc-4-elevator-hallway",
+      "name": "Door (sc-4-stairwell-4 ↔ sc-4-elevator-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          854,
+          446
+        ],
+        [
+          854,
+          446
+        ],
+        [
+          854,
+          446
+        ],
+        [
+          854,
+          446
+        ]
+      ],
+      "labelAnchor": {
+        "x": 854,
+        "y": 446
+      },
+      "neighbors": [
+        "sc-4-stairwell-4",
+        "sc-4-elevator-hallway"
+      ],
+      "connects": [
+        "sc-4-stairwell-4",
+        "sc-4-elevator-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-passenger-elevator-sc-4-elevator-hallway",
+      "name": "Door (sc-4-passenger-elevator ↔ sc-4-elevator-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          885,
+          402
+        ],
+        [
+          885,
+          402
+        ],
+        [
+          885,
+          402
+        ],
+        [
+          885,
+          402
+        ]
+      ],
+      "labelAnchor": {
+        "x": 885,
+        "y": 402
+      },
+      "neighbors": [
+        "sc-4-passenger-elevator",
+        "sc-4-elevator-hallway"
+      ],
+      "connects": [
+        "sc-4-passenger-elevator",
+        "sc-4-elevator-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-409-sc-4-central-hallway",
+      "name": "Door (sc-4-409 ↔ sc-4-central-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          811,
+          303
+        ],
+        [
+          811,
+          303
+        ],
+        [
+          811,
+          303
+        ],
+        [
+          811,
+          303
+        ]
+      ],
+      "labelAnchor": {
+        "x": 811,
+        "y": 303
+      },
+      "neighbors": [
+        "sc-4-409",
+        "sc-4-central-hallway"
+      ],
+      "connects": [
+        "sc-4-409",
+        "sc-4-central-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-413c-sc-4-413a",
+      "name": "Door (sc-4-413c ↔ sc-4-413a)",
+      "type": "door",
+      "polygon": [
+        [
+          1033,
+          303
+        ],
+        [
+          1033,
+          303
+        ],
+        [
+          1033,
+          303
+        ],
+        [
+          1033,
+          303
+        ],
+        [
+          1033,
+          303
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1033,
+        "y": 303
+      },
+      "neighbors": [
+        "sc-4-413c",
+        "sc-4-413a"
+      ],
+      "connects": [
+        "sc-4-413c",
+        "sc-4-413a"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-413c-sc-4-413d",
+      "name": "Door (sc-4-413c ↔ sc-4-413d)",
+      "type": "door",
+      "polygon": [
+        [
+          1047,
+          251
+        ],
+        [
+          1047,
+          251
+        ],
+        [
+          1047,
+          251
+        ],
+        [
+          1047,
+          251
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1047,
+        "y": 251
+      },
+      "neighbors": [
+        "sc-4-413c",
+        "sc-4-413d"
+      ],
+      "connects": [
+        "sc-4-413c",
+        "sc-4-413d"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-413b-sc-4-central-hallway",
+      "name": "Door (sc-4-413b ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1093,
+          343
+        ],
+        [
+          1093,
+          343
+        ],
+        [
+          1093,
+          343
+        ],
+        [
+          1093,
+          343
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1093,
+        "y": 343
+      },
+      "neighbors": [
+        "sc-4-413b",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-413b",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-413b-sc-4-413d",
+      "name": "Door (sc-4-413b ↔ sc-4-413d)",
+      "type": "door",
+      "polygon": [
+        [
+          1094,
+          304
+        ],
+        [
+          1094,
+          304
+        ],
+        [
+          1094,
+          304
+        ],
+        [
+          1094,
+          304
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1094,
+        "y": 304
+      },
+      "neighbors": [
+        "sc-4-413b",
+        "sc-4-413d"
+      ],
+      "connects": [
+        "sc-4-413b",
+        "sc-4-413d"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-414-sc-4-central-hallway",
+      "name": "Door (sc-4-414 ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1122,
+          346
+        ],
+        [
+          1122,
+          346
+        ],
+        [
+          1122,
+          346
+        ],
+        [
+          1122,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1122,
+        "y": 346
+      },
+      "neighbors": [
+        "sc-4-414",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-414",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-415-sc-4-central-hallway",
+      "name": "Door (sc-4-415 ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1148,
+          342
+        ],
+        [
+          1148,
+          342
+        ],
+        [
+          1148,
+          342
+        ],
+        [
+          1148,
+          342
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1148,
+        "y": 342
+      },
+      "neighbors": [
+        "sc-4-415",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-415",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-416-sc-4-east-hallway",
+      "name": "Door (sc-4-416 ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1210,
+          344
+        ],
+        [
+          1210,
+          344
+        ],
+        [
+          1210,
+          344
+        ],
+        [
+          1210,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1210,
+        "y": 344
+      },
+      "neighbors": [
+        "sc-4-416",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-416",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-417-sc-4-east-hallway",
+      "name": "Door (sc-4-417 ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1248,
+          344
+        ],
+        [
+          1248,
+          344
+        ],
+        [
+          1248,
+          344
+        ],
+        [
+          1248,
+          344
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1248,
+        "y": 344
+      },
+      "neighbors": [
+        "sc-4-417",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-417",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-418a-sc-4-east-hallway",
+      "name": "Door (sc-4-418a ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1278,
+          341
+        ],
+        [
+          1278,
+          341
+        ],
+        [
+          1278,
+          341
+        ],
+        [
+          1278,
+          341
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1278,
+        "y": 341
+      },
+      "neighbors": [
+        "sc-4-418a",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-418a",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-418c-sc-4-418d",
+      "name": "Door (sc-4-418c ↔ sc-4-418d)",
+      "type": "door",
+      "polygon": [
+        [
+          1280,
+          259
+        ],
+        [
+          1280,
+          259
+        ],
+        [
+          1280,
+          259
+        ],
+        [
+          1280,
+          259
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1280,
+        "y": 259
+      },
+      "neighbors": [
+        "sc-4-418c",
+        "sc-4-418d"
+      ],
+      "connects": [
+        "sc-4-418c",
+        "sc-4-418d"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-418c-sc-4-418a",
+      "name": "Door (sc-4-418c ↔ sc-4-418a)",
+      "type": "door",
+      "polygon": [
+        [
+          1270,
+          306
+        ],
+        [
+          1270,
+          306
+        ],
+        [
+          1270,
+          306
+        ],
+        [
+          1270,
+          306
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1270,
+        "y": 306
+      },
+      "neighbors": [
+        "sc-4-418c",
+        "sc-4-418a"
+      ],
+      "connects": [
+        "sc-4-418c",
+        "sc-4-418a"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-418d-sc-4-418b",
+      "name": "Door (sc-4-418d ↔ sc-4-418b)",
+      "type": "door",
+      "polygon": [
+        [
+          1333,
+          307
+        ],
+        [
+          1333,
+          307
+        ],
+        [
+          1333,
+          307
+        ],
+        [
+          1333,
+          307
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1333,
+        "y": 307
+      },
+      "neighbors": [
+        "sc-4-418d",
+        "sc-4-418b"
+      ],
+      "connects": [
+        "sc-4-418d",
+        "sc-4-418b"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-419-sc-4-east-hallway",
+      "name": "Door (sc-4-419 ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1371,
+          348
+        ],
+        [
+          1371,
+          348
+        ],
+        [
+          1371,
+          348
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1371,
+        "y": 348
+      },
+      "neighbors": [
+        "sc-4-419",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-419",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-stairwell-3-sc-4-east-hallway",
+      "name": "Door (sc-4-stairwell-3 ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1426,
+          346
+        ],
+        [
+          1426,
+          346
+        ],
+        [
+          1426,
+          346
+        ],
+        [
+          1426,
+          346
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1426,
+        "y": 346
+      },
+      "neighbors": [
+        "sc-4-stairwell-3",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-stairwell-3",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-474-sc-4-east-hallway",
+      "name": "Door (sc-4-474 ↔ sc-4-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1368,
+          377
+        ],
+        [
+          1368,
+          377
+        ],
+        [
+          1368,
+          377
+        ],
+        [
+          1368,
+          377
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1368,
+        "y": 377
+      },
+      "neighbors": [
+        "sc-4-474",
+        "sc-4-east-hallway"
+      ],
+      "connects": [
+        "sc-4-474",
+        "sc-4-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-south-east-hallway",
+      "name": "South-East Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          1306,
+          412
+        ],
+        [
+          1307,
+          582
+        ],
+        [
+          1416,
+          584
+        ],
+        [
+          1420,
+          414
+        ],
+        [
+          1396,
+          412
+        ],
+        [
+          1398,
+          571
+        ],
+        [
+          1321,
+          570
+        ],
+        [
+          1325,
+          428
+        ],
+        [
+          1326,
+          411
+        ],
+        [
+          1329,
+          428
+        ],
+        [
+          1393,
+          429
+        ],
+        [
+          1391,
+          412
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1361,
+        "y": 471
+      },
+      "neighbors": [
+        "sc-4-474",
+        "sc-4-451",
+        "sc-4-452",
+        "sc-4-453",
+        "sc-4-454",
+        "sc-4-455",
+        "sc-4-475",
+        "sc-4-480",
+        "sc-4-463",
+        "sc-4-464",
+        "sc-4-467",
+        "sc-4-466",
+        "sc-4-465",
+        "sc-4-inner-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-474-sc-4-south-east-hallway",
+      "name": "Door (sc-4-474 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1368,
+          408
+        ],
+        [
+          1368,
+          408
+        ],
+        [
+          1368,
+          408
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1368,
+        "y": 408
+      },
+      "neighbors": [
+        "sc-4-474",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-474",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-451-sc-4-south-east-hallway",
+      "name": "Door (sc-4-451 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1305,
+          443
+        ],
+        [
+          1305,
+          443
+        ],
+        [
+          1305,
+          443
+        ],
+        [
+          1305,
+          443
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1305,
+        "y": 443
+      },
+      "neighbors": [
+        "sc-4-451",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-451",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-452-sc-4-south-east-hallway",
+      "name": "Door (sc-4-452 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1303,
+          487
+        ],
+        [
+          1303,
+          487
+        ],
+        [
+          1303,
+          487
+        ],
+        [
+          1303,
+          487
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1303,
+        "y": 487
+      },
+      "neighbors": [
+        "sc-4-452",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-452",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-453-sc-4-south-east-hallway",
+      "name": "Door (sc-4-453 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1305,
+          522
+        ],
+        [
+          1305,
+          522
+        ],
+        [
+          1305,
+          522
+        ],
+        [
+          1305,
+          522
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1305,
+        "y": 522
+      },
+      "neighbors": [
+        "sc-4-453",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-453",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-454-sc-4-south-east-hallway",
+      "name": "Door (sc-4-454 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1305,
+          549
+        ],
+        [
+          1305,
+          549
+        ],
+        [
+          1305,
+          549
+        ],
+        [
+          1305,
+          549
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1305,
+        "y": 549
+      },
+      "neighbors": [
+        "sc-4-454",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-454",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-455-sc-4-south-east-hallway",
+      "name": "Door (sc-4-455 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1305,
+          577
+        ],
+        [
+          1305,
+          577
+        ],
+        [
+          1305,
+          577
+        ],
+        [
+          1305,
+          577
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1305,
+        "y": 577
+      },
+      "neighbors": [
+        "sc-4-455",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-455",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-475-sc-4-south-east-hallway",
+      "name": "Door (sc-4-475 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1362,
+          427
+        ],
+        [
+          1362,
+          427
+        ],
+        [
+          1362,
+          427
+        ],
+        [
+          1362,
+          427
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1362,
+        "y": 427
+      },
+      "neighbors": [
+        "sc-4-475",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-475",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-469-sc-4-south-east-hallway",
+      "name": "Door (sc-4-469 ↔ sc-4-inner-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1359,
+          512
+        ],
+        [
+          1359,
+          512
+        ],
+        [
+          1359,
+          512
+        ],
+        [
+          1359,
+          512
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1359,
+        "y": 512
+      },
+      "neighbors": [
+        "sc-4-469",
+        "sc-4-inner-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-469",
+        "sc-4-inner-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-480-sc-4-south-east-hallway",
+      "name": "Door (sc-4-480 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1360,
+          583
+        ],
+        [
+          1360,
+          583
+        ],
+        [
+          1360,
+          583
+        ],
+        [
+          1360,
+          583
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1360,
+        "y": 583
+      },
+      "neighbors": [
+        "sc-4-480",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-480",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-480-sc-4-482",
+      "name": "Door (sc-4-480 ↔ sc-4-482)",
+      "type": "door",
+      "polygon": [
+        [
+          1329,
+          668
+        ],
+        [
+          1329,
+          668
+        ],
+        [
+          1329,
+          668
+        ],
+        [
+          1329,
+          668
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1329,
+        "y": 668
+      },
+      "neighbors": [
+        "sc-4-480",
+        "sc-4-482"
+      ],
+      "connects": [
+        "sc-4-480",
+        "sc-4-482"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-457-sc-4-480",
+      "name": "Door (sc-4-457 ↔ sc-4-480)",
+      "type": "door",
+      "polygon": [
+        [
+          1307,
+          637
+        ],
+        [
+          1307,
+          637
+        ],
+        [
+          1307,
+          637
+        ],
+        [
+          1307,
+          637
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1307,
+        "y": 637
+      },
+      "neighbors": [
+        "sc-4-457",
+        "sc-4-480"
+      ],
+      "connects": [
+        "sc-4-457",
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-458-sc-4-457",
+      "name": "Door (sc-4-458 ↔ sc-4-457)",
+      "type": "door",
+      "polygon": [
+        [
+          1285,
+          670
+        ],
+        [
+          1285,
+          670
+        ],
+        [
+          1285,
+          670
+        ],
+        [
+          1285,
+          670
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1285,
+        "y": 670
+      },
+      "neighbors": [
+        "sc-4-458",
+        "sc-4-457"
+      ],
+      "connects": [
+        "sc-4-458",
+        "sc-4-457"
+      ]
+    },
+    {
+      "id": "sc-4-stairwell-5",
+      "name": "Stairwell 5",
+      "type": "stairwell",
+      "polygon": [
+        [
+          1343,
+          717
+        ],
+        [
+          1398,
+          720
+        ],
+        [
+          1399,
+          688
+        ],
+        [
+          1344,
+          687
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1371,
+        "y": 703
+      },
+      "neighbors": [
+        "sc-4-459"
+      ],
+      "connectsFloors": [
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-459-sc-4-stairwell-5",
+      "name": "Door (sc-4-459 ↔ sc-4-stairwell-5)",
+      "type": "door",
+      "polygon": [
+        [
+          1339,
+          703
+        ],
+        [
+          1339,
+          703
+        ],
+        [
+          1339,
+          703
+        ],
+        [
+          1339,
+          703
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1339,
+        "y": 703
+      },
+      "neighbors": [
+        "sc-4-459",
+        "sc-4-stairwell-5"
+      ],
+      "connects": [
+        "sc-4-459",
+        "sc-4-stairwell-5"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-459-sc-4-480",
+      "name": "Door (sc-4-459 ↔ sc-4-480)",
+      "type": "door",
+      "polygon": [
+        [
+          1342,
+          687
+        ],
+        [
+          1342,
+          687
+        ],
+        [
+          1342,
+          687
+        ],
+        [
+          1342,
+          687
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1342,
+        "y": 687
+      },
+      "neighbors": [
+        "sc-4-459",
+        "sc-4-480"
+      ],
+      "connects": [
+        "sc-4-459",
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-460-sc-4-480",
+      "name": "Door (sc-4-460 ↔ sc-4-480)",
+      "type": "door",
+      "polygon": [
+        [
+          1412,
+          687
+        ],
+        [
+          1412,
+          687
+        ],
+        [
+          1412,
+          687
+        ],
+        [
+          1412,
+          687
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1412,
+        "y": 687
+      },
+      "neighbors": [
+        "sc-4-460",
+        "sc-4-480"
+      ],
+      "connects": [
+        "sc-4-460",
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-461-sc-4-480",
+      "name": "Door (sc-4-461 ↔ sc-4-480)",
+      "type": "door",
+      "polygon": [
+        [
+          1418,
+          653
+        ],
+        [
+          1418,
+          653
+        ],
+        [
+          1418,
+          653
+        ],
+        [
+          1418,
+          653
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1418,
+        "y": 653
+      },
+      "neighbors": [
+        "sc-4-461",
+        "sc-4-480"
+      ],
+      "connects": [
+        "sc-4-461",
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-462-sc-4-480",
+      "name": "Door (sc-4-462 ↔ sc-4-480)",
+      "type": "door",
+      "polygon": [
+        [
+          1418,
+          621
+        ],
+        [
+          1418,
+          621
+        ],
+        [
+          1418,
+          621
+        ],
+        [
+          1418,
+          621
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1418,
+        "y": 621
+      },
+      "neighbors": [
+        "sc-4-462",
+        "sc-4-480"
+      ],
+      "connects": [
+        "sc-4-462",
+        "sc-4-480"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-463-sc-4-south-east-hallway",
+      "name": "Door (sc-4-463 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1419,
+          595
+        ],
+        [
+          1419,
+          595
+        ],
+        [
+          1419,
+          595
+        ],
+        [
+          1419,
+          595
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1419,
+        "y": 595
+      },
+      "neighbors": [
+        "sc-4-463",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-463",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-464-sc-4-south-east-hallway",
+      "name": "Door (sc-4-464 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1419,
+          571
+        ],
+        [
+          1419,
+          571
+        ],
+        [
+          1419,
+          571
+        ],
+        [
+          1419,
+          571
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1419,
+        "y": 571
+      },
+      "neighbors": [
+        "sc-4-464",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-464",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-467-sc-4-south-east-hallway",
+      "name": "Door (sc-4-467 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1423,
+          484
+        ],
+        [
+          1423,
+          484
+        ],
+        [
+          1423,
+          484
+        ],
+        [
+          1423,
+          484
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1423,
+        "y": 484
+      },
+      "neighbors": [
+        "sc-4-467",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-467",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-466-sc-4-south-east-hallway",
+      "name": "Door (sc-4-466 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1421,
+          524
+        ],
+        [
+          1421,
+          524
+        ],
+        [
+          1421,
+          524
+        ],
+        [
+          1421,
+          524
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1421,
+        "y": 524
+      },
+      "neighbors": [
+        "sc-4-466",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-466",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-465-sc-4-south-east-hallway",
+      "name": "Door (sc-4-465 ↔ sc-4-south-east-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          1420,
+          546
+        ],
+        [
+          1420,
+          546
+        ],
+        [
+          1420,
+          546
+        ],
+        [
+          1420,
+          546
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1420,
+        "y": 546
+      },
+      "neighbors": [
+        "sc-4-465",
+        "sc-4-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-465",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-stairwell-2-sc-4-west-hallway",
+      "name": "Door (sc-4-stairwell-2 ↔ sc-4-west-hallway)",
+      "type": "door",
+      "polygon": [
+        [
+          157,
+          348
+        ],
+        [
+          157,
+          348
+        ],
+        [
+          157,
+          348
+        ],
+        [
+          157,
+          348
+        ]
+      ],
+      "labelAnchor": {
+        "x": 157,
+        "y": 348
+      },
+      "neighbors": [
+        "sc-4-stairwell-2",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-stairwell-2",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-400-hallway",
+      "name": "400 Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          160,
+          348
+        ],
+        [
+          210,
+          349
+        ],
+        [
+          208,
+          235
+        ],
+        [
+          258,
+          239
+        ],
+        [
+          257,
+          347
+        ],
+        [
+          271,
+          349
+        ],
+        [
+          274,
+          234
+        ],
+        [
+          307,
+          235
+        ],
+        [
+          309,
+          224
+        ],
+        [
+          188,
+          223
+        ],
+        [
+          192,
+          329
+        ],
+        [
+          159,
+          331
+        ]
+      ],
+      "labelAnchor": {
+        "x": 233,
+        "y": 287
+      },
+      "neighbors": [
+        "sc-4-400a",
+        "sc-4-400b",
+        "sc-4-400c",
+        "sc-4-400d",
+        "sc-4-400p",
+        "sc-4-400n",
+        "sc-4-400e",
+        "sc-4-400f",
+        "sc-4-400g",
+        "sc-4-400h",
+        "sc-4-400j",
+        "sc-4-400k",
+        "sc-4-400m",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-west-hallway-sc-4-400-hallway",
+      "name": "Door (sc-4-west-hallway ↔ sc-4-400-hallway)",
+      "type": "connection",
+      "polygon": [
+        [
+          194,
+          351
+        ],
+        [
+          194,
+          351
+        ],
+        [
+          194,
+          351
+        ],
+        [
+          194,
+          351
+        ]
+      ],
+      "labelAnchor": {
+        "x": 194,
+        "y": 351
+      },
+      "neighbors": [
+        "sc-4-west-hallway",
+        "sc-4-400-hallway"
+      ],
+      "connects": [
+        "sc-4-west-hallway",
+        "sc-4-400-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-403-hallway",
+      "name": "403 Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          412,
+          309
+        ],
+        [
+          504,
+          309
+        ],
+        [
+          508,
+          346
+        ],
+        [
+          411,
+          349
+        ]
+      ],
+      "labelAnchor": {
+        "x": 459,
+        "y": 328
+      },
+      "neighbors": [
+        "sc-4-403e",
+        "sc-4-403d",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-403-hallway-sc-4-west-hallway",
+      "name": "Door (sc-4-403-hallway ↔ sc-4-west-hallway)",
+      "type": "connection",
+      "polygon": [
+        [
+          465,
+          345
+        ],
+        [
+          465,
+          345
+        ],
+        [
+          465,
+          345
+        ],
+        [
+          465,
+          345
+        ]
+      ],
+      "labelAnchor": {
+        "x": 465,
+        "y": 345
+      },
+      "neighbors": [
+        "sc-4-403-hallway",
+        "sc-4-west-hallway"
+      ],
+      "connects": [
+        "sc-4-403-hallway",
+        "sc-4-west-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-inner-south-east-hallway",
+      "name": "Inner South-east Hallway",
+      "type": "corridor",
+      "polygon": [
+        [
+          1336,
+          430
+        ],
+        [
+          1335,
+          448
+        ],
+        [
+          1390,
+          446
+        ],
+        [
+          1386,
+          426
+        ],
+        [
+          1395,
+          426
+        ],
+        [
+          1398,
+          564
+        ],
+        [
+          1322,
+          564
+        ],
+        [
+          1326,
+          418
+        ],
+        [
+          1329,
+          428
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1357,
+        "y": 461
+      },
+      "neighbors": [
+        "sc-4-469",
+        "sc-4-south-east-hallway"
+      ]
+    },
+    {
+      "id": "sc-4-door-sc-4-south-east-hallway-sc-4-inner-south-east-hallway",
+      "name": "Door (sc-4-south-east-hallway ↔ sc-4-inner-south-east-hallway)",
+      "type": "connection",
+      "polygon": [
+        [
+          1397,
+          492
+        ],
+        [
+          1397,
+          492
+        ],
+        [
+          1397,
+          492
+        ],
+        [
+          1397,
+          492
+        ]
+      ],
+      "labelAnchor": {
+        "x": 1397,
+        "y": 492
+      },
+      "neighbors": [
+        "sc-4-south-east-hallway",
+        "sc-4-inner-south-east-hallway"
+      ],
+      "connects": [
+        "sc-4-south-east-hallway",
+        "sc-4-inner-south-east-hallway"
+      ]
+    }
+  ]
+}
