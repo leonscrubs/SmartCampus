@@ -53,9 +53,6 @@ AMENITY_KIND_ALIASES = {
     'vending_machine': ['vending_machine', 'vending', 'snack', 'machine'],
 }
 
-# Index position of each floor — used to compute inter-floor distance cost
-FLOOR_IDX = {f: i for i, f in enumerate(FLOOR_ORDER)}
-
 
 def centroid(polygon):
     n = len(polygon)
@@ -246,10 +243,13 @@ def build_graph(use_elevator=True, use_stairs=True):
             connected += 1
 
     # ── Cross-floor edges (stairwells & elevators) ────────────────────────────
+    floor_order_set = set(FLOOR_ORDER)
     connectors = [
         (key, node)
         for key, node in nodes.items()
-        if node['type'] in ('stairwell', 'elevator') and node['connectsFloors']
+        if node['type'] in ('stairwell', 'elevator')
+        # Must list at least two real floors to be a cross-floor connector
+        and sum(1 for f in node['connectsFloors'] if f in floor_order_set) >= 2
     ]
 
     # Only bridge connectors between floors that are ADJACENT in FLOOR_ORDER
@@ -276,18 +276,24 @@ def build_graph(use_elevator=True, use_stairs=True):
         a = sum(pts[i][0]*pts[(i+1)%n][1] - pts[(i+1)%n][0]*pts[i][1] for i in range(n))
         return abs(a) / 2
 
-    AREA_RATIO_MAX = 1.25  # stairwell polygons must be within 25% in area
+    AREA_RATIO_MAX = 1.5  # stairwell polygons must be within 50% in area
+
+    # Track which connectors have already been paired per adjacent floor,
+    # so one connector cannot link to multiple partners on the same floor.
+    paired_on_floor = {}  # key_a -> set of adj_floors already linked
 
     for key_a, na in connectors:
         area_a = poly_area(na['polygon']) if na['type'] == 'stairwell' else None
         for adj_floor in FLOOR_ORDER:
             if (na['floor'], adj_floor) not in adjacent_pairs:
                 continue
+            if adj_floor in paired_on_floor.get(key_a, set()):
+                continue
             candidates = []
             for key_b, nb in connectors_by_floor_type.get((adj_floor, na['type']), []):
                 if not (set(na['connectsFloors']) & set(nb['connectsFloors'])):
                     continue
-                # For stairwells, reject pairs whose polygon areas differ by more than 25%
+                # For stairwells, reject pairs whose polygon areas differ by more than 50%
                 if area_a is not None:
                     area_b = poly_area(nb['polygon'])
                     ratio = max(area_a, area_b) / max(min(area_a, area_b), 1)
@@ -302,6 +308,8 @@ def build_graph(use_elevator=True, use_stairs=True):
             if pair in used_pairs:
                 continue
             used_pairs.add(pair)
+            paired_on_floor.setdefault(key_a, set()).add(adj_floor)
+            paired_on_floor.setdefault(key_b, set()).add(na['floor'])
             cost = FLOOR_CHANGE_COST + coord_dist * 0.25
             adj[key_a].append((key_b, cost))
             adj[key_b].append((key_a, cost))
