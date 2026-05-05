@@ -17,8 +17,8 @@ The system has two components:
 
 ### Mapping server features
 
-- **Floor browser** — sidebar arrows and floor badges let you jump between floors 1, 2, 3, and 5 (Floor 4 omitted from raw floor plans).
-- **Room search** — fuzzy matching accepts variants of the same room - for example, `322`, `Room 322`, `R322`, `Cabot`, etc.
+- **Floor browser** — sidebar arrows and floor badges let you jump between all floors of the Science Center, from the Basement to Floor 9.
+- **Room search** — fuzzy matching accepts variants of the same room - for example, `322`, `Room 322`, `R322`, etc.
 - **Type filter** — When user selects for a specific type of room, dropdown greys out all rooms except the selected type (office, classroom, …).
 - **Navigation** — When the user types any two rooms in the *From / To* fields, the server computes the shortest
   path via Dijkstra and draws an animated dashed line that follows hallway geometry. User-facing rooms are entered and exited through designated door or connection nodes; direct corridor-to-room shortcuts are ignored.
@@ -26,6 +26,8 @@ The system has two components:
   appears at each floor-change point; pressing it advances the map to the target floor on the route,
   skipping in-between, or transit, floors automatically.
 - **Elevator toggle** — checkbox selects elevator-only cross-floor routing when enabled and stair-only cross-floor routing when disabled.
+- **Amenity stops** - User can choose to filter by only paths which cross a particular amenity, e.g. stopping by a restroom, water-fountain, or vending machine from origin to destination; upon doing this, the server outputs a path from origin to destination, with the closest available amenity of that type demarcated on the path.
+- **Via-search** - This 'amenity-stop' idea was then expanded to any specific intermediate point - users can filter to find the optimal path from Point A to Point B that passes through some specific intermediate office, restroom, classroom, hallway, or any other room type!
 
 ---
 
@@ -103,7 +105,7 @@ In some parts of the project, we made use of AI, helping us with debugging, impr
 
 | File | AI contribution |
 |------|----------------|
-| `app.py` | Here, we used AI to help us with the Dijkstra's algorithm portion - in particular, we used AI or Google searches online to create TYPE_COST multipliers in our graph that weighed hallways as lower-cost relative to classrooms or offices,  to implement this into our graphing system. and implementation, and to construct the graphs mapping source to target destinations and visualizing optimal routes. |
+| `app.py` | Here, we used AI to help us with the Dijkstra's algorithm portion - in particular, we used AI or Google searches online to create TYPE_COST multipliers in our graph that weighed hallways as lower-cost relative to classrooms or offices,  to implement this into our graphing system. and implementation, and to construct the graphs mapping source to target destinations and visualizing optimal routes. Additionally, we asked AI for guidance and doubts when developing the filters for the search algorithm; in particular, while passing through a particular room was solvable independently, we used AI guidance to understand how to create algorithms that passed through the closest amenity.|
 | `templates/index.html` | AI helped us here with visual aspects - specifically, it helped us in terms of making our path right-angled v.s. straight-line, creating an animated dashed line, developing the "I am here" multi-floor button to improve UI and User Experience, and visual symbols for elevators and stairwells. |
 | `FloorPlan_Explorer.ipynb` | We utilized AI to help us with creating the labeling system that we used to label our floor-plans with doors, rooms, hallways, and cross-floor connections. |
 
